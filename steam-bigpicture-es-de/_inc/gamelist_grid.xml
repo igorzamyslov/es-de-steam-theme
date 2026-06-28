@@ -53,12 +53,14 @@
             <backgroundColor>ffffffff</backgroundColor>
             <backgroundRelativeScale>1.0</backgroundRelativeScale>
             <backgroundCornerRadius>${radTile}</backgroundCornerRadius>
-            <!-- thin light-grey focus frame just inside the cell edge, leaving a gap to the inset cover -->
+            <!-- frame drawn at the full cell (1.0); its even gap to the cover is baked into the SVG -->
             <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
-            <selectorRelativeScale>0.98</selectorRelativeScale>
+            <selectorRelativeScale>1.0</selectorRelativeScale>
             <selectorLayer>top</selectorLayer>
-            <!-- Steam shows neighbours at full brightness; only a hair of dim for couch focus aid -->
-            <unfocusedItemOpacity>0.92</unfocusedItemOpacity>
+            <!-- focus: keep the selected item full colour/brightness; non-selected slightly darker + desaturated -->
+            <unfocusedItemOpacity>1.0</unfocusedItemOpacity>
+            <unfocusedItemDimming>0.82</unfocusedItemDimming>
+            <unfocusedItemSaturation>0.7</unfocusedItemSaturation>
             <zIndex>30</zIndex>
         </grid>
     </view>
