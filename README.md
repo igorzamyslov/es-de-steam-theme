@@ -1,6 +1,8 @@
 # Steam Big Picture for ES-DE
 
-A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view presents a bottom rail of platform icons alongside a full-bleed hero area; the gamelist shows a capsule grid or list with a detail panel on the right. The color scheme is dark throughout, using Steam's characteristic navy and neon-cyan accent palette. Six layout variants let you mix hero styles with grid or list gamelists. Aspect ratios 16:9, 16:10, and 4:3 are all supported.
+A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view presents a bottom rail of platform icons over a full-bleed hero area; the gamelist shows a capsule grid (or a list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy with a neon-cyan accent.
+
+It adapts to your display and settings: a per-font-size type-and-density scale, a desktop side-panel layout for `16:9 / 16:10 / 4:3 / 5:4`, and a full-width hero-banner layout for phone/ultrawide (`19.5:9 / 20:9 / 21:9`). Four variants (hero style × gamelist layout) combine with four color-scheme media modes.
 
 ---
 
@@ -26,31 +28,69 @@ A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that 
 
 ## Variants
 
-Switch variants under **UI Settings → Theme variant**. There are **12 variants** —
-every combination of three independent choices (ES-DE exposes a single variant list,
-so the combinations are enumerated). The default is **Hero (neon) · Grid · Marquee**.
+Switch variants under **UI Settings → Theme variant**. There are **4 variants** — every combination of two independent choices. The default is **Hero (neon) · Grid**.
 
-- **System view:** `Hero (neon)` (gradient hero + system icon) · `Hero (art)` (per-platform art hero — placeholder until art is added, see below) · `No hero` (full-screen icon grid)
-- **Gamelist:** `Grid` (capsule grid) · `List` (scrollable list)
-- **Detail media:** `Marquee` · `Screenshot` — the chosen static media shows first, then the game's **video auto-plays after a short delay** (falls back to the static media if there's no video)
+- **System view:** `Hero (neon)` (gradient hero + focus-tracked system logo) · `Hero (art)` (per-platform background art — placeholder until you add art, see below)
+- **Gamelist:** `Grid` (capsule grid + right detail panel) · `List` (scrollable list + wider detail panel)
 
-Variant names follow the pattern `Hero (neon) · Grid · Marquee`, `No hero · List · Screenshot`, etc.
+| Variant | System hero | Gamelist |
+| --- | --- | --- |
+| Hero (neon) · Grid *(default)* | neon | grid |
+| Hero (neon) · List | neon | list |
+| Hero (art) · Grid | art | grid |
+| Hero (art) · List | art | list |
+
+---
+
+## Detail media (color schemes)
+
+The **color scheme** axis is repurposed to pick how the detail panel presents a game's media. Switch it under **UI Settings → Theme color scheme** (all four share the one dark palette). The default is **Marquee → Video**.
+
+| Color scheme | Behavior |
+| --- | --- |
+| **Marquee → Video** *(default)* | marquee still shows first, then the game's video auto-plays |
+| **Screenshot → Video** | screenshot still shows first, then the video auto-plays |
+| **Marquee (no video)** | marquee still only — no video playback |
+| **Screenshot (no video)** | screenshot still only — no video playback |
+
+If the chosen still or the video isn't scraped for a game, the panel falls back to a placeholder.
+
+---
+
+## Theme font size
+
+The theme scales its typography **and** grid density to the **UI Settings → Theme font size** setting:
+
+- **Medium** — most capsules per screen (densest grid), compact type.
+- **Large** — fewer, larger capsules; a wider detail panel with a bigger video.
+- **X-Large** — largest capsules and type, for couch/TV viewing distance.
+
+Pick whichever suits your screen size and viewing distance.
+
+---
+
+## Aspect ratios
+
+The layout reflows automatically by aspect ratio:
+
+- **Desktop / TV** (`16:9`, `16:10`, `4:3`, `5:4`): grid (or list) on the left, detail panel on the right.
+- **Phone / ultrawide** (`19.5:9`, `20:9`, `21:9`): a full-width hero banner across the top of the gamelist with the focused game's title and compact metadata, and the grid below.
 
 ---
 
 ## Collections (Library, Favorites, Recent)
 
-To get the **Library**, **Favorites**, and **Recent** entries in the system view rail, enable automatic collections in ES-DE:
+To get the **Library**, **Favorites**, and **Recent** entries in the persistent nav strip, enable automatic collections in ES-DE:
 
 **Game Collection Settings → Enable automatic game collections**
 
-Once enabled, ES-DE aggregates games across all platforms and surfaces them as virtual systems in the rail.
+Once enabled, ES-DE aggregates games across all platforms and surfaces them as virtual systems.
 
 ---
 
 ## Adding hero art
 
-The "Hero (art)" variants ship with a placeholder hero area. Per-platform background art is a planned addition. To produce and install your own hero art:
+The "Hero (art)" variants show a placeholder hero area until you add per-platform background art. To produce and install your own:
 
 - See **`docs/hero-art-pipeline.md`** for the production workflow (canvas size, naming convention, export settings).
 - See **`steam-bigpicture-es-de/systems/art/README.md`** for where to place the files so the theme picks them up.
@@ -71,7 +111,7 @@ Asset sources:
 
 - **System logos & icons:** ES-DE official asset repositories (`gitlab.com/es-de/themes/system-logos`, `system-controllers-outline`) — see their individual licenses.
 - **System metadata & colors:** `gitlab.com/es-de/themes/system-metadata` (CC BY-NC-SA).
-- **Font:** Inter by Rasmus Andersson (SIL Open Font License 1.1).
+- **Fonts:** Inter by Rasmus Andersson and Rubik (display face) — both under the SIL Open Font License 1.1.
 - Logos and trademarks used in system icons and metadata are the property of their respective owners.
 
 See `ATTRIBUTION.md` for a full attribution list.
