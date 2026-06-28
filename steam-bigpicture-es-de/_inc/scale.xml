@@ -20,9 +20,13 @@
             <fsCount>0.022</fsCount><fsButton>0.021</fsButton><fsLabel>0.020</fsLabel>
             <fsMetaWide>0.019</fsMetaWide><fsMeta>0.0185</fsMeta><fsTab>0.018</fsTab>
             <gridItemY>0.242</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
-            <gridSize>0.63 0.764</gridSize>
+            <gridSize>0.596 0.764</gridSize>
             <heroNameY>0.48</heroNameY><heroSpecY>0.595</heroSpecY><heroCountY>0.635</heroCountY>
             <heroDescY>0.685</heroDescY><heroDescH>0.062</heroDescH>
+            <!-- detail panel (6 grid cols on 16:9): x/width + content x + media width -->
+            <pPanelX>0.666</pPanelX><pPanelW>0.299</pPanelW><pContentX>0.686</pContentX><pValueX>0.771</pValueX>
+            <pInnerW>0.259</pInnerW><pValueW>0.174</pValueW><pMediaW>0.259</pMediaW>
+            <pPlayIconX>0.7975</pPlayIconX><pPlayLabelX>0.8125</pPlayLabelX>
         </variables>
     </fontSize>
     <fontSize name="large">
@@ -32,9 +36,13 @@
             <fsCount>0.030</fsCount><fsButton>0.028</fsButton><fsLabel>0.027</fsLabel>
             <fsMetaWide>0.026</fsMetaWide><fsMeta>0.025</fsMeta><fsTab>0.025</fsTab>
             <gridItemY>0.241</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
-            <gridSize>0.63 0.765</gridSize>
+            <gridSize>0.506 0.765</gridSize>
             <heroNameY>0.44</heroNameY><heroSpecY>0.555</heroSpecY><heroCountY>0.595</heroCountY>
             <heroDescY>0.645</heroDescY><heroDescH>0.10</heroDescH>
+            <!-- detail panel (5 grid cols on 16:9): widest panel -> biggest video -->
+            <pPanelX>0.576</pPanelX><pPanelW>0.389</pPanelW><pContentX>0.596</pContentX><pValueX>0.681</pValueX>
+            <pInnerW>0.349</pInnerW><pValueW>0.264</pValueW><pMediaW>0.349</pMediaW>
+            <pPlayIconX>0.7525</pPlayIconX><pPlayLabelX>0.7675</pPlayLabelX>
         </variables>
     </fontSize>
     <fontSize name="x-large">
@@ -44,9 +52,13 @@
             <fsCount>0.035</fsCount><fsButton>0.032</fsButton><fsLabel>0.031</fsLabel>
             <fsMetaWide>0.030</fsMetaWide><fsMeta>0.029</fsMeta><fsTab>0.029</fsTab>
             <gridItemY>0.370</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
-            <gridSize>0.63 0.764</gridSize>
+            <gridSize>0.602 0.764</gridSize>
             <heroNameY>0.40</heroNameY><heroSpecY>0.515</heroSpecY><heroCountY>0.565</heroCountY>
             <heroDescY>0.615</heroDescY><heroDescH>0.13</heroDescH>
+            <!-- detail panel (4 grid cols on 16:9) -->
+            <pPanelX>0.672</pPanelX><pPanelW>0.293</pPanelW><pContentX>0.692</pContentX><pValueX>0.777</pValueX>
+            <pInnerW>0.253</pInnerW><pValueW>0.168</pValueW><pMediaW>0.253</pMediaW>
+            <pPlayIconX>0.8005</pPlayIconX><pPlayLabelX>0.8155</pPlayLabelX>
         </variables>
     </fontSize>
 
