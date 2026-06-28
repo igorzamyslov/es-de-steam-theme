@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 221">
-  <!-- soft halo, fully inset so it only bleeds INWARD (outer glow is impossible: selector is item-capped) -->
-  <rect x="13" y="13" width="166" height="195" rx="6" fill="none" stroke="#bfe0ff" stroke-opacity="0.13" stroke-width="16"/>
-  <rect x="6" y="6" width="180" height="209" rx="11" fill="none" stroke="#9fd0ff" stroke-opacity="0.40" stroke-width="9"/>
-  <!-- bright crisp core ON the tile edge (outer face of the 3.5px stroke = item rectangle edge); rx matches the tile -->
-  <rect x="1.75" y="1.75" width="188.5" height="217.5" rx="15" fill="none" stroke="#ffffff" stroke-opacity="0.96" stroke-width="3.5"/>
+  <g fill="none">
+    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#a9d2ff" stroke-opacity="0.05" stroke-width="30"/>
+    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#a9d2ff" stroke-opacity="0.09" stroke-width="22"/>
+    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#b9dcff" stroke-opacity="0.16" stroke-width="15"/>
+    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#d4ebff" stroke-opacity="0.30" stroke-width="9"/>
+    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#eaf5ff" stroke-opacity="0.55" stroke-width="5"/>
+    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#ffffff" stroke-opacity="0.96" stroke-width="2.5"/>
+  </g>
 </svg>

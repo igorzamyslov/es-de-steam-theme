@@ -29,8 +29,10 @@
             <!-- Steam-style focus: scale up + glowing frame; scaleInwards keeps edge rows in bounds -->
             <itemScale>1.10</itemScale>
             <scaleInwards>true</scaleInwards>
-            <!-- cover = art fills the capsule edge-to-edge (Steam look; crops wide/square box art) -->
+            <!-- cover cropped to fill, but inset ~7% so the selector glow has a margin to live in
+                 around the art (an outer glow can't exceed the item box, so we shrink the art instead) -->
             <imageFit>cover</imageFit>
+            <imageRelativeScale>0.86</imageRelativeScale>
             <imageCornerRadius>${rad}</imageCornerRadius>
             <backgroundColor>1a1f27ff</backgroundColor>
             <backgroundCornerRadius>${rad}</backgroundCornerRadius>
