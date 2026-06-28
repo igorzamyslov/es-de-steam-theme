@@ -2,16 +2,29 @@
 <theme>
     <include>./_inc/fonts.xml</include>
     <include>./_inc/colors.xml</include>
-    <include>./_inc/system_hero_neon.xml</include>
-    <view name="gamelist">
-        <textlist name="gameList">
-            <pos>0.05 0.1</pos>
-            <size>0.9 0.8</size>
-            <primaryColor>${cText2}</primaryColor>
-            <selectedColor>${cText}</selectedColor>
-            <selectedBackgroundColor>${cAccent}</selectedBackgroundColor>
-            <fontSize>0.045</fontSize>
-            <fontPath>${fontSemiBold}</fontPath>
-        </textlist>
-    </view>
+
+    <variant name="heroNeonGrid">
+        <include>./_inc/system_hero_neon.xml</include>
+        <include>./_inc/gamelist_grid.xml</include>
+    </variant>
+    <variant name="heroNeonList">
+        <include>./_inc/system_hero_neon.xml</include>
+        <include>./_inc/gamelist_list.xml</include>
+    </variant>
+    <variant name="heroArtGrid">
+        <include>./_inc/system_hero_art.xml</include>
+        <include>./_inc/gamelist_grid.xml</include>
+    </variant>
+    <variant name="heroArtList">
+        <include>./_inc/system_hero_art.xml</include>
+        <include>./_inc/gamelist_list.xml</include>
+    </variant>
+    <variant name="noHeroGrid">
+        <include>./_inc/system_nohero.xml</include>
+        <include>./_inc/gamelist_grid.xml</include>
+    </variant>
+    <variant name="noHeroList">
+        <include>./_inc/system_nohero.xml</include>
+        <include>./_inc/gamelist_list.xml</include>
+    </variant>
 </theme>

@@ -1,8 +1,30 @@
 <!-- Steam Big Picture for ES-DE -->
 <themeCapabilities>
     <themeName>Steam Big Picture</themeName>
+
     <aspectRatio>16:9</aspectRatio>
+    <aspectRatio>16:10</aspectRatio>
+    <aspectRatio>4:3</aspectRatio>
+
     <colorScheme name="dark">
         <label language="en_US">Dark</label>
     </colorScheme>
+
+    <transitions name="steam">
+        <label language="en_US">Steam</label>
+        <selectable>true</selectable>
+        <systemToSystem>instant</systemToSystem>
+        <systemToGamelist>slide</systemToGamelist>
+        <gamelistToGamelist>instant</gamelistToGamelist>
+        <gamelistToSystem>slide</gamelistToSystem>
+        <startupToSystem>fade</startupToSystem>
+        <startupToGamelist>fade</startupToGamelist>
+    </transitions>
+
+    <variant name="heroNeonGrid"><label language="en_US">Hero (neon) · Grid</label><selectable>true</selectable></variant>
+    <variant name="heroNeonList"><label language="en_US">Hero (neon) · List</label><selectable>true</selectable></variant>
+    <variant name="heroArtGrid"><label language="en_US">Hero (art) · Grid</label><selectable>true</selectable></variant>
+    <variant name="heroArtList"><label language="en_US">Hero (art) · List</label><selectable>true</selectable></variant>
+    <variant name="noHeroGrid"><label language="en_US">No hero · Grid</label><selectable>true</selectable></variant>
+    <variant name="noHeroList"><label language="en_US">No hero · List</label><selectable>true</selectable></variant>
 </themeCapabilities>
