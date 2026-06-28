@@ -3,35 +3,80 @@
     <include>./_inc/fonts.xml</include>
     <include>./_inc/colors.xml</include>
 
-    <variant name="heroNeonGrid">
+    <!-- base default for the detail-panel static media (each variant overrides this) -->
+    <variables>
+        <detailMediaType>marquee</detailMediaType>
+    </variables>
+
+    <!-- 12 variants = {hero neon, hero art, no hero} x {grid, list} x {marquee, screenshot}.
+         The detail panel shows the chosen static media, then plays the video after a delay.
+         First variant is the default: Hero (neon) · Grid · Marquee. -->
+
+    <variant name="heroNeonGridMarquee">
+        <variables><detailMediaType>marquee</detailMediaType></variables>
         <include>./_inc/system_hero_neon.xml</include>
         <include>./_inc/gamelist_grid.xml</include>
     </variant>
-    <variant name="heroNeonList">
+    <variant name="heroNeonGridShot">
+        <variables><detailMediaType>screenshot</detailMediaType></variables>
+        <include>./_inc/system_hero_neon.xml</include>
+        <include>./_inc/gamelist_grid.xml</include>
+    </variant>
+    <variant name="heroNeonListMarquee">
+        <variables><detailMediaType>marquee</detailMediaType></variables>
         <include>./_inc/system_hero_neon.xml</include>
         <include>./_inc/gamelist_list.xml</include>
     </variant>
-    <variant name="heroArtGrid">
+    <variant name="heroNeonListShot">
+        <variables><detailMediaType>screenshot</detailMediaType></variables>
+        <include>./_inc/system_hero_neon.xml</include>
+        <include>./_inc/gamelist_list.xml</include>
+    </variant>
+
+    <variant name="heroArtGridMarquee">
+        <variables><detailMediaType>marquee</detailMediaType></variables>
         <include>./_inc/system_hero_art.xml</include>
         <include>./_inc/gamelist_grid.xml</include>
     </variant>
-    <variant name="heroArtList">
+    <variant name="heroArtGridShot">
+        <variables><detailMediaType>screenshot</detailMediaType></variables>
+        <include>./_inc/system_hero_art.xml</include>
+        <include>./_inc/gamelist_grid.xml</include>
+    </variant>
+    <variant name="heroArtListMarquee">
+        <variables><detailMediaType>marquee</detailMediaType></variables>
         <include>./_inc/system_hero_art.xml</include>
         <include>./_inc/gamelist_list.xml</include>
     </variant>
-    <variant name="noHeroGrid">
+    <variant name="heroArtListShot">
+        <variables><detailMediaType>screenshot</detailMediaType></variables>
+        <include>./_inc/system_hero_art.xml</include>
+        <include>./_inc/gamelist_list.xml</include>
+    </variant>
+
+    <variant name="noHeroGridMarquee">
+        <variables><detailMediaType>marquee</detailMediaType></variables>
         <include>./_inc/system_nohero.xml</include>
         <include>./_inc/gamelist_grid.xml</include>
     </variant>
-    <variant name="noHeroList">
+    <variant name="noHeroGridShot">
+        <variables><detailMediaType>screenshot</detailMediaType></variables>
+        <include>./_inc/system_nohero.xml</include>
+        <include>./_inc/gamelist_grid.xml</include>
+    </variant>
+    <variant name="noHeroListMarquee">
+        <variables><detailMediaType>marquee</detailMediaType></variables>
+        <include>./_inc/system_nohero.xml</include>
+        <include>./_inc/gamelist_list.xml</include>
+    </variant>
+    <variant name="noHeroListShot">
+        <variables><detailMediaType>screenshot</detailMediaType></variables>
         <include>./_inc/system_nohero.xml</include>
         <include>./_inc/gamelist_list.xml</include>
     </variant>
 
     <!-- Aspect-ratio reflow overrides are deferred: they must be variant-scoped, because a
-         global override block leaks a second primary element (e.g. the no-hero grid into a
-         hero variant, or the rail carousel into the no-hero variant) and ES-DE then skips
-         the real primary ("Multiple primary components defined"). The base layout uses
-         normalized coordinates so it still scales to 16:10 / 4:3; bespoke per-variant
-         reflow is a future pass done with <aspectRatio> nested inside each <variant>. -->
+         global override block leaks a second primary element into a variant and ES-DE then
+         skips the real primary. The base layout uses normalized coordinates so it still
+         scales to 16:10 / 4:3; bespoke per-variant reflow is a future pass. -->
 </theme>

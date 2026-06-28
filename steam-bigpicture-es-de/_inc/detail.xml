@@ -22,7 +22,7 @@
             <origin>0.5 0.5</origin>
             <maxSize>0.262 0.165</maxSize>
             <imageMaxSize>0.262 0.165</imageMaxSize>
-            <imageType>screenshot</imageType>
+            <imageType>${detailMediaType}</imageType>
             <default>./../assets/ui/capsule-placeholder.svg</default>
             <delay>2.5</delay>
             <fadeInTime>0.6</fadeInTime>

@@ -26,16 +26,15 @@ A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that 
 
 ## Variants
 
-Switch variants under **UI Settings → Theme variant**. Six variants are available:
+Switch variants under **UI Settings → Theme variant**. There are **12 variants** —
+every combination of three independent choices (ES-DE exposes a single variant list,
+so the combinations are enumerated). The default is **Hero (neon) · Grid · Marquee**.
 
-| Variant | Hero style | Gamelist layout |
-|---|---|---|
-| Hero (neon) · Grid | Neon-gradient hero with system icon | Capsule grid |
-| Hero (neon) · List | Neon-gradient hero with system icon | Scrollable list |
-| Hero (art) · Grid | Placeholder hero area (per-platform art — see below) | Capsule grid |
-| Hero (art) · List | Placeholder hero area (per-platform art — see below) | Scrollable list |
-| No hero · Grid | No hero, full icon grid | Capsule grid |
-| No hero · List | No hero, full icon grid | Scrollable list |
+- **System view:** `Hero (neon)` (gradient hero + system icon) · `Hero (art)` (per-platform art hero — placeholder until art is added, see below) · `No hero` (full-screen icon grid)
+- **Gamelist:** `Grid` (capsule grid) · `List` (scrollable list)
+- **Detail media:** `Marquee` · `Screenshot` — the chosen static media shows first, then the game's **video auto-plays after a short delay** (falls back to the static media if there's no video)
+
+Variant names follow the pattern `Hero (neon) · Grid · Marquee`, `No hero · List · Screenshot`, etc.
 
 ---
 
