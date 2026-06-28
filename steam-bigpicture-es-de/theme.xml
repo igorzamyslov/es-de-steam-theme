@@ -28,10 +28,10 @@
         <include>./_inc/gamelist_list.xml</include>
     </variant>
 
-    <aspectRatio name="4:3">
-        <include>./_inc/aspect_4_3.xml</include>
-    </aspectRatio>
-    <aspectRatio name="16:10">
-        <include>./_inc/aspect_16_10.xml</include>
-    </aspectRatio>
+    <!-- Aspect-ratio reflow overrides are deferred: they must be variant-scoped, because a
+         global override block leaks a second primary element (e.g. the no-hero grid into a
+         hero variant, or the rail carousel into the no-hero variant) and ES-DE then skips
+         the real primary ("Multiple primary components defined"). The base layout uses
+         normalized coordinates so it still scales to 16:10 / 4:3; bespoke per-variant
+         reflow is a future pass done with <aspectRatio> nested inside each <variant>. -->
 </theme>

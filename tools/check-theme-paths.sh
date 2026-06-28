@@ -6,7 +6,7 @@ fail=0
 for f in _inc/*.xml; do
   dir="$(dirname "$f")"
   # extract path-like values
-  grep -oE '<(path|staticImage|default|defaultImage|include|fontRegular|fontSemiBold|fontExtraBold)>[^<]*</' "$f" \
+  grep -oE '<(path|staticImage|selectorImage|backgroundImage|default|defaultImage|include|fontRegular|fontSemiBold|fontExtraBold)>[^<]*</' "$f" \
    | sed -E 's/<[^>]+>//; s|</||' | while read -r p; do
       [ -z "$p" ] && continue
       case "$p" in ./*) ;; *) continue;; esac          # only ./-relative

@@ -29,8 +29,9 @@
             <imageColor>aab4c0ff</imageColor>
             <imageSelectedColor>ffffffff</imageSelectedColor>
             <backgroundColor>1a1f27ff</backgroundColor>
-            <selectorColor>${cAccent}</selectorColor>
-            <selectorLayer>bottom</selectorLayer>
+            <backgroundCornerRadius>0.014</backgroundCornerRadius>
+            <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
+            <selectorLayer>top</selectorLayer>
             <text>${system.fullName}</text>
             <textColor>00000000</textColor>
             <zIndex>40</zIndex>
