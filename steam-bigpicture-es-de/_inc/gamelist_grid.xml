@@ -22,10 +22,11 @@
             <itemSpacing>0.016 0.024</itemSpacing>
             <itemScale>1.07</itemScale>
             <scaleInwards>true</scaleInwards>
-            <!-- cover = the art fills the whole box (no letterbox gaps) -->
-            <imageFit>cover</imageFit>
-            <!-- slight inset so the rounded accent selector reads as a frame around the art -->
-            <imageRelativeScale>0.93</imageRelativeScale>
+            <!-- contain = whole cover always shown (never crops/cuts box art like 'cover' does);
+                 the rounded plate fills the tile so framed covers still look intentional -->
+            <imageFit>contain</imageFit>
+            <!-- consistent inset so the rounded accent selector reads as a uniform frame -->
+            <imageRelativeScale>0.92</imageRelativeScale>
             <imageCornerRadius>${rad}</imageCornerRadius>
             <backgroundColor>1a1f27ff</backgroundColor>
             <backgroundCornerRadius>${rad}</backgroundCornerRadius>

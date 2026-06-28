@@ -4,6 +4,7 @@
         <image name="footerBar">
             <pos>0 1</pos><origin>0 1</origin><size>1 0.075</size>
             <path>./../assets/ui/footer.svg</path>
+            <stationary>always</stationary>
             <zIndex>45</zIndex>
         </image>
         <helpsystem name="help">
