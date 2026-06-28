@@ -21,7 +21,7 @@
                  when no cover is found, so art-less tiles show the title (styled below) -->
             <textColor>${cText}</textColor>
             <textBackgroundColor>00000000</textBackgroundColor>
-            <textRelativeScale>0.84</textRelativeScale>
+            <textRelativeScale>0.86</textRelativeScale>
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>0.018</fontSize>
             <itemSize>0.10 0.205</itemSize>
@@ -36,6 +36,8 @@
             <imageCornerRadius>${rad}</imageCornerRadius>
             <backgroundColor>1a1f27ff</backgroundColor>
             <backgroundCornerRadius>${rad}</backgroundCornerRadius>
+            <!-- plate matches the inset cover so it isn't larger than the art; the glow lives in the outer margin -->
+            <backgroundRelativeScale>0.86</backgroundRelativeScale>
             <!-- glowing near-white selector frame (baked halo) over the focused capsule -->
             <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
             <selectorLayer>top</selectorLayer>
