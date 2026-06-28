@@ -31,8 +31,8 @@
             <pPanelX>0.666</pPanelX><pPanelW>0.334</pPanelW><pContentX>0.686</pContentX><pInnerW>0.294</pInnerW>
             <pPanelCX>0.833</pPanelCX><pKeyW>0.07</pKeyW><pValueX>0.756</pValueX><pValueW>0.224</pValueW>
             <pPlayIconX>0.711</pPlayIconX><pPlayLabelX>0.728</pPlayLabelX><glCountY>0.108</glCountY>
-            <pTitleH>0.085</pTitleH><pVideoY>0.155</pVideoY><pVideoH>0.285</pVideoH>
-            <pwTitleH>0.09</pwTitleH><pwVideoY>0.16</pwVideoY><pwVideoH>0.29</pwVideoH>
+            <pTitleH>0.05</pTitleH><pVideoY>0.118</pVideoY><pVideoH>0.322</pVideoH>
+            <pwTitleH>0.05</pwTitleH><pwVideoY>0.118</pwVideoY><pwVideoH>0.332</pwVideoH>
         </variables>
     </fontSize>
     <fontSize name="large">
@@ -50,8 +50,8 @@
             <pPanelX>0.576</pPanelX><pPanelW>0.424</pPanelW><pContentX>0.596</pContentX><pInnerW>0.384</pInnerW>
             <pPanelCX>0.788</pPanelCX><pKeyW>0.085</pKeyW><pValueX>0.681</pValueX><pValueW>0.299</pValueW>
             <pPlayIconX>0.621</pPlayIconX><pPlayLabelX>0.638</pPlayLabelX><glCountY>0.122</glCountY>
-            <pTitleH>0.115</pTitleH><pVideoY>0.185</pVideoY><pVideoH>0.255</pVideoH>
-            <pwTitleH>0.12</pwTitleH><pwVideoY>0.19</pwVideoY><pwVideoH>0.26</pwVideoH>
+            <pTitleH>0.062</pTitleH><pVideoY>0.13</pVideoY><pVideoH>0.31</pVideoH>
+            <pwTitleH>0.064</pwTitleH><pwVideoY>0.132</pwVideoY><pwVideoH>0.318</pwVideoH>
         </variables>
     </fontSize>
     <fontSize name="x-large">
@@ -69,8 +69,8 @@
             <pPanelX>0.672</pPanelX><pPanelW>0.328</pPanelW><pContentX>0.692</pContentX><pInnerW>0.288</pInnerW>
             <pPanelCX>0.836</pPanelCX><pKeyW>0.10</pKeyW><pValueX>0.792</pValueX><pValueW>0.188</pValueW>
             <pPlayIconX>0.717</pPlayIconX><pPlayLabelX>0.734</pPlayLabelX><glCountY>0.135</glCountY>
-            <pTitleH>0.135</pTitleH><pVideoY>0.205</pVideoY><pVideoH>0.235</pVideoH>
-            <pwTitleH>0.14</pwTitleH><pwVideoY>0.21</pwVideoY><pwVideoH>0.24</pwVideoH>
+            <pTitleH>0.072</pTitleH><pVideoY>0.14</pVideoY><pVideoH>0.30</pVideoH>
+            <pwTitleH>0.074</pwTitleH><pwVideoY>0.142</pwVideoY><pwVideoH>0.308</pwVideoH>
         </variables>
     </fontSize>
 

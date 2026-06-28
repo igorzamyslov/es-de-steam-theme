@@ -13,7 +13,8 @@
         <!-- title: top of the column, wraps to multiple lines -->
         <text name="detailTitle">
             <pos>${pContentX} 0.064</pos><size>${pInnerW} ${pTitleH}</size>
-            <metadata>name</metadata><container>false</container>
+            <!-- single-line marquee: constant height -> video below always fills the rest, no gap -->
+            <metadata>name</metadata><container>true</container><containerType>horizontal</containerType>
             <fontPath>${fontDisplay}</fontPath><fontSize>${fsTitle}</fontSize>
             <verticalAlignment>top</verticalAlignment>
             <color>${cText}</color><zIndex>20</zIndex>
