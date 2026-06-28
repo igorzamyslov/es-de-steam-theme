@@ -1,0 +1,32 @@
+<theme>
+    <include>./helpsystem.xml</include>
+    <include>./status.xml</include>
+    <include>./detail.xml</include>
+    <view name="gamelist">
+        <text name="glHeader">
+            <pos>0.035 0.05</pos><size>0.6 0.06</size>
+            <metadata>systemFullname</metadata>
+            <fontPath>${fontExtraBold}</fontPath><fontSize>0.036</fontSize>
+            <color>${cText}</color><zIndex>20</zIndex>
+        </text>
+        <gamelistinfo name="glCount">
+            <pos>0.035 0.11</pos><size>0.3 0.03</size>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.02</fontSize>
+            <color>${cMuted}</color><zIndex>20</zIndex>
+        </gamelistinfo>
+        <grid name="capsules">
+            <pos>0.035 0.16</pos><size>0.64 0.80</size>
+            <imageType>cover</imageType>
+            <defaultImage>./assets/ui/capsule-placeholder.svg</defaultImage>
+            <itemSize>0.10 0.22</itemSize>
+            <itemSpacing>0.014 0.02</itemSpacing>
+            <itemScale>1.06</itemScale>
+            <scaleInwards>true</scaleInwards>
+            <imageFit>contain</imageFit>
+            <imageCornerRadius>0.006</imageCornerRadius>
+            <selectorColor>3a9bffff</selectorColor>
+            <selectorLayer>bottom</selectorLayer>
+            <zIndex>30</zIndex>
+        </grid>
+    </view>
+</theme>
