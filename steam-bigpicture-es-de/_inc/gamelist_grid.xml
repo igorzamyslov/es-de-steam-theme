@@ -12,17 +12,17 @@
         <gamelistinfo name="glCount">
             <pos>0.035 0.11</pos><size>0.3 0.03</size>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.02</fontSize>
-            <color>${cMuted}</color><zIndex>20</zIndex>
+            <color>${cText2}</color><zIndex>20</zIndex>
         </gamelistinfo>
         <grid name="capsules">
             <pos>0.035 0.16</pos><size>0.64 0.74</size>
             <imageType>cover</imageType>
             <!-- no defaultImage: in a gamelist grid the game name is the automatic fallback
                  when no cover is found, so art-less tiles show the title (styled below) -->
-            <textColor>${cText2}</textColor>
+            <textColor>${cText}</textColor>
             <textBackgroundColor>00000000</textBackgroundColor>
             <fontPath>${fontSemiBold}</fontPath>
-            <fontSize>0.016</fontSize>
+            <fontSize>0.018</fontSize>
             <itemSize>0.10 0.205</itemSize>
             <itemSpacing>0.016 0.024</itemSpacing>
             <itemScale>1.06</itemScale>

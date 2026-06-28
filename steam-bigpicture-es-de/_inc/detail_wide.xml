@@ -54,7 +54,7 @@
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.019</fontSize><color>${cText2}</color><zIndex>20</zIndex></datetime>
 
         <text name="detailDescLabel"><pos>0.51 0.675</pos><size>0.45 0.022</size><text>Description</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.015</fontSize><color>${cMuted}</color><letterCase>uppercase</letterCase><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
         <text name="detailDesc">
             <pos>0.51 0.70</pos><size>0.45 0.125</size>
             <metadata>description</metadata><container>true</container><containerType>vertical</containerType>

@@ -49,19 +49,19 @@
             <fontPath>${fontExtraBold}</fontPath><fontSize>0.052</fontSize>
             <color>${cText}</color><zIndex>10</zIndex>
         </text>
-        <!-- secondary: full official name (wraps for long names) -->
+        <!-- secondary: manufacturer (non-redundant with the system name; ${systemManufacturer} from metadata) -->
         <text name="sysFull">
-            <pos>0.05 0.645</pos><size>0.62 0.055</size>
-            <systemdata>fullname</systemdata>
+            <pos>0.05 0.645</pos><size>0.62 0.04</size>
+            <text>${systemManufacturer}</text>
             <container>false</container>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.020</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
         </text>
         <text name="sysCount">
-            <pos>0.05 0.705</pos><size>0.5 0.05</size>
+            <pos>0.05 0.70</pos><size>0.5 0.05</size>
             <systemdata>gamecount</systemdata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.022</fontSize>
-            <color>${cMuted}</color><zIndex>10</zIndex>
+            <color>${cText2}</color><zIndex>10</zIndex>
         </text>
         <!-- bottom rail of system icons (kept above the help footer at y 0.925) -->
         <carousel name="rail">
@@ -72,7 +72,7 @@
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.12</itemSize>
             <itemScale>1.18</itemScale>
-            <imageColor>e8edf2dd</imageColor>
+            <imageColor>b9c3cfff</imageColor>
             <imageSelectedColor>ffffffff</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>

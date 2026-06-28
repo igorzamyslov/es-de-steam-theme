@@ -78,7 +78,7 @@
 
         <!-- description: the only scroll region; ends above the Play button -->
         <text name="detailDescLabel"><pos>0.72 0.54</pos><size>0.26 0.022</size><text>Description</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.015</fontSize><color>${cMuted}</color><letterCase>uppercase</letterCase><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
         <text name="detailDesc">
             <pos>0.72 0.565</pos>
             <size>0.26 0.25</size>
