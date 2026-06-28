@@ -1,0 +1,371 @@
+<meta charset="utf-8">
+<title>Steam Big Picture — ES-DE Theme Mockup</title>
+<style>
+  :root{
+    --bg1:#15181d; --bg2:#0b0e12;
+    --panel:#191d23; --line:#2b313a;
+    --accent:#3a9bff;
+    --green-1:#a1cd44; --green-2:#5f9626;
+    --text:#e8edf2; --text-2:#aab4c0; --muted:#6d7884;
+    --capsule-radius:8px;
+    --font:"Motiva Sans","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:var(--font);color:var(--text);background:#05070a;-webkit-font-smoothing:antialiased;
+    overflow:hidden;display:flex;flex-direction:column;height:100vh}
+
+  .mockbar{flex:none;min-height:46px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    padding:7px 16px;background:#04060a;border-bottom:1px solid #ffffff12;font-size:11px}
+  .grp{display:flex;align-items:center;gap:7px}
+  .grp .lab{color:#56697a;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+  .seg{display:flex;gap:4px;background:#ffffff0d;padding:3px;border-radius:999px;border:1px solid #ffffff14}
+  .seg button{border:none;background:transparent;color:#9fb3c4;font-weight:700;font-size:11px;padding:5px 11px;border-radius:999px;cursor:pointer;font-family:var(--font)}
+  .seg button.on{background:#cfd9e3;color:#0c1722}
+  .mock-note{color:#56697a;margin-left:auto}
+
+  .stage-wrap{flex:1;min-height:0;width:100%;display:grid;place-items:center}
+  .stage{position:relative;width:100%;height:100%;overflow:hidden;display:flex;flex-direction:column;
+    background:linear-gradient(180deg,var(--bg1),var(--bg2) 90%)}
+
+  .status{position:absolute;top:15px;right:26px;z-index:9;display:flex;align-items:center;gap:14px;
+    color:var(--text-2);font-size:13px;text-shadow:0 1px 4px #000a}
+  .status .clock{font-variant-numeric:tabular-nums;letter-spacing:.5px;font-weight:600}
+  .status .battery{display:flex;align-items:center;gap:6px}
+  .batt{width:26px;height:13px;border:1.5px solid currentColor;border-radius:3px;position:relative;padding:1.6px;opacity:.85}
+  .batt::after{content:"";position:absolute;right:-4px;top:3px;width:2px;height:5px;background:currentColor;border-radius:0 2px 2px 0}
+  .batt i{display:block;height:100%;width:72%;background:var(--green-1);border-radius:1px}
+
+  .view{flex:1;min-height:0;display:none;flex-direction:column;position:relative}
+  .view.show{display:flex}
+  .mode{display:none;flex:1;min-height:0;flex-direction:column}
+  .mode.show{display:flex}
+
+  /* ============ SYSTEM VIEW — HERO + RAIL ============ */
+  .hero{position:relative;flex:1;min-height:0;overflow:hidden;display:flex;align-items:flex-end;transition:background .35s ease}
+  .hero-fog{position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(60% 70% at 72% 32%, #ffffff14, transparent 60%),radial-gradient(120% 120% at 50% 120%, #00000066, transparent 60%)}
+  .hero-art{position:absolute;right:2%;top:48%;transform:translateY(-54%);width:46%;max-width:600px;display:grid;place-items:center;transition:color .35s ease, filter .35s ease}
+  .hero-art::before{content:"";position:absolute;width:86%;height:86%;border-radius:50%;background:radial-gradient(closest-side, currentColor, transparent 72%);opacity:.10;filter:blur(26px)}
+  .hero-art svg{position:relative;width:92%;height:auto;max-height:74vh}
+  /* art-mode: placeholder frame instead of the neon glyph (real per-platform art deferred) */
+  .hero.mode-art .hero-art{color:#7d8a99}
+  .hero.mode-art .hero-art::before{opacity:0}
+  .hero.mode-art .hero-art svg{width:46%;opacity:.5}
+  .hero.mode-art .hero-art::after{content:"PLATFORM ART";position:absolute;bottom:8%;left:50%;transform:translateX(-50%);
+    font-size:11px;letter-spacing:2px;color:#8a97a6;border:1px dashed #ffffff2e;padding:6px 12px;border-radius:6px;white-space:nowrap}
+  .hero-grain{position:absolute;inset:0;pointer-events:none;background:radial-gradient(125% 105% at 50% 42%, transparent 62%, #000 122%)}
+  .hero-grain::before{content:"";position:absolute;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.04;mix-blend-mode:overlay}
+  .hero-scrim{position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(90deg,#000c 0%, #0009 26%, transparent 58%),linear-gradient(0deg,#000c 0%, transparent 40%)}
+  .ember{position:absolute;width:3px;height:3px;border-radius:50%;background:#ffd9a0;filter:blur(.5px);opacity:.32;box-shadow:0 0 6px 1px #ffcf9488}
+  .hero.mode-art .ember{display:none}
+  .hero-info{position:relative;z-index:2;padding:0 0 30px 48px;max-width:62%}
+  .hero-info .kind{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-2);font-weight:700;margin-bottom:10px;opacity:.9}
+  .hero-info h1{margin:0 0 10px;font-size:46px;line-height:1.02;font-weight:800;letter-spacing:-.5px;text-wrap:balance;overflow-wrap:anywhere;text-shadow:0 3px 18px #000b}
+  .hero-info .meta{color:var(--text);font-size:15px;font-weight:600;text-shadow:0 2px 8px #000a}
+  .hero-info .feat{color:var(--text-2);font-size:13px;margin-top:6px;text-shadow:0 2px 8px #000a}
+  .hero-info .feat b{color:var(--text);font-weight:700}
+
+  .railpos{position:absolute;right:44px;bottom:182px;z-index:4;color:var(--text-2);font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;background:#0b0e12cc;padding:3px 10px;border-radius:999px;border:1px solid #ffffff14}
+  .sysrail{flex:none;height:152px;display:flex;align-items:center;gap:14px;padding:8px 40px 18px;overflow-x:auto;-webkit-mask:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);scrollbar-width:none}
+  .sysrail::-webkit-scrollbar{display:none}
+  .railtile{flex:none;width:104px;height:104px;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
+    background:linear-gradient(180deg,#1e242d,#141921);border:1px solid #ffffff16;box-shadow:inset 0 1px 0 #ffffff0e, 0 6px 14px #00000040;color:var(--text-2);cursor:pointer;transition:all .15s ease}
+  .railtile svg{width:34px;height:34px;display:block}
+  .railtile .lbl{font-size:11px;font-weight:700;letter-spacing:.2px;max-width:92px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center}
+  .railtile:hover{background:#222a34;color:var(--text)}
+  .railtile.active{color:#fff;border-color:var(--accent);box-shadow:0 0 0 2px var(--accent), 0 0 24px -3px var(--accent), 0 12px 30px #000a;transform:translateY(-4px) scale(1.06)}
+
+  /* ============ SYSTEM VIEW — NO HERO (tile grid) ============ */
+  .sgridhead{flex:none;display:flex;align-items:baseline;gap:14px;padding:18px 0 12px 44px}
+  .sgridhead b{font-size:24px;font-weight:800;letter-spacing:-.3px}
+  .sgridhead .c{color:var(--muted);font-size:14px}
+  .sysgrid{flex:1;min-height:0;overflow:auto;align-content:start;display:grid;grid-template-columns:repeat(auto-fill,minmax(152px,1fr));gap:16px;padding:8px 44px 26px;scrollbar-width:thin;scrollbar-color:#39424d transparent}
+  .gtile{aspect-ratio:1/0.82;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+    background:linear-gradient(180deg,#1e242d,#141921);border:1px solid #ffffff16;box-shadow:inset 0 1px 0 #ffffff0e, 0 6px 14px #00000040;color:var(--text-2);cursor:pointer;transition:all .15s ease}
+  .gtile svg{width:40px;height:40px}
+  .gtile .lbl{font-size:12px;font-weight:700;max-width:92%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .gtile:hover{background:#222a34;color:var(--text)}
+  .gtile.active{color:#fff;border-color:var(--accent);box-shadow:0 0 0 2px var(--accent), 0 0 22px -3px var(--accent), 0 10px 28px #000a;transform:translateY(-2px) scale(1.04)}
+
+  /* ============ GAMELIST ============ */
+  .glhead{display:flex;align-items:baseline;gap:14px;padding:18px 0 14px 44px;flex:none}
+  .glhead b{font-size:24px;font-weight:800;letter-spacing:-.3px}
+  .glhead .count{color:var(--muted);font-size:14px}
+  .glhead .sort{font-size:13px;color:var(--text-2);background:#ffffff0d;padding:6px 12px;border-radius:999px}
+  .gl{flex:1;min-height:0;display:grid;grid-template-columns:1fr 380px}
+  .gl-main{min-height:0;display:flex;flex-direction:column;padding:0 0 0 26px}
+  .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;align-content:start;min-height:0;overflow:auto;padding:24px 30px 30px 20px;scrollbar-width:thin;scrollbar-color:#39424d transparent}
+
+  /* list mode */
+  .gllist{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:3px;padding:20px 24px 30px 0;scrollbar-width:thin;scrollbar-color:#39424d transparent}
+  .glrow{display:flex;align-items:center;gap:12px;padding:11px 16px;border-radius:9px;cursor:pointer;color:var(--text-2);transition:background .12s,color .12s}
+  .glrow .nm{font-weight:600;font-size:15px;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+  .glrow .yr{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;flex:none}
+  .glrow .fav{color:#f5c518;flex:none;font-size:12px}
+  .glrow:hover{background:#ffffff0d;color:var(--text)}
+  .glrow.sel{background:linear-gradient(90deg,#1b222c,#151a21);box-shadow:inset 2px 0 0 var(--accent), inset 0 0 0 1px #ffffff12}
+  .glrow.sel .nm{color:#fff}
+
+  .capsule{position:relative;border-radius:var(--capsule-radius);overflow:hidden;cursor:pointer;box-shadow:0 8px 18px #00000055;transition:transform .16s ease, box-shadow .16s ease;background:#0e1218;border:1px solid #ffffff0d}
+  .capsule .poster{aspect-ratio:2/3;display:flex;align-items:flex-end;padding:12px;background-size:cover;position:relative}
+  .capsule .poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,#000000d8)}
+  .capsule .title{position:relative;z-index:2;font-weight:800;font-size:13px;line-height:1.16;color:#fff;text-shadow:0 2px 6px #000b;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+  .capsule:hover{transform:translateY(-4px)}
+  .capsule.sel{transform:translateY(-4px) scale(1.04);box-shadow:0 0 0 3px var(--accent), 0 0 26px -3px var(--accent), 0 16px 40px #000b}
+  .capsule.letterbox .poster{background:#0a0e13}
+  .capsule.letterbox .poster .fit{position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;width:100%;height:62%;background-size:cover;background-position:center}
+  .capsule.placeholder .poster{background:linear-gradient(160deg,#222a34,#141a21)}
+  .capsule.placeholder .ph{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;gap:6px}
+  .capsule.placeholder .ph small{color:var(--muted);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+
+  .detail{background:linear-gradient(180deg,#191d23aa,#0c1116f2);border-left:1px solid var(--line);padding:30px 26px 24px;display:flex;flex-direction:column;gap:15px;overflow:hidden}
+  .detail .shot{aspect-ratio:16/9;border-radius:10px;background-size:cover;box-shadow:0 10px 24px #0009}
+  .detail h3{margin:0;font-size:22px;font-weight:800;letter-spacing:-.3px;line-height:1.18;text-wrap:balance;overflow-wrap:anywhere}
+  .badges{display:flex;flex-wrap:wrap;gap:8px}
+  .badge{font-size:12px;font-weight:700;color:var(--text-2);background:#ffffff0e;border:1px solid #ffffff14;padding:6px 11px;border-radius:7px;display:flex;gap:6px;align-items:center;white-space:nowrap}
+  .badge .k{color:var(--muted);font-weight:600}
+  .stars{color:#f5c518;letter-spacing:2px;font-size:14px}
+  .desc-label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:700;flex:none}
+  .desc{color:var(--text-2);font-size:13.5px;line-height:1.6;margin:0;flex:1;min-height:48px;overflow:auto;padding-right:8px;-webkit-mask:linear-gradient(180deg,#000 calc(100% - 18px),transparent);scrollbar-width:thin;scrollbar-color:#39424d transparent}
+  .meta-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:13px}
+  .meta-grid .k{color:var(--muted);white-space:nowrap}
+  .meta-grid .v{overflow-wrap:anywhere}
+  .play-btn{flex:none;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:9px;border:none;cursor:pointer;font-weight:800;font-size:15px;color:#102b06;background:linear-gradient(180deg,var(--green-1),var(--green-2));box-shadow:0 8px 22px #5f962655}
+
+  .helpbar{flex:none;display:flex;align-items:center;gap:22px;padding:12px 40px;border-top:1px solid #ffffff0d;background:#070a0ecc;color:var(--text-2);font-size:13px;z-index:6}
+  .help{display:flex;align-items:center;gap:8px}
+  .btn-glyph{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800;color:#0b121b}
+  .btn-glyph.a{background:#6cc04a}.btn-glyph.b{background:#e05a4f}.btn-glyph.x{background:#3a9bff}.btn-glyph.y{background:#e7b94a}
+  .btn-glyph.lr{background:#39424d;color:#cfe;font-size:10px;width:auto;padding:0 7px;border-radius:6px}
+
+  @media (prefers-reduced-motion: no-preference){
+    .ember{animation:rise 7s ease-in-out infinite}
+    @keyframes rise{0%,100%{transform:translateY(0);opacity:.25}50%{transform:translateY(-14px);opacity:.6}}
+  }
+</style>
+
+<div class="mockbar">
+  <div class="grp"><span class="lab">View</span>
+    <div class="seg"><button id="tabSystem" class="on" onclick="showView('system')">System</button><button id="tabGamelist" onclick="showView('gamelist')">Gamelist</button></div>
+  </div>
+  <div class="grp"><span class="lab">System variant</span>
+    <div class="seg"><button id="sNeon" class="on" onclick="setSys('neon')">Hero · neon</button><button id="sArt" onclick="setSys('art')">Hero · art</button><button id="sNo" onclick="setSys('nohero')">No hero</button></div>
+  </div>
+  <div class="grp"><span class="lab">Game variant</span>
+    <div class="seg"><button id="gGrid" class="on" onclick="setGl('grid')">Grid</button><button id="gList" onclick="setGl('list')">List</button></div>
+  </div>
+  <div class="mock-note">Variants = ES-DE theme "mods" · 16:9 @ 1080p</div>
+</div>
+
+<div class="stage-wrap"><div class="stage">
+  <div class="status"><span class="battery"><span class="batt"><i></i></span>72%</span><span class="clock">14:32</span></div>
+
+  <!-- SYSTEM VIEW -->
+  <section class="view show" id="systemView">
+    <!-- mode: hero (neon/art) + rail -->
+    <div class="mode show" id="sysHeroMode">
+      <div class="hero mode-neon" id="hero">
+        <div class="hero-fog"></div>
+        <div class="hero-art" id="heroArt"></div>
+        <div class="hero-grain"></div>
+        <span class="ember" style="left:70%;top:42%"></span>
+        <span class="ember" style="left:80%;top:60%;animation-delay:2.4s"></span>
+        <div class="hero-scrim"></div>
+        <div class="hero-info">
+          <div class="kind" id="sysKind">Platform</div>
+          <h1 id="sysName">Nintendo GameCube</h1>
+          <div class="meta" id="sysMeta">7 games</div>
+          <div class="feat" id="sysFeat"></div>
+        </div>
+      </div>
+      <div class="railpos" id="railPos">1 / 16</div>
+      <div class="sysrail" id="sysrail"></div>
+    </div>
+    <!-- mode: no hero (tile grid) -->
+    <div class="mode" id="sysGridMode">
+      <div class="sgridhead"><b id="sgName">Nintendo GameCube</b><span class="c" id="sgMeta">7 games</span></div>
+      <div class="sysgrid" id="sysgrid"></div>
+    </div>
+  </section>
+
+  <!-- GAMELIST VIEW -->
+  <section class="view" id="gamelistView">
+    <div class="glhead"><b>Game Boy Advance</b><span class="count">1094 games</span><span class="sort">Sorted A–Z</span></div>
+    <div class="gl">
+      <div class="gl-main">
+        <div class="grid mode show" id="grid"></div>
+        <div class="gllist mode" id="glList"></div>
+      </div>
+      <aside class="detail" id="detail"></aside>
+    </div>
+  </section>
+
+  <div class="helpbar">
+    <div class="help"><span class="btn-glyph a">A</span> Select</div>
+    <div class="help"><span class="btn-glyph b">B</span> Back</div>
+    <div class="help"><span class="btn-glyph x">X</span> Favorite</div>
+    <div class="help"><span class="btn-glyph y">Y</span> Random</div>
+    <div class="help"><span class="btn-glyph lr">LB/RB</span> Page</div>
+    <div class="help" style="margin-left:auto"><span class="btn-glyph lr">☰</span> Menu</div>
+  </div>
+</div></div>
+
+<script>
+  const S='stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"';
+  const F='fill="currentColor"';
+  const ICONS={
+    library:`<svg viewBox="0 0 24 24" ${S}><rect x="3.5" y="4.3" width="17" height="4" rx="1.1"/><rect x="3.5" y="10" width="17" height="4" rx="1.1"/><rect x="3.5" y="15.7" width="17" height="4" rx="1.1"/></svg>`,
+    heart:`<svg viewBox="0 0 24 24" ${S}><path d="M12 20.2l-1.7-1.6C5.4 14.2 3 11.8 3 9 3 6.7 4.8 5 7 5c1.6 0 3 .8 3.9 2 0.9-1.2 2.3-2 3.9-2 2.2 0 4 1.7 4 4 0 2.8-2.4 5.2-7.3 9.6z"/></svg>`,
+    recent:`<svg viewBox="0 0 24 24" ${S}><circle cx="13" cy="12.2" r="7.2"/><path d="M13 8.4v3.9l2.6 1.6"/><path d="M5.9 8.4A7.4 7.4 0 0 1 13 4.8"/><path d="M3.6 5.7l.5 3 3-.6"/></svg>`,
+    nes:`<svg viewBox="0 0 24 24" ${S}><rect x="3.4" y="6.6" width="17.2" height="10.8" rx="1.3"/><rect x="5.9" y="9" width="6.7" height="6.4" rx=".7"/><line x1="14.8" y1="9.6" x2="18.2" y2="9.6"/><line x1="14.8" y1="11.6" x2="18.2" y2="11.6"/><line x1="14.8" y1="13.6" x2="18.2" y2="13.6"/></svg>`,
+    snes:`<svg viewBox="0 0 24 24" ${S}><rect x="2.6" y="7.6" width="18.8" height="8.8" rx="4.4"/><line x1="6.4" y1="12" x2="9" y2="12"/><line x1="7.7" y1="10.7" x2="7.7" y2="13.3"/><circle cx="15" cy="10.7" r=".85" ${F}/><circle cx="15" cy="13.3" r=".85" ${F}/><circle cx="13.7" cy="12" r=".85" ${F}/><circle cx="16.3" cy="12" r=".85" ${F}/></svg>`,
+    n64:`<svg viewBox="0 0 24 24" ${S}><circle cx="12" cy="6.6" r="1.5"/><path d="M12 8.2v2.2M12 10.4 8.2 11.8 7 16M12 10.4l3.8 1.4L17 16"/><circle cx="7" cy="16.3" r="1.5"/><circle cx="12" cy="16.3" r="1.5"/><circle cx="17" cy="16.3" r="1.5"/></svg>`,
+    gamecube:`<svg viewBox="0 0 24 24" ${S}><path d="M12 3.4l7.6 4.1v8.9L12 20.6 4.4 16.4V7.5z"/><path d="M4.6 7.6 12 11.7l7.4-4.1M12 11.7v8.7"/></svg>`,
+    gb:`<svg viewBox="0 0 24 24" ${S}><rect x="6.6" y="3.3" width="10.8" height="17.4" rx="2"/><rect x="8.6" y="5.6" width="6.8" height="5.8" rx="1"/><line x1="9" y1="15.4" x2="11" y2="15.4"/><line x1="10" y1="14.4" x2="10" y2="16.4"/><circle cx="14.4" cy="15.6" r=".95" ${F}/><circle cx="15.8" cy="14" r=".95" ${F}/></svg>`,
+    gba:`<svg viewBox="0 0 24 24" ${S}><rect x="2.8" y="6.5" width="18.4" height="11" rx="3.2"/><rect x="9" y="8.6" width="6" height="6.8" rx="1"/><line x1="5.6" y1="12" x2="7.4" y2="12"/><line x1="6.5" y1="11.1" x2="6.5" y2="12.9"/><circle cx="17.1" cy="11.4" r=".95" ${F}/><circle cx="18.5" cy="13" r=".95" ${F}/></svg>`,
+    genesis:`<svg viewBox="0 0 24 24" ${S}><rect x="3.3" y="8.4" width="17.4" height="7.4" rx="3.7"/><line x1="6.3" y1="12.1" x2="8.3" y2="12.1"/><line x1="7.3" y1="11.1" x2="7.3" y2="13.1"/><circle cx="14.2" cy="12.6" r=".9" ${F}/><circle cx="16.2" cy="12.2" r=".9" ${F}/><circle cx="18.1" cy="11.9" r=".9" ${F}/></svg>`,
+    ps2:`<svg viewBox="0 0 24 24" ${S}><rect x="2.8" y="7.9" width="18.4" height="8.6" rx="3.3"/><circle cx="9.5" cy="14.1" r="1.4"/><circle cx="14.5" cy="14.1" r="1.4"/><line x1="5.7" y1="11.3" x2="7.5" y2="11.3"/><line x1="6.6" y1="10.4" x2="6.6" y2="12.2"/><circle cx="17" cy="11.3" r=".9" ${F}/><circle cx="18.4" cy="12.7" r=".9" ${F}/></svg>`,
+    wiiu:`<svg viewBox="0 0 24 24" ${S}><rect x="2.8" y="6.4" width="18.4" height="11.2" rx="2.4"/><rect x="7.6" y="8.3" width="8.8" height="7.4" rx="1"/><line x1="4.7" y1="11" x2="6.1" y2="11"/><line x1="5.4" y1="10.3" x2="5.4" y2="11.7"/><circle cx="18.4" cy="10.8" r=".85" ${F}/><circle cx="18.4" cy="13.2" r=".85" ${F}/></svg>`,
+    arcade:`<svg viewBox="0 0 24 24" ${S}><path d="M6.5 3.5h11v17h-2.6l-1 1h-3.8l-1-1H6.5z"/><rect x="8.5" y="5.7" width="7" height="4.6" rx="1"/><line x1="8.5" y1="13" x2="15.5" y2="13"/><circle cx="9.8" cy="16.2" r=".9" ${F}/><circle cx="12.1" cy="16.2" r=".9" ${F}/></svg>`,
+    pico8:`<svg viewBox="0 0 24 24" ${S}><rect x="4" y="4.2" width="16" height="15.6" rx="2.2"/><rect x="7" y="7.2" width="3" height="3" ${F}/><rect x="14" y="7.2" width="3" height="3" ${F}/><rect x="7" y="13.8" width="3" height="3" ${F}/><rect x="11" y="10.6" width="3" height="3" ${F}/></svg>`,
+    fallback:`<svg viewBox="0 0 24 24" ${S}><rect x="2.8" y="7.9" width="18.4" height="8.6" rx="4.3"/><line x1="6.1" y1="12.2" x2="8.1" y2="12.2"/><line x1="7.1" y1="11.2" x2="7.1" y2="13.2"/><circle cx="15.6" cy="11.4" r=".9" ${F}/><circle cx="17.4" cy="13" r=".9" ${F}/></svg>`,
+  };
+  const icon=id=>ICONS[id]||ICONS.fallback;
+  const MOODS={slate:{bh:218,bs:22,rim:200},ocean:{bh:202,bs:52,rim:188},teal:{bh:172,bs:48,rim:160},toxic:{bh:128,bs:46,rim:92},royal:{bh:268,bs:50,rim:288},crimson:{bh:348,bs:54,rim:8},ember:{bh:20,bs:62,rim:36},gold:{bh:42,bs:58,rim:48}};
+  const systems=[
+    {icon:"library", abbr:"Library",  name:"Library",   kind:"Collection", mood:"slate",   coll:1, count:2409, feat:"Metroid Prime"},
+    {icon:"heart",   abbr:"Favorites",name:"Favorites", kind:"Collection", mood:"crimson", coll:1, count:37,   feat:"The Wind Waker"},
+    {icon:"recent",  abbr:"Recent",   name:"Recent",    kind:"Collection", mood:"teal",    coll:1, count:12,   feat:"Resident Evil 4"},
+    {icon:"nes",     abbr:"NES",      name:"Nintendo Entertainment System", kind:"Platform", mood:"ember",  count:0,    feat:"—"},
+    {icon:"snes",    abbr:"SNES",     name:"Super Nintendo Entertainment System", kind:"Platform", mood:"royal", count:0, feat:"—"},
+    {icon:"n64",     abbr:"N64",      name:"Nintendo 64", kind:"Platform", mood:"toxic",  count:1,        feat:"Super Mario 64"},
+    {icon:"gamecube",abbr:"GameCube", name:"Nintendo GameCube", kind:"Platform", mood:"royal", count:7,   feat:"Metroid Prime"},
+    {icon:"wiiu",    abbr:"Wii U",    name:"Nintendo Wii U", kind:"Platform", mood:"ocean",  count:1,     feat:"Super Mario 3D World"},
+    {icon:"gb",      abbr:"Game Boy", name:"Nintendo Game Boy", kind:"Platform", mood:"toxic", count:0,   feat:"—"},
+    {icon:"gb",      abbr:"GB Color", name:"Game Boy Color", kind:"Platform", mood:"crimson", count:567,  feat:"Pokémon Crystal"},
+    {icon:"gba",     abbr:"GB Advance",name:"Game Boy Advance", kind:"Platform", mood:"ocean", count:1094,feat:"Pokémon Emerald"},
+    {icon:"genesis", abbr:"Mega Drive",name:"Sega Mega Drive", kind:"Platform", mood:"slate", count:748,  feat:"Sonic the Hedgehog 2"},
+    {icon:"ps2",     abbr:"PS2",      name:"Sony PlayStation 2", kind:"Platform", mood:"slate", count:0,  feat:"—"},
+    {icon:"pico8",   abbr:"PICO-8",   name:"PICO-8", kind:"Platform", mood:"crimson", count:1,            feat:"Celeste Classic"},
+    {icon:"arcade",  abbr:"Arcade",   name:"Arcade", kind:"Platform", mood:"gold",   count:0,            feat:"—"},
+    {icon:"fallback",abbr:"Dreamcast",name:"Sega Dreamcast", kind:"Platform", mood:"ocean", count:0,      feat:"—"},
+  ];
+
+  let curSys=6, sysLayout='neon', glLayout='grid';
+
+  // build rail + nohero grid
+  document.getElementById("sysrail").innerHTML=systems.map((s,i)=>
+    `<div class="railtile" data-i="${i}" onclick="selectSys(${i})">${icon(s.icon)}<div class="lbl">${s.abbr}</div></div>`).join("");
+  document.getElementById("sysgrid").innerHTML=systems.map((s,i)=>
+    `<div class="gtile" data-i="${i}" onclick="selectSys(${i})">${icon(s.icon)}<div class="lbl">${s.abbr}</div></div>`).join("");
+
+  function selectSys(i){
+    curSys=i; const s=systems[i];
+    // rail / grid active states
+    document.querySelectorAll('#sysrail .railtile').forEach((t,j)=>t.classList.toggle('active',j===i));
+    document.querySelectorAll('#sysgrid .gtile').forEach((t,j)=>t.classList.toggle('active',j===i));
+    // hero
+    document.getElementById("railPos").textContent=(i+1)+" / "+systems.length;
+    document.getElementById("sysKind").textContent=s.kind;
+    document.getElementById("sysName").textContent=s.name;
+    const metaTxt=s.coll?`${s.count.toLocaleString()} titles · all platforms`:(s.count>0?`${s.count.toLocaleString()} games`:"No games yet — add ROMs or scrape this system");
+    document.getElementById("sysMeta").textContent=metaTxt;
+    document.getElementById("sysFeat").innerHTML=(s.feat&&s.feat!=="—")?`${s.coll?'Featuring':'Last played'} <b>${s.feat}</b>`:"";
+    const m=MOODS[s.mood]||MOODS.slate, empty=!s.count, dim=empty?0.45:1;
+    const hero=document.getElementById("hero");
+    hero.style.background=`radial-gradient(78% 88% at 70% 36%, hsl(${m.bh} ${m.bs}% ${26*dim+4}%) 0%, hsl(${m.bh} ${m.bs}% ${13*dim+3}%) 40%, #07090c 80%)`;
+    const art=document.getElementById("heroArt");
+    art.style.color=`hsl(${m.bh} 26% ${empty?60:88}%)`;
+    art.style.opacity=empty?.5:1;
+    art.style.filter=`drop-shadow(-12px -8px 16px hsl(${m.rim} 92% 62% / ${empty?.2:.55})) drop-shadow(10px 8px 38px hsl(${m.bh} 80% 45% / ${empty?.15:.34}))`;
+    art.innerHTML=icon(s.icon);
+    // nohero header
+    document.getElementById("sgName").textContent=s.name;
+    document.getElementById("sgMeta").textContent=metaTxt;
+    const tile=document.querySelector(`#sysrail .railtile[data-i="${i}"]`); if(tile&&sysLayout!=='nohero') tile.scrollIntoView({inline:'center',block:'nearest'});
+  }
+
+  function setSys(v){
+    sysLayout=v;
+    document.getElementById("sNeon").classList.toggle('on',v==='neon');
+    document.getElementById("sArt").classList.toggle('on',v==='art');
+    document.getElementById("sNo").classList.toggle('on',v==='nohero');
+    document.getElementById("sysHeroMode").classList.toggle('show',v!=='nohero');
+    document.getElementById("sysGridMode").classList.toggle('show',v==='nohero');
+    const hero=document.getElementById("hero");
+    hero.classList.toggle('mode-art',v==='art');
+    hero.classList.toggle('mode-neon',v==='neon');
+    selectSys(curSys);
+  }
+
+  /* ---------- gamelist ---------- */
+  const longDesc="Sonic the Hedgehog 2 is a side-scrolling platformer based around speed, and the sequel to Sonic the Hedgehog. Players run through different worlds called \"Zones\", each with a specific theme. There are two Acts in nearly all of the 10 Zones, and at the end of each Zone's last Act is a machine that Robotnik controls, which you must defeat to progress. Sonic and Tails can collect rings scattered throughout the levels; collecting 100 rings earns an extra life, and rings also act as protection — if Sonic is hurt while carrying rings they scatter and can be picked back up before they vanish.";
+  const games=[
+    {t:"Metroid Prime",year:2002,genre:"Action-Adventure",dev:"Retro Studios",players:"1",rating:4.5,fav:1,desc:"Samus Aran explores the planet Tallon IV in a first-person adventure blending exploration, puzzle-solving and combat."},
+    {t:"Game Boy Advance Video: Pokémon - For Ho-Oh the Bells Toll! / A Hot Water Battle",genre:"Shooter / Space Invaders Like-Shoot'em Up / Vertical-Shoot'em Up-Shooter",dev:"ITE Media ApS (Interactive Television Entertainment)",players:"1-10",rating:3.5,desc:longDesc},
+    {t:"Super Smash Bros. Melee",genre:"Fighting",dev:"HAL Laboratory",players:"1-4",rating:5,fav:1,desc:"The definitive platform fighter — Nintendo all-stars battling across iconic stages."},
+    {t:"F-Zero GX",genre:"Racing-Driving / Racing, Futuristic",dev:"Amusement Vision",players:"1-4",rating:4.5,desc:longDesc},
+    {t:"Pikmin 2",genre:"Strategy",dev:"Nintendo EAD",players:"1-2",rating:4},
+    {t:"Resident Evil 4",genre:"Survival Horror",dev:"Capcom",players:"1",rating:5,fav:1,desc:longDesc},
+    {t:"Paper Mario: The Thousand-Year Door",genre:"Role Playing Game",dev:"Intelligent Systems",players:"1",rating:5},
+    {t:"Luigi's Mansion",genre:"Action",dev:"Nintendo EAD",players:"1",rating:4},
+    {t:"Mario Kart: Double Dash!!",genre:"Racing",dev:"Nintendo EAD",players:"1-4",rating:4.5},
+    {t:"Eternal Darkness: Sanity's Requiem",genre:"Action / Adventure-Action-Action RPG-Role Playing Game",dev:"Silicon Knights",players:"1",rating:4.5,desc:longDesc},
+    {t:"Star Fox Adventures",genre:"Adventure",dev:"Rare",players:"1",rating:3.5},
+    {t:"Tales of Symphonia",genre:"RPG",dev:"Namco",players:"1-4",rating:4.5},
+  ];
+  games[7].letterbox=true; games[10].placeholder=true;
+  const yearFor=g=>g.year||2003;
+  function stars(r){const f=Math.floor(r),h=r-f>=.5;return "★".repeat(f)+(h?"⯪":"")+"☆".repeat(5-f-(h?1:0));}
+  function artFor(seed){let h=0;for(const c of seed||"x")h=(h*23+c.charCodeAt(0))%360;return `linear-gradient(120deg,hsl(${h} 42% 32%),hsl(${(h+55)%360} 48% 16%))`;}
+  function capsule(g,i,sel){
+    if(g.placeholder) return `<div class="capsule placeholder ${sel?'sel':''}" onclick="pick(${i})"><div class="poster"><div class="ph"><small>No cover art</small><div class="title">${g.t}</div></div></div></div>`;
+    if(g.letterbox)   return `<div class="capsule letterbox ${sel?'sel':''}" onclick="pick(${i})"><div class="poster"><div class="fit" style="background-image:${artFor(g.t)}"></div><div class="title">${g.t}</div></div></div>`;
+    return `<div class="capsule ${sel?'sel':''}" onclick="pick(${i})"><div class="poster" style="background-image:${artFor(g.t)}"><div class="title">${g.t}</div></div></div>`;
+  }
+  let selected=1;
+  function renderGrid(){document.getElementById("grid").innerHTML=games.map((g,i)=>capsule(g,i,i===selected)).join("");}
+  function renderList(){document.getElementById("glList").innerHTML=games.map((g,i)=>
+    `<div class="glrow ${i===selected?'sel':''}" onclick="pick(${i})"><span class="nm">${g.t}</span>${g.fav?'<span class="fav">★</span>':''}<span class="yr">${yearFor(g)}</span></div>`).join("");}
+  function renderLeft(){ glLayout==='grid'?renderGrid():renderList(); }
+  function pick(i){selected=i;renderLeft();renderDetail();}
+  function renderDetail(){
+    const g=games[selected];
+    document.getElementById("detail").innerHTML=`
+      <div class="shot" style="background-image:${artFor((g.t||'')+'shot')}"></div>
+      <h3>${g.t}</h3>
+      <div class="badges">
+        <span class="badge"><span class="k">⭐</span><span class="stars">${stars(g.rating||4)}</span></span>
+        <span class="badge"><span class="k">👥</span> ${g.players||"1"}</span>
+        <span class="badge">${yearFor(g)}</span>
+      </div>
+      <div class="meta-grid">
+        <span class="k">Genre</span><span class="v">${g.genre||"—"}</span>
+        <span class="k">Developer</span><span class="v">${g.dev||"—"}</span>
+        <span class="k">Platform</span><span class="v">Game Boy Advance</span>
+        <span class="k">Players</span><span class="v">${g.players||"1"}</span>
+      </div>
+      <div class="desc-label">Description</div>
+      <p class="desc">${g.desc||"Scraped metadata and media populate this panel in ES-DE."}</p>
+      <button class="play-btn">▶  Play</button>`;
+  }
+  function setGl(v){
+    glLayout=v;
+    document.getElementById("gGrid").classList.toggle('on',v==='grid');
+    document.getElementById("gList").classList.toggle('on',v==='list');
+    document.getElementById("grid").style.display=v==='grid'?'grid':'none';
+    document.getElementById("glList").style.display=v==='list'?'flex':'none';
+    renderLeft();
+  }
+
+  function showView(v){
+    document.getElementById("systemView").classList.toggle("show",v==="system");
+    document.getElementById("gamelistView").classList.toggle("show",v==="gamelist");
+    document.getElementById("tabSystem").classList.toggle("on",v==="system");
+    document.getElementById("tabGamelist").classList.toggle("on",v==="gamelist");
+  }
+
+  selectSys(6); setGl('grid'); renderDetail();
+</script>
