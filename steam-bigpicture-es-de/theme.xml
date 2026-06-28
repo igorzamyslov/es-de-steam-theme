@@ -27,4 +27,11 @@
         <include>./_inc/system_nohero.xml</include>
         <include>./_inc/gamelist_list.xml</include>
     </variant>
+
+    <aspectRatio name="4:3">
+        <include>./_inc/aspect_4_3.xml</include>
+    </aspectRatio>
+    <aspectRatio name="16:10">
+        <include>./_inc/aspect_16_10.xml</include>
+    </aspectRatio>
 </theme>

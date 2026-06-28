@@ -1,0 +1,5 @@
+<theme>
+    <view name="system">
+        <carousel name="rail"><pos>0 0.80</pos><size>1 0.18</size><maxItemCount>8</maxItemCount></carousel>
+    </view>
+</theme>
