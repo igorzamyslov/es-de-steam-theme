@@ -1,8 +1,9 @@
 <theme>
     <include>./helpsystem.xml</include>
     <include>./status.xml</include>
-    <include>./mood_default.xml</include>
-    <include>./systems/${system.theme}.xml</include>
+    <!-- official ES-DE per-system metadata: ${systemName} (short name) + ${systemColor} (tint); full coverage, _default fallback -->
+    <include>./../system-metadata/_default.xml</include>
+    <include>./../system-metadata/${system.theme}.xml</include>
     <view name="system">
         <!-- fallback base gradient (shown only if a system has no art) -->
         <image name="heroBg">
@@ -22,7 +23,7 @@
         <image name="heroTint">
             <pos>0 0</pos><size>1 1</size>
             <path>./../assets/ui/tint.svg</path>
-            <color>${cHero}</color>
+            <color>${systemColor}cc</color>
             <zIndex>4</zIndex>
         </image>
         <!-- darken the lower area so the icon rail stays legible over the art -->
@@ -38,10 +39,10 @@
             <zIndex>8</zIndex>
         </image>
         <!-- system name + count -->
-        <!-- primary: curated short name (${sysShort}); blank for un-curated systems -->
+        <!-- primary: official short name (${systemName}); falls back to full name for un-curated systems -->
         <text name="sysName">
             <pos>0.05 0.55</pos><size>0.60 0.095</size>
-            <text>${sysShort}</text>
+            <text>${systemName}</text>
             <container>false</container>
             <fontPath>${fontExtraBold}</fontPath><fontSize>0.052</fontSize>
             <color>${cText}</color><zIndex>10</zIndex>
