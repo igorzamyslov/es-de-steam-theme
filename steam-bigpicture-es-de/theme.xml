@@ -1,4 +1,5 @@
 <theme>
+    <include>./_inc/fonts.xml</include>
     <view name="system">
         <textlist name="systemList">
             <pos>0.05 0.1</pos>
@@ -7,6 +8,7 @@
             <selectedColor>ffffffff</selectedColor>
             <selectedBackgroundColor>3a9bffff</selectedBackgroundColor>
             <fontSize>0.045</fontSize>
+            <fontPath>${fontSemiBold}</fontPath>
         </textlist>
     </view>
     <view name="gamelist">
@@ -17,6 +19,7 @@
             <selectedColor>ffffffff</selectedColor>
             <selectedBackgroundColor>3a9bffff</selectedBackgroundColor>
             <fontSize>0.045</fontSize>
+            <fontPath>${fontSemiBold}</fontPath>
         </textlist>
     </view>
 </theme>
