@@ -89,9 +89,9 @@
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.12</itemSize>
             <itemScale>1.25</itemScale>
-            <!-- big-screen focus: fade non-selected icons so the selected (white, scaled) pops -->
-            <unfocusedItemOpacity>0.5</unfocusedItemOpacity>
-            <imageColor>ccd6e0ff</imageColor>
+            <!-- non-selected icons kept fairly visible (focus is carried by the selection card); 0.5 made the thin lines hard to see -->
+            <unfocusedItemOpacity>0.78</unfocusedItemOpacity>
+            <imageColor>ffffffff</imageColor>
             <imageSelectedColor>ffffffff</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>
