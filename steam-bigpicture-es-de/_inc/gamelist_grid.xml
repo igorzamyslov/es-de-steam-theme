@@ -53,9 +53,9 @@
             <backgroundColor>ffffffff</backgroundColor>
             <backgroundRelativeScale>1.0</backgroundRelativeScale>
             <backgroundCornerRadius>${radTile}</backgroundCornerRadius>
-            <!-- concentric frame: 0.95 of the cell vs cover at 0.91 -> same aspect, small proportional gap -->
+            <!-- concentric frame: 0.97 of the cell vs cover at 0.91 -> same aspect, clearly visible gap -->
             <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
-            <selectorRelativeScale>0.95</selectorRelativeScale>
+            <selectorRelativeScale>0.97</selectorRelativeScale>
             <selectorLayer>top</selectorLayer>
             <!-- focus: keep the selected item full colour/brightness; non-selected slightly darker + desaturated -->
             <unfocusedItemOpacity>1.0</unfocusedItemOpacity>
