@@ -7,13 +7,13 @@
         <!-- atmospheric background plate (per-system bg added in Task 17) -->
         <image name="heroBg">
             <pos>0 0</pos><size>1 1</size>
-            <path>./assets/ui/hero-bg.svg</path>
+            <path>./../assets/ui/hero-bg.svg</path>
             <zIndex>1</zIndex>
         </image>
         <!-- per-system mood tint overlay -->
         <image name="heroTint">
             <pos>0 0</pos><size>1 1</size>
-            <path>./assets/ui/tint.svg</path>
+            <path>./../assets/ui/tint.svg</path>
             <color>${cHero}</color>
             <zIndex>2</zIndex>
         </image>
@@ -21,15 +21,15 @@
         <image name="heroLogo">
             <pos>0.70 0.40</pos><origin>0.5 0.5</origin>
             <maxSize>0.44 0.46</maxSize>
-            <path>./system-logos/system-logo-white/${system.theme}.svg</path>
-            <default>./assets/icons/fallback.svg</default>
+            <path>./../system-logos/system-logo-white/${system.theme}.svg</path>
+            <default>./../assets/icons/fallback.svg</default>
             <color>e8edf2ff</color>
             <zIndex>5</zIndex>
         </image>
         <!-- left scrim for text legibility -->
         <image name="heroScrim">
             <pos>0 0</pos><size>0.62 1</size>
-            <path>./assets/ui/scrim-left.svg</path>
+            <path>./../assets/ui/scrim-left.svg</path>
             <zIndex>8</zIndex>
         </image>
         <!-- system name + count -->
@@ -49,8 +49,8 @@
         <carousel name="rail">
             <pos>0 0.80</pos><size>1 0.18</size>
             <type>horizontal</type>
-            <staticImage>./system-controllers-outline/${system.theme}.svg</staticImage>
-            <defaultImage>./assets/icons/fallback.svg</defaultImage>
+            <staticImage>./../system-controllers-outline/${system.theme}.svg</staticImage>
+            <defaultImage>./../assets/icons/fallback.svg</defaultImage>
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.13</itemSize>
             <itemScale>1.18</itemScale>

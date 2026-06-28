@@ -1,7 +1,7 @@
 <theme>
     <variables>
-        <fontRegular>./fonts/inter-regular.ttf</fontRegular>
-        <fontSemiBold>./fonts/inter-semibold.ttf</fontSemiBold>
-        <fontExtraBold>./fonts/inter-extrabold.ttf</fontExtraBold>
+        <fontRegular>./../fonts/inter-regular.ttf</fontRegular>
+        <fontSemiBold>./../fonts/inter-semibold.ttf</fontSemiBold>
+        <fontExtraBold>./../fonts/inter-extrabold.ttf</fontExtraBold>
     </variables>
 </theme>

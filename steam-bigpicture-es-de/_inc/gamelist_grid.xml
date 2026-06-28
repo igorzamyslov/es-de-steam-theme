@@ -17,7 +17,7 @@
         <grid name="capsules">
             <pos>0.035 0.16</pos><size>0.64 0.80</size>
             <imageType>cover</imageType>
-            <defaultImage>./assets/ui/capsule-placeholder.svg</defaultImage>
+            <defaultImage>./../assets/ui/capsule-placeholder.svg</defaultImage>
             <itemSize>0.10 0.22</itemSize>
             <itemSpacing>0.014 0.02</itemSpacing>
             <itemScale>1.06</itemScale>
