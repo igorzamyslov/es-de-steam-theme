@@ -39,13 +39,14 @@
         </image>
         <!-- system name + count -->
         <text name="sysName">
-            <pos>0.05 0.62</pos><size>0.55 0.12</size>
+            <pos>0.05 0.56</pos><size>0.60 0.14</size>
             <systemdata>fullname</systemdata>
-            <fontPath>${fontExtraBold}</fontPath><fontSize>0.058</fontSize>
+            <container>false</container>
+            <fontPath>${fontExtraBold}</fontPath><fontSize>0.046</fontSize>
             <color>${cText}</color><zIndex>10</zIndex>
         </text>
         <text name="sysCount">
-            <pos>0.05 0.715</pos><size>0.5 0.05</size>
+            <pos>0.05 0.705</pos><size>0.5 0.05</size>
             <systemdata>gamecount</systemdata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.024</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
