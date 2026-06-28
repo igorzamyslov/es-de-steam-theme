@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 100">
-  <!-- selection card + white border for the system rail, sits at the carousel centre behind the
-       selected icon. Thick stroke so it reads clearly on a phone. -->
-  <rect x="2.5" y="2.5" width="120" height="95"
-        fill="#2a3543" fill-opacity="0.5" stroke="#eaf2fb" stroke-opacity="0.95" stroke-width="3.2"/>
-</svg>
