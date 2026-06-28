@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
-  <!-- Concentric focus frame: a simple edge-aligned rect drawn at selectorRelativeScale 0.95 of
-       the cell. Because both the cover (imageRelativeScale 0.91) and this frame are uniform
-       fractions of the cell, they always share the SAME aspect ratio (on any device aspect) -
-       so the white border matches the cover's shape. The gap is proportional (slightly larger
-       top/bottom in px), kept small. -->
-  <rect x="1.3" y="1.3" width="197.4" height="297.4"
+  <!-- Even-gap focus frame. The cover (imageRelativeScale 0.91, centered) spans viewBox
+       x9-191 / y13.5-286.5. This frame is a uniform 5 units outside it on every side. Drawn at
+       the full cell (selectorRelativeScale 1.0); since the cell is a true 2:3 (per-aspect tile
+       widths in scale.xml) the viewBox->cell scale is uniform, so 5 units = the same pixels on
+       all four sides -> an EVEN gap. -->
+  <rect x="4" y="8.5" width="192" height="283"
         fill="none" stroke="#d6dee6" stroke-opacity="0.92" stroke-width="2.6"/>
 </svg>

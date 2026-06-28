@@ -47,9 +47,20 @@
         <fontSize name="large"><variables><gridItemX>0.101</gridItemX></variables></fontSize>
         <fontSize name="x-large"><variables><gridItemX>0.116</gridItemX></variables></fontSize>
     </aspectRatio>
-    <aspectRatio name="19.5:9, 20:9, 21:9">
+    <!-- phone aspects kept SEPARATE: each needs its own width for a true 2:3 cell -->
+    <aspectRatio name="19.5:9">
+        <fontSize name="medium"><variables><gridItemX>0.062</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.083</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.095</gridItemX></variables></fontSize>
+    </aspectRatio>
+    <aspectRatio name="20:9">
         <fontSize name="medium"><variables><gridItemX>0.060</gridItemX></variables></fontSize>
         <fontSize name="large"><variables><gridItemX>0.081</gridItemX></variables></fontSize>
         <fontSize name="x-large"><variables><gridItemX>0.093</gridItemX></variables></fontSize>
+    </aspectRatio>
+    <aspectRatio name="21:9">
+        <fontSize name="medium"><variables><gridItemX>0.057</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.077</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.089</gridItemX></variables></fontSize>
     </aspectRatio>
 </theme>
