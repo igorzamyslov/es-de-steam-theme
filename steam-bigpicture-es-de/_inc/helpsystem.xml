@@ -1,16 +1,22 @@
 <theme>
     <view name="system, gamelist">
+        <!-- dedicated footer bar so the controller hints never sit on top of content -->
+        <image name="footerBar">
+            <pos>0 1</pos><origin>0 1</origin><size>1 0.075</size>
+            <path>./../assets/ui/footer.svg</path>
+            <zIndex>45</zIndex>
+        </image>
         <helpsystem name="help">
-            <pos>0.03 0.955</pos>
+            <pos>0.03 0.962</pos>
             <origin>0 0.5</origin>
             <textColor>aab4c0ff</textColor>
             <iconColor>aab4c0ff</iconColor>
             <textColorDimmed>6d7884ff</textColorDimmed>
             <iconColorDimmed>6d7884ff</iconColorDimmed>
             <fontPath>${fontSemiBold}</fontPath>
-            <fontSize>0.028</fontSize>
-            <entrySpacing>0.012</entrySpacing>
-            <iconTextSpacing>0.006</iconTextSpacing>
+            <fontSize>0.024</fontSize>
+            <entrySpacing>0.011</entrySpacing>
+            <iconTextSpacing>0.005</iconTextSpacing>
             <letterCase>capitalize</letterCase>
         </helpsystem>
     </view>

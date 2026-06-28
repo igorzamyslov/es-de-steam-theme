@@ -4,27 +4,32 @@
     <include>./mood_default.xml</include>
     <include>./systems/${system.theme}.xml</include>
     <view name="system">
-        <!-- atmospheric background plate (per-system bg added in Task 17) -->
+        <!-- fallback base gradient (shown only if a system has no art) -->
         <image name="heroBg">
             <pos>0 0</pos><size>1 1</size>
             <path>./../assets/ui/hero-bg.svg</path>
             <zIndex>1</zIndex>
         </image>
-        <!-- per-system mood tint overlay -->
+        <!-- per-platform art, full-screen (cover-cropped to fill) -->
+        <image name="heroArt">
+            <pos>0 0</pos><origin>0 0</origin>
+            <cropSize>1 1</cropSize><cropPos>0.5 0.5</cropPos>
+            <path>./../systems/art/${system.theme}.jpg</path>
+            <default>./../assets/ui/art-placeholder.svg</default>
+            <zIndex>2</zIndex>
+        </image>
+        <!-- mood colour gradient ON TOP of the art -->
         <image name="heroTint">
             <pos>0 0</pos><size>1 1</size>
             <path>./../assets/ui/tint.svg</path>
             <color>${cHero}</color>
-            <zIndex>2</zIndex>
+            <zIndex>4</zIndex>
         </image>
-        <!-- per-platform art as the hero subject -->
-        <image name="heroArt">
-            <pos>0.70 0.40</pos><origin>0.5 0.5</origin>
-            <maxSize>0.5 0.62</maxSize>
-            <path>./../systems/art/${system.theme}.jpg</path>
-            <default>./../assets/ui/art-placeholder.svg</default>
-            <cornerRadius>0.012</cornerRadius>
-            <zIndex>5</zIndex>
+        <!-- darken the lower area so the icon rail stays legible over the art -->
+        <image name="railScrim">
+            <pos>0 0.55</pos><size>1 0.45</size>
+            <path>./../assets/ui/rail-scrim.svg</path>
+            <zIndex>6</zIndex>
         </image>
         <!-- left scrim for text legibility -->
         <image name="heroScrim">
@@ -45,14 +50,14 @@
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.024</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
         </text>
-        <!-- bottom rail of system icons -->
+        <!-- bottom rail of system icons (kept above the help footer at y 0.925) -->
         <carousel name="rail">
-            <pos>0 0.78</pos><size>1 0.16</size>
+            <pos>0 0.75</pos><size>1 0.15</size>
             <type>horizontal</type>
             <staticImage>./../system-controllers-outline/${system.theme}.svg</staticImage>
             <defaultImage>./../assets/icons/fallback.svg</defaultImage>
             <maxItemCount>9</maxItemCount>
-            <itemSize>0.085 0.13</itemSize>
+            <itemSize>0.085 0.12</itemSize>
             <itemScale>1.18</itemScale>
             <imageColor>aab4c0ff</imageColor>
             <imageSelectedColor>ffffffff</imageSelectedColor>

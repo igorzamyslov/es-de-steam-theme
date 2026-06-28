@@ -6,9 +6,11 @@
     <!-- base default for the detail-panel static media (each variant overrides this) -->
     <variables>
         <detailMediaType>marquee</detailMediaType>
+        <!-- single corner-radius token used everywhere for a consistent rounding -->
+        <rad>0.03</rad>
     </variables>
 
-    <!-- 12 variants = {hero neon, hero art, no hero} x {grid, list} x {marquee, screenshot}.
+    <!-- 8 variants = {hero neon, hero art} x {grid, list} x {marquee, screenshot}.
          The detail panel shows the chosen static media, then plays the video after a delay.
          First variant is the default: Hero (neon) · Grid · Marquee. -->
 
@@ -54,29 +56,6 @@
         <include>./_inc/gamelist_list.xml</include>
     </variant>
 
-    <variant name="noHeroGridMarquee">
-        <variables><detailMediaType>marquee</detailMediaType></variables>
-        <include>./_inc/system_nohero.xml</include>
-        <include>./_inc/gamelist_grid.xml</include>
-    </variant>
-    <variant name="noHeroGridShot">
-        <variables><detailMediaType>screenshot</detailMediaType></variables>
-        <include>./_inc/system_nohero.xml</include>
-        <include>./_inc/gamelist_grid.xml</include>
-    </variant>
-    <variant name="noHeroListMarquee">
-        <variables><detailMediaType>marquee</detailMediaType></variables>
-        <include>./_inc/system_nohero.xml</include>
-        <include>./_inc/gamelist_list.xml</include>
-    </variant>
-    <variant name="noHeroListShot">
-        <variables><detailMediaType>screenshot</detailMediaType></variables>
-        <include>./_inc/system_nohero.xml</include>
-        <include>./_inc/gamelist_list.xml</include>
-    </variant>
-
-    <!-- Aspect-ratio reflow overrides are deferred: they must be variant-scoped, because a
-         global override block leaks a second primary element into a variant and ES-DE then
-         skips the real primary. The base layout uses normalized coordinates so it still
-         scales to 16:10 / 4:3; bespoke per-variant reflow is a future pass. -->
+    <!-- Aspect-ratio reflow overrides are deferred (must be variant-scoped; a global
+         override leaks a second primary element). Base layout uses normalized coords. -->
 </theme>

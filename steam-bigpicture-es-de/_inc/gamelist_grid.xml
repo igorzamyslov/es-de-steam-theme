@@ -15,21 +15,24 @@
             <color>${cMuted}</color><zIndex>20</zIndex>
         </gamelistinfo>
         <grid name="capsules">
-            <pos>0.035 0.16</pos><size>0.64 0.78</size>
+            <pos>0.035 0.16</pos><size>0.64 0.74</size>
             <imageType>cover</imageType>
             <defaultImage>./../assets/ui/capsule-placeholder.svg</defaultImage>
             <itemSize>0.10 0.22</itemSize>
-            <itemSpacing>0.014 0.022</itemSpacing>
-            <itemScale>1.06</itemScale>
+            <itemSpacing>0.016 0.024</itemSpacing>
+            <itemScale>1.07</itemScale>
             <scaleInwards>true</scaleInwards>
-            <imageFit>contain</imageFit>
-            <imageCornerRadius>0.018</imageCornerRadius>
-            <!-- per-item rounded plate: non-2:3 covers letterbox onto a uniform tile -->
+            <!-- cover = the art fills the whole box (no letterbox gaps) -->
+            <imageFit>cover</imageFit>
+            <!-- slight inset so the rounded accent selector reads as a frame around the art -->
+            <imageRelativeScale>0.93</imageRelativeScale>
+            <imageCornerRadius>${rad}</imageCornerRadius>
             <backgroundColor>1a1f27ff</backgroundColor>
-            <backgroundCornerRadius>0.018</backgroundCornerRadius>
-            <!-- rounded glowing selection frame drawn over the focused item -->
-            <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
-            <selectorLayer>top</selectorLayer>
+            <backgroundCornerRadius>${rad}</backgroundCornerRadius>
+            <selectorColor>${cAccent}</selectorColor>
+            <selectorCornerRadius>${rad}</selectorCornerRadius>
+            <selectorLayer>middle</selectorLayer>
+            <unfocusedItemOpacity>0.55</unfocusedItemOpacity>
             <zIndex>30</zIndex>
         </grid>
     </view>
