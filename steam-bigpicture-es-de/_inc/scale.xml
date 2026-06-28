@@ -9,6 +9,9 @@
     <variables>
         <gridPos>0.035 0.155</gridPos>
         <gridFractional>false</gridFractional>
+        <!-- list-view textlist top: font-size-aware (clears the count) but NOT pushed down on phone
+             like gridPos, so the list variant stays correct on every aspect ratio -->
+        <listTop>0.035 0.155</listTop>
     </variables>
 
     <!-- itemY derived for an exact whole-row fit in ~0.765 available height: 3 rows (medium/large),
@@ -28,6 +31,7 @@
             <pPanelCX>0.833</pPanelCX><pKeyW>0.07</pKeyW><pValueX>0.756</pValueX><pValueW>0.224</pValueW>
             <pPlayIconX>0.711</pPlayIconX><pPlayLabelX>0.728</pPlayLabelX><glCountY>0.108</glCountY>
             <pTitleH>0.064</pTitleH><pVideoY>0.118</pVideoY><pVideoH>0.312</pVideoH>
+            <pwTitleH>0.07</pwTitleH><pwVideoY>0.15</pwVideoY><pwVideoH>0.30</pwVideoH>
         </variables>
     </fontSize>
     <fontSize name="large">
@@ -36,7 +40,7 @@
             <fsClock>0.027</fsClock><fsTitleWide>0.038</fsTitleWide><fsTitle>0.036</fsTitle>
             <fsCount>0.030</fsCount><fsButton>0.028</fsButton><fsLabel>0.027</fsLabel>
             <fsMetaWide>0.026</fsMetaWide><fsMeta>0.025</fsMeta><fsTab>0.025</fsTab>
-            <gridPos>0.035 0.165</gridPos>
+            <gridPos>0.035 0.165</gridPos><listTop>0.035 0.165</listTop>
             <gridItemY>0.239</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
             <gridSize>0.506 0.755</gridSize>
             <heroNameY>0.44</heroNameY><heroSpecY>0.555</heroSpecY><heroCountY>0.595</heroCountY>
@@ -46,6 +50,7 @@
             <pPanelCX>0.788</pPanelCX><pKeyW>0.085</pKeyW><pValueX>0.681</pValueX><pValueW>0.299</pValueW>
             <pPlayIconX>0.621</pPlayIconX><pPlayLabelX>0.638</pPlayLabelX><glCountY>0.122</glCountY>
             <pTitleH>0.088</pTitleH><pVideoY>0.142</pVideoY><pVideoH>0.288</pVideoH>
+            <pwTitleH>0.095</pwTitleH><pwVideoY>0.175</pwVideoY><pwVideoH>0.275</pwVideoH>
         </variables>
     </fontSize>
     <fontSize name="x-large">
@@ -54,7 +59,7 @@
             <fsClock>0.030</fsClock><fsTitleWide>0.044</fsTitleWide><fsTitle>0.042</fsTitle>
             <fsCount>0.035</fsCount><fsButton>0.032</fsButton><fsLabel>0.031</fsLabel>
             <fsMetaWide>0.030</fsMetaWide><fsMeta>0.029</fsMeta><fsTab>0.029</fsTab>
-            <gridPos>0.035 0.175</gridPos>
+            <gridPos>0.035 0.175</gridPos><listTop>0.035 0.175</listTop>
             <gridItemY>0.360</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
             <gridSize>0.602 0.745</gridSize>
             <heroNameY>0.40</heroNameY><heroSpecY>0.515</heroSpecY><heroCountY>0.565</heroCountY>
@@ -64,6 +69,7 @@
             <pPanelCX>0.836</pPanelCX><pKeyW>0.10</pKeyW><pValueX>0.792</pValueX><pValueW>0.188</pValueW>
             <pPlayIconX>0.717</pPlayIconX><pPlayLabelX>0.734</pPlayLabelX><glCountY>0.135</glCountY>
             <pTitleH>0.108</pTitleH><pVideoY>0.162</pVideoY><pVideoH>0.268</pVideoH>
+            <pwTitleH>0.115</pwTitleH><pwVideoY>0.195</pwVideoY><pwVideoH>0.255</pwVideoH>
         </variables>
     </fontSize>
 
