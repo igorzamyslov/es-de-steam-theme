@@ -1,3 +1,4 @@
+<!-- system icons: ./system-controllers-outline/${system.theme}.svg ; logos: ./system-logos/system-logo-white/${system.theme}.svg (color: ./system-logos/system-logo-color/${system.theme}.svg) ; metadata: ./system-metadata/${system.theme}.xml -->
 <theme>
     <include>./_inc/fonts.xml</include>
     <include>./_inc/colors.xml</include>
