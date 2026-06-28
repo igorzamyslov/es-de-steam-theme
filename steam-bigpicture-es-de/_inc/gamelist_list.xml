@@ -16,7 +16,7 @@
         </gamelistinfo>
         <textlist name="gameList">
             <pos>0.035 0.16</pos><size>0.64 0.80</size>
-            <primaryColor>aab4c0ff</primaryColor>
+            <primaryColor>${cText2}</primaryColor>
             <selectedColor>ffffffff</selectedColor>
             <selectedBackgroundColor>1b222cff</selectedBackgroundColor>
             <selectedSecondaryBackgroundColor>1b222cff</selectedSecondaryBackgroundColor>

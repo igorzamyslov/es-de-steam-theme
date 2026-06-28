@@ -24,7 +24,7 @@
             <scaleInwards>true</scaleInwards>
             <imageFit>contain</imageFit>
             <imageCornerRadius>0.006</imageCornerRadius>
-            <selectorColor>3a9bffff</selectorColor>
+            <selectorColor>${cAccent}</selectorColor>
             <selectorLayer>bottom</selectorLayer>
             <zIndex>30</zIndex>
         </grid>
