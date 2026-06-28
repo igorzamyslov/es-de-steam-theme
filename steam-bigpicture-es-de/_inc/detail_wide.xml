@@ -22,7 +22,7 @@
         <text name="detailTitle">
             <pos>0.51 0.37</pos><size>0.45 0.11</size>
             <metadata>name</metadata><container>false</container>
-            <fontPath>${fontExtraBold}</fontPath><fontSize>0.028</fontSize>
+            <fontPath>${fontDisplay}</fontPath><fontSize>0.028</fontSize>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
 
@@ -69,7 +69,7 @@
         </image>
         <text name="detailPlayLabel">
             <pos>0.735 0.874</pos><origin>0.5 0.5</origin>
-            <text>PLAY</text><fontPath>${fontExtraBold}</fontPath>
+            <text>PLAY</text><fontPath>${fontDisplay}</fontPath>
             <fontSize>0.021</fontSize><color>102b06ff</color>
             <horizontalAlignment>center</horizontalAlignment><zIndex>21</zIndex>
         </text>

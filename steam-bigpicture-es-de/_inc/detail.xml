@@ -31,7 +31,7 @@
             <size>0.26 0.115</size>
             <metadata>name</metadata>
             <container>false</container>
-            <fontPath>${fontExtraBold}</fontPath>
+            <fontPath>${fontDisplay}</fontPath>
             <fontSize>0.026</fontSize>
             <color>${cText}</color>
             <zIndex>20</zIndex>
@@ -100,7 +100,7 @@
         </image>
         <text name="detailPlayLabel">
             <pos>0.85 0.874</pos><origin>0.5 0.5</origin>
-            <text>PLAY</text><fontPath>${fontExtraBold}</fontPath>
+            <text>PLAY</text><fontPath>${fontDisplay}</fontPath>
             <fontSize>0.021</fontSize><color>102b06ff</color>
             <horizontalAlignment>center</horizontalAlignment><zIndex>21</zIndex>
         </text>

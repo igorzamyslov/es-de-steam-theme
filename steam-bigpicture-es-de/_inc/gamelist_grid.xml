@@ -6,7 +6,7 @@
         <text name="glHeader">
             <pos>0.035 0.05</pos><size>0.6 0.06</size>
             <metadata>systemFullname</metadata>
-            <fontPath>${fontExtraBold}</fontPath><fontSize>0.036</fontSize>
+            <fontPath>${fontDisplay}</fontPath><fontSize>0.036</fontSize>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
         <gamelistinfo name="glCount">
@@ -25,23 +25,19 @@
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>0.018</fontSize>
             <itemSize>0.10 0.205</itemSize>
-            <itemSpacing>0.016 0.024</itemSpacing>
-            <!-- no selection scaling: a scaled item overflows the grid's bottom edge when
-                 you navigate to the last visible row and ES-DE clips it ("cut"). Selection
-                 is shown by the accent frame + dimming of unfocused items instead. -->
-            <itemScale>1.0</itemScale>
-            <!-- contain = whole cover always shown (never crops/cuts box art like 'cover' does);
-                 the rounded plate fills the tile so framed covers still look intentional -->
-            <imageFit>contain</imageFit>
-            <!-- consistent inset so the rounded accent selector reads as a uniform frame -->
-            <imageRelativeScale>0.92</imageRelativeScale>
+            <itemSpacing>0.016 0.026</itemSpacing>
+            <!-- Steam-style focus: scale up + glowing frame; scaleInwards keeps edge rows in bounds -->
+            <itemScale>1.10</itemScale>
+            <scaleInwards>true</scaleInwards>
+            <!-- cover = art fills the capsule edge-to-edge (Steam look; crops wide/square box art) -->
+            <imageFit>cover</imageFit>
             <imageCornerRadius>${rad}</imageCornerRadius>
             <backgroundColor>1a1f27ff</backgroundColor>
             <backgroundCornerRadius>${rad}</backgroundCornerRadius>
-            <selectorColor>${cAccent}</selectorColor>
-            <selectorCornerRadius>${rad}</selectorCornerRadius>
-            <selectorLayer>middle</selectorLayer>
-            <unfocusedItemOpacity>0.55</unfocusedItemOpacity>
+            <!-- glowing near-white selector frame (baked halo) over the focused capsule -->
+            <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
+            <selectorLayer>top</selectorLayer>
+            <unfocusedItemOpacity>0.45</unfocusedItemOpacity>
             <zIndex>30</zIndex>
         </grid>
     </view>

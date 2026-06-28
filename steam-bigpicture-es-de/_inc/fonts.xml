@@ -3,5 +3,8 @@
         <fontRegular>./../fonts/inter-regular.ttf</fontRegular>
         <fontSemiBold>./../fonts/inter-semibold.ttf</fontSemiBold>
         <fontExtraBold>./../fonts/inter-extrabold.ttf</fontExtraBold>
+        <!-- display face (Rubik, OFL): big headers/titles for a warmer, more "Steam" voice -->
+        <fontDisplay>./../fonts/rubik-extrabold.ttf</fontDisplay>
+        <fontDisplayBold>./../fonts/rubik-bold.ttf</fontDisplayBold>
     </variables>
 </theme>

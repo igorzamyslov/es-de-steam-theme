@@ -47,7 +47,7 @@
             <pos>0.05 0.55</pos><size>0.60 0.095</size>
             <text>${systemName}</text>
             <container>false</container>
-            <fontPath>${fontExtraBold}</fontPath><fontSize>0.052</fontSize>
+            <fontPath>${fontDisplay}</fontPath><fontSize>0.052</fontSize>
             <color>${cText}</color><zIndex>10</zIndex>
         </text>
         <!-- secondary: manufacturer (non-redundant with the system name; ${systemManufacturer} from metadata) -->

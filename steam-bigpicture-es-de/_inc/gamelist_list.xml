@@ -6,7 +6,7 @@
         <text name="glHeader">
             <pos>0.035 0.05</pos><size>0.42 0.06</size>
             <metadata>systemFullname</metadata>
-            <fontPath>${fontExtraBold}</fontPath><fontSize>0.034</fontSize>
+            <fontPath>${fontDisplay}</fontPath><fontSize>0.034</fontSize>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
         <gamelistinfo name="glCount">
