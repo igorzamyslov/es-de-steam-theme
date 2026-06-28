@@ -1,0 +1,8 @@
+<!-- Steam Big Picture for ES-DE -->
+<themeCapabilities>
+    <themeName>Steam Big Picture</themeName>
+    <aspectRatio>16:9</aspectRatio>
+    <colorScheme name="dark">
+        <label language="en_US">Dark</label>
+    </colorScheme>
+</themeCapabilities>
