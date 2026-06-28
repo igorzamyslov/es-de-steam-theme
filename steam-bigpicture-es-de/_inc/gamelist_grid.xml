@@ -1,68 +1,69 @@
 <theme>
     <include>./helpsystem.xml</include>
     <include>./status.xml</include>
-    <include>./detail.xml</include>
+
+    <!-- SHARED: backdrop + the grid (the single navigable/primary element). Region position/size,
+         item size, spacing and fractionalRows all come from scale.xml per aspect ratio + font size,
+         so the desktop side-panel layout and the phone hero-banner layout reuse one grid element. -->
     <view name="gamelist">
-        <!-- Steam library backdrop (dark blue-grey, not black) behind the whole view -->
         <image name="gridBg">
             <pos>0 0</pos><size>1 1</size>
             <path>./../assets/ui/grid-bg.svg</path>
             <zIndex>1</zIndex>
         </image>
-        <!-- header sits below the section-strip top bar (which ends at y 0.056) -->
-        <text name="glHeader">
-            <pos>0.035 0.064</pos><size>0.6 0.05</size>
-            <!-- use ${systemName} (matches the system-view name + honours the collection renames) -->
-            <text>${systemName}</text>
-            <fontPath>${fontDisplay}</fontPath><fontSize>${fsHeader}</fontSize>
-            <color>${cText}</color><zIndex>20</zIndex>
-        </text>
-        <gamelistinfo name="glCount">
-            <pos>0.035 0.108</pos><size>0.3 0.03</size>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
-            <color>${cText2}</color><zIndex>20</zIndex>
-        </gamelistinfo>
         <grid name="capsules">
-            <pos>0.035 0.16</pos><size>0.64 0.74</size>
+            <pos>${gridPos}</pos><size>${gridSize}</size>
             <imageType>cover</imageType>
-            <!-- no defaultImage: in a gamelist grid the game name is the automatic fallback
-                 when no cover is found, so art-less tiles show the title (styled below) -->
+            <!-- no defaultImage: the game name is the automatic fallback for art-less tiles -->
             <textColor>${cText}</textColor>
             <textBackgroundColor>00000000</textBackgroundColor>
             <textRelativeScale>0.86</textRelativeScale>
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>${fsTab}</fontSize>
-            <!-- compact grid: smaller cells + tight spacing pack more capsules per screen -->
             <itemSize>${gridItemX} ${gridItemY}</itemSize>
             <itemSpacing>${gridSpacing}</itemSpacing>
-            <!-- Steam focus: subtle scale + a thin frame at the capsule edge; scaleInwards keeps edge rows in bounds -->
             <itemScale>1.04</itemScale>
             <scaleInwards>true</scaleInwards>
-            <!-- show partial rows top/bottom so there's visible scroll context (mitigates the
-                 "stuck on the last row" feel; ES-DE has no selection-anchor property) -->
-            <fractionalRows>true</fractionalRows>
-            <!-- cover inset to 0.91 of the cell: the freed margin holds a bottom drop shadow
-                 (baked into the background image) while top/left/right read as a clean gap to the
-                 focus frame. -->
+            <fractionalRows>${gridFractional}</fractionalRows>
+            <!-- cover inset to 0.91 of the cell -> margin holds the bottom drop shadow; even gap to the frame -->
             <imageFit>cover</imageFit>
             <imageRelativeScale>0.91</imageRelativeScale>
             <imageCornerRadius>${radTile}</imageCornerRadius>
-            <!-- per-tile background = card (text-fallback base) + baked bottom drop shadow.
-                 backgroundColor white so the SVG renders untinted. -->
             <backgroundImage>./../assets/ui/capsule-shadow-soft.svg</backgroundImage>
             <backgroundColor>ffffffff</backgroundColor>
             <backgroundRelativeScale>1.0</backgroundRelativeScale>
             <backgroundCornerRadius>${radTile}</backgroundCornerRadius>
-            <!-- frame drawn at full cell (1.0); its even gap to the cover is baked into the SVG,
-                 which works because each aspect now renders a true 2:3 cell (per scale.xml) -->
             <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
             <selectorRelativeScale>1.0</selectorRelativeScale>
             <selectorLayer>top</selectorLayer>
-            <!-- focus: keep the selected item full colour/brightness; non-selected slightly darker + desaturated -->
             <unfocusedItemOpacity>1.0</unfocusedItemOpacity>
             <unfocusedItemDimming>0.76</unfocusedItemDimming>
             <unfocusedItemSaturation>0.7</unfocusedItemSaturation>
             <zIndex>30</zIndex>
         </grid>
     </view>
+
+    <!-- DESKTOP (side-panel layout): top-left header + right detail panel -->
+    <aspectRatio name="16:9, 16:10, 4:3, 5:4">
+        <view name="gamelist">
+            <!-- header sits below the section-strip top bar (which ends at y 0.056) -->
+            <text name="glHeader">
+                <pos>0.035 0.064</pos><size>0.6 0.05</size>
+                <text>${systemName}</text>
+                <fontPath>${fontDisplay}</fontPath><fontSize>${fsHeader}</fontSize>
+                <color>${cText}</color><zIndex>20</zIndex>
+            </text>
+            <gamelistinfo name="glCount">
+                <pos>0.035 0.108</pos><size>0.3 0.03</size>
+                <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
+                <color>${cText2}</color><zIndex>20</zIndex>
+            </gamelistinfo>
+        </view>
+        <include>./detail.xml</include>
+    </aspectRatio>
+
+    <!-- PHONE / ULTRAWIDE (hero-banner layout): full-width top banner, no detail panel -->
+    <aspectRatio name="19.5:9, 20:9, 21:9">
+        <include>./gamelist_banner.xml</include>
+    </aspectRatio>
 </theme>
