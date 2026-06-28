@@ -29,9 +29,10 @@
             <secondaryColor>${cText2}</secondaryColor>
             <selectedColor>${cText}</selectedColor>
             <selectedSecondaryColor>${cText}</selectedSecondaryColor>
-            <!-- full-line highlight: the selector bar spans the whole row width -->
+            <!-- full-line highlight: the selector bar spans the whole row width. No selectorHeight:
+                 ES-DE then auto-fits the bar to the row pitch and centers it on the text (a fixed
+                 height anchors it off-centre and doesn't track the per-font-size row height). -->
             <selectorColor>27313dff</selectorColor>
-            <selectorHeight>0.05</selectorHeight>
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>${fsList}</fontSize>
             <horizontalMargin>0.014</horizontalMargin>
