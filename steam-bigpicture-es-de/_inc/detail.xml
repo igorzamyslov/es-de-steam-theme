@@ -12,16 +12,17 @@
 
         <!-- title: top of the column, wraps to multiple lines -->
         <text name="detailTitle">
-            <pos>${pContentX} 0.05</pos><size>${pInnerW} 0.13</size>
+            <pos>${pContentX} 0.05</pos><size>${pInnerW} ${pTitleH}</size>
             <metadata>name</metadata><container>false</container>
             <fontPath>${fontDisplay}</fontPath><fontSize>${fsTitle}</fontSize>
+            <verticalAlignment>top</verticalAlignment>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
 
         <!-- media: fills the space between the title and the bottom block; centered horizontally -->
         <video name="detailMedia">
-            <pos>${pPanelCX} 0.195</pos><origin>0.5 0</origin>
-            <maxSize>${pInnerW} 0.235</maxSize><imageMaxSize>${pInnerW} 0.235</imageMaxSize>
+            <pos>${pPanelCX} ${pVideoY}</pos><origin>0.5 0</origin>
+            <maxSize>${pInnerW} ${pVideoH}</maxSize><imageMaxSize>${pInnerW} ${pVideoH}</imageMaxSize>
             <imageType>${detailMediaType}</imageType>
             <default>./../assets/ui/capsule-placeholder.svg</default>
             <delay>2.5</delay><fadeInTime>0.6</fadeInTime>
@@ -76,7 +77,7 @@
             <cornerRadius>${radButton}</cornerRadius><zIndex>20</zIndex>
         </image>
         <image name="detailPlayIcon">
-            <pos>${pPlayIconX} 0.874</pos><origin>0.5 0.5</origin><size>0.015 0.026</size>
+            <pos>${pPlayIconX} 0.874</pos><origin>0.5 0.5</origin><size>0.022 0.036</size>
             <path>./../assets/ui/play-triangle.svg</path><zIndex>21</zIndex>
         </image>
         <text name="detailPlayLabel">

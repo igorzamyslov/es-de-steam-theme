@@ -26,7 +26,8 @@
             <!-- detail panel (6 grid cols on 16:9): x/width + content x + media width -->
             <pPanelX>0.666</pPanelX><pPanelW>0.334</pPanelW><pContentX>0.686</pContentX><pInnerW>0.294</pInnerW>
             <pPanelCX>0.833</pPanelCX><pKeyW>0.07</pKeyW><pValueX>0.756</pValueX><pValueW>0.224</pValueW>
-            <pPlayIconX>0.711</pPlayIconX><pPlayLabelX>0.734</pPlayLabelX><glCountY>0.108</glCountY>
+            <pPlayIconX>0.711</pPlayIconX><pPlayLabelX>0.728</pPlayLabelX><glCountY>0.108</glCountY>
+            <pTitleH>0.064</pTitleH><pVideoY>0.118</pVideoY><pVideoH>0.312</pVideoH>
         </variables>
     </fontSize>
     <fontSize name="large">
@@ -35,14 +36,16 @@
             <fsClock>0.027</fsClock><fsTitleWide>0.038</fsTitleWide><fsTitle>0.036</fsTitle>
             <fsCount>0.030</fsCount><fsButton>0.028</fsButton><fsLabel>0.027</fsLabel>
             <fsMetaWide>0.026</fsMetaWide><fsMeta>0.025</fsMeta><fsTab>0.025</fsTab>
-            <gridItemY>0.241</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
-            <gridSize>0.506 0.765</gridSize>
+            <gridPos>0.035 0.165</gridPos>
+            <gridItemY>0.239</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
+            <gridSize>0.506 0.755</gridSize>
             <heroNameY>0.44</heroNameY><heroSpecY>0.555</heroSpecY><heroCountY>0.595</heroCountY>
             <heroDescY>0.645</heroDescY><heroDescH>0.10</heroDescH>
             <!-- detail panel (5 grid cols on 16:9): widest panel -> biggest video -->
             <pPanelX>0.576</pPanelX><pPanelW>0.424</pPanelW><pContentX>0.596</pContentX><pInnerW>0.384</pInnerW>
             <pPanelCX>0.788</pPanelCX><pKeyW>0.085</pKeyW><pValueX>0.681</pValueX><pValueW>0.299</pValueW>
-            <pPlayIconX>0.621</pPlayIconX><pPlayLabelX>0.644</pPlayLabelX><glCountY>0.122</glCountY>
+            <pPlayIconX>0.621</pPlayIconX><pPlayLabelX>0.638</pPlayLabelX><glCountY>0.122</glCountY>
+            <pTitleH>0.088</pTitleH><pVideoY>0.142</pVideoY><pVideoH>0.288</pVideoH>
         </variables>
     </fontSize>
     <fontSize name="x-large">
@@ -51,32 +54,34 @@
             <fsClock>0.030</fsClock><fsTitleWide>0.044</fsTitleWide><fsTitle>0.042</fsTitle>
             <fsCount>0.035</fsCount><fsButton>0.032</fsButton><fsLabel>0.031</fsLabel>
             <fsMetaWide>0.030</fsMetaWide><fsMeta>0.029</fsMeta><fsTab>0.029</fsTab>
-            <gridItemY>0.370</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
-            <gridSize>0.602 0.764</gridSize>
+            <gridPos>0.035 0.175</gridPos>
+            <gridItemY>0.360</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
+            <gridSize>0.602 0.745</gridSize>
             <heroNameY>0.40</heroNameY><heroSpecY>0.515</heroSpecY><heroCountY>0.565</heroCountY>
             <heroDescY>0.615</heroDescY><heroDescH>0.13</heroDescH>
             <!-- detail panel (4 grid cols on 16:9) -->
             <pPanelX>0.672</pPanelX><pPanelW>0.328</pPanelW><pContentX>0.692</pContentX><pInnerW>0.288</pInnerW>
             <pPanelCX>0.836</pPanelCX><pKeyW>0.10</pKeyW><pValueX>0.792</pValueX><pValueW>0.188</pValueW>
-            <pPlayIconX>0.717</pPlayIconX><pPlayLabelX>0.740</pPlayLabelX><glCountY>0.135</glCountY>
+            <pPlayIconX>0.717</pPlayIconX><pPlayLabelX>0.734</pPlayLabelX><glCountY>0.135</glCountY>
+            <pTitleH>0.108</pTitleH><pVideoY>0.162</pVideoY><pVideoH>0.268</pVideoH>
         </variables>
     </fontSize>
 
     <!-- grid item WIDTH per aspect x size: itemX = itemY * (2/3) / (W:H) keeps tiles true 2:3 portrait. -->
     <aspectRatio name="4:3, 5:4">
         <fontSize name="medium"><variables><gridItemX>0.121</gridItemX></variables></fontSize>
-        <fontSize name="large"><variables><gridItemX>0.1205</gridItemX></variables></fontSize>
-        <fontSize name="x-large"><variables><gridItemX>0.185</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.1195</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.180</gridItemX></variables></fontSize>
     </aspectRatio>
     <aspectRatio name="16:10">
         <fontSize name="medium"><variables><gridItemX>0.1008</gridItemX></variables></fontSize>
-        <fontSize name="large"><variables><gridItemX>0.1004</gridItemX></variables></fontSize>
-        <fontSize name="x-large"><variables><gridItemX>0.1542</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.0996</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.150</gridItemX></variables></fontSize>
     </aspectRatio>
     <aspectRatio name="16:9">
         <fontSize name="medium"><variables><gridItemX>0.0907</gridItemX></variables></fontSize>
-        <fontSize name="large"><variables><gridItemX>0.0904</gridItemX></variables></fontSize>
-        <fontSize name="x-large"><variables><gridItemX>0.1388</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.0896</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.135</gridItemX></variables></fontSize>
     </aspectRatio>
 
     <!-- PHONE / ULTRAWIDE: hero-banner layout. Grid full-width below banner, 2 fixed rows of
