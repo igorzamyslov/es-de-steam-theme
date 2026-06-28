@@ -1,0 +1,56 @@
+<theme>
+    <include>./helpsystem.xml</include>
+    <include>./status.xml</include>
+    <view name="system">
+        <!-- atmospheric background plate (per-system bg added in Task 17) -->
+        <image name="heroBg">
+            <pos>0 0</pos><size>1 1</size>
+            <path>./assets/ui/hero-bg.svg</path>
+            <zIndex>1</zIndex>
+        </image>
+        <!-- big focus-tracked system logo as the "neon" hero subject -->
+        <image name="heroLogo">
+            <pos>0.70 0.40</pos><origin>0.5 0.5</origin>
+            <maxSize>0.44 0.46</maxSize>
+            <path>./system-logos/system-logo-white/${system.theme}.svg</path>
+            <default>./assets/icons/fallback.svg</default>
+            <color>e8edf2ff</color>
+            <zIndex>5</zIndex>
+        </image>
+        <!-- left scrim for text legibility -->
+        <image name="heroScrim">
+            <pos>0 0</pos><size>0.62 1</size>
+            <path>./assets/ui/scrim-left.svg</path>
+            <zIndex>8</zIndex>
+        </image>
+        <!-- system name + count -->
+        <text name="sysName">
+            <pos>0.05 0.62</pos><size>0.55 0.12</size>
+            <systemdata>fullname</systemdata>
+            <fontPath>${fontExtraBold}</fontPath><fontSize>0.058</fontSize>
+            <color>${cText}</color><zIndex>10</zIndex>
+        </text>
+        <text name="sysCount">
+            <pos>0.05 0.74</pos><size>0.5 0.05</size>
+            <systemdata>gamecount</systemdata>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.024</fontSize>
+            <color>${cText2}</color><zIndex>10</zIndex>
+        </text>
+        <!-- bottom rail of system icons -->
+        <carousel name="rail">
+            <pos>0 0.80</pos><size>1 0.18</size>
+            <type>horizontal</type>
+            <staticImage>./system-controllers-outline/${system.theme}.svg</staticImage>
+            <defaultImage>./assets/icons/fallback.svg</defaultImage>
+            <maxItemCount>9</maxItemCount>
+            <itemSize>0.085 0.13</itemSize>
+            <itemScale>1.18</itemScale>
+            <imageColor>aab4c0ff</imageColor>
+            <imageSelectedColor>ffffffff</imageSelectedColor>
+            <color>00000000</color>
+            <text>${system.fullName}</text>
+            <textColor>00000000</textColor>
+            <zIndex>40</zIndex>
+        </carousel>
+    </view>
+</theme>

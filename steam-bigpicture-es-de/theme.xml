@@ -2,17 +2,7 @@
 <theme>
     <include>./_inc/fonts.xml</include>
     <include>./_inc/colors.xml</include>
-    <view name="system">
-        <textlist name="systemList">
-            <pos>0.05 0.1</pos>
-            <size>0.9 0.8</size>
-            <primaryColor>${cText2}</primaryColor>
-            <selectedColor>${cText}</selectedColor>
-            <selectedBackgroundColor>${cAccent}</selectedBackgroundColor>
-            <fontSize>0.045</fontSize>
-            <fontPath>${fontSemiBold}</fontPath>
-        </textlist>
-    </view>
+    <include>./_inc/system_hero_neon.xml</include>
     <view name="gamelist">
         <textlist name="gameList">
             <pos>0.05 0.1</pos>
