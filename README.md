@@ -24,6 +24,8 @@ It adapts to your display and settings: a per-font-size type-and-density scale, 
 
 > **Note:** This theme is not listed in the ES-DE theme downloader. Manual installation is required.
 
+> **Recommended:** For the full Steam-like experience, **enable automatic collections** (see [Collections](#collections-library-favorites-recent) below). They power the persistent **Library / Favorites / Recent** nav tabs at the top of every screen — without them, those tabs have nothing to show.
+
 ---
 
 ## Variants
@@ -80,11 +82,13 @@ The layout reflows automatically by aspect ratio:
 
 ## Collections (Library, Favorites, Recent)
 
-To get the **Library**, **Favorites**, and **Recent** entries in the persistent nav strip, enable automatic collections in ES-DE:
+This theme is built around a persistent **Library / Favorites / Recent / Platforms** nav strip across the top of every screen — the Steam-style spine of the UI. The first three are ES-DE *automatic collections*, so **enabling them is strongly recommended for the best experience**. Without them, those tabs lead to empty systems.
+
+Enable them in ES-DE under:
 
 **Game Collection Settings → Enable automatic game collections**
 
-Once enabled, ES-DE aggregates games across all platforms and surfaces them as virtual systems.
+Once enabled, ES-DE aggregates games across all platforms and surfaces them as virtual systems, and the Library / Favorites / Recent tabs come to life.
 
 ---
 
@@ -99,7 +103,20 @@ The "Hero (art)" variants show a placeholder hero area until you add per-platfor
 
 ## Screenshots
 
-Screenshots for each variant will be added once the theme is verified in-engine. Check back after the first release.
+### System view — Library collection (hero · neon)
+![Library system view with the persistent Library / Favorites / Recent / Platforms nav strip](screenshots/01-system-library.png)
+
+### Gamelist — capsule grid with detail panel
+![Capsule grid gamelist with a right-hand detail panel](screenshots/02-gamelist-grid.png)
+
+### Gamelist — list with wide detail panel
+![List gamelist with a wide detail panel](screenshots/03-gamelist-list.png)
+
+### System view — per-platform hero art
+![Game Boy Advance system view with per-platform hero art](screenshots/04-system-hero-art.png)
+
+### Theme settings (variant · color scheme · font size)
+![ES-DE theme settings showing the variant, color-scheme media modes, and font-size options](screenshots/05-settings.png)
 
 ---
 
