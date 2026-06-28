@@ -41,19 +41,21 @@
             <!-- show partial rows top/bottom so there's visible scroll context (mitigates the
                  "stuck on the last row" feel; ES-DE has no selection-anchor property) -->
             <fractionalRows>true</fractionalRows>
-            <!-- full-bleed capsules: cover fills the cell so there is no dark margin "ring" and no
-                 uneven L/R vs T/B margin (a uniform inset on a portrait cell gives unequal px
-                 margins). The gap between tiles comes from itemSpacing. A per-tile drop shadow
-                 can't extend beyond the cell in ES-DE, so the in-margin fake read as a hard box
-                 on phones - dropped here in favour of clean full-bleed. -->
+            <!-- cover inset to 0.91 of the cell: the freed margin holds a bottom drop shadow
+                 (baked into the background image) while top/left/right read as a clean gap to the
+                 focus frame. -->
             <imageFit>cover</imageFit>
-            <imageRelativeScale>1.0</imageRelativeScale>
+            <imageRelativeScale>0.91</imageRelativeScale>
             <imageCornerRadius>${radTile}</imageCornerRadius>
-            <!-- card base for un-scraped (text-fallback) tiles -->
-            <backgroundColor>1a222dff</backgroundColor>
+            <!-- per-tile background = card (text-fallback base) + baked bottom drop shadow.
+                 backgroundColor white so the SVG renders untinted. -->
+            <backgroundImage>./../assets/ui/capsule-shadow-soft.svg</backgroundImage>
+            <backgroundColor>ffffffff</backgroundColor>
+            <backgroundRelativeScale>1.0</backgroundRelativeScale>
             <backgroundCornerRadius>${radTile}</backgroundCornerRadius>
-            <!-- thin light-grey focus frame at the cell edge (hugs the full-bleed capsule) -->
+            <!-- thin light-grey focus frame just inside the cell edge, leaving a gap to the inset cover -->
             <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
+            <selectorRelativeScale>0.98</selectorRelativeScale>
             <selectorLayer>top</selectorLayer>
             <!-- Steam shows neighbours at full brightness; only a hair of dim for couch focus aid -->
             <unfocusedItemOpacity>0.92</unfocusedItemOpacity>

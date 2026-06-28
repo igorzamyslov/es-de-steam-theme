@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
-  <!-- soft ambient halo (7 stops) + crisp bottom-right band + card; all within the cell margin.
-       Card matches the cover (imageRelativeScale 0.91, centered). backgroundColor = ffffffff. -->
-  <rect x="0"    y="4.5"  width="200"   height="291"   fill="#000000" fill-opacity="0.02"/>
-  <rect x="1.5"  y="6"    width="197"   height="288"   fill="#000000" fill-opacity="0.035"/>
-  <rect x="3"    y="7.5"  width="194"   height="285"   fill="#000000" fill-opacity="0.05"/>
-  <rect x="4.5"  y="9"    width="191"   height="282"   fill="#000000" fill-opacity="0.065"/>
-  <rect x="6"    y="10.5" width="188"   height="279"   fill="#000000" fill-opacity="0.08"/>
-  <rect x="7.2"  y="11.7" width="185.6" height="276.6" fill="#000000" fill-opacity="0.095"/>
-  <rect x="8.1"  y="12.6" width="183.8" height="274.8" fill="#000000" fill-opacity="0.11"/>
-  <rect x="11.5" y="16.5" width="182"   height="273"   fill="#000000" fill-opacity="0.26"/>
-  <rect x="9"    y="13.5" width="182"   height="273"   fill="#1a222d"/>
+  <!-- Drop shadow under the capsule: a crisp line right at the card's bottom edge + a soft fade
+       below it. Same width as the card (no left/right/top peek) so those margins stay a clean GAP
+       to the focus frame. Card = the cover (imageRelativeScale 0.91, centered). The cover is drawn
+       on top of this by the grid; backgroundColor must be ffffffff so these colours render untinted. -->
+  <rect x="9" y="23.5"  width="182" height="273" fill="#000000" fill-opacity="0.03"/>
+  <rect x="9" y="21"    width="182" height="273" fill="#000000" fill-opacity="0.06"/>
+  <rect x="9" y="18.5"  width="182" height="273" fill="#000000" fill-opacity="0.10"/>
+  <rect x="9" y="16"    width="182" height="273" fill="#000000" fill-opacity="0.14"/>
+  <rect x="9" y="286.5" width="182" height="4"   fill="#000000" fill-opacity="0.28"/>
+  <rect x="9" y="13.5"  width="182" height="273" fill="#1a222d"/>
 </svg>
