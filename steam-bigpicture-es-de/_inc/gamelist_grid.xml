@@ -23,9 +23,9 @@
             <textBackgroundColor>00000000</textBackgroundColor>
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>0.016</fontSize>
-            <itemSize>0.10 0.22</itemSize>
+            <itemSize>0.10 0.205</itemSize>
             <itemSpacing>0.016 0.024</itemSpacing>
-            <itemScale>1.07</itemScale>
+            <itemScale>1.06</itemScale>
             <scaleInwards>true</scaleInwards>
             <!-- contain = whole cover always shown (never crops/cuts box art like 'cover' does);
                  the rounded plate fills the tile so framed covers still look intentional -->
