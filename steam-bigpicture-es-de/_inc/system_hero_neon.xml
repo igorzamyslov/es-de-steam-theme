@@ -1,12 +1,21 @@
 <theme>
     <include>./helpsystem.xml</include>
     <include>./status.xml</include>
+    <include>./mood_default.xml</include>
+    <include>./systems/${system.theme}.xml</include>
     <view name="system">
         <!-- atmospheric background plate (per-system bg added in Task 17) -->
         <image name="heroBg">
             <pos>0 0</pos><size>1 1</size>
             <path>./assets/ui/hero-bg.svg</path>
             <zIndex>1</zIndex>
+        </image>
+        <!-- per-system mood tint overlay -->
+        <image name="heroTint">
+            <pos>0 0</pos><size>1 1</size>
+            <path>./assets/ui/tint.svg</path>
+            <color>${cHero}</color>
+            <zIndex>2</zIndex>
         </image>
         <!-- big focus-tracked system logo as the "neon" hero subject -->
         <image name="heroLogo">
