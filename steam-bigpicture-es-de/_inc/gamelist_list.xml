@@ -1,12 +1,12 @@
 <theme>
     <include>./helpsystem.xml</include>
     <include>./status.xml</include>
-    <include>./detail.xml</include>
+    <include>./detail_wide.xml</include>
     <view name="gamelist">
         <text name="glHeader">
-            <pos>0.035 0.05</pos><size>0.6 0.06</size>
+            <pos>0.035 0.05</pos><size>0.42 0.06</size>
             <metadata>systemFullname</metadata>
-            <fontPath>${fontExtraBold}</fontPath><fontSize>0.036</fontSize>
+            <fontPath>${fontExtraBold}</fontPath><fontSize>0.034</fontSize>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
         <gamelistinfo name="glCount">
@@ -14,16 +14,16 @@
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.02</fontSize>
             <color>${cMuted}</color><zIndex>20</zIndex>
         </gamelistinfo>
+        <!-- list occupies the left half; the wider detail panel fills the right half -->
         <textlist name="gameList">
-            <pos>0.035 0.16</pos><size>0.64 0.74</size>
+            <pos>0.035 0.16</pos><size>0.43 0.74</size>
             <primaryColor>${cText2}</primaryColor>
             <secondaryColor>${cText2}</secondaryColor>
             <selectedColor>${cText}</selectedColor>
             <selectedSecondaryColor>${cText}</selectedSecondaryColor>
-            <selectedBackgroundColor>27313dff</selectedBackgroundColor>
-            <selectedSecondaryBackgroundColor>27313dff</selectedSecondaryBackgroundColor>
-            <selectedBackgroundMargins>0 0</selectedBackgroundMargins>
-            <selectedBackgroundCornerRadius>0.008</selectedBackgroundCornerRadius>
+            <!-- full-line highlight: the selector bar spans the whole row width -->
+            <selectorColor>27313dff</selectorColor>
+            <selectorHeight>0.05</selectorHeight>
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>0.030</fontSize>
             <horizontalMargin>0.014</horizontalMargin>
