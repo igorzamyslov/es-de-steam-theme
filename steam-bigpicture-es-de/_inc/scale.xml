@@ -1,0 +1,53 @@
+<theme>
+    <!-- Type scale + grid sizing per Theme Font Size (medium = current). Included before the
+         element files so these variables are defined before use (ES-DE resolves in order). -->
+    <fontSize name="medium">
+        <variables>
+            <fsHero>0.052</fsHero><fsHeader>0.032</fsHeader><fsList>0.030</fsList>
+            <fsClock>0.030</fsClock><fsTitleWide>0.028</fsTitleWide><fsTitle>0.026</fsTitle>
+            <fsCount>0.022</fsCount><fsButton>0.021</fsButton><fsLabel>0.020</fsLabel>
+            <fsMetaWide>0.019</fsMetaWide><fsMeta>0.0185</fsMeta><fsTab>0.018</fsTab>
+            <gridItemY>0.20</gridItemY><gridSpacing>0.010 0.014</gridSpacing>
+        </variables>
+    </fontSize>
+    <fontSize name="large">
+        <variables>
+            <fsHero>0.058</fsHero><fsHeader>0.038</fsHeader><fsList>0.036</fsList>
+            <fsClock>0.034</fsClock><fsTitleWide>0.033</fsTitleWide><fsTitle>0.031</fsTitle>
+            <fsCount>0.026</fsCount><fsButton>0.025</fsButton><fsLabel>0.024</fsLabel>
+            <fsMetaWide>0.023</fsMetaWide><fsMeta>0.022</fsMeta><fsTab>0.022</fsTab>
+            <gridItemY>0.235</gridItemY><gridSpacing>0.012 0.017</gridSpacing>
+        </variables>
+    </fontSize>
+    <fontSize name="x-large">
+        <variables>
+            <fsHero>0.064</fsHero><fsHeader>0.044</fsHeader><fsList>0.042</fsList>
+            <fsClock>0.038</fsClock><fsTitleWide>0.038</fsTitleWide><fsTitle>0.036</fsTitle>
+            <fsCount>0.030</fsCount><fsButton>0.028</fsButton><fsLabel>0.027</fsLabel>
+            <fsMetaWide>0.026</fsMetaWide><fsMeta>0.025</fsMeta><fsTab>0.025</fsTab>
+            <gridItemY>0.27</gridItemY><gridSpacing>0.014 0.020</gridSpacing>
+        </variables>
+    </fontSize>
+
+    <!-- grid item WIDTH per aspect x size: itemX = itemY * (2/3) / (W:H) keeps tiles ~2:3 portrait -->
+    <aspectRatio name="4:3, 5:4">
+        <fontSize name="medium"><variables><gridItemX>0.100</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.117</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.135</gridItemX></variables></fontSize>
+    </aspectRatio>
+    <aspectRatio name="16:10">
+        <fontSize name="medium"><variables><gridItemX>0.083</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.098</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.113</gridItemX></variables></fontSize>
+    </aspectRatio>
+    <aspectRatio name="16:9">
+        <fontSize name="medium"><variables><gridItemX>0.075</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.088</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.101</gridItemX></variables></fontSize>
+    </aspectRatio>
+    <aspectRatio name="19.5:9, 20:9, 21:9">
+        <fontSize name="medium"><variables><gridItemX>0.060</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.071</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.081</gridItemX></variables></fontSize>
+    </aspectRatio>
+</theme>

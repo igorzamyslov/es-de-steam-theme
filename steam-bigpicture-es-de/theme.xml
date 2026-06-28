@@ -2,6 +2,8 @@
 <theme>
     <include>./_inc/fonts.xml</include>
     <include>./_inc/colors.xml</include>
+    <!-- size/scale variables (font-size + aspect-ratio); must precede the variant includes -->
+    <include>./_inc/scale.xml</include>
 
     <!-- base default for the detail-panel static media (each variant overrides this) -->
     <variables>
