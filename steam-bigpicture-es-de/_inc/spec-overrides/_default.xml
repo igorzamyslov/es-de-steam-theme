@@ -1,0 +1,8 @@
+<theme>
+    <!-- default spec line: hardware type · manufacturer · release year (e.g. "Console · Nintendo · 1985").
+         Collection-type systems (manufacturer/year = "Various" or empty) override this to just the
+         hardware type via the per-system files in this folder. -->
+    <variables>
+        <specLine>${systemHardwareType} · ${systemManufacturer} · ${systemReleaseYear}</specLine>
+    </variables>
+</theme>

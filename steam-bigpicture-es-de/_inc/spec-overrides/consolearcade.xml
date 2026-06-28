@@ -1,0 +1,6 @@
+<theme>
+    <!-- collection-type system: collapse the spec line to just the hardware type (no "Various") -->
+    <variables>
+        <specLine>${systemHardwareType}</specLine>
+    </variables>
+</theme>

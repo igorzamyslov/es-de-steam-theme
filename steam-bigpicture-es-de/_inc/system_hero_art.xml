@@ -15,6 +15,10 @@
     <include>./name-overrides/${system.theme}.xml</include>
     <!-- collection hero accent color (after metadata so it overrides the grey _default) -->
     <include>./section-accent/${system.theme}.xml</include>
+    <!-- spec-line composition (after metadata so the nested vars resolve): default joined,
+         collection-type systems collapse to just the hardware type -->
+    <include>./spec-overrides/_default.xml</include>
+    <include>./spec-overrides/${system.theme}.xml</include>
     <view name="system">
         <!-- fallback base gradient (shown only if a system has no art) -->
         <image name="heroBg">
@@ -39,28 +43,35 @@
             <path>./../assets/ui/scrim-left.svg</path>
             <zIndex>8</zIndex>
         </image>
-        <!-- system name + count -->
-        <!-- primary: official short name (${systemName}); falls back to full name for un-curated systems -->
+        <!-- bottom-left info panel: name · spec line · count · description (inhabit the void) -->
         <text name="sysName">
-            <pos>0.05 0.55</pos><size>0.60 0.095</size>
+            <pos>0.05 0.48</pos><size>0.60 0.095</size>
             <text>${systemName}</text>
             <container>false</container>
             <fontPath>${fontDisplay}</fontPath><fontSize>${fsHero}</fontSize>
             <color>${cText}</color><zIndex>10</zIndex>
         </text>
-        <!-- secondary: manufacturer (non-redundant with the system name; ${systemManufacturer} from metadata) -->
-        <text name="sysFull">
-            <pos>0.05 0.645</pos><size>0.62 0.04</size>
-            <text>${systemManufacturer}</text>
+        <!-- spec line: hardware type · manufacturer · year; collection-type systems collapse to just the type -->
+        <text name="sysSpec">
+            <pos>0.05 0.595</pos><size>0.62 0.04</size>
+            <text>${specLine}</text>
             <container>false</container>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsLabel}</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
         </text>
         <text name="sysCount">
-            <pos>0.05 0.70</pos><size>0.5 0.05</size>
+            <pos>0.05 0.635</pos><size>0.5 0.05</size>
             <systemdata>gamecount</systemdata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsCount}</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
+        </text>
+        <!-- system description fills the empty space; scrolls if long; legible over the rail shelf / left scrim -->
+        <text name="sysDesc">
+            <pos>0.05 0.685</pos><size>0.46 0.06</size>
+            <text>${systemDescription}</text>
+            <container>true</container><containerType>vertical</containerType>
+            <fontPath>${fontRegular}</fontPath><fontSize>${fsMeta}</fontSize>
+            <color>${cText2}</color><lineSpacing>1.4</lineSpacing><zIndex>10</zIndex>
         </text>
         <!-- dark shelf behind the icon rail so the outline icons stay legible over busy art.
              zIndex 9 = above the scrims (<=8) but below the name text (10) and the rail (40). -->
