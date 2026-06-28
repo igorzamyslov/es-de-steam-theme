@@ -1,27 +1,26 @@
 <theme>
     <!-- Type scale + grid sizing per Theme Font Size. Included before the element files so these
-         variables are defined before use. Tiers: medium (baseline) -> large -> x-large.
-         clock + list are deliberately tamed. -->
+         variables are defined before use. clock + list are deliberately tamed.
+         NOTE: the grid uses itemScale 1.0 (focus = frame + dimming), so fractionalRows=false snaps
+         rows to itemY exactly (itemScale>1 would inflate each row's reserved height and drop a row). -->
 
     <!-- grid REGION defaults = desktop side-panel layout. Symmetric padding P=0.035:
-         grid x=0.035, fixed block width 0.63, then P gap, panel x=0.70 w=0.265 (right edge 0.965 = 1-P).
-         fractionalRows=false everywhere so only whole rows show. Phone aspects override below. -->
+         grid x=0.035, fixed block width 0.63, P gap, panel x=0.70 w=0.265 (right edge 0.965 = 1-P). -->
     <variables>
         <gridPos>0.035 0.155</gridPos>
         <gridFractional>false</gridFractional>
     </variables>
 
-    <!-- itemY derived for an exact whole-row fit in the ~0.765 available height:
-         3 rows (medium/large) / 2 rows (x-large). gridSize = fixed 0.63 block x exact region height. -->
+    <!-- itemY derived for an exact whole-row fit in ~0.765 available height: 3 rows (medium/large),
+         2 rows (x-large). gridSize = fixed 0.63 block x region height. -->
     <fontSize name="medium">
         <variables>
             <fsHero>0.052</fsHero><fsHeader>0.032</fsHeader><fsList>0.026</fsList>
             <fsClock>0.024</fsClock><fsTitleWide>0.028</fsTitleWide><fsTitle>0.026</fsTitle>
             <fsCount>0.022</fsCount><fsButton>0.021</fsButton><fsLabel>0.020</fsLabel>
             <fsMetaWide>0.019</fsMetaWide><fsMeta>0.0185</fsMeta><fsTab>0.018</fsTab>
-            <gridItemY>0.244</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
+            <gridItemY>0.242</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
             <gridSize>0.63 0.764</gridSize>
-            <!-- system-view bottom-left stack (name/spec/count/description y + description height) -->
             <heroNameY>0.48</heroNameY><heroSpecY>0.595</heroSpecY><heroCountY>0.635</heroCountY>
             <heroDescY>0.685</heroDescY><heroDescH>0.062</heroDescH>
         </variables>
@@ -32,9 +31,8 @@
             <fsClock>0.027</fsClock><fsTitleWide>0.038</fsTitleWide><fsTitle>0.036</fsTitle>
             <fsCount>0.030</fsCount><fsButton>0.028</fsButton><fsLabel>0.027</fsLabel>
             <fsMetaWide>0.026</fsMetaWide><fsMeta>0.025</fsMeta><fsTab>0.025</fsTab>
-            <gridItemY>0.243</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
+            <gridItemY>0.241</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
             <gridSize>0.63 0.765</gridSize>
-            <!-- stack packed up so the description gets ~3 lines above the rail -->
             <heroNameY>0.44</heroNameY><heroSpecY>0.555</heroSpecY><heroCountY>0.595</heroCountY>
             <heroDescY>0.645</heroDescY><heroDescH>0.10</heroDescH>
         </variables>
@@ -45,56 +43,54 @@
             <fsClock>0.030</fsClock><fsTitleWide>0.044</fsTitleWide><fsTitle>0.042</fsTitle>
             <fsCount>0.035</fsCount><fsButton>0.032</fsButton><fsLabel>0.031</fsLabel>
             <fsMetaWide>0.030</fsMetaWide><fsMeta>0.029</fsMeta><fsTab>0.029</fsTab>
-            <gridItemY>0.372</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
+            <gridItemY>0.370</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
             <gridSize>0.63 0.764</gridSize>
-            <!-- stack packed up so the description gets ~3 lines above the rail -->
             <heroNameY>0.40</heroNameY><heroSpecY>0.515</heroSpecY><heroCountY>0.565</heroCountY>
             <heroDescY>0.615</heroDescY><heroDescH>0.13</heroDescH>
         </variables>
     </fontSize>
 
-    <!-- grid item WIDTH per aspect x size: itemX = itemY * (2/3) / (W:H) keeps tiles true 2:3 portrait.
-         Column count is whatever fits the fixed 0.63 block on each aspect (reported in the task notes). -->
+    <!-- grid item WIDTH per aspect x size: itemX = itemY * (2/3) / (W:H) keeps tiles true 2:3 portrait. -->
     <aspectRatio name="4:3, 5:4">
-        <fontSize name="medium"><variables><gridItemX>0.122</gridItemX></variables></fontSize>
-        <fontSize name="large"><variables><gridItemX>0.122</gridItemX></variables></fontSize>
-        <fontSize name="x-large"><variables><gridItemX>0.186</gridItemX></variables></fontSize>
+        <fontSize name="medium"><variables><gridItemX>0.121</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.1205</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.185</gridItemX></variables></fontSize>
     </aspectRatio>
     <aspectRatio name="16:10">
-        <fontSize name="medium"><variables><gridItemX>0.102</gridItemX></variables></fontSize>
-        <fontSize name="large"><variables><gridItemX>0.101</gridItemX></variables></fontSize>
-        <fontSize name="x-large"><variables><gridItemX>0.155</gridItemX></variables></fontSize>
+        <fontSize name="medium"><variables><gridItemX>0.1008</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.1004</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.1542</gridItemX></variables></fontSize>
     </aspectRatio>
     <aspectRatio name="16:9">
-        <fontSize name="medium"><variables><gridItemX>0.0915</gridItemX></variables></fontSize>
-        <fontSize name="large"><variables><gridItemX>0.0911</gridItemX></variables></fontSize>
-        <fontSize name="x-large"><variables><gridItemX>0.1395</gridItemX></variables></fontSize>
+        <fontSize name="medium"><variables><gridItemX>0.0907</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.0904</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.1388</gridItemX></variables></fontSize>
     </aspectRatio>
 
-    <!-- PHONE / ULTRAWIDE: hero-banner layout. Grid full-width below the banner, 2 fixed rows of
-         ~10 medium 2:3 capsules. Item size fixed per aspect (not per font size). -->
+    <!-- PHONE / ULTRAWIDE: hero-banner layout. Grid full-width below banner, 2 fixed rows of
+         ~10 medium 2:3 capsules (itemY accounts for itemScale 1.0). -->
     <aspectRatio name="19.5:9">
         <variables>
             <gridPos>0.035 0.388</gridPos><gridSize>0.93 0.532</gridSize>
             <gridFractional>false</gridFractional>
-            <gridItemY>0.258</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
-            <gridItemX>0.079</gridItemX>
+            <gridItemY>0.256</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
+            <gridItemX>0.0788</gridItemX>
         </variables>
     </aspectRatio>
     <aspectRatio name="20:9">
         <variables>
             <gridPos>0.035 0.388</gridPos><gridSize>0.93 0.532</gridSize>
             <gridFractional>false</gridFractional>
-            <gridItemY>0.258</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
-            <gridItemX>0.077</gridItemX>
+            <gridItemY>0.256</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
+            <gridItemX>0.0768</gridItemX>
         </variables>
     </aspectRatio>
     <aspectRatio name="21:9">
         <variables>
             <gridPos>0.035 0.388</gridPos><gridSize>0.93 0.532</gridSize>
             <gridFractional>false</gridFractional>
-            <gridItemY>0.258</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
-            <gridItemX>0.074</gridItemX>
+            <gridItemY>0.256</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
+            <gridItemX>0.0732</gridItemX>
         </variables>
     </aspectRatio>
 </theme>
