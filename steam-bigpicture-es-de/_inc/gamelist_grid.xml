@@ -53,9 +53,9 @@
             <backgroundColor>ffffffff</backgroundColor>
             <backgroundRelativeScale>1.0</backgroundRelativeScale>
             <backgroundCornerRadius>${radTile}</backgroundCornerRadius>
-            <!-- frame drawn at the full cell (1.0); its even gap to the cover is baked into the SVG -->
+            <!-- concentric frame: 0.95 of the cell vs cover at 0.91 -> same aspect, small proportional gap -->
             <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
-            <selectorRelativeScale>1.0</selectorRelativeScale>
+            <selectorRelativeScale>0.95</selectorRelativeScale>
             <selectorLayer>top</selectorLayer>
             <!-- focus: keep the selected item full colour/brightness; non-selected slightly darker + desaturated -->
             <unfocusedItemOpacity>1.0</unfocusedItemOpacity>
