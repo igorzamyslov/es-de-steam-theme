@@ -5,9 +5,10 @@
     <!-- size/scale variables (font-size + aspect-ratio); must precede the variant includes -->
     <include>./_inc/scale.xml</include>
 
-    <!-- base default for the detail-panel static media (each variant overrides this) -->
+    <!-- detail-panel media (detailMediaType + mediaDelay) is set by the selected colorScheme below,
+         matching the official-theme pattern (scheme-controlled vars live only in colorScheme blocks,
+         never at root, so nothing competes with the selection). -->
     <variables>
-        <detailMediaType>marquee</detailMediaType>
         <!-- corner-radius tokens. Big Picture is fully rectangular, so these are 0.
              Kept as tokens (not removed) so fillets can be re-enabled in one place;
              cornerRadius is screen-WIDTH-relative in ES-DE (same px on every element). -->
@@ -19,48 +20,31 @@
              here could never be overridden by the per-collection section-state includes. -->
     </variables>
 
-    <!-- 8 variants = {hero neon, hero art} x {grid, list} x {marquee, screenshot}.
-         The detail panel shows the chosen static media, then plays the video after a delay.
-         First variant is the default: Hero (neon) · Grid · Marquee. -->
+    <!-- Detail-panel media behaviour lives on the colorScheme axis (4 schemes, one shared dark
+         palette). detailMediaType = the still shown first; mediaDelay = seconds before the video
+         plays (100000 = effectively "no video": the still just stays). Must be a colorScheme (not a
+         variant) so it is independent of the hero/layout variant; variants are resolved later and
+         would otherwise override these. -->
+    <colorScheme name="marqueeVideo"><variables><detailMediaType>marquee</detailMediaType><mediaDelay>2.5</mediaDelay></variables></colorScheme>
+    <colorScheme name="screenshotVideo"><variables><detailMediaType>screenshot</detailMediaType><mediaDelay>2.5</mediaDelay></variables></colorScheme>
+    <colorScheme name="marqueeStill"><variables><detailMediaType>marquee</detailMediaType><mediaDelay>100000</mediaDelay></variables></colorScheme>
+    <colorScheme name="screenshotStill"><variables><detailMediaType>screenshot</detailMediaType><mediaDelay>100000</mediaDelay></variables></colorScheme>
 
-    <variant name="heroNeonGridMarquee">
-        <variables><detailMediaType>marquee</detailMediaType></variables>
+    <!-- 4 variants = {hero neon, hero art} x {grid, list}. Detail media is the colorScheme axis above.
+         First variant is the default: Hero (neon) · Grid. -->
+    <variant name="heroNeonGrid">
         <include>./_inc/system_hero_neon.xml</include>
         <include>./_inc/gamelist_grid.xml</include>
     </variant>
-    <variant name="heroNeonGridShot">
-        <variables><detailMediaType>screenshot</detailMediaType></variables>
-        <include>./_inc/system_hero_neon.xml</include>
-        <include>./_inc/gamelist_grid.xml</include>
-    </variant>
-    <variant name="heroNeonListMarquee">
-        <variables><detailMediaType>marquee</detailMediaType></variables>
+    <variant name="heroNeonList">
         <include>./_inc/system_hero_neon.xml</include>
         <include>./_inc/gamelist_list.xml</include>
     </variant>
-    <variant name="heroNeonListShot">
-        <variables><detailMediaType>screenshot</detailMediaType></variables>
-        <include>./_inc/system_hero_neon.xml</include>
-        <include>./_inc/gamelist_list.xml</include>
-    </variant>
-
-    <variant name="heroArtGridMarquee">
-        <variables><detailMediaType>marquee</detailMediaType></variables>
+    <variant name="heroArtGrid">
         <include>./_inc/system_hero_art.xml</include>
         <include>./_inc/gamelist_grid.xml</include>
     </variant>
-    <variant name="heroArtGridShot">
-        <variables><detailMediaType>screenshot</detailMediaType></variables>
-        <include>./_inc/system_hero_art.xml</include>
-        <include>./_inc/gamelist_grid.xml</include>
-    </variant>
-    <variant name="heroArtListMarquee">
-        <variables><detailMediaType>marquee</detailMediaType></variables>
-        <include>./_inc/system_hero_art.xml</include>
-        <include>./_inc/gamelist_list.xml</include>
-    </variant>
-    <variant name="heroArtListShot">
-        <variables><detailMediaType>screenshot</detailMediaType></variables>
+    <variant name="heroArtList">
         <include>./_inc/system_hero_art.xml</include>
         <include>./_inc/gamelist_list.xml</include>
     </variant>

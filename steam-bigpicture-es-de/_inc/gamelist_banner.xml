@@ -10,7 +10,7 @@
             <cropSize>1 0.30</cropSize><cropPos>0.5 0.5</cropPos>
             <imageType>${detailMediaType}, cover</imageType>
             <defaultImage>./../assets/ui/art-placeholder.svg</defaultImage>
-            <delay>2.5</delay><fadeInTime>0.6</fadeInTime>
+            <delay>${mediaDelay}</delay><fadeInTime>0.6</fadeInTime>
             <pillarboxes>false</pillarboxes>
             <zIndex>5</zIndex>
         </video>

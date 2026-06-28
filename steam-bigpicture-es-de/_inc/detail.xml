@@ -25,8 +25,8 @@
             <pos>${pPanelCX} ${pVideoY}</pos><origin>0.5 0</origin>
             <maxSize>${pInnerW} ${pVideoH}</maxSize><imageMaxSize>${pInnerW} ${pVideoH}</imageMaxSize>
             <imageType>${detailMediaType}</imageType>
-            <default>./../assets/ui/capsule-placeholder.svg</default>
-            <delay>2.5</delay><fadeInTime>0.6</fadeInTime>
+            <defaultImage>./../assets/ui/capsule-placeholder.svg</defaultImage>
+            <delay>${mediaDelay}</delay><fadeInTime>0.6</fadeInTime>
             <pillarboxes>false</pillarboxes>
             <imageCornerRadius>${rad}</imageCornerRadius><videoCornerRadius>${rad}</videoCornerRadius>
             <zIndex>20</zIndex>

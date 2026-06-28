@@ -14,8 +14,19 @@
     <fontSize>large</fontSize>
     <fontSize>x-large</fontSize>
 
-    <colorScheme name="dark">
-        <label language="en_US">Dark</label>
+    <!-- The colorScheme axis is repurposed as a detail-panel MEDIA selector (all share one dark
+         palette). First entry is the default: Marquee, then video. -->
+    <colorScheme name="marqueeVideo">
+        <label language="en_US">Marquee → Video</label>
+    </colorScheme>
+    <colorScheme name="screenshotVideo">
+        <label language="en_US">Screenshot → Video</label>
+    </colorScheme>
+    <colorScheme name="marqueeStill">
+        <label language="en_US">Marquee (no video)</label>
+    </colorScheme>
+    <colorScheme name="screenshotStill">
+        <label language="en_US">Screenshot (no video)</label>
     </colorScheme>
 
     <transitions name="steam">
@@ -29,14 +40,10 @@
         <startupToGamelist>fade</startupToGamelist>
     </transitions>
 
-    <!-- 2 system heroes x 2 gamelist layouts x 2 detail media = 8 variants.
-         First entry is the default: Hero (neon) · Grid · Marquee. -->
-    <variant name="heroNeonGridMarquee"><label language="en_US">Hero (neon) · Grid · Marquee</label><selectable>true</selectable></variant>
-    <variant name="heroNeonGridShot"><label language="en_US">Hero (neon) · Grid · Screenshot</label><selectable>true</selectable></variant>
-    <variant name="heroNeonListMarquee"><label language="en_US">Hero (neon) · List · Marquee</label><selectable>true</selectable></variant>
-    <variant name="heroNeonListShot"><label language="en_US">Hero (neon) · List · Screenshot</label><selectable>true</selectable></variant>
-    <variant name="heroArtGridMarquee"><label language="en_US">Hero (art) · Grid · Marquee</label><selectable>true</selectable></variant>
-    <variant name="heroArtGridShot"><label language="en_US">Hero (art) · Grid · Screenshot</label><selectable>true</selectable></variant>
-    <variant name="heroArtListMarquee"><label language="en_US">Hero (art) · List · Marquee</label><selectable>true</selectable></variant>
-    <variant name="heroArtListShot"><label language="en_US">Hero (art) · List · Screenshot</label><selectable>true</selectable></variant>
+    <!-- 2 system heroes x 2 gamelist layouts = 4 variants (detail media moved to the colorScheme axis).
+         First entry is the default: Hero (neon) · Grid. -->
+    <variant name="heroNeonGrid"><label language="en_US">Hero (neon) · Grid</label><selectable>true</selectable></variant>
+    <variant name="heroNeonList"><label language="en_US">Hero (neon) · List</label><selectable>true</selectable></variant>
+    <variant name="heroArtGrid"><label language="en_US">Hero (art) · Grid</label><selectable>true</selectable></variant>
+    <variant name="heroArtList"><label language="en_US">Hero (art) · List</label><selectable>true</selectable></variant>
 </themeCapabilities>
