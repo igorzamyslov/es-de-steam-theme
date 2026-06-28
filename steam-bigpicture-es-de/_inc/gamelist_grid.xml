@@ -35,28 +35,25 @@
             <!-- compact grid: smaller cells + tight spacing pack more capsules per screen -->
             <itemSize>${gridItemX} ${gridItemY}</itemSize>
             <itemSpacing>${gridSpacing}</itemSpacing>
-            <!-- Steam focus: subtle scale + a thin frame floating OUTSIDE the art; scaleInwards keeps edge rows in bounds -->
+            <!-- Steam focus: subtle scale + a thin frame at the capsule edge; scaleInwards keeps edge rows in bounds -->
             <itemScale>1.04</itemScale>
             <scaleInwards>true</scaleInwards>
             <!-- show partial rows top/bottom so there's visible scroll context (mitigates the
                  "stuck on the last row" feel; ES-DE has no selection-anchor property) -->
             <fractionalRows>true</fractionalRows>
-            <!-- capsule art sits at 0.91 of the cell -> a bigger gap to the focus frame (cell edge)
-                 and room for the shadow to read around the box -->
+            <!-- full-bleed capsules: cover fills the cell so there is no dark margin "ring" and no
+                 uneven L/R vs T/B margin (a uniform inset on a portrait cell gives unequal px
+                 margins). The gap between tiles comes from itemSpacing. A per-tile drop shadow
+                 can't extend beyond the cell in ES-DE, so the in-margin fake read as a hard box
+                 on phones - dropped here in favour of clean full-bleed. -->
             <imageFit>cover</imageFit>
-            <imageRelativeScale>0.91</imageRelativeScale>
+            <imageRelativeScale>1.0</imageRelativeScale>
             <imageCornerRadius>${radTile}</imageCornerRadius>
-            <!-- per-tile background = card + baked shadow. Swap between the two to compare:
-                 capsule-shadow.svg (CRISP drop) <-> capsule-shadow-soft.svg (SOFT ambient).
-                 backgroundColor white so the SVG renders untinted. -->
-            <backgroundImage>./../assets/ui/capsule-shadow-soft.svg</backgroundImage>
-            <backgroundColor>ffffffff</backgroundColor>
-            <backgroundRelativeScale>1.0</backgroundRelativeScale>
+            <!-- card base for un-scraped (text-fallback) tiles -->
+            <backgroundColor>1a222dff</backgroundColor>
             <backgroundCornerRadius>${radTile}</backgroundCornerRadius>
-            <!-- thin light-grey frame, offset outside the capsule with a small gap (Steam focus = frame + slight scale, no glow) -->
+            <!-- thin light-grey focus frame at the cell edge (hugs the full-bleed capsule) -->
             <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
-            <!-- pull the frame in from the cell edge (1.0) so the gap to the cover (0.91) shrinks ~2px -->
-            <selectorRelativeScale>0.98</selectorRelativeScale>
             <selectorLayer>top</selectorLayer>
             <!-- Steam shows neighbours at full brightness; only a hair of dim for couch focus aid -->
             <unfocusedItemOpacity>0.92</unfocusedItemOpacity>
