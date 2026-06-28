@@ -22,8 +22,8 @@
             <fontSize>${fsTab}</fontSize>
             <itemSize>${gridItemX} ${gridItemY}</itemSize>
             <itemSpacing>${gridSpacing}</itemSpacing>
-            <!-- itemScale 1.0: fractionalRows snaps rows to itemY exactly; focus = frame + dimming -->
-            <itemScale>1.0</itemScale>
+            <!-- itemScale 1.01: minor focus zoom; itemY trimmed in scale.xml so rows still snap right -->
+            <itemScale>1.01</itemScale>
             <scaleInwards>true</scaleInwards>
             <fractionalRows>${gridFractional}</fractionalRows>
             <!-- cover inset to 0.91 of the cell -> margin holds the bottom drop shadow; even gap to the frame -->

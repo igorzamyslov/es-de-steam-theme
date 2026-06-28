@@ -12,7 +12,7 @@
 
         <!-- title: top of the column, wraps to multiple lines -->
         <text name="detailTitle">
-            <pos>${pContentX} 0.05</pos><size>${pInnerW} ${pTitleH}</size>
+            <pos>${pContentX} 0.064</pos><size>${pInnerW} ${pTitleH}</size>
             <metadata>name</metadata><container>false</container>
             <fontPath>${fontDisplay}</fontPath><fontSize>${fsTitle}</fontSize>
             <verticalAlignment>top</verticalAlignment>

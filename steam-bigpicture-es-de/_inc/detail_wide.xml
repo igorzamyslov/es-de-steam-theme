@@ -12,7 +12,7 @@
 
         <!-- title: top of the panel, wraps to multiple lines -->
         <text name="detailTitle">
-            <pos>0.51 0.07</pos><size>0.47 ${pwTitleH}</size>
+            <pos>0.51 0.064</pos><size>0.47 ${pwTitleH}</size>
             <metadata>name</metadata><container>false</container>
             <fontPath>${fontDisplay}</fontPath><fontSize>${fsTitleWide}</fontSize>
             <verticalAlignment>top</verticalAlignment>

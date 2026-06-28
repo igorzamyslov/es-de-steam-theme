@@ -1,8 +1,8 @@
 <theme>
     <!-- Type scale + grid sizing per Theme Font Size. Included before the element files so these
          variables are defined before use. clock + list are deliberately tamed.
-         NOTE: the grid uses itemScale 1.0 (focus = frame + dimming), so fractionalRows=false snaps
-         rows to itemY exactly (itemScale>1 would inflate each row's reserved height and drop a row). -->
+         NOTE: the grid uses itemScale 1.01 (very minor focus zoom). fractionalRows=false snaps rows
+         to itemY*itemScale, so itemY is trimmed a hair to keep the intended row counts at 1.01. -->
 
     <!-- grid REGION defaults = desktop side-panel layout: grid x=0.035, P=0.035 gap, then the
          detail panel runs flush to the right screen edge (x=1.0) so its media/content cover it. -->
@@ -14,15 +14,16 @@
         <listTop>0.035 0.155</listTop>
     </variables>
 
-    <!-- itemY derived for an exact whole-row fit in ~0.765 available height: 3 rows (medium/large),
-         2 rows (x-large). gridSize = fixed 0.63 block x region height. -->
+    <!-- detail panel vertical model (both grid detail.xml and list detail_wide.xml):
+         title at y0.064 (aligned with the system header), 2-line box (pTitleH/pwTitleH so it wraps),
+         video right below filling to the bottom block (pVideoY/pVideoH, pw* for the wide list panel). -->
     <fontSize name="medium">
         <variables>
             <fsHero>0.052</fsHero><fsHeader>0.032</fsHeader><fsList>0.026</fsList>
             <fsClock>0.024</fsClock><fsTitleWide>0.028</fsTitleWide><fsTitle>0.026</fsTitle>
             <fsCount>0.022</fsCount><fsButton>0.021</fsButton><fsLabel>0.020</fsLabel>
             <fsMetaWide>0.019</fsMetaWide><fsMeta>0.0185</fsMeta><fsTab>0.018</fsTab>
-            <gridItemY>0.242</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
+            <gridItemY>0.240</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
             <gridSize>0.596 0.764</gridSize>
             <heroNameY>0.48</heroNameY><heroSpecY>0.595</heroSpecY><heroCountY>0.635</heroCountY>
             <heroDescY>0.685</heroDescY><heroDescH>0.062</heroDescH>
@@ -30,8 +31,8 @@
             <pPanelX>0.666</pPanelX><pPanelW>0.334</pPanelW><pContentX>0.686</pContentX><pInnerW>0.294</pInnerW>
             <pPanelCX>0.833</pPanelCX><pKeyW>0.07</pKeyW><pValueX>0.756</pValueX><pValueW>0.224</pValueW>
             <pPlayIconX>0.711</pPlayIconX><pPlayLabelX>0.728</pPlayLabelX><glCountY>0.108</glCountY>
-            <pTitleH>0.064</pTitleH><pVideoY>0.118</pVideoY><pVideoH>0.312</pVideoH>
-            <pwTitleH>0.07</pwTitleH><pwVideoY>0.15</pwVideoY><pwVideoH>0.30</pwVideoH>
+            <pTitleH>0.085</pTitleH><pVideoY>0.155</pVideoY><pVideoH>0.285</pVideoH>
+            <pwTitleH>0.09</pwTitleH><pwVideoY>0.16</pwVideoY><pwVideoH>0.29</pwVideoH>
         </variables>
     </fontSize>
     <fontSize name="large">
@@ -41,7 +42,7 @@
             <fsCount>0.030</fsCount><fsButton>0.028</fsButton><fsLabel>0.027</fsLabel>
             <fsMetaWide>0.026</fsMetaWide><fsMeta>0.025</fsMeta><fsTab>0.025</fsTab>
             <gridPos>0.035 0.165</gridPos><listTop>0.035 0.165</listTop>
-            <gridItemY>0.239</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
+            <gridItemY>0.236</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
             <gridSize>0.506 0.755</gridSize>
             <heroNameY>0.44</heroNameY><heroSpecY>0.555</heroSpecY><heroCountY>0.595</heroCountY>
             <heroDescY>0.645</heroDescY><heroDescH>0.10</heroDescH>
@@ -49,8 +50,8 @@
             <pPanelX>0.576</pPanelX><pPanelW>0.424</pPanelW><pContentX>0.596</pContentX><pInnerW>0.384</pInnerW>
             <pPanelCX>0.788</pPanelCX><pKeyW>0.085</pKeyW><pValueX>0.681</pValueX><pValueW>0.299</pValueW>
             <pPlayIconX>0.621</pPlayIconX><pPlayLabelX>0.638</pPlayLabelX><glCountY>0.122</glCountY>
-            <pTitleH>0.088</pTitleH><pVideoY>0.142</pVideoY><pVideoH>0.288</pVideoH>
-            <pwTitleH>0.095</pwTitleH><pwVideoY>0.175</pwVideoY><pwVideoH>0.275</pwVideoH>
+            <pTitleH>0.115</pTitleH><pVideoY>0.185</pVideoY><pVideoH>0.255</pVideoH>
+            <pwTitleH>0.12</pwTitleH><pwVideoY>0.19</pwVideoY><pwVideoH>0.26</pwVideoH>
         </variables>
     </fontSize>
     <fontSize name="x-large">
@@ -60,7 +61,7 @@
             <fsCount>0.035</fsCount><fsButton>0.032</fsButton><fsLabel>0.031</fsLabel>
             <fsMetaWide>0.030</fsMetaWide><fsMeta>0.029</fsMeta><fsTab>0.029</fsTab>
             <gridPos>0.035 0.175</gridPos><listTop>0.035 0.175</listTop>
-            <gridItemY>0.360</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
+            <gridItemY>0.357</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
             <gridSize>0.602 0.745</gridSize>
             <heroNameY>0.40</heroNameY><heroSpecY>0.515</heroSpecY><heroCountY>0.565</heroCountY>
             <heroDescY>0.615</heroDescY><heroDescH>0.13</heroDescH>
@@ -68,52 +69,52 @@
             <pPanelX>0.672</pPanelX><pPanelW>0.328</pPanelW><pContentX>0.692</pContentX><pInnerW>0.288</pInnerW>
             <pPanelCX>0.836</pPanelCX><pKeyW>0.10</pKeyW><pValueX>0.792</pValueX><pValueW>0.188</pValueW>
             <pPlayIconX>0.717</pPlayIconX><pPlayLabelX>0.734</pPlayLabelX><glCountY>0.135</glCountY>
-            <pTitleH>0.108</pTitleH><pVideoY>0.162</pVideoY><pVideoH>0.268</pVideoH>
-            <pwTitleH>0.115</pwTitleH><pwVideoY>0.195</pwVideoY><pwVideoH>0.255</pwVideoH>
+            <pTitleH>0.135</pTitleH><pVideoY>0.205</pVideoY><pVideoH>0.235</pVideoH>
+            <pwTitleH>0.14</pwTitleH><pwVideoY>0.21</pwVideoY><pwVideoH>0.24</pwVideoH>
         </variables>
     </fontSize>
 
     <!-- grid item WIDTH per aspect x size: itemX = itemY * (2/3) / (W:H) keeps tiles true 2:3 portrait. -->
     <aspectRatio name="4:3, 5:4">
-        <fontSize name="medium"><variables><gridItemX>0.121</gridItemX></variables></fontSize>
-        <fontSize name="large"><variables><gridItemX>0.1195</gridItemX></variables></fontSize>
-        <fontSize name="x-large"><variables><gridItemX>0.180</gridItemX></variables></fontSize>
+        <fontSize name="medium"><variables><gridItemX>0.12</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.118</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.1785</gridItemX></variables></fontSize>
     </aspectRatio>
     <aspectRatio name="16:10">
-        <fontSize name="medium"><variables><gridItemX>0.1008</gridItemX></variables></fontSize>
-        <fontSize name="large"><variables><gridItemX>0.0996</gridItemX></variables></fontSize>
-        <fontSize name="x-large"><variables><gridItemX>0.150</gridItemX></variables></fontSize>
+        <fontSize name="medium"><variables><gridItemX>0.10</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.0983</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.1488</gridItemX></variables></fontSize>
     </aspectRatio>
     <aspectRatio name="16:9">
-        <fontSize name="medium"><variables><gridItemX>0.0907</gridItemX></variables></fontSize>
-        <fontSize name="large"><variables><gridItemX>0.0896</gridItemX></variables></fontSize>
-        <fontSize name="x-large"><variables><gridItemX>0.135</gridItemX></variables></fontSize>
+        <fontSize name="medium"><variables><gridItemX>0.0900</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.0885</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.1339</gridItemX></variables></fontSize>
     </aspectRatio>
 
     <!-- PHONE / ULTRAWIDE: hero-banner layout. Grid full-width below banner, 2 fixed rows of
-         ~10 medium 2:3 capsules (itemY accounts for itemScale 1.0). -->
+         ~10 medium 2:3 capsules (itemY accounts for itemScale 1.01). -->
     <aspectRatio name="19.5:9">
         <variables>
             <gridPos>0.035 0.388</gridPos><gridSize>0.93 0.532</gridSize>
             <gridFractional>false</gridFractional>
-            <gridItemY>0.256</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
-            <gridItemX>0.0788</gridItemX>
+            <gridItemY>0.254</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
+            <gridItemX>0.0782</gridItemX>
         </variables>
     </aspectRatio>
     <aspectRatio name="20:9">
         <variables>
             <gridPos>0.035 0.388</gridPos><gridSize>0.93 0.532</gridSize>
             <gridFractional>false</gridFractional>
-            <gridItemY>0.256</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
-            <gridItemX>0.0768</gridItemX>
+            <gridItemY>0.254</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
+            <gridItemX>0.0762</gridItemX>
         </variables>
     </aspectRatio>
     <aspectRatio name="21:9">
         <variables>
             <gridPos>0.035 0.388</gridPos><gridSize>0.93 0.532</gridSize>
             <gridFractional>false</gridFractional>
-            <gridItemY>0.256</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
-            <gridItemX>0.0732</gridItemX>
+            <gridItemY>0.254</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
+            <gridItemX>0.0726</gridItemX>
         </variables>
     </aspectRatio>
 </theme>
