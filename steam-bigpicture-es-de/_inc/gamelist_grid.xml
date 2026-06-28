@@ -14,12 +14,12 @@
             <pos>0.035 0.064</pos><size>0.6 0.05</size>
             <!-- use ${systemName} (matches the system-view name + honours the collection renames) -->
             <text>${systemName}</text>
-            <fontPath>${fontDisplay}</fontPath><fontSize>0.032</fontSize>
+            <fontPath>${fontDisplay}</fontPath><fontSize>${fsHeader}</fontSize>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
         <gamelistinfo name="glCount">
             <pos>0.035 0.108</pos><size>0.3 0.03</size>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
             <color>${cText2}</color><zIndex>20</zIndex>
         </gamelistinfo>
         <grid name="capsules">
@@ -31,10 +31,10 @@
             <textBackgroundColor>00000000</textBackgroundColor>
             <textRelativeScale>0.86</textRelativeScale>
             <fontPath>${fontSemiBold}</fontPath>
-            <fontSize>0.018</fontSize>
+            <fontSize>${fsTab}</fontSize>
             <!-- compact grid: smaller cells + tight spacing pack more capsules per screen -->
-            <itemSize>0.095 0.195</itemSize>
-            <itemSpacing>0.010 0.014</itemSpacing>
+            <itemSize>${gridItemX} ${gridItemY}</itemSize>
+            <itemSpacing>${gridSpacing}</itemSpacing>
             <!-- Steam focus: subtle scale + a thin frame floating OUTSIDE the art; scaleInwards keeps edge rows in bounds -->
             <itemScale>1.04</itemScale>
             <scaleInwards>true</scaleInwards>
