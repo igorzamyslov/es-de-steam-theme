@@ -21,6 +21,9 @@
             <fsMetaWide>0.019</fsMetaWide><fsMeta>0.0185</fsMeta><fsTab>0.018</fsTab>
             <gridItemY>0.244</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
             <gridSize>0.63 0.764</gridSize>
+            <!-- system-view bottom-left stack (name/spec/count/description y + description height) -->
+            <heroNameY>0.48</heroNameY><heroSpecY>0.595</heroSpecY><heroCountY>0.635</heroCountY>
+            <heroDescY>0.685</heroDescY><heroDescH>0.062</heroDescH>
         </variables>
     </fontSize>
     <fontSize name="large">
@@ -31,6 +34,9 @@
             <fsMetaWide>0.026</fsMetaWide><fsMeta>0.025</fsMeta><fsTab>0.025</fsTab>
             <gridItemY>0.243</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
             <gridSize>0.63 0.765</gridSize>
+            <!-- stack packed up so the description gets ~3 lines above the rail -->
+            <heroNameY>0.44</heroNameY><heroSpecY>0.555</heroSpecY><heroCountY>0.595</heroCountY>
+            <heroDescY>0.645</heroDescY><heroDescH>0.10</heroDescH>
         </variables>
     </fontSize>
     <fontSize name="x-large">
@@ -41,6 +47,9 @@
             <fsMetaWide>0.030</fsMetaWide><fsMeta>0.029</fsMeta><fsTab>0.029</fsTab>
             <gridItemY>0.372</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
             <gridSize>0.63 0.764</gridSize>
+            <!-- stack packed up so the description gets ~3 lines above the rail -->
+            <heroNameY>0.40</heroNameY><heroSpecY>0.515</heroSpecY><heroCountY>0.565</heroCountY>
+            <heroDescY>0.615</heroDescY><heroDescH>0.13</heroDescH>
         </variables>
     </fontSize>
 

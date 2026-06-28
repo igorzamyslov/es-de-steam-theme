@@ -56,7 +56,7 @@
         </image>
         <!-- bottom-left info panel: name · spec line · count · description (inhabit the void) -->
         <text name="sysName">
-            <pos>0.05 0.48</pos><size>0.60 0.095</size>
+            <pos>0.05 ${heroNameY}</pos><size>0.60 0.095</size>
             <text>${systemName}</text>
             <container>false</container>
             <fontPath>${fontDisplay}</fontPath><fontSize>${fsHero}</fontSize>
@@ -64,21 +64,21 @@
         </text>
         <!-- spec line: hardware type · manufacturer · year; collection-type systems collapse to just the type -->
         <text name="sysSpec">
-            <pos>0.05 0.595</pos><size>0.62 0.04</size>
+            <pos>0.05 ${heroSpecY}</pos><size>0.62 0.04</size>
             <text>${specLine}</text>
             <container>false</container>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsLabel}</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
         </text>
         <text name="sysCount">
-            <pos>0.05 0.635</pos><size>0.5 0.05</size>
+            <pos>0.05 ${heroCountY}</pos><size>0.5 0.05</size>
             <systemdata>gamecount</systemdata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsCount}</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
         </text>
         <!-- system description fills the empty space; scrolls if long; legible over the left scrim -->
         <text name="sysDesc">
-            <pos>0.05 0.685</pos><size>0.46 0.06</size>
+            <pos>0.05 ${heroDescY}</pos><size>0.46 ${heroDescH}</size>
             <text>${systemDescription}</text>
             <container>true</container><containerType>vertical</containerType>
             <fontPath>${fontRegular}</fontPath><fontSize>${fsMeta}</fontSize>
