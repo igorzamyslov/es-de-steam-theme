@@ -1,18 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 221">
   <g fill="none">
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#a9d2ff" stroke-opacity="0.022" stroke-width="36"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#a9d2ff" stroke-opacity="0.032" stroke-width="32"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#a9d2ff" stroke-opacity="0.045" stroke-width="28"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#b0d6ff" stroke-opacity="0.060" stroke-width="24"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#b0d6ff" stroke-opacity="0.080" stroke-width="20"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#badeff" stroke-opacity="0.105" stroke-width="17"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#badeff" stroke-opacity="0.140" stroke-width="14"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#c8e4ff" stroke-opacity="0.185" stroke-width="11"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#d4ebff" stroke-opacity="0.245" stroke-width="9"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#e0f1ff" stroke-opacity="0.330" stroke-width="7"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#eaf5ff" stroke-opacity="0.460" stroke-width="5"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#f4faff" stroke-opacity="0.640" stroke-width="3.5"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#ffffff" stroke-opacity="0.850" stroke-width="2.5"/>
-    <rect x="13" y="15" width="166" height="191" rx="15" stroke="#ffffff" stroke-opacity="1.0" stroke-width="1.4"/>
+    <!-- tiny near-white feather just inside the edge (a hint of light, not a halo) -->
+    <rect x="2.5" y="2.5" width="187" height="216" rx="14" stroke="#eaf5ff" stroke-opacity="0.22" stroke-width="5"/>
+    <!-- crisp bright white core on the capsule edge (outer face = item edge); rx matches the tile -->
+    <rect x="1" y="1" width="190" height="219" rx="15" stroke="#ffffff" stroke-opacity="0.96" stroke-width="2"/>
   </g>
 </svg>

@@ -29,16 +29,13 @@
             <!-- Steam-style focus: scale up + glowing frame; scaleInwards keeps edge rows in bounds -->
             <itemScale>1.10</itemScale>
             <scaleInwards>true</scaleInwards>
-            <!-- cover cropped to fill, but inset ~7% so the selector glow has a margin to live in
-                 around the art (an outer glow can't exceed the item box, so we shrink the art instead) -->
+            <!-- edge-to-edge capsule art (Steam look); crops wide/square box art -->
             <imageFit>cover</imageFit>
-            <imageRelativeScale>0.86</imageRelativeScale>
+            <imageRelativeScale>1.0</imageRelativeScale>
             <imageCornerRadius>${rad}</imageCornerRadius>
             <backgroundColor>1a1f27ff</backgroundColor>
             <backgroundCornerRadius>${rad}</backgroundCornerRadius>
-            <!-- plate matches the inset cover so it isn't larger than the art; the glow lives in the outer margin -->
-            <backgroundRelativeScale>0.86</backgroundRelativeScale>
-            <!-- glowing near-white selector frame (baked halo) over the focused capsule -->
+            <!-- crisp bright white edge hugging the capsule (Steam focus = edge + scale + dim, not a halo) -->
             <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
             <selectorLayer>top</selectorLayer>
             <unfocusedItemOpacity>0.45</unfocusedItemOpacity>
