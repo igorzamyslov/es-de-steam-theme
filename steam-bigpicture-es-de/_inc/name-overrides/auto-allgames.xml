@@ -1,0 +1,6 @@
+<theme>
+    <!-- rename the All Games collection to "Library" to match the section tab -->
+    <variables>
+        <systemName>Library</systemName>
+    </variables>
+</theme>

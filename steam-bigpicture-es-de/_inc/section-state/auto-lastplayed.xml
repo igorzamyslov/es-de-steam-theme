@@ -1,0 +1,9 @@
+<theme>
+    <!-- focused system is the Last Played collection: light up RECENT, dim Platforms. -->
+    <variables>
+        <secTxtRecent>e8edf2ff</secTxtRecent>
+        <secTxtPlat>8f98a0ff</secTxtPlat>
+        <secUnRecent>3a9bffff</secUnRecent>
+        <secUnPlat>00000000</secUnPlat>
+    </variables>
+</theme>

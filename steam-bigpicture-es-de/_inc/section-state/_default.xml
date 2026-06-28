@@ -1,0 +1,17 @@
+<theme>
+    <!-- Section-strip nav DEFAULTS: Platforms active (most systems are consoles).
+         Included before section-state/${system.theme}.xml so a focused collection's
+         override wins (last include wins; mirrors the system-metadata _default pattern).
+         active text = e8edf2 (cText), inactive = 8f98a0 (readable grey);
+         underline accent = 3a9bff (cAccent) / transparent. -->
+    <variables>
+        <secTxtLibrary>8f98a0ff</secTxtLibrary>
+        <secTxtRecent>8f98a0ff</secTxtRecent>
+        <secTxtFav>8f98a0ff</secTxtFav>
+        <secTxtPlat>e8edf2ff</secTxtPlat>
+        <secUnLibrary>00000000</secUnLibrary>
+        <secUnRecent>00000000</secUnRecent>
+        <secUnFav>00000000</secUnFav>
+        <secUnPlat>3a9bffff</secUnPlat>
+    </variables>
+</theme>

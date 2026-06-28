@@ -3,15 +3,23 @@
     <include>./status.xml</include>
     <include>./detail_wide.xml</include>
     <view name="gamelist">
+        <!-- Steam library backdrop (dark blue-grey, not black) behind the whole view -->
+        <image name="gridBg">
+            <pos>0 0</pos><size>1 1</size>
+            <path>./../assets/ui/grid-bg.svg</path>
+            <zIndex>1</zIndex>
+        </image>
+        <!-- header sits below the section-strip top bar (which ends at y 0.056) -->
         <text name="glHeader">
-            <pos>0.035 0.05</pos><size>0.42 0.06</size>
-            <metadata>systemFullname</metadata>
-            <fontPath>${fontDisplay}</fontPath><fontSize>0.034</fontSize>
+            <pos>0.035 0.064</pos><size>0.42 0.05</size>
+            <!-- use ${systemName} (matches the system-view name + honours the collection renames) -->
+            <text>${systemName}</text>
+            <fontPath>${fontDisplay}</fontPath><fontSize>0.032</fontSize>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
         <gamelistinfo name="glCount">
-            <pos>0.035 0.11</pos><size>0.3 0.03</size>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.02</fontSize>
+            <pos>0.035 0.108</pos><size>0.3 0.03</size>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
             <color>${cText2}</color><zIndex>20</zIndex>
         </gamelistinfo>
         <!-- list occupies the left half; the wider detail panel fills the right half -->

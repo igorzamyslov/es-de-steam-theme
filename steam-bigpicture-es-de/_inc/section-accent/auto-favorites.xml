@@ -1,0 +1,6 @@
+<theme>
+    <!-- Favorites hero accent: warm amber mood tint (gold = Steam favorite star). -->
+    <variables>
+        <systemColor>b0832a</systemColor>
+    </variables>
+</theme>

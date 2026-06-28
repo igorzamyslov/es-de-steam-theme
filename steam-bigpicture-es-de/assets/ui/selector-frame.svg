@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 221">
-  <g fill="none">
-    <!-- tiny near-white feather just inside the edge (a hint of light, not a halo) -->
-    <rect x="2.5" y="2.5" width="187" height="216" rx="14" stroke="#eaf5ff" stroke-opacity="0.22" stroke-width="5"/>
-    <!-- crisp bright white core on the capsule edge (outer face = item edge); rx matches the tile -->
-    <rect x="1" y="1" width="190" height="219" rx="15" stroke="#ffffff" stroke-opacity="0.96" stroke-width="2"/>
-  </g>
+  <!-- Steam-style focus frame: a single thin light-grey rounded outline drawn at the CELL
+       edge. The capsule image sits at ~0.93 of the cell, so this frame floats just OUTSIDE
+       the art with a small gap. No glow, no halo - one crisp hairline. -->
+  <rect x="1.25" y="1.25" width="189.5" height="218.5"
+        fill="none" stroke="#d6dee6" stroke-opacity="0.92" stroke-width="2.5"/>
 </svg>

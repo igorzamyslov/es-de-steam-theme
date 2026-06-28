@@ -1,0 +1,72 @@
+<theme>
+    <!-- Steam-style persistent section nav. A LIVE INDICATOR (not clickable tabs); the label
+         matching the focused system lights up. Rendered in BOTH system and gamelist views so
+         the header is consistent. ${secTxt*}/${secUn*} are global (set by the section-state
+         includes in the system-hero module). ${system.theme} in the gamelist is that gamelist's
+         system, so the active tab tracks where you are (and L1/R1 move it if "Quick system
+         select = Shoulders"). Tab order matches the rail's collection order.
+         All header elements are stationary=always so they don't slide during view transitions. -->
+
+    <view name="system, gamelist">
+        <!-- dedicated top bar, mirrors the footer. zIndex 10 = above hero art/scrims (<=8),
+             below tabs (46) and the status overlay. NOTE: <systemstatus> does NOT support <zIndex>. -->
+        <image name="topBar">
+            <pos>0 0</pos><size>1 0.056</size>
+            <path>./../assets/ui/topbar.svg</path>
+            <stationary>always</stationary>
+            <zIndex>10</zIndex>
+        </image>
+
+        <!-- tabs: vertical center y 0.028 (same row as clock/battery). Order: LIBRARY - FAVORITES - RECENT - PLATFORMS -->
+        <text name="secLibrary">
+            <pos>0.33 0.028</pos><origin>0.5 0.5</origin><size>0.13 0.04</size>
+            <text>LIBRARY</text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
+            <horizontalAlignment>center</horizontalAlignment>
+            <color>${secTxtLibrary}</color><stationary>always</stationary><zIndex>46</zIndex>
+        </text>
+        <text name="secFavorites">
+            <pos>0.44 0.028</pos><origin>0.5 0.5</origin><size>0.13 0.04</size>
+            <text>FAVORITES</text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
+            <horizontalAlignment>center</horizontalAlignment>
+            <color>${secTxtFav}</color><stationary>always</stationary><zIndex>46</zIndex>
+        </text>
+        <text name="secRecent">
+            <pos>0.55 0.028</pos><origin>0.5 0.5</origin><size>0.13 0.04</size>
+            <text>RECENT</text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
+            <horizontalAlignment>center</horizontalAlignment>
+            <color>${secTxtRecent}</color><stationary>always</stationary><zIndex>46</zIndex>
+        </text>
+        <text name="secPlatforms">
+            <pos>0.67 0.028</pos><origin>0.5 0.5</origin><size>0.13 0.04</size>
+            <text>PLATFORMS</text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
+            <horizontalAlignment>center</horizontalAlignment>
+            <color>${secTxtPlat}</color><stationary>always</stationary><zIndex>46</zIndex>
+        </text>
+
+        <!-- accent underline under the active label; per-tab widths roughly match each word -->
+        <image name="secUnLibrary">
+            <pos>0.33 0.047</pos><origin>0.5 0</origin><size>0.060 0.005</size>
+            <path>./../assets/ui/tab-underline.svg</path>
+            <color>${secUnLibrary}</color><stationary>always</stationary><zIndex>46</zIndex>
+        </image>
+        <image name="secUnFavorites">
+            <pos>0.44 0.047</pos><origin>0.5 0</origin><size>0.078 0.005</size>
+            <path>./../assets/ui/tab-underline.svg</path>
+            <color>${secUnFav}</color><stationary>always</stationary><zIndex>46</zIndex>
+        </image>
+        <image name="secUnRecent">
+            <pos>0.55 0.047</pos><origin>0.5 0</origin><size>0.050 0.005</size>
+            <path>./../assets/ui/tab-underline.svg</path>
+            <color>${secUnRecent}</color><stationary>always</stationary><zIndex>46</zIndex>
+        </image>
+        <image name="secUnPlatforms">
+            <pos>0.67 0.047</pos><origin>0.5 0</origin><size>0.080 0.005</size>
+            <path>./../assets/ui/tab-underline.svg</path>
+            <color>${secUnPlat}</color><stationary>always</stationary><zIndex>46</zIndex>
+        </image>
+    </view>
+</theme>

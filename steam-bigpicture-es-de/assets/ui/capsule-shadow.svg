@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 221">
+  <!-- CRISP shadow variant: two dark rects offset toward bottom-right, mostly hidden under the
+       card, peeking on the bottom/right edges = a hard directional drop shadow.
+       Card matches the cover (imageRelativeScale 0.91, centered). backgroundColor must be
+       ffffffff so these colours render untinted. -->
+  <rect x="15.65" y="18.95" width="174.7" height="201.1" fill="#000000" fill-opacity="0.13"/>
+  <rect x="12.65" y="14.95" width="174.7" height="201.1" fill="#000000" fill-opacity="0.26"/>
+  <rect x="8.65" y="9.95" width="174.7" height="201.1" fill="#1a222d"/>
+</svg>

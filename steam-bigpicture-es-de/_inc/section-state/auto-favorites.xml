@@ -1,0 +1,9 @@
+<theme>
+    <!-- focused system is the Favorites collection: light up FAVORITES, dim Platforms. -->
+    <variables>
+        <secTxtFav>e8edf2ff</secTxtFav>
+        <secTxtPlat>8f98a0ff</secTxtPlat>
+        <secUnFav>3a9bffff</secUnFav>
+        <secUnPlat>00000000</secUnPlat>
+    </variables>
+</theme>

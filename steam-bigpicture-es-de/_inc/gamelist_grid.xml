@@ -3,15 +3,23 @@
     <include>./status.xml</include>
     <include>./detail.xml</include>
     <view name="gamelist">
+        <!-- Steam library backdrop (dark blue-grey, not black) behind the whole view -->
+        <image name="gridBg">
+            <pos>0 0</pos><size>1 1</size>
+            <path>./../assets/ui/grid-bg.svg</path>
+            <zIndex>1</zIndex>
+        </image>
+        <!-- header sits below the section-strip top bar (which ends at y 0.056) -->
         <text name="glHeader">
-            <pos>0.035 0.05</pos><size>0.6 0.06</size>
-            <metadata>systemFullname</metadata>
-            <fontPath>${fontDisplay}</fontPath><fontSize>0.036</fontSize>
+            <pos>0.035 0.064</pos><size>0.6 0.05</size>
+            <!-- use ${systemName} (matches the system-view name + honours the collection renames) -->
+            <text>${systemName}</text>
+            <fontPath>${fontDisplay}</fontPath><fontSize>0.032</fontSize>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
         <gamelistinfo name="glCount">
-            <pos>0.035 0.11</pos><size>0.3 0.03</size>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.02</fontSize>
+            <pos>0.035 0.108</pos><size>0.3 0.03</size>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
             <color>${cText2}</color><zIndex>20</zIndex>
         </gamelistinfo>
         <grid name="capsules">
@@ -24,21 +32,34 @@
             <textRelativeScale>0.86</textRelativeScale>
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>0.018</fontSize>
-            <itemSize>0.10 0.205</itemSize>
-            <itemSpacing>0.016 0.026</itemSpacing>
-            <!-- Steam-style focus: scale up + glowing frame; scaleInwards keeps edge rows in bounds -->
-            <itemScale>1.10</itemScale>
+            <!-- compact grid: smaller cells + tight spacing pack more capsules per screen -->
+            <itemSize>0.095 0.195</itemSize>
+            <itemSpacing>0.010 0.014</itemSpacing>
+            <!-- Steam focus: subtle scale + a thin frame floating OUTSIDE the art; scaleInwards keeps edge rows in bounds -->
+            <itemScale>1.04</itemScale>
             <scaleInwards>true</scaleInwards>
-            <!-- edge-to-edge capsule art (Steam look); crops wide/square box art -->
+            <!-- show partial rows top/bottom so there's visible scroll context (mitigates the
+                 "stuck on the last row" feel; ES-DE has no selection-anchor property) -->
+            <fractionalRows>true</fractionalRows>
+            <!-- capsule art sits at 0.91 of the cell -> a bigger gap to the focus frame (cell edge)
+                 and room for the shadow to read around the box -->
             <imageFit>cover</imageFit>
-            <imageRelativeScale>1.0</imageRelativeScale>
-            <imageCornerRadius>${rad}</imageCornerRadius>
-            <backgroundColor>1a1f27ff</backgroundColor>
-            <backgroundCornerRadius>${rad}</backgroundCornerRadius>
-            <!-- crisp bright white edge hugging the capsule (Steam focus = edge + scale + dim, not a halo) -->
+            <imageRelativeScale>0.91</imageRelativeScale>
+            <imageCornerRadius>${radTile}</imageCornerRadius>
+            <!-- per-tile background = card + baked shadow. Swap between the two to compare:
+                 capsule-shadow.svg (CRISP drop) <-> capsule-shadow-soft.svg (SOFT ambient).
+                 backgroundColor white so the SVG renders untinted. -->
+            <backgroundImage>./../assets/ui/capsule-shadow-soft.svg</backgroundImage>
+            <backgroundColor>ffffffff</backgroundColor>
+            <backgroundRelativeScale>1.0</backgroundRelativeScale>
+            <backgroundCornerRadius>${radTile}</backgroundCornerRadius>
+            <!-- thin light-grey frame, offset outside the capsule with a small gap (Steam focus = frame + slight scale, no glow) -->
             <selectorImage>./../assets/ui/selector-frame.svg</selectorImage>
+            <!-- pull the frame in from the cell edge (1.0) so the gap to the cover (0.91) shrinks ~2px -->
+            <selectorRelativeScale>0.98</selectorRelativeScale>
             <selectorLayer>top</selectorLayer>
-            <unfocusedItemOpacity>0.45</unfocusedItemOpacity>
+            <!-- Steam shows neighbours at full brightness; only a hair of dim for couch focus aid -->
+            <unfocusedItemOpacity>0.92</unfocusedItemOpacity>
             <zIndex>30</zIndex>
         </grid>
     </view>

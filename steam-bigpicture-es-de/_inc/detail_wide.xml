@@ -1,6 +1,7 @@
 <theme>
     <!-- Wide detail panel for the LIST gamelist (right half of the screen). Mirrors detail.xml
-         but occupies x 0.48-1.0 so the list+metadata split the screen roughly half/half. -->
+         but occupies x 0.48-1.0 so the list+metadata split the screen roughly half/half.
+         Top block sits below the section-strip top bar (ends y 0.056). -->
     <view name="gamelist">
         <image name="detailPanelBg">
             <pos>0.48 0</pos><size>0.52 1</size>
@@ -9,7 +10,7 @@
 
         <!-- media renders directly (no backing plate); has its own rounded corners -->
         <video name="detailMedia">
-            <pos>0.735 0.20</pos><origin>0.5 0.5</origin>
+            <pos>0.735 0.225</pos><origin>0.5 0.5</origin>
             <maxSize>0.44 0.26</maxSize><imageMaxSize>0.44 0.26</imageMaxSize>
             <imageType>${detailMediaType}</imageType>
             <default>./../assets/ui/capsule-placeholder.svg</default>
@@ -20,43 +21,43 @@
         </video>
 
         <text name="detailTitle">
-            <pos>0.51 0.37</pos><size>0.45 0.11</size>
+            <pos>0.51 0.395</pos><size>0.45 0.11</size>
             <metadata>name</metadata><container>false</container>
             <fontPath>${fontDisplay}</fontPath><fontSize>0.028</fontSize>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
 
         <rating name="detailRating">
-            <pos>0.51 0.485</pos><size>0 0.024</size>
+            <pos>0.51 0.51</pos><size>0 0.024</size>
             <color>${cStar}</color><hideIfZero>false</hideIfZero><zIndex>20</zIndex>
         </rating>
         <badges name="detailFav">
-            <pos>0.955 0.485</pos><origin>1 0</origin><size>0.07 0.026</size>
+            <pos>0.955 0.51</pos><origin>1 0</origin><size>0.07 0.026</size>
             <slots>favorite</slots><lines>1</lines><itemsPerLine>1</itemsPerLine>
             <badgeIconColor>${cStar}</badgeIconColor><zIndex>20</zIndex>
         </badges>
 
-        <text name="detailGenreKey"><pos>0.51 0.53</pos><size>0.09 0.024</size><text>Genre</text>
+        <text name="detailGenreKey"><pos>0.51 0.555</pos><size>0.09 0.024</size><text>Genre</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.019</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
-        <text name="detailGenre"><pos>0.61 0.53</pos><size>0.35 0.024</size><metadata>genre</metadata>
+        <text name="detailGenre"><pos>0.61 0.555</pos><size>0.35 0.024</size><metadata>genre</metadata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.019</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
-        <text name="detailDevKey"><pos>0.51 0.563</pos><size>0.09 0.024</size><text>Developer</text>
+        <text name="detailDevKey"><pos>0.51 0.588</pos><size>0.09 0.024</size><text>Developer</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.019</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
-        <text name="detailDeveloper"><pos>0.61 0.563</pos><size>0.35 0.024</size><metadata>developer</metadata>
+        <text name="detailDeveloper"><pos>0.61 0.588</pos><size>0.35 0.024</size><metadata>developer</metadata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.019</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
-        <text name="detailPlayersKey"><pos>0.51 0.596</pos><size>0.09 0.024</size><text>Players</text>
+        <text name="detailPlayersKey"><pos>0.51 0.621</pos><size>0.09 0.024</size><text>Players</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.019</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
-        <text name="detailPlayers"><pos>0.61 0.596</pos><size>0.35 0.024</size><metadata>players</metadata>
+        <text name="detailPlayers"><pos>0.61 0.621</pos><size>0.35 0.024</size><metadata>players</metadata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.019</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
-        <text name="detailReleasedKey"><pos>0.51 0.629</pos><size>0.09 0.024</size><text>Released</text>
+        <text name="detailReleasedKey"><pos>0.51 0.654</pos><size>0.09 0.024</size><text>Released</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.019</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
-        <datetime name="detailReleased"><pos>0.61 0.629</pos><size>0.35 0.024</size><metadata>releasedate</metadata><format>%Y</format>
+        <datetime name="detailReleased"><pos>0.61 0.654</pos><size>0.35 0.024</size><metadata>releasedate</metadata><format>%Y</format>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.019</fontSize><color>${cText2}</color><zIndex>20</zIndex></datetime>
 
-        <text name="detailDescLabel"><pos>0.51 0.675</pos><size>0.45 0.022</size><text>Description</text>
+        <text name="detailDescLabel"><pos>0.51 0.70</pos><size>0.45 0.022</size><text>Description</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
         <text name="detailDesc">
-            <pos>0.51 0.70</pos><size>0.45 0.125</size>
+            <pos>0.51 0.725</pos><size>0.45 0.10</size>
             <metadata>description</metadata><container>true</container><containerType>vertical</containerType>
             <fontPath>${fontRegular}</fontPath><fontSize>0.019</fontSize>
             <color>${cText2}</color><lineSpacing>1.5</lineSpacing><zIndex>20</zIndex>
@@ -67,11 +68,16 @@
             <path>./../assets/ui/play-button.svg</path>
             <cornerRadius>${radButton}</cornerRadius><zIndex>20</zIndex>
         </image>
+        <!-- white play triangle + "Play" text, grouped roughly centered on the button (center x 0.735) -->
+        <image name="detailPlayIcon">
+            <pos>0.717 0.874</pos><origin>0.5 0.5</origin><size>0.015 0.026</size>
+            <path>./../assets/ui/play-triangle.svg</path><zIndex>21</zIndex>
+        </image>
         <text name="detailPlayLabel">
-            <pos>0.735 0.874</pos><origin>0.5 0.5</origin>
-            <text>PLAY</text><fontPath>${fontDisplay}</fontPath>
-            <fontSize>0.021</fontSize><color>102b06ff</color>
-            <horizontalAlignment>center</horizontalAlignment><zIndex>21</zIndex>
+            <pos>0.732 0.874</pos><origin>0 0.5</origin>
+            <text>Play</text><fontPath>${fontSemiBold}</fontPath>
+            <fontSize>0.021</fontSize><color>ffffffff</color>
+            <horizontalAlignment>left</horizontalAlignment><zIndex>21</zIndex>
         </text>
     </view>
 </theme>

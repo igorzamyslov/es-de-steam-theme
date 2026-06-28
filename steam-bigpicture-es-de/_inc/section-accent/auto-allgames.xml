@@ -1,0 +1,8 @@
+<theme>
+    <!-- Collection hero accent: All Games metadata ships no systemColor (falls back to grey
+         _default), which makes the hero read near-black. Override to a Steam-blue mood tint.
+         Included AFTER the metadata includes so it wins; used by heroTint (${systemColor}cc). -->
+    <variables>
+        <systemColor>2a6fb0</systemColor>
+    </variables>
+</theme>

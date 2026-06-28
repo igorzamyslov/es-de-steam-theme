@@ -1,11 +1,20 @@
 <theme>
     <include>./helpsystem.xml</include>
     <include>./status.xml</include>
+    <!-- section-strip highlight state MUST precede section-strip.xml: ES-DE resolves variables
+         in declaration order, so each var must be defined before the element that uses it
+         (and an override must follow its default). _default first, then per-collection override. -->
+    <include>./section-state/_default.xml</include>
+    <include>./section-state/${system.theme}.xml</include>
+    <!-- Steam-style persistent section nav (consumes the section-state vars above) -->
+    <include>./section-strip.xml</include>
     <!-- official ES-DE per-system metadata: ${systemName} (short name) + ${systemColor} (tint); full coverage, _default fallback -->
     <include>./../system-metadata/_default.xml</include>
     <include>./../system-metadata/${system.theme}.xml</include>
     <!-- targeted overrides for ES-DE short names that collapse to the manufacturer (e.g. nes -> NES) -->
     <include>./name-overrides/${system.theme}.xml</include>
+    <!-- collection hero accent color (after metadata so it overrides the grey _default) -->
+    <include>./section-accent/${system.theme}.xml</include>
     <view name="system">
         <!-- fallback base gradient (shown only if a system has no art) -->
         <image name="heroBg">
@@ -21,19 +30,9 @@
             <default>./../assets/ui/art-placeholder.svg</default>
             <zIndex>2</zIndex>
         </image>
-        <!-- mood colour gradient ON TOP of the art -->
-        <image name="heroTint">
-            <pos>0 0</pos><size>1 1</size>
-            <path>./../assets/ui/tint.svg</path>
-            <color>${systemColor}cc</color>
-            <zIndex>4</zIndex>
-        </image>
-        <!-- darken the lower area so the icon rail stays legible over the art -->
-        <image name="railScrim">
-            <pos>0 0.55</pos><size>1 0.45</size>
-            <path>./../assets/ui/rail-scrim.svg</path>
-            <zIndex>6</zIndex>
-        </image>
+        <!-- (mood colour tint removed for the art variant: art shows in its natural colours) -->
+        <!-- (railScrim removed for the art variant: it was bottom-heavy and stacked with the
+             footer, making the bottom darker than the top. The uniform railShelf below replaces it.) -->
         <!-- left scrim for text legibility -->
         <image name="heroScrim">
             <pos>0 0</pos><size>0.62 1</size>
@@ -63,6 +62,13 @@
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.022</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
         </text>
+        <!-- dark shelf behind the icon rail so the outline icons stay legible over busy art.
+             zIndex 9 = above the scrims (<=8) but below the name text (10) and the rail (40). -->
+        <image name="railShelf">
+            <pos>0 0.52</pos><size>1 0.405</size>
+            <path>./../assets/ui/rail-shelf.svg</path>
+            <zIndex>9</zIndex>
+        </image>
         <!-- bottom rail of system icons (kept above the help footer at y 0.925) -->
         <carousel name="rail">
             <pos>0 0.75</pos><size>1 0.15</size>
@@ -72,7 +78,7 @@
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.12</itemSize>
             <itemScale>1.18</itemScale>
-            <imageColor>ccd6e0ff</imageColor>
+            <imageColor>e8eef5ff</imageColor>
             <imageSelectedColor>ffffffff</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>

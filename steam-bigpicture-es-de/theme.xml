@@ -6,10 +6,15 @@
     <!-- base default for the detail-panel static media (each variant overrides this) -->
     <variables>
         <detailMediaType>marquee</detailMediaType>
-        <!-- corner-radius tokens (cornerRadius is screen-WIDTH-relative in ES-DE, so short
-             elements need a smaller value or they become pills). Steam-crisp values. -->
-        <rad>0.008</rad>          <!-- tiles / media / selector (~15px @1080p) -->
-        <radButton>0.004</radButton>  <!-- short controls e.g. Play (~8px) -->
+        <!-- corner-radius tokens. Big Picture is fully rectangular, so these are 0.
+             Kept as tokens (not removed) so fillets can be re-enabled in one place;
+             cornerRadius is screen-WIDTH-relative in ES-DE (same px on every element). -->
+        <rad>0</rad>          <!-- detail media -->
+        <radTile>0</radTile>      <!-- grid capsules -->
+        <radButton>0</radButton>  <!-- short controls e.g. Play -->
+        <!-- NOTE: section-strip nav defaults live in _inc/section-state/_default.xml, NOT here:
+             root-level variables take precedence over included ones in ES-DE, so defaults kept
+             here could never be overridden by the per-collection section-state includes. -->
     </variables>
 
     <!-- 8 variants = {hero neon, hero art} x {grid, list} x {marquee, screenshot}.

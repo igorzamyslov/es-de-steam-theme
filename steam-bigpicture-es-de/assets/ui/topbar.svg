@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 60" preserveAspectRatio="none">
+  <!-- dedicated top bar, mirrors footer.svg (solid bar + a thin edge line on the BOTTOM).
+       Height tuned so the clock/tabs (vertical center 0.028) sit centered: bar height 0.056
+       => bar center 0.028 => equal padding above and below the time. -->
+  <rect width="1920" height="60" fill="#0a0d12"/>
+  <rect y="58" width="1920" height="2" fill="#2b313a"/>
+</svg>

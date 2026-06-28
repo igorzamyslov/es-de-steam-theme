@@ -1,0 +1,9 @@
+<theme>
+    <!-- focused system is the All Games collection: light up LIBRARY, dim Platforms. -->
+    <variables>
+        <secTxtLibrary>e8edf2ff</secTxtLibrary>
+        <secTxtPlat>8f98a0ff</secTxtPlat>
+        <secUnLibrary>3a9bffff</secUnLibrary>
+        <secUnPlat>00000000</secUnPlat>
+    </variables>
+</theme>

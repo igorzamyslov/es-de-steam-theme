@@ -1,0 +1,6 @@
+<theme>
+    <!-- rename the Last Played collection to "Recent" to match the section tab -->
+    <variables>
+        <systemName>Recent</systemName>
+    </variables>
+</theme>

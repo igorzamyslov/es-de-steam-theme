@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <!-- dark shelf behind the system-icon rail (art variant). Long soft feather over the top
+       third = a gentle transition from the art; then a UNIFORM dark plateau (same darkness top
+       to bottom) behind the icons. -->
+  <defs>
+    <linearGradient id="shelf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#05070a" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#05070a" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#05070a" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" fill="url(#shelf)"/>
+</svg>
