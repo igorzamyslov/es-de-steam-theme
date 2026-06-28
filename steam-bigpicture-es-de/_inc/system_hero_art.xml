@@ -4,6 +4,8 @@
     <!-- official ES-DE per-system metadata: ${systemName} (short name) + ${systemColor} (tint); full coverage, _default fallback -->
     <include>./../system-metadata/_default.xml</include>
     <include>./../system-metadata/${system.theme}.xml</include>
+    <!-- targeted overrides for ES-DE short names that collapse to the manufacturer (e.g. nes -> NES) -->
+    <include>./name-overrides/${system.theme}.xml</include>
     <view name="system">
         <!-- fallback base gradient (shown only if a system has no art) -->
         <image name="heroBg">
@@ -70,7 +72,7 @@
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.12</itemSize>
             <itemScale>1.18</itemScale>
-            <imageColor>aab4c0ff</imageColor>
+            <imageColor>e8edf2dd</imageColor>
             <imageSelectedColor>ffffffff</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>

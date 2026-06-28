@@ -6,8 +6,10 @@
     <!-- base default for the detail-panel static media (each variant overrides this) -->
     <variables>
         <detailMediaType>marquee</detailMediaType>
-        <!-- single corner-radius token used everywhere for a consistent rounding -->
-        <rad>0.03</rad>
+        <!-- corner-radius tokens (cornerRadius is screen-WIDTH-relative in ES-DE, so short
+             elements need a smaller value or they become pills). Steam-crisp values. -->
+        <rad>0.008</rad>          <!-- tiles / media / selector (~15px @1080p) -->
+        <radButton>0.004</radButton>  <!-- short controls e.g. Play (~8px) -->
     </variables>
 
     <!-- 8 variants = {hero neon, hero art} x {grid, list} x {marquee, screenshot}.

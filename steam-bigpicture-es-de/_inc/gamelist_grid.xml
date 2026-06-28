@@ -17,7 +17,12 @@
         <grid name="capsules">
             <pos>0.035 0.16</pos><size>0.64 0.74</size>
             <imageType>cover</imageType>
-            <defaultImage>./../assets/ui/capsule-placeholder.svg</defaultImage>
+            <!-- no defaultImage: in a gamelist grid the game name is the automatic fallback
+                 when no cover is found, so art-less tiles show the title (styled below) -->
+            <textColor>${cText2}</textColor>
+            <textBackgroundColor>00000000</textBackgroundColor>
+            <fontPath>${fontSemiBold}</fontPath>
+            <fontSize>0.016</fontSize>
             <itemSize>0.10 0.22</itemSize>
             <itemSpacing>0.016 0.024</itemSpacing>
             <itemScale>1.07</itemScale>

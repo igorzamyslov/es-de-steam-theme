@@ -4,6 +4,8 @@
     <!-- official ES-DE per-system metadata: ${systemName} (short name) + ${systemColor} (tint); full coverage, _default fallback -->
     <include>./../system-metadata/_default.xml</include>
     <include>./../system-metadata/${system.theme}.xml</include>
+    <!-- targeted overrides for ES-DE short names that collapse to the manufacturer (e.g. nes -> NES) -->
+    <include>./name-overrides/${system.theme}.xml</include>
     <view name="system">
         <!-- atmospheric background plate (per-system bg added in Task 17) -->
         <image name="heroBg">
@@ -26,6 +28,12 @@
             <default>./../assets/icons/fallback.svg</default>
             <color>e8edf2ff</color>
             <zIndex>5</zIndex>
+        </image>
+        <!-- darken the lower area so the icon rail stays legible over the colored hero -->
+        <image name="railScrim">
+            <pos>0 0.55</pos><size>1 0.45</size>
+            <path>./../assets/ui/rail-scrim.svg</path>
+            <zIndex>6</zIndex>
         </image>
         <!-- left scrim for text legibility -->
         <image name="heroScrim">
@@ -65,7 +73,7 @@
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.12</itemSize>
             <itemScale>1.18</itemScale>
-            <imageColor>aab4c0ff</imageColor>
+            <imageColor>e8edf2dd</imageColor>
             <imageSelectedColor>ffffffff</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>

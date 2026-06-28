@@ -8,16 +8,8 @@
             <zIndex>10</zIndex>
         </image>
 
-        <!-- media plate: any aspect (horizontal screenshot or vertical box art) centers onto this -->
-        <image name="detailMediaBg">
-            <pos>0.85 0.135</pos>
-            <origin>0.5 0.5</origin>
-            <size>0.262 0.165</size>
-            <path>./../assets/ui/media-plate.svg</path>
-            <cornerRadius>${rad}</cornerRadius>
-            <zIndex>18</zIndex>
-        </image>
-        <!-- screenshot shown first; video auto-plays after a delay (falls back to placeholder) -->
+        <!-- media renders directly (no backing plate); has its own rounded corners.
+             screenshot/marquee shown first; video auto-plays after a delay -->
         <video name="detailMedia">
             <pos>0.85 0.135</pos>
             <origin>0.5 0.5</origin>
@@ -88,7 +80,7 @@
             <fontPath>${fontSemiBold}</fontPath><fontSize>0.015</fontSize><color>${cMuted}</color><letterCase>uppercase</letterCase><zIndex>20</zIndex></text>
         <text name="detailDesc">
             <pos>0.72 0.565</pos>
-            <size>0.26 0.275</size>
+            <size>0.26 0.25</size>
             <metadata>description</metadata>
             <container>true</container>
             <containerType>vertical</containerType>
@@ -103,7 +95,7 @@
         <image name="detailPlayBg">
             <pos>0.72 0.845</pos><size>0.26 0.058</size>
             <path>./../assets/ui/play-button.svg</path>
-            <cornerRadius>${rad}</cornerRadius><zIndex>20</zIndex>
+            <cornerRadius>${radButton}</cornerRadius><zIndex>20</zIndex>
         </image>
         <text name="detailPlayLabel">
             <pos>0.85 0.874</pos><origin>0.5 0.5</origin>
