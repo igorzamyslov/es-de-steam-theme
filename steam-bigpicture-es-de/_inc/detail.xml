@@ -1,18 +1,19 @@
 <theme>
-    <!-- Desktop detail panel. Panel x/width, content x and media width come from scale.xml per
-         font size (wider panel + bigger video at larger sizes). Vertical positions are fixed and
-         sized for the largest fonts, and the media is top-anchored with a fixed max height, so the
-         panel grows horizontally without needing a per-font-size vertical reflow. -->
+    <!-- Desktop detail panel. Panel x/width, content x, key column width and value column come from
+         scale.xml per font size (wider panel + bigger video at larger sizes). Vertical positions are
+         fixed and sized for the largest fonts; the media is centered and given a big max height so it
+         fills the panel width, with the description capped to ~3 lines (the rest of the height goes
+         to the video). -->
     <view name="gamelist">
         <image name="detailPanelBg">
             <pos>${pPanelX} 0</pos><size>${pPanelW} 1</size>
             <path>./../assets/ui/panel.svg</path><zIndex>10</zIndex>
         </image>
 
-        <!-- media: top-anchored, fills the panel inner width (wider for larger font sizes) -->
+        <!-- media: centered horizontally, big max box so most art fills the full panel width -->
         <video name="detailMedia">
-            <pos>${pContentX} 0.07</pos><origin>0 0</origin>
-            <maxSize>${pMediaW} 0.20</maxSize><imageMaxSize>${pMediaW} 0.20</imageMaxSize>
+            <pos>${pPanelCX} 0.07</pos><origin>0.5 0</origin>
+            <maxSize>${pInnerW} 0.32</maxSize><imageMaxSize>${pInnerW} 0.32</imageMaxSize>
             <imageType>${detailMediaType}</imageType>
             <default>./../assets/ui/capsule-placeholder.svg</default>
             <delay>2.5</delay><fadeInTime>0.6</fadeInTime>
@@ -22,49 +23,49 @@
         </video>
 
         <text name="detailTitle">
-            <pos>${pContentX} 0.28</pos><size>${pInnerW} 0.10</size>
+            <pos>${pContentX} 0.405</pos><size>${pInnerW} 0.085</size>
             <metadata>name</metadata><container>false</container>
             <fontPath>${fontDisplay}</fontPath><fontSize>${fsTitle}</fontSize>
             <color>${cText}</color><zIndex>20</zIndex>
         </text>
 
         <rating name="detailRating">
-            <pos>${pContentX} 0.39</pos><size>0 0.024</size>
+            <pos>${pContentX} 0.50</pos><size>0 0.024</size>
             <color>${cStar}</color><hideIfZero>false</hideIfZero><zIndex>20</zIndex>
         </rating>
         <badges name="detailFav">
-            <pos>0.952 0.39</pos><origin>1 0</origin><size>0.07 0.026</size>
+            <pos>0.952 0.50</pos><origin>1 0</origin><size>0.07 0.026</size>
             <slots>favorite</slots><lines>1</lines><itemsPerLine>1</itemsPerLine>
             <badgeIconColor>${cStar}</badgeIconColor><zIndex>20</zIndex>
         </badges>
 
-        <text name="detailGenreKey"><pos>${pContentX} 0.435</pos><size>0.08 0.024</size><text>Genre</text>
+        <text name="detailGenreKey"><pos>${pContentX} 0.54</pos><size>${pKeyW} 0.024</size><text>Genre</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
-        <text name="detailGenre"><pos>${pValueX} 0.435</pos><size>${pValueW} 0.024</size><metadata>genre</metadata>
+        <text name="detailGenre"><pos>${pValueX} 0.54</pos><size>${pValueW} 0.024</size><metadata>genre</metadata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
 
-        <text name="detailDevKey"><pos>${pContentX} 0.47</pos><size>0.08 0.024</size><text>Developer</text>
+        <text name="detailDevKey"><pos>${pContentX} 0.578</pos><size>${pKeyW} 0.024</size><text>Developer</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
-        <text name="detailDeveloper"><pos>${pValueX} 0.47</pos><size>${pValueW} 0.024</size><metadata>developer</metadata>
+        <text name="detailDeveloper"><pos>${pValueX} 0.578</pos><size>${pValueW} 0.024</size><metadata>developer</metadata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
 
-        <text name="detailPlayersKey"><pos>${pContentX} 0.505</pos><size>0.08 0.024</size><text>Players</text>
+        <text name="detailPlayersKey"><pos>${pContentX} 0.616</pos><size>${pKeyW} 0.024</size><text>Players</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
-        <text name="detailPlayers"><pos>${pValueX} 0.505</pos><size>${pValueW} 0.024</size><metadata>players</metadata>
+        <text name="detailPlayers"><pos>${pValueX} 0.616</pos><size>${pValueW} 0.024</size><metadata>players</metadata>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
 
-        <text name="detailReleasedKey"><pos>${pContentX} 0.54</pos><size>0.08 0.024</size><text>Released</text>
+        <text name="detailReleasedKey"><pos>${pContentX} 0.654</pos><size>${pKeyW} 0.024</size><text>Released</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
-        <datetime name="detailReleased"><pos>${pValueX} 0.54</pos><size>${pValueW} 0.024</size><metadata>releasedate</metadata><format>%Y</format>
+        <datetime name="detailReleased"><pos>${pValueX} 0.654</pos><size>${pValueW} 0.024</size><metadata>releasedate</metadata><format>%Y</format>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cText2}</color><zIndex>20</zIndex></datetime>
 
-        <text name="detailDescLabel"><pos>${pContentX} 0.58</pos><size>${pInnerW} 0.022</size><text>Description</text>
+        <text name="detailDescLabel"><pos>${pContentX} 0.695</pos><size>${pInnerW} 0.022</size><text>Description</text>
             <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
         <text name="detailDesc">
-            <pos>${pContentX} 0.605</pos><size>${pInnerW} 0.235</size>
+            <pos>${pContentX} 0.72</pos><size>${pInnerW} 0.11</size>
             <metadata>description</metadata><container>true</container><containerType>vertical</containerType>
             <fontPath>${fontRegular}</fontPath><fontSize>${fsMeta}</fontSize>
-            <color>${cText2}</color><lineSpacing>1.5</lineSpacing><zIndex>20</zIndex>
+            <color>${cText2}</color><lineSpacing>1.35</lineSpacing><zIndex>20</zIndex>
         </text>
 
         <image name="detailPlayBg">

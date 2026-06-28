@@ -24,9 +24,9 @@
             <heroNameY>0.48</heroNameY><heroSpecY>0.595</heroSpecY><heroCountY>0.635</heroCountY>
             <heroDescY>0.685</heroDescY><heroDescH>0.062</heroDescH>
             <!-- detail panel (6 grid cols on 16:9): x/width + content x + media width -->
-            <pPanelX>0.666</pPanelX><pPanelW>0.299</pPanelW><pContentX>0.686</pContentX><pValueX>0.771</pValueX>
-            <pInnerW>0.259</pInnerW><pValueW>0.174</pValueW><pMediaW>0.259</pMediaW>
-            <pPlayIconX>0.7975</pPlayIconX><pPlayLabelX>0.8125</pPlayLabelX>
+            <pPanelX>0.666</pPanelX><pPanelW>0.299</pPanelW><pContentX>0.686</pContentX><pInnerW>0.259</pInnerW>
+            <pPanelCX>0.8155</pPanelCX><pKeyW>0.11</pKeyW><pValueX>0.796</pValueX><pValueW>0.149</pValueW>
+            <pPlayIconX>0.7975</pPlayIconX><pPlayLabelX>0.8125</pPlayLabelX><glCountY>0.108</glCountY>
         </variables>
     </fontSize>
     <fontSize name="large">
@@ -40,9 +40,9 @@
             <heroNameY>0.44</heroNameY><heroSpecY>0.555</heroSpecY><heroCountY>0.595</heroCountY>
             <heroDescY>0.645</heroDescY><heroDescH>0.10</heroDescH>
             <!-- detail panel (5 grid cols on 16:9): widest panel -> biggest video -->
-            <pPanelX>0.576</pPanelX><pPanelW>0.389</pPanelW><pContentX>0.596</pContentX><pValueX>0.681</pValueX>
-            <pInnerW>0.349</pInnerW><pValueW>0.264</pValueW><pMediaW>0.349</pMediaW>
-            <pPlayIconX>0.7525</pPlayIconX><pPlayLabelX>0.7675</pPlayLabelX>
+            <pPanelX>0.576</pPanelX><pPanelW>0.389</pPanelW><pContentX>0.596</pContentX><pInnerW>0.349</pInnerW>
+            <pPanelCX>0.7705</pPanelCX><pKeyW>0.14</pKeyW><pValueX>0.736</pValueX><pValueW>0.209</pValueW>
+            <pPlayIconX>0.7525</pPlayIconX><pPlayLabelX>0.7675</pPlayLabelX><glCountY>0.122</glCountY>
         </variables>
     </fontSize>
     <fontSize name="x-large">
@@ -56,9 +56,9 @@
             <heroNameY>0.40</heroNameY><heroSpecY>0.515</heroSpecY><heroCountY>0.565</heroCountY>
             <heroDescY>0.615</heroDescY><heroDescH>0.13</heroDescH>
             <!-- detail panel (4 grid cols on 16:9) -->
-            <pPanelX>0.672</pPanelX><pPanelW>0.293</pPanelW><pContentX>0.692</pContentX><pValueX>0.777</pValueX>
-            <pInnerW>0.253</pInnerW><pValueW>0.168</pValueW><pMediaW>0.253</pMediaW>
-            <pPlayIconX>0.8005</pPlayIconX><pPlayLabelX>0.8155</pPlayLabelX>
+            <pPanelX>0.672</pPanelX><pPanelW>0.293</pPanelW><pContentX>0.692</pContentX><pInnerW>0.253</pInnerW>
+            <pPanelCX>0.8185</pPanelCX><pKeyW>0.155</pKeyW><pValueX>0.847</pValueX><pValueW>0.098</pValueW>
+            <pPlayIconX>0.8005</pPlayIconX><pPlayLabelX>0.8155</pPlayLabelX><glCountY>0.135</glCountY>
         </variables>
     </fontSize>
 

@@ -55,7 +55,7 @@
                 <color>${cText}</color><zIndex>20</zIndex>
             </text>
             <gamelistinfo name="glCount">
-                <pos>0.035 0.108</pos><size>0.3 0.03</size>
+                <pos>0.035 ${glCountY}</pos><size>0.3 0.03</size>
                 <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
                 <color>${cText2}</color><zIndex>20</zIndex>
             </gamelistinfo>
