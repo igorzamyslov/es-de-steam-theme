@@ -59,7 +59,7 @@
             <selectorLayer>top</selectorLayer>
             <!-- focus: keep the selected item full colour/brightness; non-selected slightly darker + desaturated -->
             <unfocusedItemOpacity>1.0</unfocusedItemOpacity>
-            <unfocusedItemDimming>0.82</unfocusedItemDimming>
+            <unfocusedItemDimming>0.76</unfocusedItemDimming>
             <unfocusedItemSaturation>0.7</unfocusedItemSaturation>
             <zIndex>30</zIndex>
         </grid>
