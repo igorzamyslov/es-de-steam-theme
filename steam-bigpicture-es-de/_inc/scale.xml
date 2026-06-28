@@ -26,7 +26,7 @@
             <!-- detail panel (6 grid cols on 16:9): x/width + content x + media width -->
             <pPanelX>0.666</pPanelX><pPanelW>0.334</pPanelW><pContentX>0.686</pContentX><pInnerW>0.294</pInnerW>
             <pPanelCX>0.833</pPanelCX><pKeyW>0.07</pKeyW><pValueX>0.756</pValueX><pValueW>0.224</pValueW>
-            <pPlayIconX>0.815</pPlayIconX><pPlayLabelX>0.830</pPlayLabelX><glCountY>0.108</glCountY>
+            <pPlayIconX>0.711</pPlayIconX><pPlayLabelX>0.734</pPlayLabelX><glCountY>0.108</glCountY>
         </variables>
     </fontSize>
     <fontSize name="large">
@@ -42,7 +42,7 @@
             <!-- detail panel (5 grid cols on 16:9): widest panel -> biggest video -->
             <pPanelX>0.576</pPanelX><pPanelW>0.424</pPanelW><pContentX>0.596</pContentX><pInnerW>0.384</pInnerW>
             <pPanelCX>0.788</pPanelCX><pKeyW>0.085</pKeyW><pValueX>0.681</pValueX><pValueW>0.299</pValueW>
-            <pPlayIconX>0.770</pPlayIconX><pPlayLabelX>0.785</pPlayLabelX><glCountY>0.122</glCountY>
+            <pPlayIconX>0.621</pPlayIconX><pPlayLabelX>0.644</pPlayLabelX><glCountY>0.122</glCountY>
         </variables>
     </fontSize>
     <fontSize name="x-large">
@@ -58,7 +58,7 @@
             <!-- detail panel (4 grid cols on 16:9) -->
             <pPanelX>0.672</pPanelX><pPanelW>0.328</pPanelW><pContentX>0.692</pContentX><pInnerW>0.288</pInnerW>
             <pPanelCX>0.836</pPanelCX><pKeyW>0.10</pKeyW><pValueX>0.792</pValueX><pValueW>0.188</pValueW>
-            <pPlayIconX>0.818</pPlayIconX><pPlayLabelX>0.833</pPlayLabelX><glCountY>0.135</glCountY>
+            <pPlayIconX>0.717</pPlayIconX><pPlayLabelX>0.740</pPlayLabelX><glCountY>0.135</glCountY>
         </variables>
     </fontSize>
 
