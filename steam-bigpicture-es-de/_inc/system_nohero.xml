@@ -1,0 +1,39 @@
+<theme>
+    <include>./helpsystem.xml</include>
+    <include>./status.xml</include>
+    <view name="system">
+        <image name="bgPlate">
+            <pos>0 0</pos><size>1 1</size>
+            <path>./assets/ui/hero-bg.svg</path><zIndex>1</zIndex>
+        </image>
+        <text name="sgName">
+            <pos>0.035 0.06</pos><size>0.6 0.07</size>
+            <systemdata>fullname</systemdata>
+            <fontPath>${fontExtraBold}</fontPath><fontSize>0.04</fontSize>
+            <color>${cText}</color><zIndex>10</zIndex>
+        </text>
+        <text name="sgCount">
+            <pos>0.035 0.115</pos><size>0.5 0.04</size>
+            <systemdata>gamecount</systemdata>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>0.022</fontSize>
+            <color>${cMuted}</color><zIndex>10</zIndex>
+        </text>
+        <grid name="sysGrid">
+            <pos>0.035 0.17</pos><size>0.93 0.74</size>
+            <staticImage>./system-controllers-outline/${system.theme}.svg</staticImage>
+            <defaultImage>./assets/icons/fallback.svg</defaultImage>
+            <itemSize>0.10 0.16</itemSize>
+            <itemSpacing>0.012 0.018</itemSpacing>
+            <itemScale>1.06</itemScale>
+            <scaleInwards>true</scaleInwards>
+            <imageColor>aab4c0ff</imageColor>
+            <imageSelectedColor>ffffffff</imageSelectedColor>
+            <backgroundColor>1a1f27ff</backgroundColor>
+            <selectorColor>3a9bffff</selectorColor>
+            <selectorLayer>bottom</selectorLayer>
+            <text>${system.fullName}</text>
+            <textColor>00000000</textColor>
+            <zIndex>40</zIndex>
+        </grid>
+    </view>
+</theme>
