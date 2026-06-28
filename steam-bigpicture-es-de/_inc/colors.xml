@@ -1,0 +1,16 @@
+<theme>
+    <colorScheme name="dark">
+        <variables>
+            <cBg1>15181dff</cBg1>
+            <cBg2>0b0e12ff</cBg2>
+            <cPanel>191d23ff</cPanel>
+            <cLine>2b313aff</cLine>
+            <cAccent>3a9bffff</cAccent>
+            <cText>e8edf2ff</cText>
+            <cText2>aab4c0ff</cText2>
+            <cMuted>6d7884ff</cMuted>
+            <cStar>f5c518ff</cStar>
+            <cGreen>7fb23bff</cGreen>
+        </variables>
+    </colorScheme>
+</theme>
