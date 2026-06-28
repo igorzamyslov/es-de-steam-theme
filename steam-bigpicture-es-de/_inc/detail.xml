@@ -33,7 +33,7 @@
             <metadata>name</metadata>
             <container>false</container>
             <fontPath>${fontDisplay}</fontPath>
-            <fontSize>0.026</fontSize>
+            <fontSize>${fsTitle}</fontSize>
             <color>${cText}</color>
             <zIndex>20</zIndex>
         </text>
@@ -58,28 +58,28 @@
 
         <!-- metadata: label + value share the SAME y so they align; values are single-line -->
         <text name="detailGenreKey"><pos>0.72 0.425</pos><size>0.08 0.024</size><text>Genre</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
         <text name="detailGenre"><pos>0.805 0.425</pos><size>0.175 0.024</size><metadata>genre</metadata>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
 
         <text name="detailDevKey"><pos>0.72 0.457</pos><size>0.08 0.024</size><text>Developer</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
         <text name="detailDeveloper"><pos>0.805 0.457</pos><size>0.175 0.024</size><metadata>developer</metadata>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
 
         <text name="detailPlayersKey"><pos>0.72 0.489</pos><size>0.08 0.024</size><text>Players</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
         <text name="detailPlayers"><pos>0.805 0.489</pos><size>0.175 0.024</size><metadata>players</metadata>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cText2}</color><zIndex>20</zIndex></text>
 
         <text name="detailReleasedKey"><pos>0.72 0.521</pos><size>0.08 0.024</size><text>Released</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
         <datetime name="detailReleased"><pos>0.805 0.521</pos><size>0.175 0.024</size><metadata>releasedate</metadata><format>%Y</format>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cText2}</color><zIndex>20</zIndex></datetime>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cText2}</color><zIndex>20</zIndex></datetime>
 
         <!-- description: the only scroll region; ends above the Play button -->
         <text name="detailDescLabel"><pos>0.72 0.565</pos><size>0.26 0.022</size><text>Description</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.0185</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsMeta}</fontSize><color>${cMuted}</color><zIndex>20</zIndex></text>
         <text name="detailDesc">
             <pos>0.72 0.59</pos>
             <size>0.26 0.225</size>
@@ -87,7 +87,7 @@
             <container>true</container>
             <containerType>vertical</containerType>
             <fontPath>${fontRegular}</fontPath>
-            <fontSize>0.0185</fontSize>
+            <fontSize>${fsMeta}</fontSize>
             <color>${cText2}</color>
             <lineSpacing>1.5</lineSpacing>
             <zIndex>20</zIndex>
@@ -107,7 +107,7 @@
         <text name="detailPlayLabel">
             <pos>0.847 0.874</pos><origin>0 0.5</origin>
             <text>Play</text><fontPath>${fontSemiBold}</fontPath>
-            <fontSize>0.021</fontSize><color>ffffffff</color>
+            <fontSize>${fsButton}</fontSize><color>ffffffff</color>
             <horizontalAlignment>left</horizontalAlignment><zIndex>21</zIndex>
         </text>
     </view>
