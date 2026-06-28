@@ -1,0 +1,20 @@
+<theme>
+    <view name="system, gamelist">
+        <systemstatus name="status">
+            <pos>0.978 0.028</pos>
+            <origin>1 0.5</origin>
+            <height>0.03</height>
+            <color>aab4c0ff</color>
+            <fontPath>${fontSemiBold}</fontPath>
+            <entries>battery, wifi</entries>
+        </systemstatus>
+        <clock name="clock">
+            <pos>0.905 0.028</pos>
+            <origin>1 0.5</origin>
+            <fontPath>${fontSemiBold}</fontPath>
+            <fontSize>0.03</fontSize>
+            <color>aab4c0ff</color>
+            <format>%H:%M</format>
+        </clock>
+    </view>
+</theme>
