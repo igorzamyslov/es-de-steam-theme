@@ -73,7 +73,7 @@
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.12</itemSize>
             <itemScale>1.18</itemScale>
-            <imageColor>b9c3cfff</imageColor>
+            <imageColor>ccd6e0ff</imageColor>
             <imageSelectedColor>ffffffff</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>

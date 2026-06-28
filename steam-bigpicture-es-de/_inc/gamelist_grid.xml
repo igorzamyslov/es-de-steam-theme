@@ -21,12 +21,15 @@
                  when no cover is found, so art-less tiles show the title (styled below) -->
             <textColor>${cText}</textColor>
             <textBackgroundColor>00000000</textBackgroundColor>
+            <textRelativeScale>0.84</textRelativeScale>
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>0.018</fontSize>
             <itemSize>0.10 0.205</itemSize>
             <itemSpacing>0.016 0.024</itemSpacing>
-            <itemScale>1.06</itemScale>
-            <scaleInwards>true</scaleInwards>
+            <!-- no selection scaling: a scaled item overflows the grid's bottom edge when
+                 you navigate to the last visible row and ES-DE clips it ("cut"). Selection
+                 is shown by the accent frame + dimming of unfocused items instead. -->
+            <itemScale>1.0</itemScale>
             <!-- contain = whole cover always shown (never crops/cuts box art like 'cover' does);
                  the rounded plate fills the tile so framed covers still look intentional -->
             <imageFit>contain</imageFit>

@@ -9,7 +9,7 @@
             <entries>battery, wifi</entries>
         </systemstatus>
         <clock name="clock">
-            <pos>0.905 0.028</pos>
+            <pos>0.80 0.028</pos>
             <origin>1 0.5</origin>
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>0.03</fontSize>
