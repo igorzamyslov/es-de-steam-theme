@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 221">
-  <rect x="11" y="11" width="170" height="199" rx="15" fill="none" stroke="#bfe0ff" stroke-opacity="0.14" stroke-width="20"/>
-  <rect x="11" y="11" width="170" height="199" rx="15" fill="none" stroke="#9fd0ff" stroke-opacity="0.45" stroke-width="9"/>
-  <rect x="11" y="11" width="170" height="199" rx="15" fill="none" stroke="#ffffff" stroke-opacity="0.95" stroke-width="3.5"/>
+  <!-- soft halo, fully inset so it only bleeds INWARD (outer glow is impossible: selector is item-capped) -->
+  <rect x="13" y="13" width="166" height="195" rx="6" fill="none" stroke="#bfe0ff" stroke-opacity="0.13" stroke-width="16"/>
+  <rect x="6" y="6" width="180" height="209" rx="11" fill="none" stroke="#9fd0ff" stroke-opacity="0.40" stroke-width="9"/>
+  <!-- bright crisp core ON the tile edge (outer face of the 3.5px stroke = item rectangle edge); rx matches the tile -->
+  <rect x="1.75" y="1.75" width="188.5" height="217.5" rx="15" fill="none" stroke="#ffffff" stroke-opacity="0.96" stroke-width="3.5"/>
 </svg>
