@@ -21,28 +21,28 @@
         <text name="secLibrary">
             <pos>0.33 0.028</pos><origin>0.5 0.5</origin><size>0.13 0.04</size>
             <text>LIBRARY</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
             <horizontalAlignment>center</horizontalAlignment>
             <color>${secTxtLibrary}</color><stationary>always</stationary><zIndex>46</zIndex>
         </text>
         <text name="secFavorites">
             <pos>0.44 0.028</pos><origin>0.5 0.5</origin><size>0.13 0.04</size>
             <text>FAVORITES</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
             <horizontalAlignment>center</horizontalAlignment>
             <color>${secTxtFav}</color><stationary>always</stationary><zIndex>46</zIndex>
         </text>
         <text name="secRecent">
             <pos>0.55 0.028</pos><origin>0.5 0.5</origin><size>0.13 0.04</size>
             <text>RECENT</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
             <horizontalAlignment>center</horizontalAlignment>
             <color>${secTxtRecent}</color><stationary>always</stationary><zIndex>46</zIndex>
         </text>
         <text name="secPlatforms">
             <pos>0.67 0.028</pos><origin>0.5 0.5</origin><size>0.13 0.04</size>
             <text>PLATFORMS</text>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.018</fontSize>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
             <horizontalAlignment>center</horizontalAlignment>
             <color>${secTxtPlat}</color><stationary>always</stationary><zIndex>46</zIndex>
         </text>

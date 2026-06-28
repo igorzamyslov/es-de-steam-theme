@@ -12,7 +12,7 @@
             <pos>0.022 0.028</pos>
             <origin>0 0.5</origin>
             <fontPath>${fontSemiBold}</fontPath>
-            <fontSize>0.03</fontSize>
+            <fontSize>${fsClock}</fontSize>
             <color>aab4c0ff</color>
             <format>%H:%M</format>
         </clock>

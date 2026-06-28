@@ -56,7 +56,7 @@
             <pos>0.05 0.55</pos><size>0.60 0.095</size>
             <text>${systemName}</text>
             <container>false</container>
-            <fontPath>${fontDisplay}</fontPath><fontSize>0.052</fontSize>
+            <fontPath>${fontDisplay}</fontPath><fontSize>${fsHero}</fontSize>
             <color>${cText}</color><zIndex>10</zIndex>
         </text>
         <!-- secondary: manufacturer (non-redundant with the system name; ${systemManufacturer} from metadata) -->
@@ -64,13 +64,13 @@
             <pos>0.05 0.645</pos><size>0.62 0.04</size>
             <text>${systemManufacturer}</text>
             <container>false</container>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.020</fontSize>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsLabel}</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
         </text>
         <text name="sysCount">
             <pos>0.05 0.70</pos><size>0.5 0.05</size>
             <systemdata>gamecount</systemdata>
-            <fontPath>${fontSemiBold}</fontPath><fontSize>0.022</fontSize>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsCount}</fontSize>
             <color>${cText2}</color><zIndex>10</zIndex>
         </text>
         <!-- bottom rail of system icons -->

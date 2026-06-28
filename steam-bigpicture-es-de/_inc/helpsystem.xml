@@ -15,7 +15,7 @@
             <textColorDimmed>6d7884ff</textColorDimmed>
             <iconColorDimmed>6d7884ff</iconColorDimmed>
             <fontPath>${fontSemiBold}</fontPath>
-            <fontSize>0.02</fontSize>
+            <fontSize>${fsLabel}</fontSize>
             <entrySpacing>0.011</entrySpacing>
             <iconTextSpacing>0.005</iconTextSpacing>
             <letterCase>capitalize</letterCase>
