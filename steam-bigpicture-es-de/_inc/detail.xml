@@ -73,7 +73,7 @@
         </text>
 
         <image name="detailPlayBg">
-            <pos>${pContentX} 0.845</pos><size>${pInnerW} 0.058</size>
+            <pos>${pContentX} 0.845</pos><size>${pPlayW} 0.058</size>
             <path>./../assets/ui/play-button.svg</path>
             <cornerRadius>${radButton}</cornerRadius><zIndex>20</zIndex>
         </image>
