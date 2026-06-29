@@ -16,7 +16,7 @@ import sys
 import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-THEME = os.path.join(REPO, "steam-bigpicture-es-de")
+THEME = os.path.join(REPO, "steam-ui")
 VENDORED = {"system-logos", "system-controllers-outline", "system-metadata"}
 # relative path ending in a known asset/include extension
 PATH_RE = re.compile(r"^\.{1,2}/.*\.(svg|ttf|otf|jpe?g|png|xml|json)$", re.IGNORECASE)

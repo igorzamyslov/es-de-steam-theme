@@ -16,7 +16,7 @@ from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-THEME = os.path.join(REPO, "steam-bigpicture-es-de")
+THEME = os.path.join(REPO, "steam-ui")
 FONT = os.path.join(THEME, "fonts", "rubik-extrabold.ttf")
 OUT = os.path.join(THEME, "system-logos", "system-label")
 

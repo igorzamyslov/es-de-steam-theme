@@ -1,7 +1,7 @@
 #!/bin/bash
 # Verifies that ./-relative path values inside _inc/*.xml resolve to real files.
 # ${system.theme} is substituted with a known system ("gc"). Other ${...} are skipped.
-cd "$(git rev-parse --show-toplevel)/steam-bigpicture-es-de" || exit 2
+cd "$(git rev-parse --show-toplevel)/steam-ui" || exit 2
 fail=0
 for f in _inc/*.xml; do
   dir="$(dirname "$f")"

@@ -1,6 +1,6 @@
 # Hero art — locked style spec
 
-The `Hero (art)` variant loads one poster per system at `steam-bigpicture-es-de/systems/art/<system>.jpg`. This spec locks the look so a full pack stays visually consistent. The shipped `gba.jpg` is the reference frame.
+The `Hero (art)` variant loads one poster per system at `steam-ui/systems/art/<system>.jpg`. This spec locks the look so a full pack stays visually consistent. The shipped `gba.jpg` is the reference frame.
 
 ## Canvas & technical
 
@@ -29,4 +29,4 @@ Tie each poster's dominant light to the system's `${systemColor}` (provided per 
 ## Post-process
 
 - Crop/cover to 1280×720; apply left + bottom darkening; export JPG (quality ~85).
-- Save as `steam-bigpicture-es-de/systems/art/<system>.jpg` where `<system>` is the ES-DE `${system.theme}` key (the manifest's first column).
+- Save as `steam-ui/systems/art/<system>.jpg` where `<system>` is the ES-DE `${system.theme}` key (the manifest's first column).

@@ -20,8 +20,8 @@ import sys
 import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-META = os.path.join(REPO, "steam-bigpicture-es-de", "system-metadata")
-OUT = os.path.join(REPO, "steam-bigpicture-es-de", "_inc", "section-accent")
+META = os.path.join(REPO, "steam-ui", "system-metadata")
+OUT = os.path.join(REPO, "steam-ui", "_inc", "section-accent")
 
 # Tunables. lum is perceived luminance 0..1; systems below LUM_THRESHOLD are "too dark".
 LUM_THRESHOLD = 0.32

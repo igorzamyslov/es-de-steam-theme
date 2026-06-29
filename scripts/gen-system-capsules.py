@@ -19,7 +19,7 @@ import sys
 import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-THEME = os.path.join(REPO, "steam-bigpicture-es-de")
+THEME = os.path.join(REPO, "steam-ui")
 META = os.path.join(THEME, "system-metadata")
 LOGOS = os.path.join(THEME, "system-logos", "system-logo-color")
 OUT = os.path.join(THEME, "system-logos", "system-capsule")

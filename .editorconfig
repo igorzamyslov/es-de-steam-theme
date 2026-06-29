@@ -23,7 +23,7 @@ indent_size = 2
 trim_trailing_whitespace = false
 
 # Vendored upstream assets — leave exactly as imported
-[steam-bigpicture-es-de/{system-logos,system-controllers-outline,system-metadata}/**]
+[steam-ui/{system-logos,system-controllers-outline,system-metadata}/**]
 charset = unset
 end_of_line = unset
 insert_final_newline = unset

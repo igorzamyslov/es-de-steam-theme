@@ -8,7 +8,7 @@ focus = scale+dim, grid focus = frame, baked panels/blooms). Real colour logos a
 """
 import json, re, pathlib
 
-REPO = pathlib.Path("/Users/igorzamyslov/Projects/es-de-steam-theme/.claude/worktrees/awesome-proskuriakova-61191f/steam-bigpicture-es-de")
+REPO = pathlib.Path("/Users/igorzamyslov/Projects/es-de-steam-theme/.claude/worktrees/awesome-proskuriakova-61191f/steam-ui")
 COLOR = REPO / "system-logos" / "system-logo-color"
 OUT = pathlib.Path("/Users/igorzamyslov/Projects/es-de-steam-theme/.claude/worktrees/awesome-proskuriakova-61191f/docs/mockup/steam-system-redesign.html")
 

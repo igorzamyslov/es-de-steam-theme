@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate a per-system hero-art prompt manifest from the bundled system metadata.
 
-Reads each steam-bigpicture-es-de/system-metadata/<system>.xml, pulls the top-level
+Reads each steam-ui/system-metadata/<system>.xml, pulls the top-level
 <variables> (NOT the per-language overrides), and expands a locked prompt template.
 Writes docs/hero-art/prompts.tsv: system<TAB>prompt<TAB>primary_color<TAB>palette.
 
@@ -12,7 +12,7 @@ import sys
 import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-META = os.path.join(REPO, "steam-bigpicture-es-de", "system-metadata")
+META = os.path.join(REPO, "steam-ui", "system-metadata")
 OUT = os.path.join(REPO, "docs", "hero-art", "prompts.tsv")
 
 FIELDS = (

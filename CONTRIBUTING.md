@@ -37,9 +37,9 @@ The asset-reference check is the theme-specific one worth knowing: ES-DE silentl
 `system-logos`, `system-controllers-outline`, and `system-metadata` are vendored as git subtrees (committed in-tree so the theme is self-contained). To pull upstream updates:
 
 ```bash
-git subtree pull --prefix=steam-bigpicture-es-de/system-logos                es-logos       master --squash
-git subtree pull --prefix=steam-bigpicture-es-de/system-controllers-outline  es-controllers master --squash
-git subtree pull --prefix=steam-bigpicture-es-de/system-metadata             es-metadata    master --squash
+git subtree pull --prefix=steam-ui/system-logos                es-logos       master --squash
+git subtree pull --prefix=steam-ui/system-controllers-outline  es-controllers master --squash
+git subtree pull --prefix=steam-ui/system-metadata             es-metadata    master --squash
 ```
 
 The `es-logos` / `es-controllers` / `es-metadata` remotes are already configured; run `git remote -v` to confirm.

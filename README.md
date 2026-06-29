@@ -17,7 +17,7 @@ It adapts to your display: a per-font-size type-and-density scale with a side-pa
 
 1. **Enable automatic collections first.** The top nav (**Library / Favorites / Recent / Platforms**) is the Steam-style spine of this theme; the first three tabs are ES-DE *automatic collections*, off by default. Without them, three of four tabs show empty systems. In ES-DE: **Game Collection Settings → Enable automatic game collections** (see [Collections](#collections-library-favorites-recent)).
 2. Download or clone this repository.
-3. Copy (or symlink) `steam-bigpicture-es-de/` into your ES-DE themes folder:
+3. Copy (or symlink) `steam-ui/` into your ES-DE themes folder:
    - **Linux / macOS:** `~/ES-DE/themes/`
    - **Windows:** `%USERPROFILE%\ES-DE\themes\`
    - Custom data directory: `<your data path>/themes/`
@@ -93,7 +93,7 @@ Once enabled, ES-DE aggregates games across all platforms as virtual systems and
 The "Hero (art)" variants show a placeholder until you add per-platform background art:
 
 - **`docs/hero-art-pipeline.md`** — production workflow (canvas size, naming, export settings).
-- **`steam-bigpicture-es-de/systems/art/README.md`** — where to place files so the theme picks them up.
+- **`steam-ui/systems/art/README.md`** — where to place files so the theme picks them up.
 
 ---
 

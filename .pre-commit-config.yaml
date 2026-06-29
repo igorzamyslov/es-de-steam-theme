@@ -8,7 +8,7 @@
 # Never touch vendored upstream assets or internal process artifacts.
 exclude: |
   (?x)^(
-    steam-bigpicture-es-de/(system-logos|system-controllers-outline|system-metadata)/|
+    steam-ui/(system-logos|system-controllers-outline|system-metadata)/|
     \.superpowers/|
     docs/superpowers/
   )
