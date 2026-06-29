@@ -1,4 +1,4 @@
-# Steam Big Picture for ES-DE
+# Steam UI for ES-DE
 
 A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view has a bottom rail of **full-colour system-logo capsules** over a dark, full-bleed hero — the focused system shown as a large white logo (collections as a clean white label) beside an info card with its details; the gamelist shows a capsule grid (or list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy, with a Steam-blue accent on the active nav. Per-system colour comes through the rail capsules and a subtle hero tint. **ES-DE only** — runs on Steam Deck, desktop, and distros that bundle ES-DE (not a muOS/Knulli/ROCKNIX/Batocera theme).
 
@@ -21,7 +21,7 @@ It adapts to your display: a per-font-size type-and-density scale with a side-pa
    - **Linux / macOS:** `~/ES-DE/themes/`
    - **Windows:** `%USERPROFILE%\ES-DE\themes\`
    - Custom data directory: `<your data path>/themes/`
-4. Launch ES-DE, open **UI Settings → Theme**, and select **Steam Big Picture**.
+4. Launch ES-DE, open **UI Settings → Theme**, and select **Steam UI**.
 
 > **Small screens (5–6" handhelds):** the default **Medium** font size is the densest grid. For comfortable reading, set **UI Settings → Theme font size** to **Large** or **X-Large**.
 >
