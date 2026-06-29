@@ -36,15 +36,8 @@
             <color>${systemColor}88</color>
             <zIndex>2</zIndex>
         </image>
-        <!-- per-system colour bloom behind the logo: white asset multiplied by ${systemColor}
-             so the focused system's colour blooms across the hero (radial isn't an engine
-             primitive; this is a baked diagonal-linear glow asset). -->
-        <image name="heroBloom">
-            <pos>0.45 0</pos><size>0.55 1</size>
-            <path>./../assets/ui/hero-bloom.svg</path>
-            <color>${systemColor}3a</color>
-            <zIndex>3</zIndex>
-        </image>
+        <!-- (heroBloom removed: the one-sided glow read as a dark band in the middle; the hero is
+             now an even, uniform per-system tint over the dark base.) -->
         <!-- hero subject: platforms show the full-colour logo (heroColorOpacity=1); the three
              auto-collections fade it out (=0) and show the clean white label below instead, so the
              rail and the main screen use the same label. -->
