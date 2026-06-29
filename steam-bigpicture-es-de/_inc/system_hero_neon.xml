@@ -33,7 +33,7 @@
         <image name="heroTint">
             <pos>0 0</pos><size>1 1</size>
             <path>./../assets/ui/tint.svg</path>
-            <color>${systemColor}88</color>
+            <color>${systemColor}40</color>
             <zIndex>2</zIndex>
         </image>
         <!-- (heroBloom removed: the one-sided glow read as a dark band in the middle; the hero is
@@ -42,16 +42,16 @@
              auto-collections fade it out (=0) and show the clean white label below instead, so the
              rail and the main screen use the same label. -->
         <image name="heroLogo">
-            <pos>0.70 0.40</pos><origin>0.5 0.5</origin>
-            <maxSize>0.52 0.48</maxSize>
+            <pos>0.75 0.40</pos><origin>0.5 0.5</origin>
+            <maxSize>0.46 0.46</maxSize>
             <path>./../system-logos/system-logo-color/${system.theme}.svg</path>
             <default>./../assets/icons/fallback.svg</default>
             <opacity>${heroColorOpacity}</opacity>
             <zIndex>5</zIndex>
         </image>
         <image name="heroLogoLabel">
-            <pos>0.70 0.40</pos><origin>0.5 0.5</origin>
-            <maxSize>0.50 0.30</maxSize>
+            <pos>0.75 0.40</pos><origin>0.5 0.5</origin>
+            <maxSize>0.46 0.28</maxSize>
             <path>./../system-logos/system-label/${system.theme}.svg</path>
             <default>./../assets/icons/fallback.svg</default>
             <opacity>${heroLabelOpacity}</opacity>
@@ -67,7 +67,7 @@
         <!-- description card: solid dark backing so the text block stays legible over the hero;
              kept left of the hero logo. -->
         <image name="infoPanel">
-            <pos>0.03 ${heroCardY}</pos><size>0.40 ${heroCardH}</size>
+            <pos>0.03 ${heroCardY}</pos><size>0.47 ${heroCardH}</size>
             <path>./../assets/ui/info-panel.svg</path>
             <zIndex>9</zIndex>
         </image>
@@ -80,9 +80,9 @@
             <color>${cAccent}</color><zIndex>10</zIndex>
         </text>
         <text name="sysName">
-            <pos>0.05 ${heroNameY}</pos><size>0.60 0.095</size>
+            <pos>0.05 ${heroNameY}</pos><size>0.44 0.09</size>
             <text>${systemName}</text>
-            <container>false</container>
+            <container>true</container><containerType>horizontal</containerType>
             <fontPath>${fontDisplay}</fontPath><fontSize>${fsHero}</fontSize>
             <color>${cText}</color><zIndex>10</zIndex>
         </text>
@@ -102,7 +102,7 @@
         </text>
         <!-- system description fills the empty space; scrolls if long; legible over the left scrim -->
         <text name="sysDesc">
-            <pos>0.05 ${heroDescY}</pos><size>0.37 ${heroDescH}</size>
+            <pos>0.05 ${heroDescY}</pos><size>0.44 ${heroDescH}</size>
             <text>${systemDescription}</text>
             <container>true</container><containerType>vertical</containerType>
             <fontPath>${fontRegular}</fontPath><fontSize>${fsMeta}</fontSize>

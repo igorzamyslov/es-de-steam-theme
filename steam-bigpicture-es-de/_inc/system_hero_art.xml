@@ -48,7 +48,7 @@
         </image>
         <!-- description card: solid dark backing so the text block stays legible over busy art. -->
         <image name="infoPanel">
-            <pos>0.03 ${heroCardY}</pos><size>0.40 ${heroCardH}</size>
+            <pos>0.03 ${heroCardY}</pos><size>0.47 ${heroCardH}</size>
             <path>./../assets/ui/info-panel.svg</path>
             <zIndex>9</zIndex>
         </image>
@@ -61,9 +61,9 @@
             <color>${cAccent}</color><zIndex>10</zIndex>
         </text>
         <text name="sysName">
-            <pos>0.05 ${heroNameY}</pos><size>0.60 0.095</size>
+            <pos>0.05 ${heroNameY}</pos><size>0.44 0.09</size>
             <text>${systemName}</text>
-            <container>false</container>
+            <container>true</container><containerType>horizontal</containerType>
             <fontPath>${fontDisplay}</fontPath><fontSize>${fsHero}</fontSize>
             <color>${cText}</color><zIndex>10</zIndex>
         </text>
@@ -83,7 +83,7 @@
         </text>
         <!-- system description fills the empty space; scrolls if long; legible over the rail shelf / left scrim -->
         <text name="sysDesc">
-            <pos>0.05 ${heroDescY}</pos><size>0.37 ${heroDescH}</size>
+            <pos>0.05 ${heroDescY}</pos><size>0.44 ${heroDescH}</size>
             <text>${systemDescription}</text>
             <container>true</container><containerType>vertical</containerType>
             <fontPath>${fontRegular}</fontPath><fontSize>${fsMeta}</fontSize>
