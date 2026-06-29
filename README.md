@@ -24,7 +24,7 @@ It adapts to your display: a per-font-size type-and-density scale with a side-pa
 4. Launch ES-DE, open **UI Settings → Theme**, and select **Steam Big Picture**.
 
 > **Small screens (5–6" handhelds):** the default **Medium** font size is the densest grid. For comfortable reading, set **UI Settings → Theme font size** to **Large** or **X-Large**.
-
+>
 > **Not in the ES-DE theme downloader yet** — manual install (above) required for now.
 
 ---
