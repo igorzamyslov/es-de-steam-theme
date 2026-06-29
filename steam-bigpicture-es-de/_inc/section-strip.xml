@@ -49,22 +49,22 @@
 
         <!-- accent underline under the active label; per-tab widths roughly match each word -->
         <image name="secUnLibrary">
-            <pos>0.33 0.047</pos><origin>0.5 0</origin><size>0.060 0.005</size>
+            <pos>0.33 0.047</pos><origin>0.5 0</origin><size>${unwLib} 0.005</size>
             <path>./../assets/ui/tab-underline.svg</path>
             <color>${secUnLibrary}</color><stationary>always</stationary><zIndex>46</zIndex>
         </image>
         <image name="secUnFavorites">
-            <pos>0.44 0.047</pos><origin>0.5 0</origin><size>0.078 0.005</size>
+            <pos>0.44 0.047</pos><origin>0.5 0</origin><size>${unwFav} 0.005</size>
             <path>./../assets/ui/tab-underline.svg</path>
             <color>${secUnFav}</color><stationary>always</stationary><zIndex>46</zIndex>
         </image>
         <image name="secUnRecent">
-            <pos>0.55 0.047</pos><origin>0.5 0</origin><size>0.050 0.005</size>
+            <pos>0.55 0.047</pos><origin>0.5 0</origin><size>${unwRec} 0.005</size>
             <path>./../assets/ui/tab-underline.svg</path>
             <color>${secUnRecent}</color><stationary>always</stationary><zIndex>46</zIndex>
         </image>
         <image name="secUnPlatforms">
-            <pos>0.67 0.047</pos><origin>0.5 0</origin><size>0.080 0.005</size>
+            <pos>0.67 0.047</pos><origin>0.5 0</origin><size>${unwPlat} 0.005</size>
             <path>./../assets/ui/tab-underline.svg</path>
             <color>${secUnPlat}</color><stationary>always</stationary><zIndex>46</zIndex>
         </image>
