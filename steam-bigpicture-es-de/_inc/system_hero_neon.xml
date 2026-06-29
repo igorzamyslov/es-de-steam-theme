@@ -84,26 +84,7 @@
             <fontPath>${fontRegular}</fontPath><fontSize>${fsMeta}</fontSize>
             <color>${cText2}</color><lineSpacing>1.4</lineSpacing><zIndex>10</zIndex>
         </text>
-        <!-- bottom rail of system icons -->
-        <carousel name="rail">
-            <pos>0 0.75</pos><size>1 0.15</size>
-            <type>horizontal</type>
-            <staticImage>./../system-controllers-outline/${system.theme}.svg</staticImage>
-            <defaultImage>./../assets/icons/fallback.svg</defaultImage>
-            <maxItemCount>9</maxItemCount>
-            <itemSize>0.085 0.12</itemSize>
-            <itemScale>1.25</itemScale>
-            <!-- focus: unselected icons are neutral grey (dimmed); the selected one is bright
-                 white + scaled so it pops. Literal colours - feeding a per-system ${systemColor}
-                 here makes ES-DE resolve the carousel tint per-item and glitch to the home
-                 system's colour during navigation. -->
-            <unfocusedItemOpacity>0.5</unfocusedItemOpacity>
-            <imageColor>ccd6e0ff</imageColor>
-            <imageSelectedColor>ffffffff</imageSelectedColor>
-            <color>00000000</color>
-            <text>${system.fullName}</text>
-            <textColor>00000000</textColor>
-            <zIndex>40</zIndex>
-        </carousel>
+        <!-- bottom rail of colour-logo capsules (shared with the art variant) -->
+        <include>./system_rail.xml</include>
     </view>
 </theme>
