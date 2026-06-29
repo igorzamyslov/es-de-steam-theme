@@ -1,24 +1,23 @@
 <theme>
     <include>./helpsystem.xml</include>
     <include>./status.xml</include>
-    <!-- section-strip highlight state MUST precede section-strip.xml: ES-DE resolves variables
-         in declaration order, so each var must be defined before the element that uses it
-         (and an override must follow its default). _default first, then per-collection override. -->
-    <include>./section-state/_default.xml</include>
-    <include>./section-state/${system.theme}.xml</include>
-    <!-- Steam-style persistent section nav (consumes the section-state vars above) -->
-    <include>./section-strip.xml</include>
-    <!-- official ES-DE per-system metadata: ${systemName} (short name) + ${systemColor} (tint); full coverage, _default fallback -->
+    <!-- official ES-DE per-system metadata FIRST: defines ${systemName} + ${systemColor};
+         everything below (section-accent, section-state) reads ${systemColor}. -->
     <include>./../system-metadata/_default.xml</include>
     <include>./../system-metadata/${system.theme}.xml</include>
     <!-- targeted overrides for ES-DE short names that collapse to the manufacturer (e.g. nes -> NES) -->
     <include>./name-overrides/${system.theme}.xml</include>
-    <!-- collection hero accent color (after metadata so it overrides the grey _default) -->
+    <!-- collection accent: overrides ${systemColor} for the auto-collections (after metadata) -->
     <include>./section-accent/${system.theme}.xml</include>
-    <!-- spec-line composition (after metadata so the nested vars resolve): default joined,
-         collection-type systems collapse to just the hardware type -->
+    <!-- spec-line composition (after metadata so the nested vars resolve) -->
     <include>./spec-overrides/_default.xml</include>
     <include>./spec-overrides/${system.theme}.xml</include>
+    <!-- section-strip highlight state: now AFTER metadata so the active underline can be
+         ${systemColor}. _default first, then per-collection override (last include wins). -->
+    <include>./section-state/_default.xml</include>
+    <include>./section-state/${system.theme}.xml</include>
+    <!-- Steam-style persistent section nav (consumes the section-state vars above) -->
+    <include>./section-strip.xml</include>
     <view name="system">
         <!-- atmospheric background plate (per-system bg added in Task 17) -->
         <image name="heroBg">

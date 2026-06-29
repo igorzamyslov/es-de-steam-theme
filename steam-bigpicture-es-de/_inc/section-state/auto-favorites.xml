@@ -3,7 +3,7 @@
     <variables>
         <secTxtFav>e8edf2ff</secTxtFav>
         <secTxtPlat>8f98a0ff</secTxtPlat>
-        <secUnFav>3a9bffff</secUnFav>
+        <secUnFav>${systemColor}ff</secUnFav>
         <secUnPlat>00000000</secUnPlat>
     </variables>
 </theme>

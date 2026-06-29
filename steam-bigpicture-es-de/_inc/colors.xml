@@ -1,10 +1,10 @@
 <theme>
     <!-- Shared palette. Kept as global variables (not inside a colorScheme block) because the
          colorScheme axis is repurposed to pick the detail-panel media behaviour, not colours -
-         every scheme shares this one dark palette. Background/panel/green colours are baked into
-         the SVG assets in assets/ui/ (ES-DE cannot inject variables into SVG files). -->
+         every scheme shares this one dark palette. The accent is per-system: the section-strip
+         underline tracks ${systemColor} (see section-state/). Background/panel/green colours
+         remain baked into the SVG assets in assets/ui/. -->
     <variables>
-        <cAccent>3a9bffff</cAccent>
         <cText>e8edf2ff</cText>
         <cText2>aab4c0ff</cText2>
         <cMuted>8a94a0ff</cMuted>
