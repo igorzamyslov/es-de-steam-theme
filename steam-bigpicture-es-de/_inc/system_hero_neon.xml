@@ -33,13 +33,22 @@
             <color>${systemColor}cc</color>
             <zIndex>2</zIndex>
         </image>
-        <!-- big focus-tracked system logo as the "neon" hero subject -->
+        <!-- per-system colour bloom behind the logo: white asset multiplied by ${systemColor}
+             so the focused system's colour blooms across the hero (radial isn't an engine
+             primitive; this is a baked diagonal-linear glow asset). -->
+        <image name="heroBloom">
+            <pos>0.30 0</pos><size>0.70 1</size>
+            <path>./../assets/ui/hero-bloom.svg</path>
+            <color>${systemColor}66</color>
+            <zIndex>3</zIndex>
+        </image>
+        <!-- big focus-tracked system logo as the "neon" hero subject — full colour (was the
+             flat white logo); no <color> tint so the brand colours render. -->
         <image name="heroLogo">
             <pos>0.70 0.40</pos><origin>0.5 0.5</origin>
-            <maxSize>0.44 0.46</maxSize>
-            <path>./../system-logos/system-logo-white/${system.theme}.svg</path>
+            <maxSize>0.52 0.48</maxSize>
+            <path>./../system-logos/system-logo-color/${system.theme}.svg</path>
             <default>./../assets/icons/fallback.svg</default>
-            <color>e8edf2ff</color>
             <zIndex>5</zIndex>
         </image>
         <!-- darken the lower area so the icon rail stays legible over the colored hero -->
