@@ -127,8 +127,12 @@ git commit -m "feat(system): baked hero-bloom and info-panel assets"
     `color 00000000`; keep `text ${system.fullName}` + `textColor 00000000`.
   - Add a comment: empty/0-game systems cannot be styled per item here (carousel limit); emptiness
     shows in the hero count.
-- [ ] **Step 2:** In both hero files, delete the full `<carousel name="rail">…</carousel>` element and
-  add `<include>./system_rail.xml</include>` at the same point (keep `railScrim`/`rail-shelf` as-is).
+- [ ] **Step 2:** In both hero files, delete the full `<carousel name="rail">…</carousel>` element.
+  Add `<include>./system_rail.xml</include>` at the **theme root** (next to the other includes,
+  before `<view name="system">`) — NOT inside the `<view>`. ES-DE only accepts `<include>` at the
+  root; nested in a view the parser rejects it ("include missing name attribute") and aborts the
+  view. system_rail.xml carries its own `<view name="system">`, which ES-DE merges in. Keep
+  `railScrim`/`rail-shelf` as-is.
 - [ ] **Step 3: Validate.**
   Run: `xmllint --noout steam-bigpicture-es-de/_inc/system_rail.xml steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/_inc/system_hero_art.xml`
   Expected: no output.
