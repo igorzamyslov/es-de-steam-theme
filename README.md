@@ -1,6 +1,6 @@
 # Steam Big Picture for ES-DE
 
-A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view presents a bottom rail of platform icons over a full-bleed hero area; the gamelist shows a capsule grid (or a list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy with a neon-cyan accent.
+A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view presents a bottom rail of platform icons over a full-bleed hero area; the gamelist shows a capsule grid (or a list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy, with a per-platform accent: the active nav underline picks up each system's signature color. **ES-DE only** — it runs on Steam Deck, desktop, and the distros that bundle ES-DE (it is not a muOS/Knulli/ROCKNIX/Batocera theme).
 
 It adapts to your display and settings: a per-font-size type-and-density scale and a side-panel layout (grid/list on the left, detail panel on the right) across all supported aspect ratios — `16:9 / 16:10 / 4:3 / 5:4` and ultrawide `19.5:9 / 20:9 / 21:9`. Four variants (hero style × gamelist layout) combine with four color-scheme media modes.
 
@@ -8,23 +8,24 @@ It adapts to your display and settings: a per-font-size type-and-density scale a
 
 ## Requirements
 
-- **ES-DE 2.0 or later** (developed and tested against the 3.4.x series).
+- **ES-DE 2.0 or later** (developed and tested against the 3.4.x series). Handheld distros often bundle older builds — **below 3.x, expect rough edges**.
 - `xmllint` is not required to run the theme; it is only used during development for XML validation.
 
 ---
 
 ## Install
 
-1. Download or clone this repository.
-2. Copy (or symlink) the `steam-bigpicture-es-de/` directory into your ES-DE themes folder:
+1. **Enable automatic collections first.** This theme's top nav (**Library / Favorites / Recent / Platforms**) is its Steam-style spine; the first three are ES-DE *automatic collections*, which are **off by default**. Without them, three of the four tabs lead to empty systems and the theme looks half-broken. In ES-DE: **Game Collection Settings → Enable automatic game collections** (details in [Collections](#collections-library-favorites-recent)).
+2. Download or clone this repository.
+3. Copy (or symlink) the `steam-bigpicture-es-de/` directory into your ES-DE themes folder:
    - **Linux / macOS:** `~/ES-DE/themes/`
    - **Windows:** `%USERPROFILE%\ES-DE\themes\`
    - If you customized the ES-DE data directory, look for `<your data path>/themes/`.
-3. Launch ES-DE, open **UI Settings → Theme**, and select **Steam Big Picture**.
+4. Launch ES-DE, open **UI Settings → Theme**, and select **Steam Big Picture**.
 
-> **Note:** This theme is not listed in the ES-DE theme downloader. Manual installation is required.
->
-> **Recommended:** For the full Steam-like experience, **enable automatic collections** (see [Collections](#collections-library-favorites-recent) below). They power the persistent **Library / Favorites / Recent** nav tabs at the top of every screen — without them, those tabs have nothing to show.
+> **Small screens (5–6" handhelds):** the default **Medium** font size is the densest grid. For comfortable reading set **UI Settings → Theme font size** to **Large** or **X-Large**.
+
+> **Not in the ES-DE theme downloader yet** — manual installation (above) is required for now. Getting it listed is a tracked follow-up.
 
 ---
 
@@ -73,10 +74,11 @@ Pick whichever suits your screen size and viewing distance.
 
 ## Aspect ratios
 
-The same side-panel layout (grid/list on the left, detail panel on the right) is used across all supported aspect ratios — the grid simply packs in more columns on wider screens:
+The same side-panel layout (grid/list on the left, detail panel on the right) is used across every supported aspect ratio — the grid just packs more columns on wider screens:
 
-- **Desktop / TV:** `16:9`, `16:10`, `4:3`, `5:4`.
-- **Ultrawide / handheld (landscape):** `19.5:9`, `20:9`, `21:9`.
+- **First-class handhelds:** Steam Deck (`16:10`) and Windows handhelds — ROG Ally / Legion Go (`16:9`).
+- **Also supported:** desktop/TV `4:3` and `5:4`; budget-handheld landscape `3:2` and `5:3` (Anbernic / Powkiddy / Miyoo class); phone-style ultrawide `19.5:9`, `20:9`, `21:9`.
+- **Not yet supported:** square `1:1` (e.g. CubeXX, RGB30) and any **portrait** orientation — these need a different layout than the side-panel design.
 
 ---
 
@@ -115,13 +117,13 @@ The "Hero (art)" variants show a placeholder hero area until you add per-platfor
 
 ![List gamelist with a wide detail panel](screenshots/03-gamelist-list.png)
 
-### System view — per-platform hero art
-
-![Game Boy Advance system view with per-platform hero art](screenshots/04-system-hero-art.png)
-
 ### Theme settings (variant · color scheme · font size)
 
 ![ES-DE theme settings showing the variant, color-scheme media modes, and font-size options](screenshots/05-settings.png)
+
+### System view — per-platform hero art *(after you add your own art)*
+
+![Example Game Boy Advance hero — produced by adding your own per-platform art; see "Adding hero art"](screenshots/04-system-hero-art.png)
 
 ---
 
