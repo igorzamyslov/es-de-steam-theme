@@ -2,7 +2,7 @@
 
 A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view presents a bottom rail of platform icons over a full-bleed hero area; the gamelist shows a capsule grid (or a list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy with a neon-cyan accent.
 
-It adapts to your display and settings: a per-font-size type-and-density scale, a desktop side-panel layout for `16:9 / 16:10 / 4:3 / 5:4`, and a full-width hero-banner layout for phone/ultrawide (`19.5:9 / 20:9 / 21:9`). Four variants (hero style × gamelist layout) combine with four color-scheme media modes.
+It adapts to your display and settings: a per-font-size type-and-density scale and a side-panel layout (grid/list on the left, detail panel on the right) across all supported aspect ratios — `16:9 / 16:10 / 4:3 / 5:4` and ultrawide `19.5:9 / 20:9 / 21:9`. Four variants (hero style × gamelist layout) combine with four color-scheme media modes.
 
 ---
 
@@ -73,10 +73,10 @@ Pick whichever suits your screen size and viewing distance.
 
 ## Aspect ratios
 
-The layout reflows automatically by aspect ratio:
+The same side-panel layout (grid/list on the left, detail panel on the right) is used across all supported aspect ratios — the grid simply packs in more columns on wider screens:
 
-- **Desktop / TV** (`16:9`, `16:10`, `4:3`, `5:4`): grid (or list) on the left, detail panel on the right.
-- **Phone / ultrawide** (`19.5:9`, `20:9`, `21:9`): a full-width hero banner across the top of the gamelist with the focused game's title and compact metadata, and the grid below.
+- **Desktop / TV:** `16:9`, `16:10`, `4:3`, `5:4`.
+- **Ultrawide / handheld (landscape):** `19.5:9`, `20:9`, `21:9`.
 
 ---
 
