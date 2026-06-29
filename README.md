@@ -1,8 +1,8 @@
 # Steam Big Picture for ES-DE
 
-A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view has a bottom rail of **full-colour system-logo capsules** over a full-bleed hero area, the focused system's logo shown large in the hero over a bloom of that system's colour; the gamelist shows a capsule grid (or list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy, with a Steam-blue accent on the active nav. Per-system colour comes through the rail capsules, the focused hero logo, and the hero tint. **ES-DE only** — runs on Steam Deck, desktop, and distros that bundle ES-DE (not a muOS/Knulli/ROCKNIX/Batocera theme).
+A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view has a bottom rail of **full-colour system-logo capsules** over a dark, full-bleed hero — the focused system shown as a large white logo (collections as a clean white label) beside an info card with its details; the gamelist shows a capsule grid (or list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy, with a Steam-blue accent on the active nav. Per-system colour comes through the rail capsules and a subtle hero tint. **ES-DE only** — runs on Steam Deck, desktop, and distros that bundle ES-DE (not a muOS/Knulli/ROCKNIX/Batocera theme).
 
-It adapts to your display: a per-font-size type-and-density scale with a side-panel layout (grid/list left, detail panel right) across all supported aspect ratios — `16:9 / 16:10 / 4:3 / 5:4 / 3:2 / 5:3` and ultrawide `19.5:9 / 20:9 / 21:9`. Four variants (hero style × gamelist layout) combine with four color-scheme media modes.
+It adapts to your display: a per-font-size type-and-density scale with a side-panel layout (grid/list left, detail panel right) across all supported aspect ratios — `16:9 / 16:10 / 4:3 / 5:4 / 3:2 / 5:3` and ultrawide `19.5:9 / 20:9 / 21:9`. Four variants (hero style × gamelist layout) combine with two color-scheme media modes.
 
 ---
 
@@ -33,7 +33,7 @@ It adapts to your display: a per-font-size type-and-density scale with a side-pa
 
 Switch under **UI Settings → Theme variant**. There are **4 variants** — every combination of two independent choices. Default: **Hero (neon) · Grid**.
 
-- **System view:** `Hero (neon)` (gradient hero + focus-tracked system logo) · `Hero (art)` (per-platform background art — placeholder until you add art, see below)
+- **System view:** `Hero (neon)` (dark gradient hero + focus-tracked white system logo) · `Hero (art)` (per-platform background art — placeholder until you add art, see below)
 - **Gamelist:** `Grid` (capsule grid + right detail panel) · `List` (scrollable list + wider detail panel)
 
 | Variant | System hero | Gamelist |
@@ -47,13 +47,11 @@ Switch under **UI Settings → Theme variant**. There are **4 variants** — eve
 
 ## Detail media (color schemes)
 
-The **color scheme** axis picks how the detail panel presents a game's media. Switch under **UI Settings → Theme color scheme** (all four share the same dark palette). Default: **Marquee → Video**.
+The **color scheme** axis picks how the detail panel presents a game's media. The media is **cover-cropped to a fixed box** so every game uses the same footprint — which is why the chain is screenshot-first (wide marquees crop badly). Switch under **UI Settings → Theme color scheme** (both share the same dark palette). Default: **Screenshot → Video**.
 
 | Color scheme | Behavior |
 | --- | --- |
-| **Marquee → Video** *(default)* | marquee still shows first, then the game's video auto-plays |
-| **Screenshot → Video** | screenshot still shows first, then the video auto-plays |
-| **Marquee (no video)** | marquee still only — no video playback |
+| **Screenshot → Video** *(default)* | screenshot still shows first, then the game's video auto-plays |
 | **Screenshot (no video)** | screenshot still only — no video playback |
 
 If the chosen still or video isn't scraped, the panel falls back to a placeholder.
@@ -103,8 +101,6 @@ The "Hero (art)" variants show a placeholder until you add per-platform backgrou
 
 ### System view — Library collection (hero · neon)
 
-> **Note:** the screenshots below predate the colour-logo capsule rail and will be refreshed from a current ES-DE render. A browseable mockup of the current design is at `docs/mockup/steam-system-redesign.html`.
-
 ![Library system view with the persistent Library / Favorites / Recent / Platforms nav strip](screenshots/01-system-library.png)
 
 ### Gamelist — capsule grid with detail panel
@@ -131,7 +127,7 @@ Released under **CC BY-NC-SA 4.0**. See `LICENSE` for the full text.
 
 Asset sources:
 
-- **System logos & icons:** ES-DE official asset repos (`gitlab.com/es-de/themes/system-logos`, `system-controllers-outline`) — see their individual licenses.
+- **System logos:** ES-DE official asset repo (`gitlab.com/es-de/themes/system-logos`) — see its individual licenses.
 - **System metadata & colors:** `gitlab.com/es-de/themes/system-metadata` (CC BY-NC-SA).
 - **Fonts:** Inter (Rasmus Andersson) and Rubik — both SIL OFL 1.1.
 - Logos and trademarks are the property of their respective owners.
