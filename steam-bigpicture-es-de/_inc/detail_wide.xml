@@ -21,13 +21,13 @@
         </text>
 
         <!-- media: fills the space between the title and the bottom block; centered horizontally -->
+        <!-- cover-fill a fixed box (see detail.xml) -->
         <video name="detailMedia">
             <pos>0.745 ${pwVideoY}</pos><origin>0.5 0</origin>
-            <maxSize>0.47 ${pwVideoH}</maxSize><imageMaxSize>0.47 ${pwVideoH}</imageMaxSize>
+            <cropSize>0.47 ${pwVideoH}</cropSize>
             <imageType>${detailMediaType}</imageType>
             <defaultImage>./../assets/ui/capsule-placeholder.svg</defaultImage>
             <delay>${mediaDelay}</delay><fadeInTime>0.6</fadeInTime>
-            <pillarboxes>false</pillarboxes>
             <imageCornerRadius>${rad}</imageCornerRadius><videoCornerRadius>${rad}</videoCornerRadius>
             <zIndex>20</zIndex>
         </video>

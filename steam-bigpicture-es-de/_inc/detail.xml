@@ -21,13 +21,15 @@
         </text>
 
         <!-- media: fills the space between the title and the bottom block; centered horizontally -->
+        <!-- cover-fill a fixed box (Steam look): the media always fills pInnerW x pVideoH, cropping
+             overflow (centre), so every game uses the same footprint. Best with a screenshot/video-
+             first colorScheme — marquees/portrait covers would crop hard. -->
         <video name="detailMedia">
             <pos>${pPanelCX} ${pVideoY}</pos><origin>0.5 0</origin>
-            <maxSize>${pInnerW} ${pVideoH}</maxSize><imageMaxSize>${pInnerW} ${pVideoH}</imageMaxSize>
+            <cropSize>${pInnerW} ${pVideoH}</cropSize>
             <imageType>${detailMediaType}</imageType>
             <defaultImage>./../assets/ui/capsule-placeholder.svg</defaultImage>
             <delay>${mediaDelay}</delay><fadeInTime>0.6</fadeInTime>
-            <pillarboxes>false</pillarboxes>
             <imageCornerRadius>${rad}</imageCornerRadius><videoCornerRadius>${rad}</videoCornerRadius>
             <zIndex>20</zIndex>
         </video>
