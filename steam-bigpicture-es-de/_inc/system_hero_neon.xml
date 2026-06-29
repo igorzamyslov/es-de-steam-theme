@@ -33,7 +33,7 @@
         <image name="heroTint">
             <pos>0 0</pos><size>1 1</size>
             <path>./../assets/ui/tint.svg</path>
-            <color>${systemColor}cc</color>
+            <color>${systemColor}88</color>
             <zIndex>2</zIndex>
         </image>
         <!-- per-system colour bloom behind the logo: white asset multiplied by ${systemColor}
@@ -60,20 +60,22 @@
             <path>./../assets/ui/rail-scrim.svg</path>
             <zIndex>6</zIndex>
         </image>
-        <!-- left scrim for text legibility -->
-        <image name="heroScrim">
-            <pos>0 0</pos><size>0.62 1</size>
-            <path>./../assets/ui/scrim-left.svg</path>
-            <zIndex>8</zIndex>
-        </image>
-        <!-- description card: solid dark backing so the (grey) spec/count/description stay
-             legible over a bright, colourful hero. Kept left of the hero logo. -->
+        <!-- (left scrim removed: the info-panel card backs the text and the hero is darker now) -->
+        <!-- description card: solid dark backing so the text block stays legible over the hero;
+             kept left of the hero logo. -->
         <image name="infoPanel">
-            <pos>0.025 0.40</pos><size>0.405 0.36</size>
+            <pos>0.025 0.345</pos><size>0.405 0.37</size>
             <path>./../assets/ui/info-panel.svg</path>
             <zIndex>9</zIndex>
         </image>
-        <!-- bottom-left info panel: name · spec line · count · description (inhabit the void) -->
+        <!-- bottom-left info block: kind eyebrow · name · spec · count · description -->
+        <text name="sysKind">
+            <pos>0.05 ${heroKindY}</pos><size>0.40 0.03</size>
+            <text>${heroKind}</text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
+            <letterCase>uppercase</letterCase>
+            <color>${cAccent}</color><zIndex>10</zIndex>
+        </text>
         <text name="sysName">
             <pos>0.05 ${heroNameY}</pos><size>0.60 0.095</size>
             <text>${systemName}</text>

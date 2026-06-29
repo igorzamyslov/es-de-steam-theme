@@ -14,6 +14,14 @@
          per-system colour here would multiply (tint) the whole capsule and reintroduce the
          per-item carousel-tint glitch. -->
     <view name="system">
+        <!-- shelf label above the rail (Steam-style) -->
+        <text name="railLabel">
+            <pos>0.05 0.715</pos><size>0.4 0.03</size>
+            <text>ALL SYSTEMS</text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
+            <letterCase>uppercase</letterCase>
+            <color>${cMuted}</color><zIndex>40</zIndex>
+        </text>
         <carousel name="rail">
             <pos>0 0.75</pos><size>1 0.15</size>
             <type>horizontal</type>
@@ -21,7 +29,7 @@
             <defaultImage>./../system-logos/system-capsule/_fallback.svg</defaultImage>
             <maxItemCount>7</maxItemCount>
             <itemSize>0.15 0.12</itemSize>
-            <itemScale>1.12</itemScale>
+            <itemScale>1.08</itemScale>
             <imageFit>contain</imageFit>
             <imageCornerRadius>${radTile}</imageCornerRadius>
             <imageSelectedColor>ffffffff</imageSelectedColor>

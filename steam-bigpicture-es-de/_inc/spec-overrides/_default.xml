@@ -4,5 +4,8 @@
          hardware type via the per-system files in this folder. -->
     <variables>
         <specLine>${systemHardwareType} · ${systemManufacturer} · ${systemReleaseYear}</specLine>
+        <!-- hero eyebrow kind; collection-type systems override to "Collection" in their per-system
+             file here (loaded after this default, so they win). -->
+        <heroKind>Platform</heroKind>
     </variables>
 </theme>

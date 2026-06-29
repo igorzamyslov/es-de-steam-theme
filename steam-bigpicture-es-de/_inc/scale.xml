@@ -28,8 +28,8 @@
             <unwLib>0.060</unwLib><unwFav>0.078</unwFav><unwRec>0.050</unwRec><unwPlat>0.080</unwPlat>
             <gridItemY>0.240</gridItemY><gridSpacing>0.010 0.016</gridSpacing>
             <gridSize>0.596 0.764</gridSize>
-            <heroNameY>0.48</heroNameY><heroSpecY>0.595</heroSpecY><heroCountY>0.635</heroCountY>
-            <heroDescY>0.685</heroDescY><heroDescH>0.062</heroDescH>
+            <heroKindY>0.39</heroKindY><heroNameY>0.435</heroNameY><heroSpecY>0.55</heroSpecY><heroCountY>0.59</heroCountY>
+            <heroDescY>0.635</heroDescY><heroDescH>0.062</heroDescH>
             <!-- detail panel (6 grid cols on 16:9): x/width + content x + media width -->
             <pPanelX>0.666</pPanelX><pPanelW>0.334</pPanelW><pContentX>0.686</pContentX><pInnerW>0.294</pInnerW>
             <pPanelCX>0.833</pPanelCX><pKeyW>0.07</pKeyW><pValueX>0.756</pValueX><pValueW>0.224</pValueW>
@@ -49,8 +49,8 @@
             <gridPos>0.035 0.165</gridPos><listTop>0.035 0.165</listTop>
             <gridItemY>0.236</gridItemY><gridSpacing>0.013 0.018</gridSpacing>
             <gridSize>0.506 0.755</gridSize>
-            <heroNameY>0.44</heroNameY><heroSpecY>0.555</heroSpecY><heroCountY>0.595</heroCountY>
-            <heroDescY>0.645</heroDescY><heroDescH>0.10</heroDescH>
+            <heroKindY>0.35</heroKindY><heroNameY>0.395</heroNameY><heroSpecY>0.505</heroSpecY><heroCountY>0.545</heroCountY>
+            <heroDescY>0.595</heroDescY><heroDescH>0.10</heroDescH>
             <!-- detail panel (5 grid cols on 16:9): widest panel -> biggest video -->
             <pPanelX>0.576</pPanelX><pPanelW>0.424</pPanelW><pContentX>0.596</pContentX><pInnerW>0.384</pInnerW>
             <pPanelCX>0.788</pPanelCX><pKeyW>0.085</pKeyW><pValueX>0.681</pValueX><pValueW>0.299</pValueW>
@@ -70,8 +70,8 @@
             <gridPos>0.035 0.175</gridPos><listTop>0.035 0.175</listTop>
             <gridItemY>0.357</gridItemY><gridSpacing>0.015 0.020</gridSpacing>
             <gridSize>0.602 0.745</gridSize>
-            <heroNameY>0.40</heroNameY><heroSpecY>0.515</heroSpecY><heroCountY>0.565</heroCountY>
-            <heroDescY>0.615</heroDescY><heroDescH>0.13</heroDescH>
+            <heroKindY>0.31</heroKindY><heroNameY>0.355</heroNameY><heroSpecY>0.46</heroSpecY><heroCountY>0.51</heroCountY>
+            <heroDescY>0.555</heroDescY><heroDescH>0.13</heroDescH>
             <!-- detail panel (4 grid cols on 16:9) -->
             <pPanelX>0.672</pPanelX><pPanelW>0.328</pPanelW><pContentX>0.692</pContentX><pInnerW>0.288</pInnerW>
             <pPanelCX>0.836</pPanelCX><pKeyW>0.10</pKeyW><pValueX>0.792</pValueX><pValueW>0.188</pValueW>

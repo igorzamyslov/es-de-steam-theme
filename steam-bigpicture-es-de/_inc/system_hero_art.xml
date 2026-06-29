@@ -46,14 +46,20 @@
             <path>./../assets/ui/scrim-left.svg</path>
             <zIndex>8</zIndex>
         </image>
-        <!-- description card: solid dark backing so the (grey) spec/count/description stay
-             legible over busy per-system art. -->
+        <!-- description card: solid dark backing so the text block stays legible over busy art. -->
         <image name="infoPanel">
-            <pos>0.025 0.40</pos><size>0.405 0.36</size>
+            <pos>0.025 0.345</pos><size>0.405 0.37</size>
             <path>./../assets/ui/info-panel.svg</path>
             <zIndex>9</zIndex>
         </image>
-        <!-- bottom-left info panel: name · spec line · count · description (inhabit the void) -->
+        <!-- bottom-left info block: kind eyebrow · name · spec · count · description -->
+        <text name="sysKind">
+            <pos>0.05 ${heroKindY}</pos><size>0.40 0.03</size>
+            <text>${heroKind}</text>
+            <fontPath>${fontSemiBold}</fontPath><fontSize>${fsTab}</fontSize>
+            <letterCase>uppercase</letterCase>
+            <color>${cAccent}</color><zIndex>10</zIndex>
+        </text>
         <text name="sysName">
             <pos>0.05 ${heroNameY}</pos><size>0.60 0.095</size>
             <text>${systemName}</text>

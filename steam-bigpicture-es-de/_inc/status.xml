@@ -8,9 +8,10 @@
             <fontPath>${fontSemiBold}</fontPath>
             <entries>battery, wifi</entries>
         </systemstatus>
+        <!-- clock moved to the RIGHT, just left of the battery/wifi block (Steam layout) -->
         <clock name="clock">
-            <pos>0.022 0.028</pos>
-            <origin>0 0.5</origin>
+            <pos>0.885 0.028</pos>
+            <origin>1 0.5</origin>
             <fontPath>${fontSemiBold}</fontPath>
             <fontSize>${fsClock}</fontSize>
             <color>aab4c0ff</color>
