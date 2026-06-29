@@ -1,6 +1,6 @@
 <!-- Steam Big Picture for ES-DE -->
 <themeCapabilities>
-    <themeName>Steam Big Picture</themeName>
+    <themeName>Steam Big Picture (colour rail)</themeName>
 
     <aspectRatio>16:9</aspectRatio>
     <aspectRatio>16:10</aspectRatio>
@@ -17,15 +17,10 @@
     <fontSize>x-large</fontSize>
 
     <!-- The colorScheme axis is repurposed as a detail-panel MEDIA selector (all share one dark
-         palette). First entry is the default: Marquee, then video. -->
-    <colorScheme name="marqueeVideo">
-        <label language="en_US">Marquee → Video</label>
-    </colorScheme>
+         palette). First entry is the default. The detail media is cover-cropped to a fixed box, so
+         only screenshot/video schemes are offered (marquees crop badly and were removed). -->
     <colorScheme name="screenshotVideo">
         <label language="en_US">Screenshot → Video</label>
-    </colorScheme>
-    <colorScheme name="marqueeStill">
-        <label language="en_US">Marquee (no video)</label>
     </colorScheme>
     <colorScheme name="screenshotStill">
         <label language="en_US">Screenshot (no video)</label>

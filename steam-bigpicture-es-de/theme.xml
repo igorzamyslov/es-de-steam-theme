@@ -20,14 +20,13 @@
              here could never be overridden by the per-collection section-state includes. -->
     </variables>
 
-    <!-- Detail-panel media behaviour lives on the colorScheme axis (4 schemes, one shared dark
-         palette). detailMediaType = the still shown first; mediaDelay = seconds before the video
-         plays (100000 = effectively "no video": the still just stays). Must be a colorScheme (not a
+    <!-- Detail-panel media behaviour lives on the colorScheme axis (one shared dark palette).
+         detailMediaType = the still shown first; mediaDelay = seconds before the video plays
+         (100000 = effectively "no video": the still just stays). Must be a colorScheme (not a
          variant) so it is independent of the hero/layout variant; variants are resolved later and
-         would otherwise override these. -->
-    <colorScheme name="marqueeVideo"><variables><detailMediaType>marquee, screenshot, cover</detailMediaType><mediaDelay>2.5</mediaDelay></variables></colorScheme>
+         would otherwise override these. The detail media is cover-cropped to a fixed box, so the
+         chain is screenshot-first (marquee schemes were removed — wide logos crop badly). -->
     <colorScheme name="screenshotVideo"><variables><detailMediaType>screenshot, cover</detailMediaType><mediaDelay>2.5</mediaDelay></variables></colorScheme>
-    <colorScheme name="marqueeStill"><variables><detailMediaType>marquee, screenshot, cover</detailMediaType><mediaDelay>100000</mediaDelay></variables></colorScheme>
     <colorScheme name="screenshotStill"><variables><detailMediaType>screenshot, cover</detailMediaType><mediaDelay>100000</mediaDelay></variables></colorScheme>
 
     <!-- 4 variants = {hero neon, hero art} x {grid, list}. Detail media is the colorScheme axis above.
