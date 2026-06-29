@@ -4,6 +4,7 @@ Target: one atmospheric "poster" per system at `systems/art/<system>.jpg` (1280�
 pre-darkened on the left for text legibility; pre-blurred if used as background).
 
 Recommended path — AI generation with a locked style spec:
+
 1. Pick the style direction once (warm torchlight vs cool fog, complementary,
    neo-pixel-art, saturated midtones, atmospheric depth — describe, don't say
    "Dead Cells").

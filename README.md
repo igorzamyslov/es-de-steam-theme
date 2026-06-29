@@ -23,7 +23,7 @@ It adapts to your display and settings: a per-font-size type-and-density scale a
 3. Launch ES-DE, open **UI Settings → Theme**, and select **Steam Big Picture**.
 
 > **Note:** This theme is not listed in the ES-DE theme downloader. Manual installation is required.
-
+>
 > **Recommended:** For the full Steam-like experience, **enable automatic collections** (see [Collections](#collections-library-favorites-recent) below). They power the persistent **Library / Favorites / Recent** nav tabs at the top of every screen — without them, those tabs have nothing to show.
 
 ---
@@ -104,18 +104,23 @@ The "Hero (art)" variants show a placeholder hero area until you add per-platfor
 ## Screenshots
 
 ### System view — Library collection (hero · neon)
+
 ![Library system view with the persistent Library / Favorites / Recent / Platforms nav strip](screenshots/01-system-library.png)
 
 ### Gamelist — capsule grid with detail panel
+
 ![Capsule grid gamelist with a right-hand detail panel](screenshots/02-gamelist-grid.png)
 
 ### Gamelist — list with wide detail panel
+
 ![List gamelist with a wide detail panel](screenshots/03-gamelist-list.png)
 
 ### System view — per-platform hero art
+
 ![Game Boy Advance system view with per-platform hero art](screenshots/04-system-hero-art.png)
 
 ### Theme settings (variant · color scheme · font size)
+
 ![ES-DE theme settings showing the variant, color-scheme media modes, and font-size options](screenshots/05-settings.png)
 
 ---

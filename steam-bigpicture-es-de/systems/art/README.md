@@ -5,6 +5,7 @@
 Each hero art image follows the naming convention: `<system>.jpg`
 
 where `<system>` matches the ES-DE `${system.theme}` value. For example:
+
 - `gc.jpg` for GameCube
 - `snes.jpg` for Super Nintendo
 - `nes.jpg` for Nintendo Entertainment System
