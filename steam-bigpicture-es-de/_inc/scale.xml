@@ -30,8 +30,8 @@
             <!-- detail panel (6 grid cols on 16:9): x/width + content x + media width -->
             <pPanelX>0.666</pPanelX><pPanelW>0.334</pPanelW><pContentX>0.686</pContentX><pInnerW>0.294</pInnerW>
             <pPanelCX>0.833</pPanelCX><pKeyW>0.07</pKeyW><pValueX>0.756</pValueX><pValueW>0.224</pValueW>
-            <pPlayIconX>0.711</pPlayIconX><pPlayLabelX>0.728</pPlayLabelX><glCountY>0.108</glCountY>
-            <pPlayW>0.196</pPlayW>
+            <pPlayIconX>0.809</pPlayIconX><pPlayLabelX>0.832</pPlayLabelX><glCountY>0.108</glCountY>
+            <pPlayW>0.196</pPlayW><pPlayX>0.784</pPlayX>
             <pTitleH>0.05</pTitleH><pVideoY>0.118</pVideoY><pVideoH>0.322</pVideoH>
             <pwTitleH>0.05</pwTitleH><pwVideoY>0.118</pwVideoY><pwVideoH>0.332</pwVideoH>
         </variables>
@@ -50,8 +50,8 @@
             <!-- detail panel (5 grid cols on 16:9): widest panel -> biggest video -->
             <pPanelX>0.576</pPanelX><pPanelW>0.424</pPanelW><pContentX>0.596</pContentX><pInnerW>0.384</pInnerW>
             <pPanelCX>0.788</pPanelCX><pKeyW>0.085</pKeyW><pValueX>0.681</pValueX><pValueW>0.299</pValueW>
-            <pPlayIconX>0.621</pPlayIconX><pPlayLabelX>0.638</pPlayLabelX><glCountY>0.122</glCountY>
-            <pPlayW>0.256</pPlayW>
+            <pPlayIconX>0.749</pPlayIconX><pPlayLabelX>0.772</pPlayLabelX><glCountY>0.122</glCountY>
+            <pPlayW>0.256</pPlayW><pPlayX>0.724</pPlayX>
             <pTitleH>0.062</pTitleH><pVideoY>0.13</pVideoY><pVideoH>0.31</pVideoH>
             <pwTitleH>0.064</pwTitleH><pwVideoY>0.132</pwVideoY><pwVideoH>0.318</pwVideoH>
         </variables>
@@ -70,8 +70,8 @@
             <!-- detail panel (4 grid cols on 16:9) -->
             <pPanelX>0.672</pPanelX><pPanelW>0.328</pPanelW><pContentX>0.692</pContentX><pInnerW>0.288</pInnerW>
             <pPanelCX>0.836</pPanelCX><pKeyW>0.10</pKeyW><pValueX>0.792</pValueX><pValueW>0.188</pValueW>
-            <pPlayIconX>0.717</pPlayIconX><pPlayLabelX>0.734</pPlayLabelX><glCountY>0.135</glCountY>
-            <pPlayW>0.192</pPlayW>
+            <pPlayIconX>0.813</pPlayIconX><pPlayLabelX>0.836</pPlayLabelX><glCountY>0.135</glCountY>
+            <pPlayW>0.192</pPlayW><pPlayX>0.788</pPlayX>
             <pTitleH>0.072</pTitleH><pVideoY>0.14</pVideoY><pVideoH>0.30</pVideoH>
             <pwTitleH>0.074</pwTitleH><pwVideoY>0.142</pwVideoY><pwVideoH>0.308</pwVideoH>
         </variables>
