@@ -19,6 +19,9 @@
     <include>./section-state/${system.theme}.xml</include>
     <!-- Steam-style persistent section nav (consumes the section-state vars above) -->
     <include>./section-strip.xml</include>
+    <!-- shared colour-logo capsule rail (root-level: it carries its own <view name="system">,
+         which ES-DE merges into this view; an <include> is only valid at the theme root). -->
+    <include>./system_rail.xml</include>
     <view name="system">
         <!-- fallback base gradient (shown only if a system has no art) -->
         <image name="heroBg">
@@ -80,7 +83,5 @@
             <path>./../assets/ui/rail-shelf.svg</path>
             <zIndex>9</zIndex>
         </image>
-        <!-- bottom rail of colour-logo capsules (shared with the neon variant) -->
-        <include>./system_rail.xml</include>
     </view>
 </theme>

@@ -19,6 +19,9 @@
     <include>./section-state/${system.theme}.xml</include>
     <!-- Steam-style persistent section nav (consumes the section-state vars above) -->
     <include>./section-strip.xml</include>
+    <!-- shared colour-logo capsule rail (root-level: it carries its own <view name="system">,
+         which ES-DE merges into this view; an <include> is only valid at the theme root). -->
+    <include>./system_rail.xml</include>
     <view name="system">
         <!-- atmospheric background plate (per-system bg added in Task 17) -->
         <image name="heroBg">
@@ -93,7 +96,5 @@
             <fontPath>${fontRegular}</fontPath><fontSize>${fsMeta}</fontSize>
             <color>${cText2}</color><lineSpacing>1.4</lineSpacing><zIndex>10</zIndex>
         </text>
-        <!-- bottom rail of colour-logo capsules (shared with the art variant) -->
-        <include>./system_rail.xml</include>
     </view>
 </theme>
