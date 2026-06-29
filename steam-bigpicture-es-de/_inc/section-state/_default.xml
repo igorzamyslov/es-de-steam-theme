@@ -3,7 +3,8 @@
          Included before section-state/${system.theme}.xml so a focused collection's
          override wins (last include wins; mirrors the system-metadata _default pattern).
          active text = e8edf2 (cText), inactive = 8f98a0 (readable grey);
-         active underline = ${cAccent} (one consistent brand accent) / transparent. -->
+         active underline: Platforms = ${systemColor} (per-platform); the three collections use
+         ${cAccent} (set in their own overrides). secIcon tints the focused rail icon to match. -->
     <variables>
         <secTxtLibrary>8f98a0ff</secTxtLibrary>
         <secTxtRecent>8f98a0ff</secTxtRecent>
@@ -12,6 +13,8 @@
         <secUnLibrary>00000000</secUnLibrary>
         <secUnRecent>00000000</secUnRecent>
         <secUnFav>00000000</secUnFav>
-        <secUnPlat>${cAccent}</secUnPlat>
+        <secUnPlat>${systemColor}ff</secUnPlat>
+        <!-- focused rail-icon tint: matches the active underline (per-platform here) -->
+        <secIcon>${systemColor}ff</secIcon>
     </variables>
 </theme>

@@ -1,8 +1,9 @@
 <theme>
     <include>./helpsystem.xml</include>
     <include>./status.xml</include>
-    <!-- official ES-DE per-system metadata: defines ${systemName} + ${systemColor} (the hero
-         tint colour); section-accent below overrides ${systemColor} for the auto-collections. -->
+    <!-- official ES-DE per-system metadata FIRST: defines ${systemName} + ${systemColor} (hero
+         tint + platform tab underline + focused icon); must precede section-state, which reads it.
+         section-accent below overrides ${systemColor} for the auto-collections. -->
     <include>./../system-metadata/_default.xml</include>
     <include>./../system-metadata/${system.theme}.xml</include>
     <!-- targeted overrides for ES-DE short names that collapse to the manufacturer (e.g. nes -> NES) -->
@@ -12,8 +13,8 @@
     <!-- spec-line composition (after metadata so the nested vars resolve) -->
     <include>./spec-overrides/_default.xml</include>
     <include>./spec-overrides/${system.theme}.xml</include>
-    <!-- section-strip highlight state: which tab is active. The active underline uses ${cAccent}
-         (from colors.xml). _default first, then per-collection override (last include wins). -->
+    <!-- section-strip highlight state: which tab is active. Platform underline = ${systemColor};
+         the three collections use ${cAccent}. _default first, then per-collection override. -->
     <include>./section-state/_default.xml</include>
     <include>./section-state/${system.theme}.xml</include>
     <!-- Steam-style persistent section nav (consumes the section-state vars above) -->
@@ -91,7 +92,7 @@
             <!-- big-screen focus: fade non-selected icons so the selected (accent-tinted, scaled) pops -->
             <unfocusedItemOpacity>0.5</unfocusedItemOpacity>
             <imageColor>e8eef5ff</imageColor>
-            <imageSelectedColor>${cAccent}</imageSelectedColor>
+            <imageSelectedColor>${secIcon}</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>
             <textColor>00000000</textColor>
