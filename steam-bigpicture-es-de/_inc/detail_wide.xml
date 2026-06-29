@@ -35,7 +35,7 @@
         <!-- bottom block: stars -> metadata -> description -> Play -->
         <rating name="detailRating">
             <pos>0.51 0.46</pos><size>0 0.024</size>
-            <color>${cStar}</color><hideIfZero>false</hideIfZero><zIndex>20</zIndex>
+            <color>${cStar}</color><hideIfZero>true</hideIfZero><zIndex>20</zIndex>
         </rating>
         <badges name="detailFav">
             <pos>0.975 0.46</pos><origin>1 0</origin><size>0.07 0.026</size>
