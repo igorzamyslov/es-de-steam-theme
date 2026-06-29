@@ -34,7 +34,7 @@
     <transitions name="steam">
         <label language="en_US">Steam</label>
         <selectable>true</selectable>
-        <systemToSystem>instant</systemToSystem>
+        <systemToSystem>slide</systemToSystem>
         <systemToGamelist>slide</systemToGamelist>
         <gamelistToGamelist>instant</gamelistToGamelist>
         <gamelistToSystem>slide</gamelistToSystem>
