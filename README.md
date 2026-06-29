@@ -2,7 +2,7 @@
 
 A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view presents a bottom rail of platform icons over a full-bleed hero area; the gamelist shows a capsule grid (or a list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy, with a per-platform accent: the active nav underline picks up each system's signature color. **ES-DE only** — it runs on Steam Deck, desktop, and the distros that bundle ES-DE (it is not a muOS/Knulli/ROCKNIX/Batocera theme).
 
-It adapts to your display and settings: a per-font-size type-and-density scale and a side-panel layout (grid/list on the left, detail panel on the right) across all supported aspect ratios — `16:9 / 16:10 / 4:3 / 5:4` and ultrawide `19.5:9 / 20:9 / 21:9`. Four variants (hero style × gamelist layout) combine with four color-scheme media modes.
+It adapts to your display and settings: a per-font-size type-and-density scale and a side-panel layout (grid/list on the left, detail panel on the right) across all supported aspect ratios — `16:9 / 16:10 / 4:3 / 5:4 / 3:2 / 5:3` and ultrawide `19.5:9 / 20:9 / 21:9`. Four variants (hero style × gamelist layout) combine with four color-scheme media modes.
 
 ---
 
@@ -84,7 +84,7 @@ The same side-panel layout (grid/list on the left, detail panel on the right) is
 
 ## Collections (Library, Favorites, Recent)
 
-This theme is built around a persistent **Library / Favorites / Recent / Platforms** nav strip across the top of every screen — the Steam-style spine of the UI. The first three are ES-DE *automatic collections*, so **enabling them is strongly recommended for the best experience**. Without them, those tabs lead to empty systems.
+This theme is built around a persistent **Library / Favorites / Recent / Platforms** nav strip across the top of every screen — the Steam-style spine of the UI. The first three are ES-DE *automatic collections*. If you followed **install step 1** you've already enabled them; this section just explains what they unlock and how to toggle them. Without them, those three tabs lead to empty systems.
 
 Enable them in ES-DE under:
 
