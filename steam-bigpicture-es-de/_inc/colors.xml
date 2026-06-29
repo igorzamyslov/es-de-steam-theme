@@ -2,10 +2,11 @@
     <!-- Shared palette. Kept as global variables (not inside a colorScheme block) because the
          colorScheme axis is repurposed to pick the detail-panel media behaviour, not colours -
          every scheme shares this one dark palette. cAccent (a bright Steam blue) is the accent for
-         the three collection tabs (Library/Favorites/Recent). The Platforms underline and the
-         unselected rail icons track the per-system ${systemColor} (the selected icon is white; the
-         colour also drives the hero tint); very dark systems are lifted in section-accent/.
-         Background/panel/green colours are baked into the SVG assets in assets/ui/. -->
+         the three collection tabs (Library/Favorites/Recent). The Platforms underline tracks the
+         per-system ${systemColor} (which also drives the hero tint); very dark systems are lifted
+         in section-accent/. The rail icons use fixed colours (unselected = the Steam accent,
+         selected = white) - carousel tints can't safely take a per-system variable. Background/
+         panel/green colours are baked into the SVG assets in assets/ui/. -->
     <variables>
         <cAccent>33a8ffff</cAccent>
         <cText>e8edf2ff</cText>

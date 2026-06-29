@@ -89,10 +89,12 @@
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.12</itemSize>
             <itemScale>1.25</itemScale>
-            <!-- focus: unselected icons take the focused system's accent (${systemColor}, dimmed);
-                 the selected one is bright white + scaled so it pops. -->
+            <!-- focus: unselected icons share one fixed Steam-blue accent (dimmed); the selected
+                 one is bright white + scaled so it pops. Literal colours on purpose - feeding a
+                 per-system ${systemColor} here makes ES-DE resolve the carousel tint per-item and
+                 glitch to the home system's colour during navigation. -->
             <unfocusedItemOpacity>0.5</unfocusedItemOpacity>
-            <imageColor>${systemColor}ff</imageColor>
+            <imageColor>33a8ffff</imageColor>
             <imageSelectedColor>ffffffff</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>
