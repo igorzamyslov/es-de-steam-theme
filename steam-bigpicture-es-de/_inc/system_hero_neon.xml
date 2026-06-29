@@ -42,7 +42,7 @@
              auto-collections fade it out (=0) and show the clean white text label below instead, so
              the whole hero reads as uniform white wordmarks. -->
         <image name="heroLogo">
-            <pos>0.75 0.40</pos><origin>0.5 0.5</origin>
+            <pos>0.75 ${heroLogoY}</pos><origin>0.5 0.5</origin>
             <maxSize>0.46 0.46</maxSize>
             <path>./../system-logos/system-logo-white/${system.theme}.svg</path>
             <default>./../assets/icons/fallback.svg</default>
@@ -51,7 +51,7 @@
             <zIndex>5</zIndex>
         </image>
         <image name="heroLogoLabel">
-            <pos>0.75 0.40</pos><origin>0.5 0.5</origin>
+            <pos>0.75 ${heroLogoY}</pos><origin>0.5 0.5</origin>
             <maxSize>0.46 0.28</maxSize>
             <path>./../system-logos/system-label/${system.theme}.svg</path>
             <default>./../assets/icons/fallback.svg</default>

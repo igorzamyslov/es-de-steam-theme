@@ -30,7 +30,7 @@
             <gridSize>0.596 0.764</gridSize>
             <heroKindY>0.34</heroKindY><heroNameY>0.375</heroNameY><heroSpecY>0.45</heroSpecY><heroCountY>0.49</heroCountY>
             <heroDescY>0.535</heroDescY><heroDescH>0.125</heroDescH>
-            <heroCardY>0.315</heroCardY><heroCardH>0.375</heroCardH>   <!-- info-panel hugs the block -->
+            <heroCardY>0.315</heroCardY><heroCardH>0.375</heroCardH><heroLogoY>0.5025</heroLogoY>   <!-- info-panel hugs the block; logo centred on the card -->
             <!-- detail panel (6 grid cols on 16:9): x/width + content x + media width -->
             <pPanelX>0.666</pPanelX><pPanelW>0.334</pPanelW><pContentX>0.686</pContentX><pInnerW>0.294</pInnerW>
             <pPanelCX>0.833</pPanelCX><pKeyW>0.07</pKeyW><pValueX>0.756</pValueX><pValueW>0.224</pValueW>
@@ -52,7 +52,7 @@
             <gridSize>0.506 0.755</gridSize>
             <heroKindY>0.33</heroKindY><heroNameY>0.37</heroNameY><heroSpecY>0.45</heroSpecY><heroCountY>0.495</heroCountY>
             <heroDescY>0.54</heroDescY><heroDescH>0.12</heroDescH>
-            <heroCardY>0.305</heroCardY><heroCardH>0.385</heroCardH>
+            <heroCardY>0.305</heroCardY><heroCardH>0.385</heroCardH><heroLogoY>0.4975</heroLogoY>
             <!-- detail panel (5 grid cols on 16:9): widest panel -> biggest video -->
             <pPanelX>0.576</pPanelX><pPanelW>0.424</pPanelW><pContentX>0.596</pContentX><pInnerW>0.384</pInnerW>
             <pPanelCX>0.788</pPanelCX><pKeyW>0.085</pKeyW><pValueX>0.681</pValueX><pValueW>0.299</pValueW>
@@ -74,7 +74,7 @@
             <gridSize>0.602 0.745</gridSize>
             <heroKindY>0.32</heroKindY><heroNameY>0.36</heroNameY><heroSpecY>0.45</heroSpecY><heroCountY>0.50</heroCountY>
             <heroDescY>0.55</heroDescY><heroDescH>0.11</heroDescH>
-            <heroCardY>0.295</heroCardY><heroCardH>0.395</heroCardH>
+            <heroCardY>0.295</heroCardY><heroCardH>0.395</heroCardH><heroLogoY>0.4925</heroLogoY>
             <!-- detail panel (4 grid cols on 16:9) -->
             <pPanelX>0.672</pPanelX><pPanelW>0.328</pPanelW><pContentX>0.692</pContentX><pInnerW>0.288</pInnerW>
             <pPanelCX>0.836</pPanelCX><pKeyW>0.10</pKeyW><pValueX>0.792</pValueX><pValueW>0.188</pValueW>
