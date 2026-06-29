@@ -38,14 +38,15 @@
         </image>
         <!-- (heroBloom removed: the one-sided glow read as a dark band in the middle; the hero is
              now an even, uniform per-system tint over the dark base.) -->
-        <!-- hero subject: platforms show the full-colour logo (heroColorOpacity=1); the three
-             auto-collections fade it out (=0) and show the clean white label below instead, so the
-             rail and the main screen use the same label. -->
+        <!-- hero subject: platforms show the white system logo (heroColorOpacity=1); the three
+             auto-collections fade it out (=0) and show the clean white text label below instead, so
+             the whole hero reads as uniform white wordmarks. -->
         <image name="heroLogo">
             <pos>0.75 0.40</pos><origin>0.5 0.5</origin>
             <maxSize>0.46 0.46</maxSize>
-            <path>./../system-logos/system-logo-color/${system.theme}.svg</path>
+            <path>./../system-logos/system-logo-white/${system.theme}.svg</path>
             <default>./../assets/icons/fallback.svg</default>
+            <color>${cText}</color>
             <opacity>${heroColorOpacity}</opacity>
             <zIndex>5</zIndex>
         </image>
