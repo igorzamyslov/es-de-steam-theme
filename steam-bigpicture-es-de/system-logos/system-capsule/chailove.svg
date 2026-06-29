@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" viewBox="0 0 440 200" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="capBase" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#1d2734"/><stop offset="0.5" stop-color="#121925"/><stop offset="1" stop-color="#0a0e15"/>
     </linearGradient>
-    <linearGradient id="bloom" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#26AAE0" stop-opacity="0.50"/>
-      <stop offset="0.6" stop-color="#26AAE0" stop-opacity="0"/>
+    <linearGradient id="capBloom" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#26AAE0" stop-opacity="0.26"/>
+      <stop offset="0.5" stop-color="#26AAE0" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="440" height="200" fill="url(#base)"/>
-  <rect width="440" height="200" fill="url(#bloom)"/>
+  <rect width="440" height="200" fill="url(#capBase)"/>
+  <rect width="440" height="200" fill="url(#capBloom)"/>
   <g transform="translate(48.400 44.869) scale(0.91806)"><defs
      id="defs57" /><sodipodi:namedview
      pagecolor="#ffffff"

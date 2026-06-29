@@ -40,9 +40,9 @@
              so the focused system's colour blooms across the hero (radial isn't an engine
              primitive; this is a baked diagonal-linear glow asset). -->
         <image name="heroBloom">
-            <pos>0.30 0</pos><size>0.70 1</size>
+            <pos>0.45 0</pos><size>0.55 1</size>
             <path>./../assets/ui/hero-bloom.svg</path>
-            <color>${systemColor}66</color>
+            <color>${systemColor}3a</color>
             <zIndex>3</zIndex>
         </image>
         <!-- big focus-tracked system logo as the "neon" hero subject — full colour (was the

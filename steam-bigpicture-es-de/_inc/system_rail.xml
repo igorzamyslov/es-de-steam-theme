@@ -25,9 +25,11 @@
             <imageFit>contain</imageFit>
             <imageCornerRadius>${radTile}</imageCornerRadius>
             <imageSelectedColor>ffffffff</imageSelectedColor>
-            <unfocusedItemOpacity>0.5</unfocusedItemOpacity>
-            <unfocusedItemSaturation>0.7</unfocusedItemSaturation>
-            <unfocusedItemDimming>0.7</unfocusedItemDimming>
+            <!-- solid capsules (no see-through): unfocused recede via dimming + desaturation,
+                 not transparency. Focused = full brightness + itemScale. Matches the grid. -->
+            <unfocusedItemOpacity>1.0</unfocusedItemOpacity>
+            <unfocusedItemSaturation>0.72</unfocusedItemSaturation>
+            <unfocusedItemDimming>0.74</unfocusedItemDimming>
             <color>00000000</color>
             <text>${system.fullName}</text>
             <textColor>00000000</textColor>
