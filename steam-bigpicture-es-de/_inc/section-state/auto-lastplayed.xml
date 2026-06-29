@@ -3,7 +3,7 @@
     <variables>
         <secTxtRecent>e8edf2ff</secTxtRecent>
         <secTxtPlat>8f98a0ff</secTxtPlat>
-        <secUnRecent>${systemColor}ff</secUnRecent>
+        <secUnRecent>${cAccent}</secUnRecent>
         <secUnPlat>00000000</secUnPlat>
     </variables>
 </theme>

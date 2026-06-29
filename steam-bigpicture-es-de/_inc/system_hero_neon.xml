@@ -1,8 +1,8 @@
 <theme>
     <include>./helpsystem.xml</include>
     <include>./status.xml</include>
-    <!-- official ES-DE per-system metadata FIRST: defines ${systemName} + ${systemColor};
-         everything below (section-accent, section-state) reads ${systemColor}. -->
+    <!-- official ES-DE per-system metadata: defines ${systemName} + ${systemColor} (the hero
+         tint colour); section-accent below overrides ${systemColor} for the auto-collections. -->
     <include>./../system-metadata/_default.xml</include>
     <include>./../system-metadata/${system.theme}.xml</include>
     <!-- targeted overrides for ES-DE short names that collapse to the manufacturer (e.g. nes -> NES) -->
@@ -12,8 +12,8 @@
     <!-- spec-line composition (after metadata so the nested vars resolve) -->
     <include>./spec-overrides/_default.xml</include>
     <include>./spec-overrides/${system.theme}.xml</include>
-    <!-- section-strip highlight state: now AFTER metadata so the active underline can be
-         ${systemColor}. _default first, then per-collection override (last include wins). -->
+    <!-- section-strip highlight state: which tab is active. The active underline uses ${cAccent}
+         (from colors.xml). _default first, then per-collection override (last include wins). -->
     <include>./section-state/_default.xml</include>
     <include>./section-state/${system.theme}.xml</include>
     <!-- Steam-style persistent section nav (consumes the section-state vars above) -->
@@ -92,10 +92,10 @@
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.12</itemSize>
             <itemScale>1.25</itemScale>
-            <!-- big-screen focus: fade non-selected icons so the selected (white, scaled) pops -->
+            <!-- big-screen focus: fade non-selected icons so the selected (accent-tinted, scaled) pops -->
             <unfocusedItemOpacity>0.5</unfocusedItemOpacity>
             <imageColor>ccd6e0ff</imageColor>
-            <imageSelectedColor>ffffffff</imageSelectedColor>
+            <imageSelectedColor>${cAccent}</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>
             <textColor>00000000</textColor>

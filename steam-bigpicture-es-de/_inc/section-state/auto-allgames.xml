@@ -3,7 +3,7 @@
     <variables>
         <secTxtLibrary>e8edf2ff</secTxtLibrary>
         <secTxtPlat>8f98a0ff</secTxtPlat>
-        <secUnLibrary>${systemColor}ff</secUnLibrary>
+        <secUnLibrary>${cAccent}</secUnLibrary>
         <secUnPlat>00000000</secUnPlat>
     </variables>
 </theme>
