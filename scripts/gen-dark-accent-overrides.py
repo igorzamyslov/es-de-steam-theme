@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Lift too-dark per-system brand colours so the nav accent stays legible.
+"""Lift too-dark per-system brand colours so the per-system accent stays legible.
 
-The Platforms tab underline and the focused rail icon are tinted with the system's
+The Platforms tab underline and the unselected rail icons are tinted with the system's
 ${systemColor} (from the bundled system-metadata), and so is the neon hero's mood tint.
 A few systems (e.g. pico-8) have very dark brand colours that vanish against the dark
 chrome, and ES-DE cannot brighten a colour at runtime. This script scans every system's
 colour and, for those below a legibility threshold, writes a section-accent override
 (_inc/section-accent/<system>.xml) that raises ${systemColor}'s lightness while keeping
 its hue/saturation. Because section-accent is included after the metadata, the lifted
-colour flows to the underline, the focused icon and the hero tint together - one source,
+colour flows to the underline, the rail icons and the hero tint together - one source,
 consistent everywhere. Bright systems get no file and keep their colour untouched.
 
 Run `python3 scripts/gen-dark-accent-overrides.py` to preview, add `--apply` to write.
@@ -57,8 +57,8 @@ def override_xml(system, bright_hex):
     return (
         f"<theme>\n"
         f"    <!-- {GENERATED_TAG}\n"
-        f"         {system}: dark brand colour lifted so the nav underline, focused icon and hero\n"
-        f"         tint stay legible. Overrides ${{systemColor}} after the metadata include. -->\n"
+        f"         {system}: dark brand colour lifted so the per-system accent (nav underline,\n"
+        f"         rail icons, hero tint) stays legible. Overrides ${{systemColor}} after metadata. -->\n"
         f"    <variables>\n"
         f"        <systemColor>{bright_hex}</systemColor>\n"
         f"    </variables>\n"

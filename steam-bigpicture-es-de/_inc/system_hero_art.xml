@@ -89,10 +89,11 @@
             <maxItemCount>9</maxItemCount>
             <itemSize>0.085 0.12</itemSize>
             <itemScale>1.25</itemScale>
-            <!-- big-screen focus: fade non-selected icons so the selected (system-coloured, scaled) pops -->
+            <!-- focus: unselected icons take the focused system's accent (${systemColor}, dimmed);
+                 the selected one is bright white + scaled so it pops. -->
             <unfocusedItemOpacity>0.5</unfocusedItemOpacity>
-            <imageColor>e8eef5ff</imageColor>
-            <imageSelectedColor>${systemColor}ff</imageSelectedColor>
+            <imageColor>${systemColor}ff</imageColor>
+            <imageSelectedColor>ffffffff</imageSelectedColor>
             <color>00000000</color>
             <text>${system.fullName}</text>
             <textColor>00000000</textColor>
