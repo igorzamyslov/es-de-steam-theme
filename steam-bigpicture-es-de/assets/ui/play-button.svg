@@ -1,4 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140">
-  <!-- flat Steam-style green (no gradient) -->
-  <rect width="600" height="140" fill="#5cb14a"/>
+  <!-- Soft bottom-right drop shadow, same style/colours as the grid capsules
+       (assets/ui/capsule-shadow-soft.svg): faint offset layers fading to a crisp near layer,
+       peeking past the button's bottom and right edges. Top/left stay clean. The green face is
+       inset so the shadow shows in the bottom/right margin. -->
+  <rect x="12" y="13" width="586" height="127" fill="#000000" fill-opacity="0.04"/>
+  <rect x="10" y="11" width="586" height="127" fill="#000000" fill-opacity="0.08"/>
+  <rect x="9"  y="10" width="586" height="127" fill="#000000" fill-opacity="0.14"/>
+  <rect x="8"  y="9"  width="586" height="127" fill="#000000" fill-opacity="0.22"/>
+  <rect x="6"  y="7"  width="586" height="127" fill="#1a222d"/>
+  <!-- flat Steam-style green button face (inset top/left so the shadow peeks bottom/right) -->
+  <rect x="4" y="4" width="586" height="127" fill="#5cb14a"/>
 </svg>
