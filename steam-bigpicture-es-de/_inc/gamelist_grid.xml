@@ -13,7 +13,7 @@
         </image>
         <grid name="capsules">
             <pos>${gridPos}</pos><size>${gridSize}</size>
-            <imageType>cover</imageType>
+            <imageType>cover, miximage, screenshot, marquee</imageType>
             <!-- no defaultImage: the game name is the automatic fallback for art-less tiles -->
             <textColor>${cText}</textColor>
             <textBackgroundColor>00000000</textBackgroundColor>

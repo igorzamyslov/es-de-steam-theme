@@ -25,10 +25,10 @@
          plays (100000 = effectively "no video": the still just stays). Must be a colorScheme (not a
          variant) so it is independent of the hero/layout variant; variants are resolved later and
          would otherwise override these. -->
-    <colorScheme name="marqueeVideo"><variables><detailMediaType>marquee</detailMediaType><mediaDelay>2.5</mediaDelay></variables></colorScheme>
-    <colorScheme name="screenshotVideo"><variables><detailMediaType>screenshot</detailMediaType><mediaDelay>2.5</mediaDelay></variables></colorScheme>
-    <colorScheme name="marqueeStill"><variables><detailMediaType>marquee</detailMediaType><mediaDelay>100000</mediaDelay></variables></colorScheme>
-    <colorScheme name="screenshotStill"><variables><detailMediaType>screenshot</detailMediaType><mediaDelay>100000</mediaDelay></variables></colorScheme>
+    <colorScheme name="marqueeVideo"><variables><detailMediaType>marquee, screenshot, cover</detailMediaType><mediaDelay>2.5</mediaDelay></variables></colorScheme>
+    <colorScheme name="screenshotVideo"><variables><detailMediaType>screenshot, cover</detailMediaType><mediaDelay>2.5</mediaDelay></variables></colorScheme>
+    <colorScheme name="marqueeStill"><variables><detailMediaType>marquee, screenshot, cover</detailMediaType><mediaDelay>100000</mediaDelay></variables></colorScheme>
+    <colorScheme name="screenshotStill"><variables><detailMediaType>screenshot, cover</detailMediaType><mediaDelay>100000</mediaDelay></variables></colorScheme>
 
     <!-- 4 variants = {hero neon, hero art} x {grid, list}. Detail media is the colorScheme axis above.
          First variant is the default: Hero (neon) · Grid. -->
