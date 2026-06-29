@@ -1,5 +1,9 @@
 # Hero art production
 
+> The locked look, palette, and post-process live in **[hero-art-style-spec.md](hero-art-style-spec.md)**.
+> Per-system prompts are generated into `docs/hero-art/prompts.tsv` by
+> `scripts/gen-hero-art-prompts.py` — run it, then batch the rows through your image model.
+
 Target: one atmospheric "poster" per system at `systems/art/<system>.jpg` (1280×720,
 pre-darkened on the left for text legibility; pre-blurred if used as background).
 
