@@ -48,7 +48,7 @@
         </image>
         <!-- description card: solid dark backing so the text block stays legible over busy art. -->
         <image name="infoPanel">
-            <pos>0.025 0.345</pos><size>0.405 0.37</size>
+            <pos>0.03 ${heroCardY}</pos><size>0.40 ${heroCardH}</size>
             <path>./../assets/ui/info-panel.svg</path>
             <zIndex>9</zIndex>
         </image>

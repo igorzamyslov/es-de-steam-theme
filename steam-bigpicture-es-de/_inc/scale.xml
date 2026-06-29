@@ -30,6 +30,7 @@
             <gridSize>0.596 0.764</gridSize>
             <heroKindY>0.39</heroKindY><heroNameY>0.435</heroNameY><heroSpecY>0.55</heroSpecY><heroCountY>0.59</heroCountY>
             <heroDescY>0.635</heroDescY><heroDescH>0.062</heroDescH>
+            <heroCardY>0.37</heroCardY><heroCardH>0.345</heroCardH>   <!-- info-panel hugs the block -->
             <!-- detail panel (6 grid cols on 16:9): x/width + content x + media width -->
             <pPanelX>0.666</pPanelX><pPanelW>0.334</pPanelW><pContentX>0.686</pContentX><pInnerW>0.294</pInnerW>
             <pPanelCX>0.833</pPanelCX><pKeyW>0.07</pKeyW><pValueX>0.756</pValueX><pValueW>0.224</pValueW>
@@ -51,6 +52,7 @@
             <gridSize>0.506 0.755</gridSize>
             <heroKindY>0.35</heroKindY><heroNameY>0.395</heroNameY><heroSpecY>0.505</heroSpecY><heroCountY>0.545</heroCountY>
             <heroDescY>0.595</heroDescY><heroDescH>0.10</heroDescH>
+            <heroCardY>0.33</heroCardY><heroCardH>0.385</heroCardH>
             <!-- detail panel (5 grid cols on 16:9): widest panel -> biggest video -->
             <pPanelX>0.576</pPanelX><pPanelW>0.424</pPanelW><pContentX>0.596</pContentX><pInnerW>0.384</pInnerW>
             <pPanelCX>0.788</pPanelCX><pKeyW>0.085</pKeyW><pValueX>0.681</pValueX><pValueW>0.299</pValueW>
@@ -72,6 +74,7 @@
             <gridSize>0.602 0.745</gridSize>
             <heroKindY>0.31</heroKindY><heroNameY>0.355</heroNameY><heroSpecY>0.46</heroSpecY><heroCountY>0.51</heroCountY>
             <heroDescY>0.555</heroDescY><heroDescH>0.13</heroDescH>
+            <heroCardY>0.29</heroCardY><heroCardH>0.415</heroCardH>
             <!-- detail panel (4 grid cols on 16:9) -->
             <pPanelX>0.672</pPanelX><pPanelW>0.328</pPanelW><pContentX>0.692</pContentX><pInnerW>0.288</pInnerW>
             <pPanelCX>0.836</pPanelCX><pKeyW>0.10</pKeyW><pValueX>0.792</pValueX><pValueW>0.188</pValueW>
