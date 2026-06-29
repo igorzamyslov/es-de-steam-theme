@@ -1,0 +1,8 @@
+# Vendored upstream assets
+steam-bigpicture-es-de/system-logos/
+steam-bigpicture-es-de/system-controllers-outline/
+steam-bigpicture-es-de/system-metadata/
+
+# Internal process artifacts (superpowers plans/specs/briefs), not user-facing docs
+.superpowers/
+docs/superpowers/

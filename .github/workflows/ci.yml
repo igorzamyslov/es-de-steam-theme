@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install xmllint
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run linters (xmllint + asset refs + markdownlint)
+        run: bash scripts/lint.sh
+
+      - name: Check documentation links
+        uses: lycheeverse/lychee-action@v2
+        continue-on-error: true # transient/offline link failures shouldn't break CI
+        with:
+          args: >-
+            --no-progress --accept 200,206,429
+            README.md CONTRIBUTING.md ATTRIBUTION.md docs

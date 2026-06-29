@@ -1,0 +1,23 @@
+# Optional local hooks. Enable with:  pipx install pre-commit && pre-commit install
+# (CI runs the same checks regardless, via scripts/lint.sh.)
+exclude: ^steam-bigpicture-es-de/(system-logos|system-controllers-outline|system-metadata)/
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: \.md$
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-xml
+
+  - repo: local
+    hooks:
+      - id: theme-asset-refs
+        name: theme asset references resolve
+        entry: python3 scripts/check-asset-refs.py
+        language: system
+        pass_filenames: false
+        files: \.xml$
