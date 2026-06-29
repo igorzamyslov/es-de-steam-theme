@@ -7,5 +7,9 @@
         <!-- hero eyebrow kind; collection-type systems override to "Collection" in their per-system
              file here (loaded after this default, so they win). -->
         <heroKind>Platform</heroKind>
+        <!-- neon hero subject: platforms show the colour logo; collections cross-fade to the clean
+             white label (opacity toggles avoid risky nested-variable paths / <visible>). -->
+        <heroColorOpacity>1</heroColorOpacity>
+        <heroLabelOpacity>0</heroLabelOpacity>
     </variables>
 </theme>

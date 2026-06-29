@@ -45,13 +45,23 @@
             <color>${systemColor}3a</color>
             <zIndex>3</zIndex>
         </image>
-        <!-- big focus-tracked system logo as the "neon" hero subject — full colour (was the
-             flat white logo); no <color> tint so the brand colours render. -->
+        <!-- hero subject: platforms show the full-colour logo (heroColorOpacity=1); the three
+             auto-collections fade it out (=0) and show the clean white label below instead, so the
+             rail and the main screen use the same label. -->
         <image name="heroLogo">
             <pos>0.70 0.40</pos><origin>0.5 0.5</origin>
             <maxSize>0.52 0.48</maxSize>
             <path>./../system-logos/system-logo-color/${system.theme}.svg</path>
             <default>./../assets/icons/fallback.svg</default>
+            <opacity>${heroColorOpacity}</opacity>
+            <zIndex>5</zIndex>
+        </image>
+        <image name="heroLogoLabel">
+            <pos>0.70 0.40</pos><origin>0.5 0.5</origin>
+            <maxSize>0.50 0.30</maxSize>
+            <path>./../system-logos/system-label/${system.theme}.svg</path>
+            <default>./../assets/icons/fallback.svg</default>
+            <opacity>${heroLabelOpacity}</opacity>
             <zIndex>5</zIndex>
         </image>
         <!-- darken the lower area so the icon rail stays legible over the colored hero -->

@@ -21,9 +21,9 @@ FONT = os.path.join(THEME, "fonts", "rubik-extrabold.ttf")
 OUT = os.path.join(THEME, "system-logos", "system-label")
 
 LABELS = {
-    "auto-allgames": "All Games",
+    "auto-allgames": "Library",
     "auto-favorites": "Favorites",
-    "auto-lastplayed": "Last Played",
+    "auto-lastplayed": "Recent",
 }
 
 

@@ -3,5 +3,7 @@
     <variables>
         <specLine>${systemHardwareType}</specLine>
         <heroKind>Collection</heroKind>
+        <heroColorOpacity>0</heroColorOpacity>
+        <heroLabelOpacity>1</heroLabelOpacity>
     </variables>
 </theme>
