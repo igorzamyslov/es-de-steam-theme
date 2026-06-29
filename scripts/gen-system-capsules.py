@@ -42,7 +42,14 @@ NS = (
 
 # Per-system fit multipliers for wordmarks that read poorly at the default fit
 # (1.0 = fill the box; <1 = shrink; >1 = enlarge). Populated by eyeballing the output.
-FIT_OVERRIDES = {}
+# NOTE: logos are fit to their declared viewBox; a few (e.g. gc) have viewBox slack so a
+# large multiplier reframes/clips them. Keep values conservative (non-clipping) and do the
+# final fine-tune against the real ES-DE renderer, which may frame SVGs differently than a
+# browser. Scale only — no offset support yet (add if a system genuinely needs it).
+FIT_OVERRIDES = {
+    "neogeo": 1.45,  # small stylised mark — enlarge
+    "n64": 0.92,     # wide wordmark — calm it down a touch
+}
 
 
 def system_color(system):
