@@ -29,11 +29,11 @@ OUT = os.path.join(THEME, "system-logos", "system-capsule")
 LABEL_DIR = os.path.join(THEME, "system-logos", "system-label")
 LABEL_KEYS = {"auto-allgames", "auto-favorites", "auto-lastplayed"}
 
-# Capsule geometry (viewBox units). 2.2:1 matches the rail itemSize aspect.
-VB_W, VB_H = 440.0, 200.0
+# Capsule geometry (viewBox units). 2:1 matches the rail itemSize aspect (0.15 x 0.133).
+VB_W, VB_H = 440.0, 220.0
 # Inset plate within the viewBox: leaves an even margin so adjacent rail capsules show a gap,
 # plus room for a baked drop shadow (bottom+right) — mirroring the gamelist grid's capsule look.
-PLATE_X, PLATE_Y, PLATE_W, PLATE_H = 20.0, 12.0, 400.0, 176.0
+PLATE_X, PLATE_Y, PLATE_W, PLATE_H = 20.0, 14.0, 400.0, 192.0
 # Logo placement box as a fraction of the PLATE, centred.
 LBOX_WF, LBOX_HF = 0.82, 0.66
 
@@ -161,7 +161,7 @@ def fallback_svg():
         f'  </defs>\n'
         f'{_shadow_rects()}'
         f'  <rect x="{PLATE_X:.0f}" y="{PLATE_Y:.0f}" width="{PLATE_W:.0f}" height="{PLATE_H:.0f}" fill="url(#capBase)"/>\n'
-        f'  <g transform="translate(196 80) scale(1)" fill="none" stroke="#5c6675" '
+        f'  <g transform="translate(196 92) scale(1)" fill="none" stroke="#5c6675" '
         f'stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\n'
         f'    <rect x="0" y="6" width="48" height="28" rx="13"/>'
         f'<line x1="11" y1="20" x2="21" y2="20"/><line x1="16" y1="15" x2="16" y2="25"/>'

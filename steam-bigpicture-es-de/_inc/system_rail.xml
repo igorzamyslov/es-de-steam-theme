@@ -28,7 +28,7 @@
             <staticImage>./../system-logos/system-capsule/${system.theme}.svg</staticImage>
             <defaultImage>./../system-logos/system-capsule/_fallback.svg</defaultImage>
             <maxItemCount>7</maxItemCount>
-            <itemSize>0.15 0.12</itemSize>
+            <itemSize>0.15 0.133</itemSize>
             <itemScale>1.08</itemScale>
             <imageFit>contain</imageFit>
             <imageCornerRadius>${radTile}</imageCornerRadius>
