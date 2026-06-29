@@ -1,6 +1,6 @@
 # Steam Big Picture for ES-DE
 
-A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view has a bottom rail of platform icons over a full-bleed hero area; the gamelist shows a capsule grid (or list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy, with a single consistent Steam-blue accent: the active nav underline and the focused system's icon in the bottom rail both use it. Per-system color appears in the hero background tint only. **ES-DE only** — runs on Steam Deck, desktop, and distros that bundle ES-DE (not a muOS/Knulli/ROCKNIX/Batocera theme).
+A theme for [ES-DE](https://es-de.org/) (EmulationStation Desktop Edition) that recreates the modern Steam Big Picture / Steam Deck UI. The system view has a bottom rail of **full-colour system-logo capsules** over a full-bleed hero area, the focused system's logo shown large in the hero over a bloom of that system's colour; the gamelist shows a capsule grid (or list) with a detail panel on the right. The palette is dark throughout — Steam's characteristic navy, with a Steam-blue accent on the active nav. Per-system colour comes through the rail capsules, the focused hero logo, and the hero tint. **ES-DE only** — runs on Steam Deck, desktop, and distros that bundle ES-DE (not a muOS/Knulli/ROCKNIX/Batocera theme).
 
 It adapts to your display: a per-font-size type-and-density scale with a side-panel layout (grid/list left, detail panel right) across all supported aspect ratios — `16:9 / 16:10 / 4:3 / 5:4 / 3:2 / 5:3` and ultrawide `19.5:9 / 20:9 / 21:9`. Four variants (hero style × gamelist layout) combine with four color-scheme media modes.
 
@@ -102,6 +102,8 @@ The "Hero (art)" variants show a placeholder until you add per-platform backgrou
 ## Screenshots
 
 ### System view — Library collection (hero · neon)
+
+> **Note:** the screenshots below predate the colour-logo capsule rail and will be refreshed from a current ES-DE render. A browseable mockup of the current design is at `docs/mockup/steam-system-redesign.html`.
 
 ![Library system view with the persistent Library / Favorites / Recent / Platforms nav strip](screenshots/01-system-library.png)
 
