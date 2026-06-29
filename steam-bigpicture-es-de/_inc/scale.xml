@@ -112,4 +112,14 @@
         <fontSize name="large"><variables><gridItemX>0.0674</gridItemX></variables></fontSize>
         <fontSize name="x-large"><variables><gridItemX>0.1020</gridItemX></variables></fontSize>
     </aspectRatio>
+    <aspectRatio name="3:2">
+        <fontSize name="medium"><variables><gridItemX>0.1067</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.1049</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.1587</gridItemX></variables></fontSize>
+    </aspectRatio>
+    <aspectRatio name="5:3">
+        <fontSize name="medium"><variables><gridItemX>0.0960</gridItemX></variables></fontSize>
+        <fontSize name="large"><variables><gridItemX>0.0944</gridItemX></variables></fontSize>
+        <fontSize name="x-large"><variables><gridItemX>0.1428</gridItemX></variables></fontSize>
+    </aspectRatio>
 </theme>

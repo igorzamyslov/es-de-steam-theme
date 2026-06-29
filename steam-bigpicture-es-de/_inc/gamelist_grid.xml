@@ -46,7 +46,7 @@
 
     <!-- Side-panel layout (top-left header + right detail panel) for ALL aspect ratios — including
          phone/ultrawide, which use the same laptop layout. -->
-    <aspectRatio name="16:9, 16:10, 4:3, 5:4, 19.5:9, 20:9, 21:9">
+    <aspectRatio name="16:9, 16:10, 4:3, 5:4, 3:2, 5:3, 19.5:9, 20:9, 21:9">
         <view name="gamelist">
             <!-- header sits below the section-strip top bar (which ends at y 0.056) -->
             <text name="glHeader">
