@@ -20,7 +20,7 @@
     <fontSize name="medium">
         <variables>
             <fsHero>0.044</fsHero><fsHeader>0.032</fsHeader><fsList>0.026</fsList>
-            <fsClock>0.024</fsClock><statusH>0.028</statusH><fsTitleWide>0.028</fsTitleWide><fsTitle>0.026</fsTitle>
+            <fsClock>0.024</fsClock><statusH>0.028</statusH><clockX>0.890</clockX><fsTitleWide>0.028</fsTitleWide><fsTitle>0.026</fsTitle>
             <fsCount>0.022</fsCount><fsButton>0.021</fsButton><fsLabel>0.020</fsLabel>
             <fsMetaWide>0.019</fsMetaWide><fsMeta>0.0185</fsMeta><fsTab>0.018</fsTab>
             <!-- nav-tab underline widths, tuned to each uppercase label and scaled with fsTab so
@@ -43,7 +43,7 @@
     <fontSize name="large">
         <variables>
             <fsHero>0.050</fsHero><fsHeader>0.044</fsHeader><fsList>0.032</fsList>
-            <fsClock>0.027</fsClock><statusH>0.031</statusH><fsTitleWide>0.038</fsTitleWide><fsTitle>0.036</fsTitle>
+            <fsClock>0.027</fsClock><statusH>0.031</statusH><clockX>0.882</clockX><fsTitleWide>0.038</fsTitleWide><fsTitle>0.036</fsTitle>
             <fsCount>0.030</fsCount><fsButton>0.028</fsButton><fsLabel>0.027</fsLabel>
             <fsMetaWide>0.026</fsMetaWide><fsMeta>0.025</fsMeta><fsTab>0.025</fsTab>
             <unwLib>0.083</unwLib><unwFav>0.108</unwFav><unwRec>0.069</unwRec><unwPlat>0.111</unwPlat>
@@ -65,7 +65,7 @@
     <fontSize name="x-large">
         <variables>
             <fsHero>0.056</fsHero><fsHeader>0.052</fsHeader><fsList>0.038</fsList>
-            <fsClock>0.030</fsClock><statusH>0.034</statusH><fsTitleWide>0.044</fsTitleWide><fsTitle>0.042</fsTitle>
+            <fsClock>0.030</fsClock><statusH>0.034</statusH><clockX>0.872</clockX><fsTitleWide>0.044</fsTitleWide><fsTitle>0.042</fsTitle>
             <fsCount>0.035</fsCount><fsButton>0.032</fsButton><fsLabel>0.031</fsLabel>
             <fsMetaWide>0.030</fsMetaWide><fsMeta>0.029</fsMeta><fsTab>0.029</fsTab>
             <unwLib>0.097</unwLib><unwFav>0.126</unwFav><unwRec>0.081</unwRec><unwPlat>0.129</unwPlat>
