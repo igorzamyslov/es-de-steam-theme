@@ -26,8 +26,11 @@ OUT = os.path.join(THEME, "system-logos", "system-capsule")
 
 # Capsule geometry (viewBox units). 2.2:1 matches the rail itemSize aspect.
 VB_W, VB_H = 440.0, 200.0
-# Logo placement box: fraction of the plate, centred.
-BOX_XF, BOX_YF, BOX_WF, BOX_HF = 0.11, 0.18, 0.78, 0.64
+# Inset plate within the viewBox: leaves an even margin so adjacent rail capsules show a gap,
+# plus room for a baked drop shadow (bottom+right) — mirroring the gamelist grid's capsule look.
+PLATE_X, PLATE_Y, PLATE_W, PLATE_H = 20.0, 12.0, 400.0, 176.0
+# Logo placement box as a fraction of the PLATE, centred.
+LBOX_WF, LBOX_HF = 0.82, 0.66
 
 DEFAULT_COLOR = "33a8ff"  # neutral Steam blue when a system has no metadata colour
 
@@ -90,10 +93,22 @@ def logo_parts(path):
     return (minx, miny, w, h), inner
 
 
+def _shadow_rects():
+    """Baked soft drop shadow (bottom+right), engine-safe stacked offset rects — same idea as
+    assets/ui/capsule-shadow-soft.svg, sized for the landscape plate."""
+    layers = [(6.0, 8.0, 0.05), (4.0, 6.0, 0.11), (2.5, 4.0, 0.20)]
+    return "".join(
+        f'  <rect x="{PLATE_X+dx:.1f}" y="{PLATE_Y+dy:.1f}" width="{PLATE_W:.0f}" '
+        f'height="{PLATE_H:.0f}" fill="#000000" fill-opacity="{op}"/>\n'
+        for dx, dy, op in layers
+    )
+
+
 def capsule_svg(color, vb, inner, fit_mult):
     minx, miny, w, h = vb
-    bx, by = BOX_XF * VB_W, BOX_YF * VB_H
-    bw, bh = BOX_WF * VB_W, BOX_HF * VB_H
+    bw, bh = LBOX_WF * PLATE_W, LBOX_HF * PLATE_H
+    bx = PLATE_X + (PLATE_W - bw) / 2
+    by = PLATE_Y + (PLATE_H - bh) / 2
     s = min(bw / w, bh / h) * fit_mult
     tx = bx + (bw - w * s) / 2 - minx * s
     ty = by + (bh - h * s) / 2 - miny * s
@@ -111,8 +126,9 @@ def capsule_svg(color, vb, inner, fit_mult):
         f'      <stop offset="0.5" stop-color="#{color}" stop-opacity="0"/>\n'
         f'    </linearGradient>\n'
         f'  </defs>\n'
-        f'  <rect width="{VB_W:.0f}" height="{VB_H:.0f}" fill="url(#capBase)"/>\n'
-        f'  <rect width="{VB_W:.0f}" height="{VB_H:.0f}" fill="url(#capBloom)"/>\n'
+        f'{_shadow_rects()}'
+        f'  <rect x="{PLATE_X:.0f}" y="{PLATE_Y:.0f}" width="{PLATE_W:.0f}" height="{PLATE_H:.0f}" fill="url(#capBase)"/>\n'
+        f'  <rect x="{PLATE_X:.0f}" y="{PLATE_Y:.0f}" width="{PLATE_W:.0f}" height="{PLATE_H:.0f}" fill="url(#capBloom)"/>\n'
         f'  <g transform="translate({tx:.3f} {ty:.3f}) scale({s:.5f})">{inner}</g>\n'
         f'</svg>\n'
     )
@@ -128,8 +144,9 @@ def fallback_svg():
         f'      <stop offset="0" stop-color="#1d2734"/><stop offset="1" stop-color="#0a0e15"/>\n'
         f'    </linearGradient>\n'
         f'  </defs>\n'
-        f'  <rect width="{VB_W:.0f}" height="{VB_H:.0f}" fill="url(#capBase)"/>\n'
-        f'  <g transform="translate(196 70) scale(1)" fill="none" stroke="#5c6675" '
+        f'{_shadow_rects()}'
+        f'  <rect x="{PLATE_X:.0f}" y="{PLATE_Y:.0f}" width="{PLATE_W:.0f}" height="{PLATE_H:.0f}" fill="url(#capBase)"/>\n'
+        f'  <g transform="translate(196 80) scale(1)" fill="none" stroke="#5c6675" '
         f'stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\n'
         f'    <rect x="0" y="6" width="48" height="28" rx="13"/>'
         f'<line x1="11" y1="20" x2="21" y2="20"/><line x1="16" y1="15" x2="16" y2="25"/>'

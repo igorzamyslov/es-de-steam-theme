@@ -8,9 +8,12 @@
       <stop offset="0.5" stop-color="#CE413E" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="440" height="200" fill="url(#capBase)"/>
-  <rect width="440" height="200" fill="url(#capBloom)"/>
-  <g transform="translate(16.438 69.528) scale(0.22242)"><defs
+  <rect x="26.0" y="20.0" width="400" height="176" fill="#000000" fill-opacity="0.05"/>
+  <rect x="24.0" y="18.0" width="400" height="176" fill="#000000" fill-opacity="0.11"/>
+  <rect x="22.5" y="16.0" width="400" height="176" fill="#000000" fill-opacity="0.2"/>
+  <rect x="20" y="12" width="400" height="176" fill="url(#capBase)"/>
+  <rect x="20" y="12" width="400" height="176" fill="url(#capBloom)"/>
+  <g transform="translate(25.453 70.878) scale(0.21257)"><defs
      id="defs33" /><sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"

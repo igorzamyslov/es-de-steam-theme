@@ -8,9 +8,12 @@
       <stop offset="0.5" stop-color="#dc9230" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="440" height="200" fill="url(#capBase)"/>
-  <rect width="440" height="200" fill="url(#capBloom)"/>
-  <g transform="translate(48.400 64.968) scale(0.60324)"><g>
+  <rect x="26.0" y="20.0" width="400" height="176" fill="#000000" fill-opacity="0.05"/>
+  <rect x="24.0" y="18.0" width="400" height="176" fill="#000000" fill-opacity="0.11"/>
+  <rect x="22.5" y="16.0" width="400" height="176" fill="#000000" fill-opacity="0.2"/>
+  <rect x="20" y="12" width="400" height="176" fill="url(#capBase)"/>
+  <rect x="20" y="12" width="400" height="176" fill="url(#capBloom)"/>
+  <g transform="translate(56.000 66.520) scale(0.57652)"><g>
 	<polygon fill="#FFFFFF" points="358.58,26.897 358.58,24.416 375.765,24.416 375.765,46.389 363.564,46.389 363.564,50.715 
 		359.367,50.715 359.367,55.566 354.53,55.566 354.53,76.674 358.71,76.674 358.71,81.131 363.302,81.131 363.302,85.851 
 		375.765,85.851 375.765,108.095 358.71,108.095 358.71,105.358 353.462,105.358 353.462,102.793 349.265,102.793 349.265,99.203 

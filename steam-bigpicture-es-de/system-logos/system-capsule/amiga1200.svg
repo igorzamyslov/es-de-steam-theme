@@ -8,9 +8,12 @@
       <stop offset="0.5" stop-color="#2671C6" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="440" height="200" fill="url(#capBase)"/>
-  <rect width="440" height="200" fill="url(#capBloom)"/>
-  <g transform="translate(93.970 -182.962) scale(0.71203)"><g>
+  <rect x="26.0" y="20.0" width="400" height="176" fill="#000000" fill-opacity="0.05"/>
+  <rect x="24.0" y="18.0" width="400" height="176" fill="#000000" fill-opacity="0.11"/>
+  <rect x="22.5" y="16.0" width="400" height="176" fill="#000000" fill-opacity="0.2"/>
+  <rect x="20" y="12" width="400" height="176" fill="url(#capBase)"/>
+  <rect x="20" y="12" width="400" height="176" fill="url(#capBloom)"/>
+  <g transform="translate(99.552 -170.430) scale(0.68050)"><g>
 	<g id="Logo">
 		<path id="path3002" fill="#002255" d="M-11.4,344.8c-29.1,0-52.6,23.6-52.6,52.6c0,29.1,23.6,52.6,52.6,52.6c5.6,0,11-0.9,16-2.5
 			v-26.3c-4.4,2.5-9.5,4-14.9,4c-16,0-28.9-12.5-28.9-27.8s13-27.8,28.9-27.8c5.5,0,10.6,1.5,14.9,4v-26.3

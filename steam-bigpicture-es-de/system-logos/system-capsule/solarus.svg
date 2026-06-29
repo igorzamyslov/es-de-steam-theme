@@ -8,9 +8,12 @@
       <stop offset="0.5" stop-color="#271658" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="440" height="200" fill="url(#capBase)"/>
-  <rect width="440" height="200" fill="url(#capBloom)"/>
-  <g transform="translate(48.400 54.240) scale(0.76267)"><path id="stroke" fill="#3e2d72" d="M436.96,82.68c0.26-0.18,0.52-0.36,0.77-0.54c6.75-5.01,10.32-12.35,10.32-21.21
+  <rect x="26.0" y="20.0" width="400" height="176" fill="#000000" fill-opacity="0.05"/>
+  <rect x="24.0" y="18.0" width="400" height="176" fill="#000000" fill-opacity="0.11"/>
+  <rect x="22.5" y="16.0" width="400" height="176" fill="#000000" fill-opacity="0.2"/>
+  <rect x="20" y="12" width="400" height="176" fill="url(#capBase)"/>
+  <rect x="20" y="12" width="400" height="176" fill="url(#capBloom)"/>
+  <g transform="translate(56.000 56.267) scale(0.72889)"><path id="stroke" fill="#3e2d72" d="M436.96,82.68c0.26-0.18,0.52-0.36,0.77-0.54c6.75-5.01,10.32-12.35,10.32-21.21
 	c0-7.19-1.92-13.07-5.72-17.48c-3.55-4.12-9.13-7.38-17.05-9.98c-2.39-0.81-4.17-1.48-5.48-2.01c-0.59-0.24-0.08-0.8,0.91-0.8
 	c2.31,0,4.45,0.32,6.37,0.75c1.94,0.44,3.84,0.98,5.65,1.81l9.35,4.28l0.95-10.24l1.18-12.72l0.52-5.65L439.38,7
 	c-2.4-0.85-5.23-1.56-8.65-2.17c-3.36-0.59-6.89-0.89-10.51-0.89c-9.74,0-17.74,2.16-23.79,6.41V5.11H365.8v46.62
