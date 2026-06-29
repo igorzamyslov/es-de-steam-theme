@@ -46,6 +46,13 @@
             <path>./../assets/ui/scrim-left.svg</path>
             <zIndex>8</zIndex>
         </image>
+        <!-- description card: solid dark backing so the (grey) spec/count/description stay
+             legible over busy per-system art. -->
+        <image name="infoPanel">
+            <pos>0.025 0.40</pos><size>0.405 0.36</size>
+            <path>./../assets/ui/info-panel.svg</path>
+            <zIndex>9</zIndex>
+        </image>
         <!-- bottom-left info panel: name · spec line · count · description (inhabit the void) -->
         <text name="sysName">
             <pos>0.05 ${heroNameY}</pos><size>0.60 0.095</size>
@@ -70,7 +77,7 @@
         </text>
         <!-- system description fills the empty space; scrolls if long; legible over the rail shelf / left scrim -->
         <text name="sysDesc">
-            <pos>0.05 ${heroDescY}</pos><size>0.46 ${heroDescH}</size>
+            <pos>0.05 ${heroDescY}</pos><size>0.37 ${heroDescH}</size>
             <text>${systemDescription}</text>
             <container>true</container><containerType>vertical</containerType>
             <fontPath>${fontRegular}</fontPath><fontSize>${fsMeta}</fontSize>
