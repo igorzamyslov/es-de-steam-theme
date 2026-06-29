@@ -141,7 +141,7 @@ The gamelist view has two variant layouts (§4a): **Grid** (default) and **List*
 ## 11. File / directory structure
 
 ```
-es-de-steam-theme/                 (theme dir; ES-DE expects a name ending in -es-de → likely "steam-bigpicture-es-de")
+es-de-steam-theme/                 (theme dir; ES-DE expects a name ending in -es-de → likely "steam-ui")
   capabilities.xml
   theme.xml                        # root; includes the rest, defines variants/colorSchemes/aspectRatios
   _inc/

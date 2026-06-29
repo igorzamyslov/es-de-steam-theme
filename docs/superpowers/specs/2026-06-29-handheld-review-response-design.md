@@ -138,7 +138,7 @@ Turns "BYO art, good luck" into "run these exact prompts and drop the files in."
 - `docs/hero-art/prompts.tsv` (generated, committed): one row per system —
   `system  prompt  primary_color  palette` — ready to batch through any image model.
 - Post-process recipe in the style spec: crop/cover to `1280×720`, left-darken, export
-  to `steam-bigpicture-es-de/systems/art/<system>.jpg`.
+  to `steam-ui/systems/art/<system>.jpg`.
 
 ## Non-goals
 

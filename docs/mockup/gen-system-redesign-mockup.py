@@ -65,7 +65,7 @@ games = [dict(t=t, genre=g, dev=dev, players=p, year=y, rating=r, fav=f, desc=d)
 DATA = json.dumps(data); GAMES_JSON = json.dumps(games)
 
 HTML = r"""<meta charset="utf-8">
-<title>Steam Big Picture — ES-DE System & Game View</title>
+<title>Steam UI — ES-DE System & Game View</title>
 <style>
   :root{
     --ink-1:#0b0e12; --ink-2:#13171d; --line:#2b313a;

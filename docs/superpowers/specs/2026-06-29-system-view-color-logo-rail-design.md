@@ -84,7 +84,7 @@ A browseable mockup of the target (system + game view, with a font-size switch) 
 - New `scripts/gen-system-capsules.py` (mirrors `gen-dark-accent-overrides.py`): for every
   `system-metadata/<system>.xml`, read `${systemColor}` (and `systemColorPalette1..4`), load
   `system-logos/system-logo-color/<system>.svg`, and emit a **vector** composite to
-  `steam-bigpicture-es-de/system-logos/system-capsule/<system>.svg`. Each composite is:
+  `steam-ui/system-logos/system-capsule/<system>.svg`. Each composite is:
   - a rectangular plate: a dark base gradient with a **radial bloom of `systemColor`** from a
     top-left-ish origin (SVG `radialGradient` — baked, so allowed);
   - the colour logo embedded (nested `<svg>`/`<g>`), **fit** to roughly 78% width × 64%

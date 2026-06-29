@@ -11,7 +11,7 @@
 ## Global Constraints
 
 - **Engine:** ES-DE modern theme engine, min 2.0.0; target latest stable 3.4.x.
-- **Theme directory name MUST end in `-es-de`:** `steam-bigpicture-es-de`.
+- **Theme directory name MUST end in `-es-de`:** `steam-ui`.
 - **`capabilities.xml`** is mandatory, lives at the theme root, and is **only re-read on full ES-DE restart** (not `Ctrl+R`).
 - **Filenames lowercase** (Linux is case-sensitive). Asset paths relative to the theme file use `./`.
 - **Fonts** must be TTF/OTF (SVG fonts unsupported). Use **Inter** (OFL); optionally Motiva Sans if the user supplies it.
@@ -30,7 +30,7 @@ Because ES-DE themes have no automated test harness, each task's "test" is:
 3. **Compare to the mockup** `docs/mockup/steam-mockup.html` for layout/hierarchy intent.
 4. **Commit.**
 
-Install location (user's ES-DE on external drive): `/Volumes/Untitled/ES-DE/themes/steam-bigpicture-es-de/` (or `~/ES-DE/themes/`). A one-time dev symlink is set up in Task 2.
+Install location (user's ES-DE on external drive): `/Volumes/Untitled/ES-DE/themes/steam-ui/` (or `~/ES-DE/themes/`). A one-time dev symlink is set up in Task 2.
 
 **Spec reference:** `docs/superpowers/specs/2026-06-28-es-de-steam-big-picture-theme-design.md`. **Visual reference:** `docs/mockup/steam-mockup.html`.
 
@@ -39,7 +39,7 @@ Install location (user's ES-DE on external drive): `/Volumes/Untitled/ES-DE/them
 ## File structure (created across the plan)
 
 ```
-steam-bigpicture-es-de/
+steam-ui/
   capabilities.xml                 # Task 14 (6 variants, colorScheme, aspect ratios, transitions)
   theme.xml                        # Task 2 (root; Task 14 expands to compose variants)
   _inc/
@@ -134,13 +134,13 @@ git commit -m "chore: scaffold repo, license, attribution, design docs"
 Goal: the smallest theme ES-DE will load and navigate, so every later task has a working base to verify against.
 
 **Files:**
-- Create: `steam-bigpicture-es-de/capabilities.xml`
-- Create: `steam-bigpicture-es-de/theme.xml`
+- Create: `steam-ui/capabilities.xml`
+- Create: `steam-ui/theme.xml`
 
 **Interfaces:**
 - Produces: a theme dir ES-DE lists as "Steam Big Picture", with a `system` and `gamelist` view that render (textlist primaries) and navigate.
 
-- [ ] **Step 1: Write minimal `steam-bigpicture-es-de/capabilities.xml`**
+- [ ] **Step 1: Write minimal `steam-ui/capabilities.xml`**
 
 ```xml
 <!-- Steam Big Picture for ES-DE -->
@@ -153,7 +153,7 @@ Goal: the smallest theme ES-DE will load and navigate, so every later task has a
 </themeCapabilities>
 ```
 
-- [ ] **Step 2: Write minimal `steam-bigpicture-es-de/theme.xml`**
+- [ ] **Step 2: Write minimal `steam-ui/theme.xml`**
 
 ```xml
 <theme>
@@ -182,14 +182,14 @@ Goal: the smallest theme ES-DE will load and navigate, so every later task has a
 
 - [ ] **Step 3: Validate XML**
 
-Run: `xmllint --noout steam-bigpicture-es-de/capabilities.xml steam-bigpicture-es-de/theme.xml`
+Run: `xmllint --noout steam-ui/capabilities.xml steam-ui/theme.xml`
 Expected: no output, exit 0.
 
 - [ ] **Step 4: Install via dev symlink + load in ES-DE**
 
 Run:
 ```bash
-ln -sfn "$(pwd)/steam-bigpicture-es-de" "/Volumes/Untitled/ES-DE/themes/steam-bigpicture-es-de"
+ln -sfn "$(pwd)/steam-ui" "/Volumes/Untitled/ES-DE/themes/steam-ui"
 ```
 Then launch ES-DE → UI Settings → Theme → select "Steam Big Picture".
 Expected: theme loads with no error popup; system view shows a vertical list of system names; entering a system shows a list of games. (This is the throwaway baseline UI — later tasks replace it.)
@@ -197,7 +197,7 @@ Expected: theme loads with no error popup; system view shows a vertical list of 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/
+git add steam-ui/
 git commit -m "feat: minimal loadable ES-DE theme (textlist baseline)"
 ```
 
@@ -206,9 +206,9 @@ git commit -m "feat: minimal loadable ES-DE theme (textlist baseline)"
 ### Task 3: Fonts
 
 **Files:**
-- Create: `steam-bigpicture-es-de/fonts/inter-regular.ttf`, `inter-semibold.ttf`, `inter-extrabold.ttf`
-- Create: `steam-bigpicture-es-de/_inc/fonts.xml`
-- Modify: `steam-bigpicture-es-de/theme.xml` (include fonts.xml; use the font)
+- Create: `steam-ui/fonts/inter-regular.ttf`, `inter-semibold.ttf`, `inter-extrabold.ttf`
+- Create: `steam-ui/_inc/fonts.xml`
+- Modify: `steam-ui/theme.xml` (include fonts.xml; use the font)
 
 **Interfaces:**
 - Produces: variables `${fontRegular}`, `${fontSemiBold}`, `${fontExtraBold}` (paths to the TTFs).
@@ -217,7 +217,7 @@ git commit -m "feat: minimal loadable ES-DE theme (textlist baseline)"
 
 Run:
 ```bash
-cd steam-bigpicture-es-de/fonts
+cd steam-ui/fonts
 curl -L -o inter.zip "https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip"
 unzip -j inter.zip "*/Inter-Regular.ttf" "*/Inter-SemiBold.ttf" "*/Inter-ExtraBold.ttf"
 mv Inter-Regular.ttf inter-regular.ttf
@@ -226,7 +226,7 @@ mv Inter-ExtraBold.ttf inter-extrabold.ttf
 rm inter.zip
 cd ../..
 ```
-Expected: three lowercase `.ttf` files present (verify `ls steam-bigpicture-es-de/fonts`).
+Expected: three lowercase `.ttf` files present (verify `ls steam-ui/fonts`).
 
 - [ ] **Step 2: Write `_inc/fonts.xml`**
 
@@ -244,13 +244,13 @@ Expected: three lowercase `.ttf` files present (verify `ls steam-bigpicture-es-d
 
 - [ ] **Step 4: Validate + load**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/fonts.xml steam-bigpicture-es-de/theme.xml`
+Run: `xmllint --noout steam-ui/_inc/fonts.xml steam-ui/theme.xml`
 In ES-DE: `Ctrl+R`. Expected: list text now renders in Inter (compare letterforms to a system-default font).
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/fonts steam-bigpicture-es-de/_inc/fonts.xml steam-bigpicture-es-de/theme.xml
+git add steam-ui/fonts steam-ui/_inc/fonts.xml steam-ui/theme.xml
 git commit -m "feat: bundle Inter font and wire font variables"
 ```
 
@@ -259,8 +259,8 @@ git commit -m "feat: bundle Inter font and wire font variables"
 ### Task 4: Color scheme variables
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/colors.xml`
-- Modify: `steam-bigpicture-es-de/theme.xml` (include colors.xml; use variables)
+- Create: `steam-ui/_inc/colors.xml`
+- Modify: `steam-ui/theme.xml` (include colors.xml; use variables)
 
 **Interfaces:**
 - Produces color variables: `${cBg1}`, `${cBg2}`, `${cPanel}`, `${cLine}`, `${cAccent}`, `${cText}`, `${cText2}`, `${cMuted}`, `${cStar}`, `${cGreen}` — all 8-digit `RRGGBBAA`.
@@ -290,13 +290,13 @@ git commit -m "feat: bundle Inter font and wire font variables"
 
 - [ ] **Step 3: Validate + load**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/colors.xml steam-bigpicture-es-de/theme.xml`
+Run: `xmllint --noout steam-ui/_inc/colors.xml steam-ui/theme.xml`
 In ES-DE: `Ctrl+R`. Expected: selection highlight is the blue accent; unselected text is muted grey.
 
 - [ ] **Step 4: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/colors.xml steam-bigpicture-es-de/theme.xml
+git add steam-ui/_inc/colors.xml steam-ui/theme.xml
 git commit -m "feat: dark color scheme variables"
 ```
 
@@ -305,7 +305,7 @@ git commit -m "feat: dark color scheme variables"
 ### Task 5: Official asset repos via git subtree
 
 **Files:**
-- Create (subtrees): `steam-bigpicture-es-de/system-controllers-outline/`, `system-logos/`, `system-metadata/`
+- Create (subtrees): `steam-ui/system-controllers-outline/`, `system-logos/`, `system-metadata/`
 
 **Interfaces:**
 - Produces: per-system icon at `./system-controllers-outline/<system>.svg`, logo at `./system-logos/<system>.svg` (and `-white` variant), metadata at `./system-metadata/<system>/...`. Confirm the exact in-repo path layout after pulling (Step 2) and record it in a comment in `theme.xml`.
@@ -318,22 +318,22 @@ cd /Users/igorzamyslov/Projects/es-de-steam-theme
 git remote add es-controllers https://gitlab.com/es-de/themes/system-controllers-outline.git
 git remote add es-logos https://gitlab.com/es-de/themes/system-logos.git
 git remote add es-metadata https://gitlab.com/es-de/themes/system-metadata.git
-git subtree add --prefix=steam-bigpicture-es-de/system-controllers-outline --squash es-controllers master
-git subtree add --prefix=steam-bigpicture-es-de/system-logos --squash es-logos master
-git subtree add --prefix=steam-bigpicture-es-de/system-metadata --squash es-metadata master
+git subtree add --prefix=steam-ui/system-controllers-outline --squash es-controllers master
+git subtree add --prefix=steam-ui/system-logos --squash es-logos master
+git subtree add --prefix=steam-ui/system-metadata --squash es-metadata master
 ```
 (If `master` is not the default branch, use `main`.)
 
 - [ ] **Step 2: Record the actual path layout**
 
-Run: `ls steam-bigpicture-es-de/system-controllers-outline | head; ls steam-bigpicture-es-de/system-logos | head`
+Run: `ls steam-ui/system-controllers-outline | head; ls steam-ui/system-logos | head`
 Expected: per-system SVG files (e.g. `snes.svg`, `gc.svg`). Note the exact naming (whether `gc` vs `gamecube` etc. — this is the ES-DE `${system.theme}` value) and confirm a few of the user's systems exist: `gba`, `gbc`, `gc`, `megadrive`, `n64`, `nes`, `pico8`, `ps2`, `snes`, `wiiu`.
 
 - [ ] **Step 3: Commit** (subtree add already commits; this records the layout note)
 
 Add a comment to `theme.xml` documenting the confirmed icon path pattern, then:
 ```bash
-git add steam-bigpicture-es-de/theme.xml
+git add steam-ui/theme.xml
 git commit -m "docs: record system asset path layout"
 ```
 
@@ -342,8 +342,8 @@ git commit -m "docs: record system asset path layout"
 ### Task 6: Fallback icon + UI assets
 
 **Files:**
-- Create: `steam-bigpicture-es-de/assets/icons/fallback.svg`
-- Create: `steam-bigpicture-es-de/assets/ui/capsule-placeholder.svg`, `steam-bigpicture-es-de/assets/ui/play.svg`
+- Create: `steam-ui/assets/icons/fallback.svg`
+- Create: `steam-ui/assets/ui/capsule-placeholder.svg`, `steam-ui/assets/ui/play.svg`
 
 - [ ] **Step 1: Write `assets/icons/fallback.svg`** (generic gamepad, white, centered on a 64×64 canvas so ES-DE can tint it)
 
@@ -376,9 +376,9 @@ git commit -m "docs: record system asset path layout"
 
 - [ ] **Step 4: Validate + commit**
 
-Run: `xmllint --noout steam-bigpicture-es-de/assets/icons/fallback.svg steam-bigpicture-es-de/assets/ui/*.svg`
+Run: `xmllint --noout steam-ui/assets/icons/fallback.svg steam-ui/assets/ui/*.svg`
 ```bash
-git add steam-bigpicture-es-de/assets
+git add steam-ui/assets
 git commit -m "feat: fallback icon and UI placeholder assets"
 ```
 
@@ -387,7 +387,7 @@ git commit -m "feat: fallback icon and UI placeholder assets"
 ### Task 7: Help system module
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/helpsystem.xml`
+- Create: `steam-ui/_inc/helpsystem.xml`
 
 **Interfaces:**
 - Produces: a styled `helpsystem` to be included by every view module.
@@ -416,13 +416,13 @@ git commit -m "feat: fallback icon and UI placeholder assets"
 
 - [ ] **Step 2: Validate**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/helpsystem.xml`
+Run: `xmllint --noout steam-ui/_inc/helpsystem.xml`
 Expected: exit 0. (Visual verification happens once a module includes it, Task 10.)
 
 - [ ] **Step 3: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/helpsystem.xml
+git add steam-ui/_inc/helpsystem.xml
 git commit -m "feat: styled help system module"
 ```
 
@@ -431,7 +431,7 @@ git commit -m "feat: styled help system module"
 ### Task 8: Status overlay module (battery + clock)
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/status.xml`
+- Create: `steam-ui/_inc/status.xml`
 
 **Interfaces:**
 - Produces: a `systemstatus` (battery + wifi) and a `clock`, top-right, for inclusion by every view module.
@@ -463,9 +463,9 @@ git commit -m "feat: styled help system module"
 
 - [ ] **Step 2: Validate + commit**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/status.xml`
+Run: `xmllint --noout steam-ui/_inc/status.xml`
 ```bash
-git add steam-bigpicture-es-de/_inc/status.xml
+git add steam-ui/_inc/status.xml
 git commit -m "feat: status overlay (battery + clock)"
 ```
 Note: battery only renders on devices with a battery; verify visually in Task 10. (Dev tip: `SystemStatusDisplayAll=true` in `es_settings.xml` forces all indicators on for testing.)
@@ -475,7 +475,7 @@ Note: battery only renders on devices with a battery; verify visually in Task 10
 ### Task 9: Shared gamelist detail panel
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/detail.xml`
+- Create: `steam-ui/_inc/detail.xml`
 
 **Interfaces:**
 - Produces: the right-hand detail panel (`<view name="gamelist">` fragment) included by both gamelist modules. Uses `${cText}`, `${cText2}`, `${cMuted}`, `${cStar}`, `${fontExtraBold}`, `${fontSemiBold}`.
@@ -595,13 +595,13 @@ Note: battery only renders on devices with a battery; verify visually in Task 10
 
 - [ ] **Step 3: Validate**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/detail.xml steam-bigpicture-es-de/assets/ui/panel.svg steam-bigpicture-es-de/assets/ui/play-button.svg`
+Run: `xmllint --noout steam-ui/_inc/detail.xml steam-ui/assets/ui/panel.svg steam-ui/assets/ui/play-button.svg`
 Expected: exit 0. (Visual verification in Task 13.)
 
 - [ ] **Step 4: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/detail.xml steam-bigpicture-es-de/assets/ui
+git add steam-ui/_inc/detail.xml steam-ui/assets/ui
 git commit -m "feat: shared gamelist detail panel"
 ```
 
@@ -610,8 +610,8 @@ git commit -m "feat: shared gamelist detail panel"
 ### Task 10: System module — Hero · neon
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/system_hero_neon.xml`
-- Modify: `steam-bigpicture-es-de/theme.xml` (temporarily include this module's system view to verify in isolation)
+- Create: `steam-ui/_inc/system_hero_neon.xml`
+- Modify: `steam-ui/theme.xml` (temporarily include this module's system view to verify in isolation)
 
 **Interfaces:**
 - Consumes: `${fontExtraBold}`, `${fontSemiBold}`, colors, `${cAccent}`.
@@ -693,13 +693,13 @@ git commit -m "feat: shared gamelist detail panel"
 
 - [ ] **Step 4: Validate + load**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/assets/ui/hero-bg.svg steam-bigpicture-es-de/assets/ui/scrim-left.svg steam-bigpicture-es-de/theme.xml`
+Run: `xmllint --noout steam-ui/_inc/system_hero_neon.xml steam-ui/assets/ui/hero-bg.svg steam-ui/assets/ui/scrim-left.svg steam-ui/theme.xml`
 In ES-DE: restart (new includes), open system view. Expected: a bottom rail of system icons; scrolling it updates the big hero logo + the system name/count; clock (and battery if present) top-right; help bar bottom-left. Unmapped systems show the fallback gamepad.
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/assets/ui steam-bigpicture-es-de/theme.xml
+git add steam-ui/_inc/system_hero_neon.xml steam-ui/assets/ui steam-ui/theme.xml
 git commit -m "feat: system view module - hero (neon) + rail"
 ```
 
@@ -708,7 +708,7 @@ git commit -m "feat: system view module - hero (neon) + rail"
 ### Task 11: System module — No hero
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/system_nohero.xml`
+- Create: `steam-ui/_inc/system_nohero.xml`
 
 **Interfaces:**
 - Produces: a `system` view = full-screen `grid` of system icon tiles + a compact header (name + count) + help/status.
@@ -759,13 +759,13 @@ git commit -m "feat: system view module - hero (neon) + rail"
 
 - [ ] **Step 2: Validate + load** (temporarily swap the system include in theme.xml to this module)
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/system_nohero.xml`
+Run: `xmllint --noout steam-ui/_inc/system_nohero.xml`
 In ES-DE: restart. Expected: a multi-row grid of system tiles fills the screen, header top-left, focus highlight on the selected tile, no hero.
 
 - [ ] **Step 3: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/system_nohero.xml
+git add steam-ui/_inc/system_nohero.xml
 git commit -m "feat: system view module - no hero (tile grid)"
 ```
 
@@ -774,8 +774,8 @@ git commit -m "feat: system view module - no hero (tile grid)"
 ### Task 12: System module — Hero · art
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/system_hero_art.xml`
-- Create: `steam-bigpicture-es-de/systems/art/.gitkeep`, `steam-bigpicture-es-de/assets/ui/art-placeholder.svg`
+- Create: `steam-ui/_inc/system_hero_art.xml`
+- Create: `steam-ui/systems/art/.gitkeep`, `steam-ui/assets/ui/art-placeholder.svg`
 
 **Interfaces:**
 - Produces: a `system` view identical to hero·neon except the hero subject is per-platform **art** (`./systems/art/${system.theme}.*`) with a placeholder default until bespoke art exists.
@@ -802,13 +802,13 @@ git commit -m "feat: system view module - no hero (tile grid)"
 
 - [ ] **Step 3: Validate + load** (temporarily swap the system include)
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/system_hero_art.xml steam-bigpicture-es-de/assets/ui/art-placeholder.svg`
+Run: `xmllint --noout steam-ui/_inc/system_hero_art.xml steam-ui/assets/ui/art-placeholder.svg`
 In ES-DE: restart. Expected: hero shows the dashed "PLATFORM ART" placeholder for systems without art; rail + name/count unchanged.
 
 - [ ] **Step 4: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/system_hero_art.xml steam-bigpicture-es-de/systems steam-bigpicture-es-de/assets/ui/art-placeholder.svg
+git add steam-ui/_inc/system_hero_art.xml steam-ui/systems steam-ui/assets/ui/art-placeholder.svg
 git commit -m "feat: system view module - hero (art) with placeholder"
 ```
 
@@ -817,7 +817,7 @@ git commit -m "feat: system view module - hero (art) with placeholder"
 ### Task 13: Gamelist module — Grid
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/gamelist_grid.xml`
+- Create: `steam-ui/_inc/gamelist_grid.xml`
 
 **Interfaces:**
 - Produces: a `gamelist` view = header + capsule `grid` (left 70%) + included shared detail panel.
@@ -861,13 +861,13 @@ git commit -m "feat: system view module - hero (art) with placeholder"
 
 - [ ] **Step 2: Validate + load** (temporarily set the gamelist `<view>` in theme.xml to `<include>./_inc/gamelist_grid.xml</include>`)
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/gamelist_grid.xml`
+Run: `xmllint --noout steam-ui/_inc/gamelist_grid.xml`
 In ES-DE: `Ctrl+R`, enter a populated system (e.g. `gba`). Expected: 2:3 capsule grid; selected capsule highlighted (no edge clipping); right panel shows the selected game's shot/title/rating/genre/developer/players/description; long descriptions scroll; covers of odd ratios letterbox cleanly; missing covers show the placeholder.
 
 - [ ] **Step 3: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/gamelist_grid.xml steam-bigpicture-es-de/theme.xml
+git add steam-ui/_inc/gamelist_grid.xml steam-ui/theme.xml
 git commit -m "feat: gamelist module - capsule grid + detail"
 ```
 
@@ -876,7 +876,7 @@ git commit -m "feat: gamelist module - capsule grid + detail"
 ### Task 13b: Gamelist module — List
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/gamelist_list.xml`
+- Create: `steam-ui/_inc/gamelist_list.xml`
 
 **Interfaces:**
 - Produces: a `gamelist` view = header + `textlist` of game names (left 70%) + included shared detail panel.
@@ -920,13 +920,13 @@ git commit -m "feat: gamelist module - capsule grid + detail"
 
 - [ ] **Step 2: Validate + load** (temporarily swap the gamelist include to this module)
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/gamelist_list.xml`
+Run: `xmllint --noout steam-ui/_inc/gamelist_list.xml`
 In ES-DE: `Ctrl+R`. Expected: a vertical list of game names; selected row highlighted; the same detail panel updates on the right; favorites/collection indicators show as symbols.
 
 - [ ] **Step 3: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/gamelist_list.xml
+git add steam-ui/_inc/gamelist_list.xml
 git commit -m "feat: gamelist module - list + detail"
 ```
 
@@ -935,8 +935,8 @@ git commit -m "feat: gamelist module - list + detail"
 ### Task 14: capabilities.xml — 6 variants + theme.xml composition
 
 **Files:**
-- Modify: `steam-bigpicture-es-de/capabilities.xml`
-- Modify: `steam-bigpicture-es-de/theme.xml` (replace the temporary single-view body with full variant composition)
+- Modify: `steam-ui/capabilities.xml`
+- Modify: `steam-ui/theme.xml` (replace the temporary single-view body with full variant composition)
 
 **Interfaces:**
 - Consumes: all six `_inc/system_*` and `_inc/gamelist_*` modules.
@@ -1013,13 +1013,13 @@ git commit -m "feat: gamelist module - list + detail"
 
 - [ ] **Step 3: Validate + load**
 
-Run: `xmllint --noout steam-bigpicture-es-de/capabilities.xml steam-bigpicture-es-de/theme.xml`
+Run: `xmllint --noout steam-ui/capabilities.xml steam-ui/theme.xml`
 In ES-DE: **restart** (capabilities changed). UI Settings → Theme variant: confirm all 6 entries appear and each renders its system+gamelist correctly (spot-check `Hero (neon) · Grid`, `No hero · List`, `Hero (art) · Grid`).
 
 - [ ] **Step 4: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/capabilities.xml steam-bigpicture-es-de/theme.xml
+git add steam-ui/capabilities.xml steam-ui/theme.xml
 git commit -m "feat: 6 variants composed from layout modules"
 ```
 
@@ -1028,8 +1028,8 @@ git commit -m "feat: 6 variants composed from layout modules"
 ### Task 15: Aspect-ratio adjustments (16:10, 4:3)
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/aspect_16_10.xml`, `steam-bigpicture-es-de/_inc/aspect_4_3.xml`
-- Modify: `steam-bigpicture-es-de/theme.xml` (add `<aspectRatio>` blocks)
+- Create: `steam-ui/_inc/aspect_16_10.xml`, `steam-ui/_inc/aspect_4_3.xml`
+- Modify: `steam-ui/theme.xml` (add `<aspectRatio>` blocks)
 
 **Interfaces:**
 - Produces: per-aspect overrides of element `pos`/`size` so the layout reflows (4:3 = fewer grid columns / taller rail / repositioned hero).
@@ -1073,13 +1073,13 @@ git commit -m "feat: 6 variants composed from layout modules"
 
 - [ ] **Step 4: Validate + load**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/aspect_4_3.xml steam-bigpicture-es-de/_inc/aspect_16_10.xml steam-bigpicture-es-de/theme.xml`
+Run: `xmllint --noout steam-ui/_inc/aspect_4_3.xml steam-ui/_inc/aspect_16_10.xml steam-ui/theme.xml`
 In ES-DE: set the application resolution / test on a 4:3 and 16:10 window if possible. Expected: at 4:3 the grid uses fewer/larger capsules and the hero text doesn't collide with the rail; at 16:10 the rail shows ~8 tiles.
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/aspect_4_3.xml steam-bigpicture-es-de/_inc/aspect_16_10.xml steam-bigpicture-es-de/theme.xml
+git add steam-ui/_inc/aspect_4_3.xml steam-ui/_inc/aspect_16_10.xml steam-ui/theme.xml
 git commit -m "feat: 16:10 and 4:3 aspect-ratio adjustments"
 ```
 
@@ -1088,8 +1088,8 @@ git commit -m "feat: 16:10 and 4:3 aspect-ratio adjustments"
 ### Task 16: Per-system mood / hero tint
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/systems/<system>.xml` (one tiny file per system defining its mood color), e.g. `gc.xml`, `snes.xml`, … for the user's systems + common ones
-- Create: `steam-bigpicture-es-de/_inc/mood_default.xml`
+- Create: `steam-ui/_inc/systems/<system>.xml` (one tiny file per system defining its mood color), e.g. `gc.xml`, `snes.xml`, … for the user's systems + common ones
+- Create: `steam-ui/_inc/mood_default.xml`
 - Modify: the hero modules to load a per-system color via `${system.theme}` include and use it for `heroBg` tint / `heroLogo` glow color
 
 **Interfaces:**
@@ -1135,7 +1135,7 @@ In ES-DE: restart, scroll the rail across several systems. Expected: each themed
 - [ ] **Step 5: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/mood_default.xml steam-bigpicture-es-de/_inc/systems steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/_inc/system_hero_art.xml
+git add steam-ui/_inc/mood_default.xml steam-ui/_inc/systems steam-ui/_inc/system_hero_neon.xml steam-ui/_inc/system_hero_art.xml
 git commit -m "feat: per-system mood tint for the hero"
 ```
 
@@ -1145,7 +1145,7 @@ git commit -m "feat: per-system mood tint for the hero"
 
 **Files:**
 - Create: `docs/hero-art-pipeline.md`
-- Create: `steam-bigpicture-es-de/systems/art/README.md`
+- Create: `steam-ui/systems/art/README.md`
 
 - [ ] **Step 1: Write `docs/hero-art-pipeline.md`** documenting the chosen approach for producing the per-platform Dead Cells posters:
 
@@ -1172,7 +1172,7 @@ Until posters exist, the `Hero (art)` variant shows the dashed placeholder.
 - [ ] **Step 3: Commit**
 
 ```bash
-git add docs/hero-art-pipeline.md steam-bigpicture-es-de/systems/art/README.md
+git add docs/hero-art-pipeline.md steam-ui/systems/art/README.md
 git commit -m "docs: hero-art production pipeline"
 ```
 
@@ -1192,13 +1192,13 @@ For each of the 6 variants, at 16:9 (and spot-check 16:10, 4:3): confirm system 
 
 - [ ] **Step 3: Validate every XML file**
 
-Run: `find steam-bigpicture-es-de -name '*.xml' -exec xmllint --noout {} +`
+Run: `find steam-ui -name '*.xml' -exec xmllint --noout {} +`
 Expected: exit 0.
 
 - [ ] **Step 4: Commit**
 
 ```bash
-git add README.md steam-bigpicture-es-de
+git add README.md steam-ui
 git commit -m "docs: README + final verification pass"
 ```
 

@@ -17,15 +17,15 @@
 - ES-DE color values are `RRGGBB` or `RRGGBBAA`; variable concatenation like `${systemColor}ff` is valid (the hero tint already uses `${systemColor}cc`).
 - Do not modify vendored dirs: `system-logos/`, `system-controllers-outline/`, `system-metadata/`.
 - Never add a `Co-Authored-By` trailer to commits.
-- Theme file root is `steam-bigpicture-es-de/`. Spec: `docs/superpowers/specs/2026-06-29-handheld-review-response-design.md`.
+- Theme file root is `steam-ui/`. Spec: `docs/superpowers/specs/2026-06-29-handheld-review-response-design.md`.
 
 ---
 
 ### Task 1: Art fallback chains (grid + detail still)
 
 **Files:**
-- Modify: `steam-bigpicture-es-de/_inc/gamelist_grid.xml` (line 16)
-- Modify: `steam-bigpicture-es-de/theme.xml` (lines 28–31)
+- Modify: `steam-ui/_inc/gamelist_grid.xml` (line 16)
+- Modify: `steam-ui/theme.xml` (lines 28–31)
 
 **Interfaces:**
 - Produces: nothing consumed by later tasks (self-contained).
@@ -59,7 +59,7 @@ In `theme.xml`, replace the four colorScheme lines (28–31) with:
 
 - [ ] **Step 3: Verify well-formedness**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/gamelist_grid.xml steam-bigpicture-es-de/theme.xml`
+Run: `xmllint --noout steam-ui/_inc/gamelist_grid.xml steam-ui/theme.xml`
 Expected: no output (success).
 
 - [ ] **Step 4: Verify asset references still resolve**
@@ -70,7 +70,7 @@ Expected: exits 0, prints its OK summary.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/gamelist_grid.xml steam-bigpicture-es-de/theme.xml
+git add steam-ui/_inc/gamelist_grid.xml steam-ui/theme.xml
 git commit -m "fix(art): fall back through miximage/screenshot/marquee so the grid and detail panel render on any scrape profile"
 ```
 
@@ -79,9 +79,9 @@ git commit -m "fix(art): fall back through miximage/screenshot/marquee so the gr
 ### Task 2: Empty-state polish (stars, muted contrast, blank-label note)
 
 **Files:**
-- Modify: `steam-bigpicture-es-de/_inc/detail.xml` (line 38; add a comment near 46)
-- Modify: `steam-bigpicture-es-de/_inc/detail_wide.xml` (line 38)
-- Modify: `steam-bigpicture-es-de/_inc/colors.xml` (line 10)
+- Modify: `steam-ui/_inc/detail.xml` (line 38; add a comment near 46)
+- Modify: `steam-ui/_inc/detail_wide.xml` (line 38)
+- Modify: `steam-ui/_inc/colors.xml` (line 10)
 
 **Interfaces:**
 - Produces: nothing consumed by later tasks.
@@ -120,13 +120,13 @@ to:
 
 - [ ] **Step 5: Verify well-formedness**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/detail.xml steam-bigpicture-es-de/_inc/detail_wide.xml steam-bigpicture-es-de/_inc/colors.xml`
+Run: `xmllint --noout steam-ui/_inc/detail.xml steam-ui/_inc/detail_wide.xml steam-ui/_inc/colors.xml`
 Expected: no output.
 
 - [ ] **Step 6: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/detail.xml steam-bigpicture-es-de/_inc/detail_wide.xml steam-bigpicture-es-de/_inc/colors.xml
+git add steam-ui/_inc/detail.xml steam-ui/_inc/detail_wide.xml steam-ui/_inc/colors.xml
 git commit -m "fix(detail): hide empty star row, lift muted-text contrast for handhelds, document the blank-label limitation"
 ```
 
@@ -135,13 +135,13 @@ git commit -m "fix(detail): hide empty star row, lift muted-text contrast for ha
 ### Task 3: Per-system accent (the riskiest task — needs ES-DE visual confirmation later)
 
 **Files:**
-- Modify: `steam-bigpicture-es-de/_inc/system_hero_neon.xml` (include block, lines 4–21)
-- Modify: `steam-bigpicture-es-de/_inc/system_hero_art.xml` (include block, lines 4–21)
-- Modify: `steam-bigpicture-es-de/_inc/section-state/_default.xml`
-- Modify: `steam-bigpicture-es-de/_inc/section-state/auto-allgames.xml`
-- Modify: `steam-bigpicture-es-de/_inc/section-state/auto-favorites.xml`
-- Modify: `steam-bigpicture-es-de/_inc/section-state/auto-lastplayed.xml`
-- Modify: `steam-bigpicture-es-de/_inc/colors.xml` (remove `cAccent`)
+- Modify: `steam-ui/_inc/system_hero_neon.xml` (include block, lines 4–21)
+- Modify: `steam-ui/_inc/system_hero_art.xml` (include block, lines 4–21)
+- Modify: `steam-ui/_inc/section-state/_default.xml`
+- Modify: `steam-ui/_inc/section-state/auto-allgames.xml`
+- Modify: `steam-ui/_inc/section-state/auto-favorites.xml`
+- Modify: `steam-ui/_inc/section-state/auto-lastplayed.xml`
+- Modify: `steam-ui/_inc/colors.xml` (remove `cAccent`)
 
 **Interfaces:**
 - Consumes: `${systemColor}` (defined by `system-metadata/*.xml` and overridden for collections by `section-accent/auto-*.xml`).
@@ -223,18 +223,18 @@ And change the leading comment's last sentence to: `The accent is per-system: th
 
 - [ ] **Step 6: Confirm no dangling `cAccent` / `3a9bff` references remain**
 
-Run: `grep -rn "cAccent\|3a9bff" steam-bigpicture-es-de/ --include=*.xml`
+Run: `grep -rn "cAccent\|3a9bff" steam-ui/ --include=*.xml`
 Expected: no matches.
 
 - [ ] **Step 7: Verify well-formedness + asset refs**
 
-Run: `xmllint --noout steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/_inc/system_hero_art.xml steam-bigpicture-es-de/_inc/section-state/*.xml steam-bigpicture-es-de/_inc/colors.xml && python3 scripts/check-asset-refs.py`
+Run: `xmllint --noout steam-ui/_inc/system_hero_neon.xml steam-ui/_inc/system_hero_art.xml steam-ui/_inc/section-state/*.xml steam-ui/_inc/colors.xml && python3 scripts/check-asset-refs.py`
 Expected: no xmllint output; checker exits 0.
 
 - [ ] **Step 8: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/_inc/system_hero_art.xml steam-bigpicture-es-de/_inc/section-state steam-bigpicture-es-de/_inc/colors.xml
+git add steam-ui/_inc/system_hero_neon.xml steam-ui/_inc/system_hero_art.xml steam-ui/_inc/section-state steam-ui/_inc/colors.xml
 git commit -m "feat(accent): make the active section-strip underline track per-system ${systemColor}; remove the dead cAccent variable"
 ```
 
@@ -243,9 +243,9 @@ git commit -m "feat(accent): make the active section-strip underline track per-s
 ### Task 4: Add 3:2 and 5:3 aspect ratios
 
 **Files:**
-- Modify: `steam-bigpicture-es-de/capabilities.xml` (after line 11)
-- Modify: `steam-bigpicture-es-de/_inc/gamelist_grid.xml` (line 49)
-- Modify: `steam-bigpicture-es-de/_inc/scale.xml` (after the existing aspectRatio blocks)
+- Modify: `steam-ui/capabilities.xml` (after line 11)
+- Modify: `steam-ui/_inc/gamelist_grid.xml` (line 49)
+- Modify: `steam-ui/_inc/scale.xml` (after the existing aspectRatio blocks)
 
 **Interfaces:**
 - Produces: nothing consumed by later tasks.
@@ -292,13 +292,13 @@ In `scale.xml`, after the `21:9` aspectRatio block (ends ~line 114), add (values
 
 - [ ] **Step 4: Verify well-formedness**
 
-Run: `xmllint --noout steam-bigpicture-es-de/capabilities.xml steam-bigpicture-es-de/_inc/gamelist_grid.xml steam-bigpicture-es-de/_inc/scale.xml`
+Run: `xmllint --noout steam-ui/capabilities.xml steam-ui/_inc/gamelist_grid.xml steam-ui/_inc/scale.xml`
 Expected: no output.
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/capabilities.xml steam-bigpicture-es-de/_inc/gamelist_grid.xml steam-bigpicture-es-de/_inc/scale.xml
+git add steam-ui/capabilities.xml steam-ui/_inc/gamelist_grid.xml steam-ui/_inc/scale.xml
 git commit -m "feat(aspect): support 3:2 and 5:3 (common budget-handheld landscape ratios)"
 ```
 
@@ -307,7 +307,7 @@ git commit -m "feat(aspect): support 3:2 and 5:3 (common budget-handheld landsca
 ### Task 5: Steam-like system-to-system transition
 
 **Files:**
-- Modify: `steam-bigpicture-es-de/capabilities.xml` (line 35)
+- Modify: `steam-ui/capabilities.xml` (line 35)
 
 **Interfaces:**
 - Produces: nothing consumed by later tasks.
@@ -330,13 +330,13 @@ to:
 
 - [ ] **Step 2: Verify well-formedness**
 
-Run: `xmllint --noout steam-bigpicture-es-de/capabilities.xml`
+Run: `xmllint --noout steam-ui/capabilities.xml`
 Expected: no output.
 
 - [ ] **Step 3: Commit**
 
 ```bash
-git add steam-bigpicture-es-de/capabilities.xml
+git add steam-ui/capabilities.xml
 git commit -m "tweak(transitions): slide on system-to-system for a more Steam-like feel; keep gamelist instant"
 ```
 
@@ -367,7 +367,7 @@ In `README.md`, in the `## Install` section, insert a new step before the curren
 ```markdown
 1. **Enable automatic collections first.** This theme's top nav (**Library / Favorites / Recent / Platforms**) is its Steam-style spine; the first three are ES-DE *automatic collections*, which are **off by default**. Without them, three of the four tabs lead to empty systems and the theme looks half-broken. In ES-DE: **Game Collection Settings → Enable automatic game collections** (details in [Collections](#collections-library-favorites-recent)).
 2. Download or clone this repository.
-3. Copy (or symlink) the `steam-bigpicture-es-de/` directory into your ES-DE themes folder:
+3. Copy (or symlink) the `steam-ui/` directory into your ES-DE themes folder:
 ```
 
 (Renumber the remaining sub-steps/launch step accordingly; keep the existing folder paths and the "select Steam Big Picture" step.)
@@ -439,7 +439,7 @@ git commit -m "docs(readme): honest device/aspect claims, collections as install
 - Modify: `docs/hero-art-pipeline.md` (link to the style spec)
 
 **Interfaces:**
-- Consumes: `steam-bigpicture-es-de/system-metadata/*.xml` (top-level `<variables>` only).
+- Consumes: `steam-ui/system-metadata/*.xml` (top-level `<variables>` only).
 - Produces: a TSV manifest, one row per system; not consumed by other tasks.
 
 - [ ] **Step 1: Write the locked style spec**
@@ -450,7 +450,7 @@ Create `docs/hero-art-style-spec.md`:
 # Hero art — locked style spec
 
 The `Hero (art)` variant loads one poster per system at
-`steam-bigpicture-es-de/systems/art/<system>.jpg`. This spec locks the look so a full
+`steam-ui/systems/art/<system>.jpg`. This spec locks the look so a full
 pack stays visually consistent. The shipped `gba.jpg` is the reference frame.
 
 ## Canvas & technical
@@ -487,7 +487,7 @@ synthwave, teal abyss, crimson arcade. Pick the family nearest the system color.
 ## Post-process
 
 - Crop/cover to 1280×720; apply the left + bottom darkening; export JPG (quality ~85).
-- Save as `steam-bigpicture-es-de/systems/art/<system>.jpg` where `<system>` is the
+- Save as `steam-ui/systems/art/<system>.jpg` where `<system>` is the
   ES-DE `${system.theme}` key (the manifest's first column).
 ```
 
@@ -499,7 +499,7 @@ Create `scripts/gen-hero-art-prompts.py`:
 #!/usr/bin/env python3
 """Generate a per-system hero-art prompt manifest from the bundled system metadata.
 
-Reads each steam-bigpicture-es-de/system-metadata/<system>.xml, pulls the top-level
+Reads each steam-ui/system-metadata/<system>.xml, pulls the top-level
 <variables> (NOT the per-language overrides), and expands a locked prompt template.
 Writes docs/hero-art/prompts.tsv: system<TAB>prompt<TAB>primary_color<TAB>palette.
 
@@ -510,7 +510,7 @@ import sys
 import xml.etree.ElementTree as ET
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-META = os.path.join(REPO, "steam-bigpicture-es-de", "system-metadata")
+META = os.path.join(REPO, "steam-ui", "system-metadata")
 OUT = os.path.join(REPO, "docs", "hero-art", "prompts.tsv")
 
 FIELDS = (
@@ -614,7 +614,7 @@ git commit -m "docs(hero-art): add a generation kit — locked style spec, per-s
 - [ ] **Run the full automated suite that mirrors CI:**
 
 ```bash
-xmllint --noout $(git ls-files 'steam-bigpicture-es-de/*.xml' 'steam-bigpicture-es-de/*.svg' | grep -Ev 'system-logos|system-controllers-outline|system-metadata')
+xmllint --noout $(git ls-files 'steam-ui/*.xml' 'steam-ui/*.svg' | grep -Ev 'system-logos|system-controllers-outline|system-metadata')
 python3 scripts/check-asset-refs.py
 ```
 Expected: no xmllint output; checker exits 0.

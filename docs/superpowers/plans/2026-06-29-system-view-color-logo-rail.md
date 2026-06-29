@@ -38,8 +38,8 @@ its white logo for the colour logo plus a baked `hero-bloom.svg`.
 
 **Files:**
 - Create: `scripts/gen-system-capsules.py`
-- Reads: `steam-bigpicture-es-de/system-metadata/*.xml`, `steam-bigpicture-es-de/system-logos/system-logo-color/*.svg`
-- Writes: `steam-bigpicture-es-de/system-logos/system-capsule/<system>.svg` + `_fallback.svg`
+- Reads: `steam-ui/system-metadata/*.xml`, `steam-ui/system-logos/system-logo-color/*.svg`
+- Writes: `steam-ui/system-logos/system-capsule/<system>.svg` + `_fallback.svg`
 
 **Produces:** one capsule SVG per system the colour-logo set covers; `_fallback.svg` for the rest.
 
@@ -59,14 +59,14 @@ its white logo for the colour logo plus a baked `hero-bloom.svg`.
 - [ ] **Step 2: Run it.** `python3 scripts/gen-system-capsules.py` → expect `wrote N capsules`
   (N ≈ 200+). Confirm `system-logos/system-capsule/` is populated incl. `_fallback.svg`.
 - [ ] **Step 3: Validate well-formedness.**
-  Run: `xmllint --noout steam-bigpicture-es-de/system-logos/system-capsule/*.svg`
+  Run: `xmllint --noout steam-ui/system-logos/system-capsule/*.svg`
   Expected: no output (all well-formed). Fix any logo whose inner markup breaks nesting.
 - [ ] **Step 4: Render spot-check.** Copy ~6 capsules (`nes,snes,n64,gc,ps2,gb`) into the
   preview-served `docs/mockup/` dir (or point the static server at `system-capsule/`) and open them
   in the browser preview; confirm plate bloom + logo placement look right at capsule aspect.
 - [ ] **Step 5: Commit.**
 ```bash
-git add scripts/gen-system-capsules.py steam-bigpicture-es-de/system-logos/system-capsule/
+git add scripts/gen-system-capsules.py steam-ui/system-logos/system-capsule/
 git commit -m "feat(system): generate colour-logo capsule assets for the rail"
 ```
 
@@ -84,15 +84,15 @@ git commit -m "feat(system): generate colour-logo capsule assets for the rail"
   capsule reads cleanly. Add any other outliers discovered.
 - [ ] **Step 4: Commit.**
 ```bash
-git add scripts/gen-system-capsules.py steam-bigpicture-es-de/system-logos/system-capsule/
+git add scripts/gen-system-capsules.py steam-ui/system-logos/system-capsule/
 git commit -m "feat(system): per-system fit overrides for outlier wordmarks"
 ```
 
 ### Task 3: Baked hero assets (bloom + info panel)
 
 **Files:**
-- Create: `steam-bigpicture-es-de/assets/ui/hero-bloom.svg`
-- Create: `steam-bigpicture-es-de/assets/ui/info-panel.svg`
+- Create: `steam-ui/assets/ui/hero-bloom.svg`
+- Create: `steam-ui/assets/ui/info-panel.svg`
 
 **Produces:** `hero-bloom.svg` (tinted at runtime by `${systemColor}`); `info-panel.svg` (static).
 
@@ -104,16 +104,16 @@ git commit -m "feat(system): per-system fit overrides for outlier wordmarks"
 - [ ] **Step 3:** `xmllint --noout` both; open both in the preview to sanity-check.
 - [ ] **Step 4: Commit.**
 ```bash
-git add steam-bigpicture-es-de/assets/ui/hero-bloom.svg steam-bigpicture-es-de/assets/ui/info-panel.svg
+git add steam-ui/assets/ui/hero-bloom.svg steam-ui/assets/ui/info-panel.svg
 git commit -m "feat(system): baked hero-bloom and info-panel assets"
 ```
 
 ### Task 4: Shared rail include + re-point the carousel
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/system_rail.xml`
-- Modify: `steam-bigpicture-es-de/_inc/system_hero_neon.xml` (replace the `<carousel name="rail">` block with `<include>./system_rail.xml</include>`)
-- Modify: `steam-bigpicture-es-de/_inc/system_hero_art.xml` (same replacement)
+- Create: `steam-ui/_inc/system_rail.xml`
+- Modify: `steam-ui/_inc/system_hero_neon.xml` (replace the `<carousel name="rail">` block with `<include>./system_rail.xml</include>`)
+- Modify: `steam-ui/_inc/system_hero_art.xml` (same replacement)
 
 **Consumes:** `system-capsule/<system>.svg` + `_fallback.svg` (Task 1/2).
 
@@ -134,19 +134,19 @@ git commit -m "feat(system): baked hero-bloom and info-panel assets"
   view. system_rail.xml carries its own `<view name="system">`, which ES-DE merges in. Keep
   `railScrim`/`rail-shelf` as-is.
 - [ ] **Step 3: Validate.**
-  Run: `xmllint --noout steam-bigpicture-es-de/_inc/system_rail.xml steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/_inc/system_hero_art.xml`
+  Run: `xmllint --noout steam-ui/_inc/system_rail.xml steam-ui/_inc/system_hero_neon.xml steam-ui/_inc/system_hero_art.xml`
   Expected: no output.
 - [ ] **Step 4: Asset refs.** Run `python3 scripts/check-asset-refs.py` (and `tools/check-theme-paths.sh`).
   Expected: the `system-capsule/${system.theme}.svg` + `_fallback` references resolve; no missing assets.
 - [ ] **Step 5: Commit.**
 ```bash
-git add steam-bigpicture-es-de/_inc/system_rail.xml steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/_inc/system_hero_art.xml
+git add steam-ui/_inc/system_rail.xml steam-ui/_inc/system_hero_neon.xml steam-ui/_inc/system_hero_art.xml
 git commit -m "feat(system): colour-logo capsule rail via shared include"
 ```
 
 ### Task 5: Neon hero colour logo + bloom + info panel
 
-**Files:** Modify `steam-bigpicture-es-de/_inc/system_hero_neon.xml`; Modify `steam-bigpicture-es-de/_inc/system_hero_art.xml` (info panel only).
+**Files:** Modify `steam-ui/_inc/system_hero_neon.xml`; Modify `steam-ui/_inc/system_hero_art.xml` (info panel only).
 
 **Consumes:** `hero-bloom.svg`, `info-panel.svg` (Task 3).
 
@@ -162,7 +162,7 @@ git commit -m "feat(system): colour-logo capsule rail via shared include"
   Expected: clean; `hero-bloom.svg`/`info-panel.svg`/`system-logo-color` refs resolve.
 - [ ] **Step 5: Commit.**
 ```bash
-git add steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/_inc/system_hero_art.xml
+git add steam-ui/_inc/system_hero_neon.xml steam-ui/_inc/system_hero_art.xml
 git commit -m "feat(system): neon hero colour logo + bloom; info panel on both heroes"
 ```
 

@@ -13,14 +13,14 @@
 - ES-DE resolves variables in **declaration order**: `_inc/scale.xml` MUST be included before the element files; none of its variable names may be declared in `theme.xml`'s root `<variables>` (root wins and blocks overrides).
 - Valid `<fontSize>` names: `medium`, `large`, `x-large`. Valid aspect names used: `16:9`, `16:10`, `4:3`, `5:4`, `19.5:9`, `20:9`, `21:9`.
 - Each task leaves the theme loadable. After each edit: `xmllint --noout` the changed files; the path check is `bash tools/check-theme-paths.sh` from repo root.
-- Repo root: `/Users/igorzamyslov/Projects/es-de-steam-theme`. Theme dir: `steam-bigpicture-es-de/`.
+- Repo root: `/Users/igorzamyslov/Projects/es-de-steam-theme`. Theme dir: `steam-ui/`.
 
 ---
 
 ## File Structure
-- **Create** `steam-bigpicture-es-de/_inc/scale.xml` — all `<fontSize>`/`<aspectRatio>` variable blocks.
-- **Modify** `steam-bigpicture-es-de/capabilities.xml` — declare fontSize + aspect options.
-- **Modify** `steam-bigpicture-es-de/theme.xml` — include scale.xml.
+- **Create** `steam-ui/_inc/scale.xml` — all `<fontSize>`/`<aspectRatio>` variable blocks.
+- **Modify** `steam-ui/capabilities.xml` — declare fontSize + aspect options.
+- **Modify** `steam-ui/theme.xml` — include scale.xml.
 - **Modify** element files — swap hardcoded sizes for variables: `_inc/system_hero_neon.xml`, `_inc/system_hero_art.xml`, `_inc/section-strip.xml`, `_inc/status.xml`, `_inc/helpsystem.xml`, `_inc/gamelist_list.xml`, `_inc/detail.xml`, `_inc/detail_wide.xml`, `_inc/gamelist_grid.xml`.
 - **Modify** `assets/ui/selector-frame.svg`, `assets/ui/capsule-shadow-soft.svg`, `assets/ui/capsule-shadow.svg` — 2:3 viewBox + recomputed geometry (+ shadow softening).
 
@@ -29,7 +29,7 @@
 ## Task 1: Declare capabilities (fontSize + aspect ratios)
 
 **Files:**
-- Modify: `steam-bigpicture-es-de/capabilities.xml`
+- Modify: `steam-ui/capabilities.xml`
 
 - [ ] **Step 1: Add fontSize + aspect declarations.** Replace the existing aspectRatio block:
 
@@ -55,11 +55,11 @@ with:
     <fontSize>x-large</fontSize>
 ```
 
-- [ ] **Step 2: Validate.** Run: `xmllint --noout steam-bigpicture-es-de/capabilities.xml && echo OK` — Expected: `OK`.
+- [ ] **Step 2: Validate.** Run: `xmllint --noout steam-ui/capabilities.xml && echo OK` — Expected: `OK`.
 - [ ] **Step 3: Commit.**
 
 ```bash
-git add steam-bigpicture-es-de/capabilities.xml
+git add steam-ui/capabilities.xml
 git commit -m "feat(scale): declare font-size + phone aspect-ratio options"
 ```
 
@@ -68,8 +68,8 @@ git commit -m "feat(scale): declare font-size + phone aspect-ratio options"
 ## Task 2: Central scale variables (`_inc/scale.xml`)
 
 **Files:**
-- Create: `steam-bigpicture-es-de/_inc/scale.xml`
-- Modify: `steam-bigpicture-es-de/theme.xml`
+- Create: `steam-ui/_inc/scale.xml`
+- Modify: `steam-ui/theme.xml`
 
 **Interfaces — Produces** (variables consumed by later tasks):
 - Type scale: `${fsHero} ${fsHeader} ${fsList} ${fsClock} ${fsTitleWide} ${fsTitle} ${fsCount} ${fsButton} ${fsLabel} ${fsMetaWide} ${fsMeta} ${fsTab}`
@@ -149,11 +149,11 @@ with:
     <include>./_inc/scale.xml</include>
 ```
 
-- [ ] **Step 3: Validate.** Run: `xmllint --noout steam-bigpicture-es-de/_inc/scale.xml steam-bigpicture-es-de/theme.xml && echo OK` — Expected: `OK`. Then `cd /Users/igorzamyslov/Projects/es-de-steam-theme && bash tools/check-theme-paths.sh 2>&1 | grep -i scale.xml || echo "scale.xml resolves OK"`.
+- [ ] **Step 3: Validate.** Run: `xmllint --noout steam-ui/_inc/scale.xml steam-ui/theme.xml && echo OK` — Expected: `OK`. Then `cd /Users/igorzamyslov/Projects/es-de-steam-theme && bash tools/check-theme-paths.sh 2>&1 | grep -i scale.xml || echo "scale.xml resolves OK"`.
 - [ ] **Step 4: Commit.**
 
 ```bash
-git add steam-bigpicture-es-de/_inc/scale.xml steam-bigpicture-es-de/theme.xml
+git add steam-ui/_inc/scale.xml steam-ui/theme.xml
 git commit -m "feat(scale): central scale.xml (type scale + grid matrix)"
 ```
 
@@ -162,7 +162,7 @@ git commit -m "feat(scale): central scale.xml (type scale + grid matrix)"
 ## Task 3: Wire system view + chrome fonts to variables
 
 **Files:**
-- Modify: `_inc/system_hero_neon.xml`, `_inc/system_hero_art.xml`, `_inc/section-strip.xml`, `_inc/status.xml`, `_inc/helpsystem.xml` (all under `steam-bigpicture-es-de/`)
+- Modify: `_inc/system_hero_neon.xml`, `_inc/system_hero_art.xml`, `_inc/section-strip.xml`, `_inc/status.xml`, `_inc/helpsystem.xml` (all under `steam-ui/`)
 
 **Interfaces — Consumes:** `${fsHero} ${fsLabel} ${fsCount} ${fsTab} ${fsClock}` from Task 2.
 
@@ -179,14 +179,14 @@ git commit -m "feat(scale): central scale.xml (type scale + grid matrix)"
 
 - [ ] **Step 5: Validate.** Run:
 ```bash
-cd /Users/igorzamyslov/Projects/es-de-steam-theme/steam-bigpicture-es-de
+cd /Users/igorzamyslov/Projects/es-de-steam-theme/steam-ui
 xmllint --noout _inc/system_hero_neon.xml _inc/system_hero_art.xml _inc/section-strip.xml _inc/status.xml _inc/helpsystem.xml && echo OK
 ```
 Expected: `OK`. (At medium, rendering is unchanged.)
 
 - [ ] **Step 6: Commit.**
 ```bash
-git add steam-bigpicture-es-de/_inc/system_hero_neon.xml steam-bigpicture-es-de/_inc/system_hero_art.xml steam-bigpicture-es-de/_inc/section-strip.xml steam-bigpicture-es-de/_inc/status.xml steam-bigpicture-es-de/_inc/helpsystem.xml
+git add steam-ui/_inc/system_hero_neon.xml steam-ui/_inc/system_hero_art.xml steam-ui/_inc/section-strip.xml steam-ui/_inc/status.xml steam-ui/_inc/helpsystem.xml
 git commit -m "feat(scale): wire system view + chrome fonts to variables"
 ```
 
@@ -217,7 +217,7 @@ git commit -m "feat(scale): wire system view + chrome fonts to variables"
 
 - [ ] **Step 4: Validate.** Run:
 ```bash
-cd /Users/igorzamyslov/Projects/es-de-steam-theme/steam-bigpicture-es-de
+cd /Users/igorzamyslov/Projects/es-de-steam-theme/steam-ui
 xmllint --noout _inc/gamelist_list.xml _inc/detail.xml _inc/detail_wide.xml && echo OK
 grep -cE '<fontSize>0\.[0-9]+</fontSize>' _inc/detail.xml _inc/detail_wide.xml
 ```
@@ -225,7 +225,7 @@ Expected: `OK`; the grep reports `0` for both detail files (no literal sizes rem
 
 - [ ] **Step 5: Commit.**
 ```bash
-git add steam-bigpicture-es-de/_inc/gamelist_list.xml steam-bigpicture-es-de/_inc/detail.xml steam-bigpicture-es-de/_inc/detail_wide.xml
+git add steam-ui/_inc/gamelist_list.xml steam-ui/_inc/detail.xml steam-ui/_inc/detail_wide.xml
 git commit -m "feat(scale): wire list + detail-panel fonts to variables"
 ```
 
@@ -286,14 +286,14 @@ git commit -m "feat(scale): wire list + detail-panel fonts to variables"
 
 - [ ] **Step 5: Validate.** Run:
 ```bash
-cd /Users/igorzamyslov/Projects/es-de-steam-theme/steam-bigpicture-es-de
+cd /Users/igorzamyslov/Projects/es-de-steam-theme/steam-ui
 xmllint --noout _inc/gamelist_grid.xml assets/ui/selector-frame.svg assets/ui/capsule-shadow-soft.svg assets/ui/capsule-shadow.svg && echo OK
 ```
 Expected: `OK`.
 
 - [ ] **Step 6: Commit.**
 ```bash
-git add steam-bigpicture-es-de/_inc/gamelist_grid.xml steam-bigpicture-es-de/assets/ui/selector-frame.svg steam-bigpicture-es-de/assets/ui/capsule-shadow-soft.svg steam-bigpicture-es-de/assets/ui/capsule-shadow.svg
+git add steam-ui/_inc/gamelist_grid.xml steam-ui/assets/ui/selector-frame.svg steam-ui/assets/ui/capsule-shadow-soft.svg steam-ui/assets/ui/capsule-shadow.svg
 git commit -m "feat(scale): responsive portrait grid + 2:3 cell SVGs + softer shadow"
 ```
 
@@ -306,14 +306,14 @@ git commit -m "feat(scale): responsive portrait grid + 2:3 cell SVGs + softer sh
 - [ ] **Step 1: Full XML + path check.**
 ```bash
 cd /Users/igorzamyslov/Projects/es-de-steam-theme
-find steam-bigpicture-es-de -name '*.xml' -print0 | xargs -0 xmllint --noout && echo "ALL XML OK"
+find steam-ui -name '*.xml' -print0 | xargs -0 xmllint --noout && echo "ALL XML OK"
 bash tools/check-theme-paths.sh 2>&1 | grep -ciE 'MISSING' | xargs echo "MISSING (optional per-system includes only):"
 ```
 Expected: `ALL XML OK`; MISSING count is only the known optional per-system templated includes.
 
 - [ ] **Step 2: Confirm no stray hardcoded sizes remain in wired elements.**
 ```bash
-cd /Users/igorzamyslov/Projects/es-de-steam-theme/steam-bigpicture-es-de
+cd /Users/igorzamyslov/Projects/es-de-steam-theme/steam-ui
 grep -rnoE '<fontSize>0\.[0-9]+</fontSize>' _inc | grep -v scale.xml || echo "no literal fontSizes outside scale.xml"
 ```
 Expected: `no literal fontSizes outside scale.xml`.
