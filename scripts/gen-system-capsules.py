@@ -24,6 +24,11 @@ META = os.path.join(THEME, "system-metadata")
 LOGOS = os.path.join(THEME, "system-logos", "system-logo-color")
 OUT = os.path.join(THEME, "system-logos", "system-capsule")
 
+# Auto-collections get a plain white text label (system-logos/system-label/<key>.svg, made by
+# scripts/gen-collection-labels.py) on a NEUTRAL plate, instead of the stylised colour logo.
+LABEL_DIR = os.path.join(THEME, "system-logos", "system-label")
+LABEL_KEYS = {"auto-allgames", "auto-favorites", "auto-lastplayed"}
+
 # Capsule geometry (viewBox units). 2.2:1 matches the rail itemSize aspect.
 VB_W, VB_H = 440.0, 200.0
 # Inset plate within the viewBox: leaves an even margin so adjacent rail capsules show a gap,
@@ -112,6 +117,19 @@ def capsule_svg(color, vb, inner, fit_mult):
     s = min(bw / w, bh / h) * fit_mult
     tx = bx + (bw - w * s) / 2 - minx * s
     ty = by + (bh - h * s) / 2 - miny * s
+    # color=None -> neutral plate (no brand bloom), used for the white-label collections
+    bloom_def = bloom_rect = ""
+    if color is not None:
+        bloom_def = (
+            f'    <linearGradient id="capBloom" x1="0" y1="0" x2="1" y2="1">\n'
+            f'      <stop offset="0" stop-color="#{color}" stop-opacity="0.26"/>\n'
+            f'      <stop offset="0.5" stop-color="#{color}" stop-opacity="0"/>\n'
+            f'    </linearGradient>\n'
+        )
+        bloom_rect = (
+            f'  <rect x="{PLATE_X:.0f}" y="{PLATE_Y:.0f}" width="{PLATE_W:.0f}" '
+            f'height="{PLATE_H:.0f}" fill="url(#capBloom)"/>\n'
+        )
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" {NS}'
         f'viewBox="0 0 {VB_W:.0f} {VB_H:.0f}" preserveAspectRatio="xMidYMid meet">\n'
@@ -121,14 +139,11 @@ def capsule_svg(color, vb, inner, fit_mult):
         f'<stop offset="0.5" stop-color="#121925"/>'
         f'<stop offset="1" stop-color="#0a0e15"/>\n'
         f'    </linearGradient>\n'
-        f'    <linearGradient id="capBloom" x1="0" y1="0" x2="1" y2="1">\n'
-        f'      <stop offset="0" stop-color="#{color}" stop-opacity="0.26"/>\n'
-        f'      <stop offset="0.5" stop-color="#{color}" stop-opacity="0"/>\n'
-        f'    </linearGradient>\n'
+        f'{bloom_def}'
         f'  </defs>\n'
         f'{_shadow_rects()}'
         f'  <rect x="{PLATE_X:.0f}" y="{PLATE_Y:.0f}" width="{PLATE_W:.0f}" height="{PLATE_H:.0f}" fill="url(#capBase)"/>\n'
-        f'  <rect x="{PLATE_X:.0f}" y="{PLATE_Y:.0f}" width="{PLATE_W:.0f}" height="{PLATE_H:.0f}" fill="url(#capBloom)"/>\n'
+        f'{bloom_rect}'
         f'  <g transform="translate({tx:.3f} {ty:.3f}) scale({s:.5f})">{inner}</g>\n'
         f'</svg>\n'
     )
@@ -163,8 +178,13 @@ def main():
         if not fn.endswith(".svg"):
             continue
         system = fn[:-4]
-        vb, inner = logo_parts(os.path.join(LOGOS, fn))
-        svg = capsule_svg(system_color(system), vb, inner, FIT_OVERRIDES.get(system, 1.0))
+        if system in LABEL_KEYS:
+            # white text label on a neutral plate (no brand bloom)
+            vb, inner = logo_parts(os.path.join(LABEL_DIR, fn))
+            svg = capsule_svg(None, vb, inner, FIT_OVERRIDES.get(system, 0.85))
+        else:
+            vb, inner = logo_parts(os.path.join(LOGOS, fn))
+            svg = capsule_svg(system_color(system), vb, inner, FIT_OVERRIDES.get(system, 1.0))
         open(os.path.join(OUT, fn), "w", encoding="utf-8").write(svg)
         n += 1
     open(os.path.join(OUT, "_fallback.svg"), "w", encoding="utf-8").write(fallback_svg())
