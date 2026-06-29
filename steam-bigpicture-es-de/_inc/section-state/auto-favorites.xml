@@ -5,6 +5,5 @@
         <secTxtPlat>8f98a0ff</secTxtPlat>
         <secUnFav>${cAccent}</secUnFav>
         <secUnPlat>00000000</secUnPlat>
-        <secIcon>${cAccent}</secIcon>
     </variables>
 </theme>
