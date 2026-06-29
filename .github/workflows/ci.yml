@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  lint:
+  pre-commit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,12 +14,12 @@ jobs:
       - name: Install xmllint
         run: sudo apt-get update && sudo apt-get install -y libxml2-utils
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: "20"
+          python-version: "3.x"
 
-      - name: Run linters (xmllint + asset refs + markdownlint)
-        run: bash scripts/lint.sh
+      - name: Run pre-commit (all checks)
+        uses: pre-commit/action@v3.0.1
 
       - name: Check documentation links
         uses: lycheeverse/lychee-action@v2

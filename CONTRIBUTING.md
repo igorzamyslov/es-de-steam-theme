@@ -2,33 +2,35 @@
 
 ## Linting & checks
 
-All checks run in CI (`.github/workflows/ci.yml`) on every push and PR. To run them locally:
+All checks are defined in [`.pre-commit-config.yaml`](.pre-commit-config.yaml) — the single source
+of truth. CI runs exactly the same set via `pre-commit run --all-files`.
+
+Set it up once, then the checks run automatically on every `git commit`:
 
 ```bash
-bash scripts/lint.sh
+pip install pre-commit   # or: pipx install pre-commit
+pre-commit install
 ```
 
-This runs:
+Run them all on demand:
+
+```bash
+pre-commit run --all-files
+```
+
+What runs:
 
 | Check | Tool | What it catches |
 | --- | --- | --- |
+| Whitespace / line endings | `pre-commit-hooks` | trailing spaces, missing final newline, CRLF |
 | XML + SVG well-formedness | `xmllint` | malformed files that break theme loading |
 | Asset references | `scripts/check-asset-refs.py` | a `<path>` / `<include>` / `<fontPath>` / `<defaultImage>` … pointing at a file that doesn't exist |
 | Markdown style | `markdownlint` | doc formatting issues |
 | Doc links | `lychee` (CI only) | broken links in the docs |
 
-**Prerequisites**
-
-- `xmllint` — macOS: preinstalled; Debian/Ubuntu: `sudo apt-get install libxml2-utils`.
-- `python3` — for the asset-reference check (standard library only).
-- *(optional)* Node/`npx` or `markdownlint-cli` — for Markdown linting; the script skips it if absent.
-
-**Optional pre-commit hooks** (run the checks automatically on `git commit`):
-
-```bash
-pipx install pre-commit   # or: pip install pre-commit
-pre-commit install
-```
+`xmllint` must be on `PATH` (macOS: preinstalled; Debian/Ubuntu: `sudo apt-get install libxml2-utils`).
+`python3` is needed for the asset-reference check (standard library only). pre-commit bootstraps
+everything else (including Node for `markdownlint`).
 
 The asset-reference check is the theme-specific one worth knowing about: ES-DE silently ignores a
 missing asset (you just get a blank element or a skipped include), so this guards against typo'd or

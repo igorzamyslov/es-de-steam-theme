@@ -1,20 +1,41 @@
-# Optional local hooks. Enable with:  pipx install pre-commit && pre-commit install
-# (CI runs the same checks regardless, via scripts/lint.sh.)
-exclude: ^steam-bigpicture-es-de/(system-logos|system-controllers-outline|system-metadata)/
+# Single source of truth for all repo checks. CI runs `pre-commit run --all-files`.
+# Local setup (runs the checks automatically on every commit):
+#     pip install pre-commit   # or: pipx install pre-commit
+#     pre-commit install
+# Run on demand against everything:
+#     pre-commit run --all-files
+
+# Never touch vendored upstream assets or internal process artifacts.
+exclude: |
+  (?x)^(
+    steam-bigpicture-es-de/(system-logos|system-controllers-outline|system-metadata)/|
+    \.superpowers/|
+    docs/superpowers/
+  )
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
       - id: trailing-whitespace
-        exclude: \.md$
+        exclude: \.md$ # trailing spaces are meaningful (hard line breaks) in Markdown
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args: [--fix=lf]
-      - id: check-xml
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.43.0
+    hooks:
+      - id: markdownlint
+        args: [--config, .markdownlint.jsonc]
 
   - repo: local
     hooks:
+      - id: xmllint
+        name: xmllint (XML + SVG well-formedness)
+        entry: xmllint --noout
+        language: system
+        files: \.(xml|svg)$
       - id: theme-asset-refs
         name: theme asset references resolve
         entry: python3 scripts/check-asset-refs.py
